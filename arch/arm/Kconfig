@@ -2234,6 +2234,8 @@ source "net/Kconfig"
 
 source "drivers/Kconfig"
 
+source "ubuntu/Kconfig"
+
 source "fs/Kconfig"
 
 source "arch/arm/Kconfig.debug"
