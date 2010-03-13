@@ -2348,6 +2348,8 @@ source "net/Kconfig"
 
 source "drivers/Kconfig"
 
+source "ubuntu/Kconfig"
+
 source "drivers/firmware/Kconfig"
 
 source "fs/Kconfig"
