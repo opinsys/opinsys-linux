@@ -1,0 +1,9 @@
+This kernel can be maintained by following the Ubuntu git repository.
+For example:
+
+git remote add precise git://kernel.ubuntu.com/ubuntu/ubuntu-precise.git
+git fetch precise
+git rebase refs/remotes/precise/master
+fakeroot debian/rules startnewrelease insertchanges
+git add -u debian.lowlatency/changelog
+git commit -s -m"low-latency: rebased against ubuntu-precise master"

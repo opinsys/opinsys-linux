@@ -1,0 +1,17 @@
+# DELTA: enable full preempt
+#
+# CONFIG_PREEMPT_NONE is not set
+# CONFIG_PREEMPT_VOLUNTARY is not set
+CONFIG_PREEMPT=y
+# CONFIG_DEBUG_PREEMPT is not set
+# CONFIG_RCU_BOOST is not set
+# CONFIG_RCU_CPU_STALL_VERBOSE is not set
+# CONFIG_PREEMPT_TRACER is not set
+# CONFIG_PROVE_RCU_DELAY is not set
+
+# DELTA: switch to HZ=1000
+#
+# CONFIG_HZ_100 is not set
+# CONFIG_HZ_250 is not set
+# CONFIG_HZ_300 is not set
+CONFIG_HZ_1000=y

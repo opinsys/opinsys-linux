@@ -1,0 +1,3148 @@
+linux-lowlatency (3.10.0-3.16) saucy; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.10.0-3.12
+
+  [ Ubuntu: 3.10.0-3.12 ]
+
+  * Release Tracking Bug
+    - LP: #1201467
+  * Revert "SAUCE: ext4: fix ext4_get_group_number() at cluster boundaries"
+  * [config] set CONFIG_SERIAL_OF_PLATFORM=y for armhf
+  * d-i: package DTBs in udebs
+  * put armhf dtb names on separate lines
+  * add Tegra support to armhf generic
+  * rebase to v3.10.1
+  * ext4: fix ext4_get_group_number()
+  * rebase to v3.10.1
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 17 Jul 2013 11:35:22 +0100
+
+linux-lowlatency (3.10.0-2.15) saucy; urgency=low
+
+
+  [ Ubuntu: 3.10.0-2.11 ]
+
+  * [Config] enforce CONFIG_DEBUG_INFO
+  * SAUCE: intel_pstate -- toggle default to disable
+    - LP: #1188647
+  * [Packaging] add accellerators for binary-udeb
+  * SAUCE: ext4: fix ext4_get_group_number() at cluster boundaries
+    - LP: #1195710
+  * SAUCE: (no-up) apparmor: fix apparmor module status for none root users
+    - LP: #1199912
+  * d-i: Add qlcnic to nic-modules
+    - LP: #1196597
+  * [Debian] Prepare to build using arch specific compiler
+  * Build armhf using gcc-4.7
+
+  [ Ubuntu: 3.10.0-2.10 ]
+
+  * [Config] CONFIG_INTEL_MEI*=m
+    - LP: #1196155
+  * [Config] CONFIG_DEBUG_INFO=y
+  * [Config] fix Calxeda xgmac module filename
+  * Revert "serial: 8250_pci: add support for another kind of NetMos
+    Technology PCI 9835 Multi-I/O Controller"
+    - LP: #1190967
+  * mfd: lpc_ich: Add support for Intel Avoton SoC
+    - LP: #1196658
+
+  [ Ubuntu: 3.10.0-2.9 ]
+
+  * rebase to v3.10
+  * Revert "SAUCE: (no-up) apparmor: Fix quieting of audit messages for
+    network mediation"
+  * Revert "SAUCE: (no-up) apparmor: Fix compile warnings"
+  * Revert "SAUCE: (no-up) AppArmor: basic networking rules"
+  * Revert "SAUCE: (no-up) apparmor: Add the ability to mediate mount"
+  * Revert "SAUCE: (no-up) AppArmor: Add profile introspection file to
+    interface"
+  * Revert "SAUCE: (no-up) AppArmor: Disable Add PR_{GET,SET}_NO_NEW_PRIVS
+    to prevent execve from granting privs"
+  * SAUCE: (no-up) apparmor: Sync to apparmor 3 dev stable snapshot
+  * rebase to v3.10
+
+  [ Ubuntu: 3.10.0-1.8 ]
+
+  * Release Tracking Bug
+    - LP: #1195717
+  * Revert "ubuntu: overlayfs -- follow change to do_splice_direct
+    interface"
+  * Revert "ubuntu: overlayfs -- expose do_splice_direct prototype"
+  * Revert "SAUCE: ubuntu: overlayfs -- ovl_path_open should not take path
+    reference"
+  * Revert "ubuntu: overlayfs -- add FS_ALIAS"
+  * Revert "ubuntu: overlayfs --
+    overlayfs-copy-up-i_uid-i_gid-from-the-underlying-inode"
+  * Revert "ubuntu: overlayfs -- ovl-switch-to-inode_permission"
+  * Revert "ubuntu: overlayfs -- vfs-export-inode_permission-to-modules"
+  * Revert "ubuntu: overlayfs -- overlayfs-create-new-inode-in-ovl_link"
+  * Revert "ubuntu: overlayfs --
+    overlayfs-fix-possible-leak-in-ovl_new_inode"
+  * Revert "ubuntu: overlayfs -- fs-limit-filesystem-stacking-depth"
+  * Revert "ubuntu: overlayfs -- overlay-overlay-filesystem-documentation"
+  * Revert "ubuntu: overlayfs -- overlayfs-implement-show_options"
+  * Revert "ubuntu: overlayfs -- overlayfs-add-statfs-support"
+  * Revert "ubuntu: overlayfs -- overlay filesystem"
+  * Revert "ubuntu: overlayfs -- vfs-introduce-clone_private_mount"
+  * Revert "ubuntu: overlayfs -- vfs-export-do_splice_direct-to-modules"
+  * Revert "ubuntu: overlayfs -- vfs-add-i_op-dentry_open"
+  * ubuntu: overlayfs v18 -- -- overlayfs: add statfs support
+  * ubuntu: overlayfs v18 -- -- overlayfs: implement show_options
+  * ubuntu: overlayfs v18 -- -- vfs: add i_op->dentry_open()
+  * ubuntu: overlayfs v18 -- -- vfs: export do_splice_direct() to modules
+  * ubuntu: overlayfs v18 -- -- vfs: export __inode_permission() to modules
+  * ubuntu: overlayfs v18 -- -- vfs: introduce clone_private_mount()
+  * ubuntu: overlayfs v18 -- -- overlay filesystem
+  * ubuntu: overlayfs v18 -- -- fs: limit filesystem stacking depth
+  * ubuntu: overlayfs v18 -- -- overlay: overlay filesystem documentation
+  * [Config] CONFIG_SUNRPC_DEBUG=y
+    - LP: #1127319
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 11 Jul 2013 19:14:41 +0100
+
+linux-lowlatency (3.10.0-0.14) UNRELEASED; urgency=low
+
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 25 Jun 2013 19:49:09 +0100
+
+linux-lowlatency (3.8.0-19.13) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-19.29
+
+  [ Ubuntu: 3.8.0-19.29 ]
+
+  * UBUNTU: [Config] disable PL330_DMA
+    - LP: #1168039
+  * UBUNTU: SAUCE: (no-up) ARM: highbank: fix cache flush ordering for cpu hotplug
+    - LP: #1169956
+  * SAUCE: (no-up) x86: reboot: Make Dell Optiplex 390 use reboot=pci
+    - LP: #800660
+  * SAUCE: [media] uvcvideo: quirk PROBE_DEF for Dell Studio / OmniVision
+    webcam
+    - LP: #1168430
+  * Revert "drivers/rtc/rtc-at91rm9200.c: use a variable for storing IMR"
+    - LP: #1168506
+  * Revert "PCI/ACPI: Request _OSC control before scanning PCI root bus"
+    - LP: #1168506
+  * Revert "tty/8250_pnp: serial port detection regression since v3.7"
+    - LP: #1168506
+  * ALSA: hda - fixup D3 pin and right channel mute on Haswell HDMI audio
+    - LP: #1167270
+  * ASoC: imx-ssi: Fix occasional AC97 reset failure
+    - LP: #1168506
+  * ASoC: dma-sh7760: Fix compile error
+    - LP: #1168506
+  * ASoC: spear_pcm: Update to new pcm_new() API
+    - LP: #1168506
+  * regmap: Initialize `map->debugfs' before regcache
+    - LP: #1168506
+  * regmap: cache Fix regcache-rbtree sync
+    - LP: #1168506
+  * MIPS: Fix logic errors in bitops.c
+    - LP: #1168506
+  * HID: magicmouse: fix race between input_register() and probe()
+    - LP: #1168506
+  * spi/s3c64xx: modified error interrupt handling and init
+    - LP: #1168506
+  * spi/mpc512x-psc: optionally keep PSC SS asserted across xfer segmensts
+    - LP: #1168506
+  * gpio: stmpe: pass DT node to irqdomain
+    - LP: #1168506
+  * UBIFS: make space fixup work in the remount case
+    - LP: #1168506
+  * reiserfs: Fix warning and inode leak when deleting inode with xattrs
+    - LP: #1168506
+  * ALSA: hda - bug fix on return value when getting HDMI ELD info
+    - LP: #1168506
+  * ALSA: hda - Enabling Realtek ALC 671 codec
+    - LP: #1168506
+  * ALSA: hda - fix typo in proc output
+    - LP: #1168506
+  * drm/nouveau: fix handling empty channel list in ioctl's
+    - LP: #1168506
+  * drm/i915: Be sure to turn hsync/vsync back on at crt enable (v2)
+    - LP: #1168506
+  * drm: correctly restore mappings if drm_open fails
+    - LP: #1168506
+  * mm: prevent mmap_cache race in find_vma()
+    - LP: #1168506
+  * EISA/PCI: Init EISA early, before PNP
+    - LP: #1168506
+  * EISA/PCI: Fix bus res reference
+    - LP: #1168506
+  * ixgbe: fix registration order of driver and DCA nofitication
+    - LP: #1168506
+  * libata: Use integer return value for atapi_command_packet_set
+    - LP: #1168506
+  * libata: Set max sector to 65535 for Slimtype DVD A DS8A8SH drive
+    - LP: #1168506
+  * MIPS: Unbreak function tracer for 64-bit kernel.
+    - LP: #1168506
+  * alpha: Add irongate_io to PCI bus resources
+    - LP: #1168506
+  * PCI/ACPI: Always resume devices on ACPI wakeup notifications
+    - LP: #1168506
+  * PCI/PM: Disable runtime PM of PCIe ports
+    - LP: #1168506
+  * ata_piix: Fix DVD not dectected at some Haswell platforms
+    - LP: #1168506
+  * ftrace: Consistently restore trace function on sysctl enabling
+    - LP: #1168506
+  * powerpc: pSeries_lpar_hpte_remove fails from Adjunct partition being
+    performed before the ANDCOND test
+    - LP: #1168506
+  * mwifiex: limit channel number not to overflow memory
+    - LP: #1168506
+  * mac80211: fix remain-on-channel cancel crash
+    - LP: #1168506
+  * x86: remove the x32 syscall bitmask from syscall_get_nr()
+    - LP: #1168506
+  * hwspinlock: fix __hwspin_lock_request error path
+    - LP: #1168506
+  * remoteproc/ste: fix memory leak on shutdown
+    - LP: #1168506
+  * remoteproc: fix error path of handle_vdev
+    - LP: #1168506
+  * remoteproc: fix FW_CONFIG typo
+    - LP: #1168506
+  * spinlocks and preemption points need to be at least compiler barriers
+    - LP: #1168506
+  * crypto: ux500 - add missing comma
+    - LP: #1168506
+  * crypto: gcm - fix assumption that assoc has one segment
+    - LP: #1168506
+  * drm/mgag200: Index 24 in extended CRTC registers is 24 in hex, not
+    decimal.
+    - LP: #1168506
+  * block: avoid using uninitialized value in from queue_var_store
+    - LP: #1168506
+  * SUNRPC: Remove extra xprt_put()
+    - LP: #1168506
+  * NFSv4: Fix a memory leak in nfs4_discover_server_trunking
+    - LP: #1168506
+  * NFSv4/4.1: Fix bugs in nfs4[01]_walk_client_list
+    - LP: #1168506
+  * drm/i915: Fix build failure
+    - LP: #1168506
+  * x86: Fix rebuild with EFI_STUB enabled
+    - LP: #1168506
+  * thermal: return an error on failure to register thermal class
+    - LP: #1168506
+  * msi-wmi: Fix memory leak
+    - LP: #1168506
+  * cpufreq: exynos: Get booting freq value in exynos_cpufreq_init
+    - LP: #1168506
+  * ARM: EXYNOS: Fix crash on soft reset on EXYNOS5440
+    - LP: #1168506
+  * drm/i915: add quirk to invert brightness on eMachines G725
+    - LP: #1168506
+  * drm/i915: add quirk to invert brightness on eMachines e725
+    - LP: #1168506
+  * drm/i915: add quirk to invert brightness on Packard Bell NCL20
+    - LP: #1168506
+  * r8169: fix auto speed down issue
+    - LP: #1168506
+  * vfio-pci: Fix possible integer overflow
+    - LP: #1168506
+  * NFSv4: Doh! Typo in the fix to nfs41_walk_client_list
+    - LP: #1168506
+  * can: gw: use kmem_cache_free() instead of kfree()
+    - LP: #1168506
+  * mwifiex: complete last internal scan
+    - LP: #1168506
+  * Linux 3.8.7
+    - LP: #1168506
+  * ALSA: usb-audio: fix endianness bug in snd_nativeinstruments_*
+    - LP: #1169930
+  * ASoC: core: Fix to check return value of snd_soc_update_bits_locked()
+    - LP: #1169930
+  * ASoC: wm5102: Correct lookup of arizona struct in SYSCLK event
+    - LP: #1169930
+  * ASoC: wm8903: Fix the bypass to HP/LINEOUT when no DAC or ADC is
+    running
+    - LP: #1169930
+  * tracing: Fix double free when function profile init failed
+    - LP: #1169930
+  * ARM: Kirkwood: Fix typo in the definition of ix2-200 rebuild LED
+    - LP: #1169930
+  * ARM: imx35 Bugfix admux clock
+    - LP: #1169930
+  * dmaengine: omap-dma: Start DMA without delay for cyclic channels
+    - LP: #1169930
+  * PM / reboot: call syscore_shutdown() after disable_nonboot_cpus()
+    - LP: #1169930
+  * ipc: set msg back to -EAGAIN if copy wasn't performed
+    - LP: #1169930
+  * GFS2: Fix unlock of fcntl locks during withdrawn state
+    - LP: #1169930
+  * GFS2: return error if malloc failed in gfs2_rs_alloc()
+    - LP: #1169930
+  * SCSI: libsas: fix handling vacant phy in sas_set_ex_phy()
+    - LP: #1169930
+  * cifs: Allow passwords which begin with a delimitor
+    - LP: #1169930
+  * target: Fix incorrect fallthrough of ALUA Standby/Offline/Transition
+    CDBs
+    - LP: #1169930
+  * vfs: Revert spurious fix to spinning prevention in prune_icache_sb
+    - LP: #1169930
+  * kobject: fix kset_find_obj() race with concurrent last kobject_put()
+    - LP: #1169930
+  * gpio: fix wrong checking condition for gpio range
+    - LP: #1169930
+  * x86-32: Fix possible incomplete TLB invalidate with PAE pagetables
+    - LP: #1169930
+  * tracing: Fix possible NULL pointer dereferences
+    - LP: #1169930
+  * udl: handle EDID failure properly.
+    - LP: #1169930
+  * ftrace: Move ftrace_filter_lseek out of CONFIG_DYNAMIC_FTRACE section
+    - LP: #1169930
+  * sched_clock: Prevent 64bit inatomicity on 32bit systems
+    - LP: #1169930
+  * x86, mm, paravirt: Fix vmalloc_fault oops during lazy MMU updates
+    - LP: #1169930
+  * x86, mm: Patch out arch_flush_lazy_mmu_mode() when running on bare
+    metal
+    - LP: #1169930
+  * tty: don't deadlock while flushing workqueue
+    - LP: #1169930
+  * Linux 3.8.8
+    - LP: #1169930
+  * Release Tracking Bug
+    - LP: #1168504
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 18 Apr 2013 10:04:01 +0100
+
+linux-lowlatency (3.8.0-18.12) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-18.28
+
+  [ Ubuntu: 3.8.0-18.28 ]
+
+  * (debian) fix internal linkage for separated header packages
+    - LP: #1165259
+  * SAUCE: Bluetooth: Add support for Broadcom 413c:8143
+    - LP: #1166113
+  * SAUCE: (no-up) apparmor: Fix quieting of audit messages for network
+    mediation
+    - LP: #1163259
+  * SAUCE: (no-up) drm/i915: quirk no PCH_PWM_ENABLE for Dell XPS13
+    backlight
+    - LP: #1162026, #1163720
+  * [Config] Disable CONFIG_PARPORT_PC_FIFO
+    - LP: #339752
+  * SAUCE: (no-up) mac80211_hwsim: Register and bind to driver
+    - LP: #1166250
+  * [Config] RTC_DRV_PL031=y
+  * (debian) Abort build on unresolved symbols
+    - LP: #1166197
+  * [Config] Add libceph to inclusion list
+  * [Config] Drop all inclusion list modules with unsatisfied dependencies
+  * SAUCE: (no-up) Remove emi62 files duplicated in linux-firmware
+  * SAUCE: (no-up) Remove emi26 files duplicated in linux-firmware
+  * SAUCE: (no-up) Remove whiteheat files duplicated in linux-firmware
+  * Release Tracking Bug
+    - LP: #1168040
+  * TTY: do not update atime/mtime on read/write
+    - LP: #1097680
+    - CVE-2013-0160
+  * KVM: x86: Convert MSR_KVM_SYSTEM_TIME to use gfn_to_hva_cache functions
+    (CVE-2013-1797)
+    - LP: #1158258
+    - CVE-2013-1797
+  * KVM: Fix bounds checking in ioapic indirect register reads
+    (CVE-2013-1798)
+    - LP: #1158262
+    - CVE-2013-1798
+  * drm/i915: HDMI/DP - ELD info refresh support for Haswell
+    - LP: #1011438
+  * ALSA - HDA: New PCI ID for Haswell ULT
+    - LP: #1011438
+  * ALSA: hda - Support rereading widgets under the function group
+    - LP: #1011438
+  * ALSA: hda - Add fixup for Haswell to enable all pin and convertor
+    widgets
+    - LP: #1011438
+  * libata: fix DMA to stack in reading devslp_timing parameters
+    - LP: #1031173
+  * dmaengine: dw_dmac: remove CLK dependency
+    - LP: #1031163
+  * dmaengine: dw_dmac: Enhance device tree support
+    - LP: #1031163
+  * dmaengine: dw_dmac: amend description and indentation
+    - LP: #1031163
+  * dw_dmac: change dev_printk() to corresponding macros
+    - LP: #1031163
+  * dw_dmac: don't call platform_get_drvdata twice
+    - LP: #1031163
+  * dw_dmac: change dev_crit to dev_WARN in dwc_handle_error
+    - LP: #1031163
+  * dw_dmac: introduce to_dw_desc() macro
+    - LP: #1031163
+  * dw_dmac: absence of pdata isn't critical when autocfg is set
+    - LP: #1031163
+  * dw_dmac: check for mapping errors
+    - LP: #1031163
+  * dw_dmac: remove redundant check
+    - LP: #1031163
+  * dw_dmac: update tx_node_active in dwc_do_single_block
+    - LP: #1031163
+  * dma: dw_dmac: add dwc_chan_pause and dwc_chan_resume
+    - LP: #1031163
+  * dmaengine: introduce is_slave_direction function
+    - LP: #1031163
+  * dmaengine: add possibility for cyclic transfers
+    - LP: #1031163
+  * dma: dw_dmac: check direction properly in dw_dma_cyclic_prep
+    - LP: #1031163
+  * dma: ep93xx_dma: reuse is_slave_direction helper
+    - LP: #1031163
+  * dma: ipu_idmac: reuse is_slave_direction helper
+    - LP: #1031163
+  * dma: ste_dma40: reuse is_slave_direction helper
+    - LP: #1031163
+  * dw_dmac: call .probe after we have a device in place
+    - LP: #1031163
+  * dw_dmac: store direction in the custom channel structure
+    - LP: #1031163
+  * dw_dmac: make usage of dw_dma_slave optional
+    - LP: #1031163
+  * dw_dmac: backlink to dw_dma in dw_dma_chan is superfluous
+    - LP: #1031163
+  * dw_dmac: allocate dma descriptors from DMA_COHERENT memory
+    - LP: #1031163
+  * dw_dmac: don't exceed AHB master number in dwc_get_data_width
+    - LP: #1031163
+  * dw_dmac: move soft LLP code from tasklet to dwc_scan_descriptors
+    - LP: #1031163
+  * dw_dmac: print out DW_PARAMS and DWC_PARAMS when debug
+    - LP: #1031163
+  * dw_dmac: remove unnecessary tx_list field in dw_dma_chan
+    - LP: #1031163
+  * dw_dmac: introduce total_len field in struct dw_desc
+    - LP: #1031163
+  * dw_dmac: fill individual length of descriptor
+    - LP: #1031163
+  * dw_dmac: return proper residue value
+    - LP: #1031163
+  * dw_dmac: apply default dma_mask if needed
+    - LP: #1031163
+  * dw_dmac: add support for Lynxpoint DMA controllers
+    - LP: #1031163
+  * dw_dmac: adjust slave_id accordingly to request line base
+    - LP: #1031163
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 12 Apr 2013 12:03:31 +0100
+
+linux-lowlatency (3.8.0-17.11) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * drop erroneous AUFS update from 3.9.
+  * [Packaging] ensure we clear out the old config before regenerating
+  * [Config] add CONFIG_PROVE_RCU_DELAY=n
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Tue, 09 Apr 2013 10:29:36 +0100
+
+linux-lowlatency (3.8.0-17.10) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Revert "ubuntu: AUFS (no-squash) -- aufs3-standalone.patch"
+  * Revert "ubuntu: AUFS (no-squash) -- aufs3-base.patch"
+  * ubuntu: AUFS -- update to ef8e1b1b265bb851b9a22aab02c81f24e57f81ac
+  * rebase to Ubuntu-3.8.0-17.27
+
+  [ Upstream Kernel Changes ]
+
+  * Uubuntu: AUFS (no-squash) -- aufs3-base.patch
+  * Uubuntu: AUFS (no-squash) -- aufs3-standalone.patch
+
+  [ Ubuntu: 3.8.0-17.27 ]
+
+  * SAUCE: (no-up) Bluetooth: Add support for 04ca:2007
+    - LP: #1153448
+  * SAUCE: (no-up) Bluetooth: Add support for 105b:e065
+    - LP: #1161261
+  * SAUCE: (no-up) tools/power turbostat: additional Haswell CPU-id
+    - LP: #1083993
+  * Revert "SAUCE: (no-up) seccomp: forcing auditing of kill condition"
+    Replaced by upstream patch.
+  * Release Tracking Bug
+    - LP: #1165746
+  * rebase to v3.8.6
+  * Revert "brcmsmac: support 4313iPA"
+    - LP: #1157190
+  * tools/power turbostat: support Haswell
+    - LP: #1083993
+  * net: calxedaxgmac: fix rx ring handling when OOM
+  * cpufreq: check OF node /cpus presence before dereferencing it
+  * Input: cypress_ps2 - fix trackpadi found in Dell XPS12
+    - LP: #1103594
+  * ARM: OMAP2+: Limit omap initcalls to omap only on multiplatform kernels
+  * ARM: OMAP2+: Use omap initcalls
+  * ARM: OMAP: Fix i2c cmdline initcall for multiplatform
+  * ARM: OMAP: Fix dmaengine init for multiplatform
+  * ARM: OMAP2+: Add multiplatform debug_ll support
+  * ARM: OMAP2+: Disable code that currently does not work with
+    multiplaform
+  * ARM: OMAP2+: Enable ARCH_MULTIPLATFORM support
+  * ARM: OMAP2+: Add minimal support for booting vexpress
+  * ARM: OMAP2+: Remove now obsolete uncompress.h and debug-macro.S
+  * davinci: do not include mach/hardware.h
+  * clk: export __clk_get_name for re-use in imx-ipu-v3 and others
+  * [SCSI] storvsc: avoid usage of WRITE_SAME
+    - LP: #1157952
+  * ACPICA: Fix possible memory leak in dispatcher error path.
+  * KVM: x86: fix for buffer overflow in handling of MSR_KVM_SYSTEM_TIME (CVE-2013-1796)
+    - LP: #1158254
+    - CVE-2013-1796
+  * SAUCE: (no-up) Bluetooth: Add a load_firmware callback to struct hci_dev
+    - LP: #1065400
+  * SAUCE: (no-up) Bluetooth: Implement broadcom patchram firmware loader
+    - LP: #1065400
+  * SAUCE: (no-up) Bluetooth: Add support for 13d3:3388 and 13d3:3389
+    - LP: #1065400
+
+  [ Ubuntu: 3.8.0-16.26 ]
+
+  * SAUCE: intel_idle: additional Haswell CPU-id
+    - LP: #1083993
+  * SAUCE: cpufreq: OMAP: instantiate omap-cpufreq as a platform_driver
+  * Rebase to 3.8.5
+  * Release Tracking Bug
+    - LP: #1162956
+  * iwlwifi: add 7000 series device configuration
+    - LP: #1011422
+  * mac80211: prevent spurious HT/VHT downgrade message
+
+  [ Ubuntu: 3.8.0-15.25 ]
+
+  * [Config] annotations -- track move to -generic for armhf
+  * [Config] annotations -- resync with updated armhf -generic flavour
+  * [Config] annotations -- clean up redundant annotations
+  * Revert "SAUCE: add option to hand off all kernel parameters to init"
+  * SAUCE: add option to hand off all kernel parameters to init
+    Clean up compile warnings.
+    - LP: #586386
+  * Revert "SAUCE: isapnp_init: make isa PNP scans occur async"
+  * SAUCE: isapnp_init: make isa PNP scans occur async
+    Clean up compile warnings.
+  * [Config] HIHGBANK=y
+  * [Config] SATA_HIGHBANK=y
+  * [Config] NET_CALXEDA_XGMAC=y
+  * [Config] EDAC_HIGHBANK_[MC|L2]=y
+  * SAUCE: cpufreq: check OF /cpus presence before dereferencing it
+  * [Config] CONFIG_CPU_IDLE_CALXEDA=y, CONFIG_SWP_EMULATE=y
+  * [Config] ARM_HIGHBANK_CPUFREQ=y
+  * [Config] CPU_IDLE_MULTIPLE_DRIVERS=y, CPU_FREQ_DEFAULT_GOV_ONDEMAND=y
+  * SAUCE: ARM: cache-l2x0: fix masking of RTL revision numbering and
+    set_debug init
+  * SAUCE: ahci: remove calxeda ahci controller
+  * SAUCE: cpuidle: calxeda: disable power gating by default
+  * SAUCE: net: calxedaxgmac: fix rx ring handling when OOM
+  * SAUCE: dm-raid45: Fix incompatible ptr assignments
+    Clean up compile warnings.
+  * [Config] Removed modules from ABI
+  * [Config] CONFIG_SATA_HIGHBANK=n for x86
+  * [Config] Remove highbank as a flavour
+  * [Config] CONFIG_MAILBOX=y
+  * SAUCE: acpi/video.c: Fix compile warnings
+  * SAUCE: apparmor: Fix compile warnings
+  * SAUCE: vesafb: Cleanup compile warnings
+  * Release Tracking Bug
+    - LP: #1161054
+  * i2c: iSMT: add Intel Avoton DeviceIDs
+    - LP: #1083965
+  * ARM: use device tree to get smp_twd clock
+  * clk / highbank: Prevent glitches in non-bypass reset mode
+  * ARM / highbank: add support for pl320 IPC
+  * cpufreq / highbank: add support for highbank cpufreq
+  * PM / OPP: switch exported symbols to GPL variant
+  * PM / OPP: Export more symbols for module usage
+  * mailbox, pl320-ipc: remove __init from probe function
+  * SAUCE: PCI: define macro for marvell vendor ID
+    - LP: #1159863
+  * SAUCE: PCI: fix system hang issue of Marvell SATA host controller
+    - LP: #1159863
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 08 Apr 2013 10:32:32 +0100
+
+linux-lowlatency (3.8.0-14.9) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-14.24
+
+  [ Ubuntu: 3.8.0-14.24 ]
+
+  * [Config] rename omap flavour to generic
+  * [Config] USB_MUSB_HDRC=m
+  * SAUCE: mfd: omap-usb-host: Fix clk warnings at boot
+  * SAUCE: Revert "brcmsmac: support 4313iPA"
+    - LP: #1157190
+  * [Config] CONFIG_SERIAL_8250_DW=m across all arches
+    - LP: #1031162
+  * [debian] Build extras package only for specific arches
+  * [config] Set do_extras_package=true for x86en
+  * Rebase to 3.8.4
+  * Release Tracking Bug
+    - LP: #1158863
+  * Input: ALPS - document the alps.h data structures
+    - LP: #1089413
+  * Input: ALPS - copy "model" info into alps_data struct
+    - LP: #1089413
+  * Input: ALPS - move alps_get_model() down below hw_init code
+    - LP: #1089413
+  * Input: ALPS - introduce helper function for repeated commands
+    - LP: #1089413
+  * Input: ALPS - rework detection sequence
+    - LP: #1089413
+  * Input: ALPS - use function pointers for different protocol handlers
+    - LP: #1089413
+  * Input: ALPS - move {addr,nibble}_command settings into
+    alps_set_defaults()
+    - LP: #1089413
+  * Input: ALPS - rework detection of Pinnacle AGx touchpads
+    - LP: #1089413
+  * Input: ALPS - fix command mode check
+    - LP: #1089413
+  * Input: ALPS - move pixel and bitmap info into alps_data struct
+    - LP: #1089413
+  * Input: ALPS - make the V3 packet field decoder "pluggable"
+    - LP: #1089413
+  * Input: ALPS - add support for "Rushmore" touchpads
+    - LP: #1089413
+  * Input: ALPS - enable trackstick on Rushmore touchpads
+    - LP: #1089413
+  * Input: ALPS - remove unused argument to alps_enter_command_mode()
+    - LP: #1089413
+  * Input: ALPS - add "Dolphin V1" touchpad support
+    - LP: #1089413
+  * serial: 8250_dw: Use ifdef with ACPI
+    - LP: #1031162
+  * rebase to v3.8.4
+
+  [ Ubuntu: 3.8.0-13.23 ]
+
+  * Revert "drm/i915: enable irqs earlier when resuming"
+    - LP: #1156310
+  * Revert "drm/i915: reorder setup sequence to have irqs for output setup"
+    - LP: #1156310
+  * x86/apic: Remove noisy zero-mask warning from
+    default_send_IPI_mask_logical()
+    - LP: #1100202
+  * drm/i915: Fix races in gen4 page flip interrupt handling
+    - LP: #1116587
+  * drm/i915: Revert hdmi HDP pin checks
+    - LP: #1135668
+  * signal: always clear sa_restorer on execve
+    - LP: #1153813
+    - CVE-2013-0914
+
+  [ Ubuntu: 3.8.0-13.22 ]
+
+  * Revert "SAUCE: fireware: add NO_MSI quirks for o2micro controller"
+  * SAUCE: alx: use github.com/qca/alx repo
+    - LP: #1154238
+  * [packaging] do not use ../.$(series)-env file
+  * SAUCE: Convert bnx2x firmware files to ihex format
+  * SAUCE: alx: Update to heads/master
+    - LP: #1154238
+  * SAUCE: efivars: Allow disabling use as a pstore backend
+  * [Config] Re-enable CONFIG_PSTORE for x86
+  * Drop efivarfs reverts in favor of 3.8.3 stable updates
+    Revert "efivarfs: Validate filenames much more aggressively"
+    Revert "efivarfs: guid part of filenames are case-insensitive"
+  * [Config] CONFIG_I2C_ISMT=m
+    - LP: #1011449
+  * [Config] CONFIG_SERIAL_8250_DMA=y,CONFIG_SERIAL_8250_DW=m for x86en
+    - LP: #1031162
+  * Release Tracking Bug
+    - LP: #1155680
+  * net/sctp: Validate parameter size for SCTP_GET_ASSOC_STATS
+    - LP: #1152791
+    - CVE-2013-1828
+  * mfd: rtsx: Implement driving adjustment to device-dependent callbacks
+    - LP: #1153618
+  * mfd: rtsx: Support RTS5227
+    - LP: #1153618
+  * mmc: rtsx: remove driving adjustment
+    - LP: #1153618
+  * i2c: Adding support for Intel iSMT SMBus 2.0 host controller
+    - LP: #1011449
+  * i2c: fix i2c-ismt.c printk format warning
+    - LP: #1011449
+  * serial: quatech: add the other serial identifiers and preliminary
+    control code
+    - LP: #1031162
+  * serial: Remove RM9000 series serial driver.
+    - LP: #1031162
+  * serial: 8250_pci: remove __devexit usage
+    - LP: #1031162
+  * serial: 8250: Allow drivers to deliver capabilities
+    - LP: #1031162
+  * serial: 8250_dw: Don't use UPF_FIXED_TYPE
+    - LP: #1031162
+  * serial: 8250_dw: Map IO memory
+    - LP: #1031162
+  * serial: 8250_dw: Move device tree code to separate function
+    - LP: #1031162
+  * serial: 8250_dw: Set FIFO size dynamically
+    - LP: #1031162
+  * serial: 8250_dw: Add ACPI 5.0 support
+    - LP: #1031162
+  * serial: 8250: Add support for dmaengine
+    - LP: #1031162
+  * serial: 8250_dw: Enable DMA support with ACPI
+    - LP: #1031162
+  * rebase to v3.8.3
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 25 Mar 2013 09:40:27 +0000
+
+linux-lowlatency (3.8.0-12.8) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-12.21
+
+  [ Ubuntu: 3.8.0-12.21 ]
+
+  * [Config] CONFIG_PSTORE=n for x86
+  * Release Tracking Bug
+    - LP: #1152228
+  * Revert "efivarfs: guid part of filenames are case-insensitive"
+    - LP: #1146988
+  * Revert "efivarfs: Validate filenames much more aggressively"
+    - LP: #1146988
+  * mfd: rtsx: Optimize card detect flow
+    - LP: #1148892
+  * mfd: rtsx: Fix issue that booting OS with SD card inserted
+    - LP: #1148892
+
+  [ Ubuntu: 3.8.0-11.20 ]
+
+  * Release Tracking Bug
+    - LP: #1147659
+  * [Config] CONFIG_SPI_PXA2XX_PCI=m
+    - LP: #1031169
+  * CONFIG_SATA_ZPODD=y
+    - LP: #1031180
+  * CONFIG_GPIO_LYNXPOINT=y
+    - LP: #1031174
+  * spi/pxa2xx-pci: switch to use pcim_* interfaces
+    - LP: #1031169
+  * spi/pxa2xx: embed the ssp_device to platform data
+    - LP: #1031169
+  * spi/pxa2xx: allow building on a 64-bit kernel
+    - LP: #1031169
+  * spi/pxa2xx: fix warnings when compiling a 64-bit kernel
+    - LP: #1031169
+  * spi/pxa2xx: convert to the pump message infrastructure
+    - LP: #1031169
+  * spi/pxa2xx: convert to the common clk framework
+    - LP: #1031169
+  * spi/pxa2xx: break out the private DMA API usage into a separate file
+    - LP: #1031169
+  * spi/pxa2xx: add support for DMA engine
+    - LP: #1031169
+  * spi/pxa2xx: add support for runtime PM
+    - LP: #1031169
+  * spi/pxa2xx: add support for SPI_LOOP
+    - LP: #1031169
+  * spi/pxa2xx: add support for Intel Low Power Subsystem SPI
+    - LP: #1031169
+  * spi/pxa2xx: add support for Lynxpoint SPI controllers
+    - LP: #1031169
+  * i2c-designware: always set the STOP bit after last byte
+    - LP: #1031166
+  * i2c-designware: add minimal support for runtime PM
+    - LP: #1031166
+  * i2c-designware: add support for Intel Lynxpoint
+    - LP: #1031166
+  * remove can_power_off flag from scsi_device
+    - LP: #1031180
+  * sr: support runtime pm
+    - LP: #1031180
+  * libata: identify and init ZPODD devices
+    - LP: #1031180
+  * libata: move acpi notification code to zpodd
+    - LP: #1031180
+  * libata: check zero power ready status for ZPODD
+    - LP: #1031180
+  * libata: handle power transition of ODD
+    - LP: #1031180
+  * libata: expose pm qos flags for ata device
+    - LP: #1031180
+  * libata: do not suspend port if normal ODD is attached
+    - LP: #1031180
+  * pm: differentiate system and runtime pm for ata port
+    - LP: #1031180
+  * PM code cleanup for ata port
+    - LP: #1031180
+  * scsi: no poll when ODD is powered off
+    - LP: #1031180
+  * Set proper SK when CK_COND is set.
+    - LP: #1031180
+  * fix smatch warning for zpodd_wake_dev
+    - LP: #1031180
+  * gpio/lynxpoint: add chipset gpio driver.
+    - LP: #1031174
+
+  [ Ubuntu: 3.8.0-10.19 ]
+
+  * [Config] annotate CONFIG_PATA_ACPI
+  * rebase to v3.8.2
+  * NFC: Fixed nfc core and hci unregistration and cleanup
+    - LP: #1083994
+  * NFC: Added error handling in event_received hci ops
+    - LP: #1083994
+  * NFC: Changed event_received hci ops result semantic
+    - LP: #1083994
+  * NFC: Fixed skb leak in tm_send() nfc and hci ops implementations
+    - LP: #1083994
+  * NFC: Add HCI quirks to support driver (non)standard implementations
+    - LP: #1083994
+  * USB: Don't use EHCI port sempahore for USB 3.0 hubs.
+    - LP: #1011415
+  * USB: Prepare for refactoring by adding extra udev checks.
+    - LP: #1011415
+  * USB: Rip out recursive call on warm port reset.
+    - LP: #1011415
+  * USB: Fix connected device switch to Inactive state.
+    - LP: #1011415
+  * USB: Use helper function hub_set_port_link_state
+    - LP: #1011415
+  * USB: Refactor hub_port_wait_reset.
+    - LP: #1011415
+  * usb/core: consider link speed while looking at bMaxPower
+    - LP: #1011415
+  * usb/core: update power budget for SuperSpeed
+    - LP: #1011415
+  * usb: Add driver/usb/core/(port.c,hub.h) files
+    - LP: #1011415
+  * usb: fix compilation error and warning of driver/usb/core/port.c on arm
+    and blackfin
+    - LP: #1011415
+  * usb: Add "portX/connect_type" attribute to expose usb port's connect
+    type
+    - LP: #1011415
+  * usb: Create link files between child device and usb port device.
+    - LP: #1011415
+  * USB: Set usb port's DeviceRemovable according acpi information
+    - LP: #1011415
+  * USB: fix sign-extension bug in the hub driver
+    - LP: #1011415
+  * usb: add runtime pm support for usb port device
+    - LP: #1011415
+  * usb: add usb port auto power off mechanism
+    - LP: #1011415
+  * usb: expose usb port's pm qos flags to user space
+    - LP: #1011415
+  * usb: enable usb port device's async suspend.
+    - LP: #1011415
+  * drm: add prime helpers
+    - LP: #1138440
+  * drm/nouveau: use prime helpers
+    - LP: #1138440
+  * drm/radeon: use prime helpers
+    - LP: #1138440
+  * rebase to v3.8.2
+    - LP: #961286
+  * Release Tracking Bug
+    - LP: #1144449
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 07 Mar 2013 17:19:41 +0000
+
+linux-lowlatency (3.8.0-9.7) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-9.18
+
+  [ Ubuntu: 3.8.0-9.18 ]
+
+  * Release Tracking Bug
+    - LP: #1135937
+  * [Config] CONFIG_PATA_ACPI=m
+    - LP: #1084783
+  * intel_idle: stop using driver_data for static flags
+    - LP: #1083993
+  * intel_idle: support Haswell
+    - LP: #1083993
+  * i2c: i801: SMBus patch for Intel Avoton DeviceIDs
+    - LP: #1083965
+  * ahci: AHCI-mode SATA patch for Intel Avoton DeviceIDs
+    - LP: #1083965
+  * ata_piix: IDE-mode SATA patch for Intel Avoton DeviceIDs
+    - LP: #1083965
+  * rebase to v3.8.1
+    - LP: #1011792
+
+  [ Ubuntu: 3.8.0-8.17 ]
+
+  * Release Tracking Bug
+    - LP: #1133552
+  * Bump ABI to fix armhf FTBS
+  * d-i: Add hid-logitech-dj to input-modules
+    - LP: #975198
+
+  [ Ubuntu: 3.8.0-7.16 ]
+
+  * [Config] all new menu aligned annotations
+  * [Config] v3.8 configuration review -- pass 1
+  * [Config] v3.8 configuration review -- pass 2
+  * [Config] apply v3.8 final configuration review changes
+  * [Config] annotation: ALX does not build on powerpc
+  * [Config] CONFIG_DEBUG_INFO=y
+  * SAUCE: sock_diag: Fix out-of-bounds access to sock_diag_handlers[]
+    - LP: #1132896
+    - CVE-2013-1763
+
+  [ Ubuntu: 3.8.0-7.15 ]
+
+  * [Config] Add CONFIG_PS2_CYPRESS
+  * SAUCE: Input: Cypress PS/2 Trackpad simulated multitouch
+  * SAUCE: Input: fix Cypress PS/2 Trackpad in Dell XPS12
+    - LP: #1103594
+  * Input: increase struct ps2dev cmdbuf[] to 8 bytes
+  * Input: add support for Cypress PS/2 Trackpads
+    - LP: #978807
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 28 Feb 2013 23:04:23 +0000
+
+linux-lowlatency (3.8.0-7.6) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * packaging -- default pocket is no longer -proposed
+  * rebase to Ubuntu-3.8.0-7.14
+
+  [ Ubuntu: 3.8.0-7.14 ]
+
+  * [Config] CONFIG_RCU_USER_QS=n
+  * [Config] CONFIG_MTD_ONENAND_SIM=n
+  * annotations: add annotations for CONFIG_CC_STACKPROTECTOR
+  * rebase to v3.8
+  * Release Tracking Bug
+    - LP: #1130111
+  * UBUNTU: SAUCE: rt2x00: rt2x00pci_regbusy_read() - only print register access failure once
+    - LP: #1128840
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 21 Feb 2013 12:55:43 +0000
+
+linux-lowlatency (3.8.0-6.5) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-6.13
+
+  [ Ubuntu: 3.8.0-6.13 ]
+
+  * Release Tracking Bug
+    - LP: #1125364
+  * Add ahci modules to d-i
+    - LP: #1124415
+  * SAUCE: drm/i915: Wait for pending flips to complete before tearing down
+    the encoders
+    - LP: #1097315
+
+  [ Ubuntu: 3.8.0-6.12 ]
+
+  * perf: NO_LIBPERL=1
+  * Fix linux-headers dependency
+  * Release Tracking Bug
+    - LP: #1124362
+  * [Config] enable CONFIG_AUFS_EXPORT to allow nfs exports
+    - LP: #1121699
+  * SAUCE: drm/i915: write backlight harder
+    - LP: #954661
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 18 Feb 2013 12:01:48 +0000
+
+linux-lowlatency (3.8.0-6.4) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-6.11
+
+  [ Ubuntu: 3.8.0-6.11 ]
+
+  * Release Tracking Bug
+    - LP: #1122071
+  * rebase to v3.8-rc7
+  * Add libaudit-dev as a build dependency
+  * Build perf with NO_LIBPYTHON=1 to avoid a python build dependency.
+  * [Config] Remove CONFIG_SATA_AHCI annotation
+
+  [ Ubuntu: 3.8.0-5.10 ]
+
+  * Release Tracking Bug
+    - LP: #1118568
+  * Bump ABI to fix install issue with 3.8.0-4.8.
+    Moving drivers/ata/*ahci* to linux-image caused an
+    install conflict with linux-image-extras without an
+    ABI bump.
+  * SAUCE: xen-pciback: rate limit error messages from
+    xen_pcibk_enable_msi{, x}()
+    - LP: #1117336
+    - CVE-2013-0231
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 11 Feb 2013 18:22:23 +0000
+
+linux-lowlatency (3.8.0-4.3) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] add a build dependancy on openssl
+  * rebase to Ubuntu-3.8.0-4.9
+
+  [ Ubuntu: 3.8.0-4.9 ]
+
+  * d-i: Add mellanox ethernet drivers to nic-modules
+    - LP: #1015339
+  * SAUCE: ACPI: Add DMI entry for Sony VGN-FW41E_H
+    - LP: #1113547
+  * SAUCE: alx driver import script
+  * SAUCE: alx: Update to heads/master
+  * Release Tracking Bug
+    - LP: #1117673
+  * [debian] Remove dangling symlink from headers package
+    - LP: #1112442
+  * [config] CONFIG_ALX=m
+  * [Config] Add alx to d-i nic-modules
+  * [Config] CONFIG_SATA_AHCI=m
+    - LP: #1056563
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 07 Feb 2013 16:03:16 +0000
+
+linux-lowlatency (3.8.0-4.2) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-4.8
+
+  [ Ubuntu: 3.8.0-4.8 ]
+
+  * SAUCE: imx6: dts: Add IMX6Q AHCI support
+  * rebase to v3.8-rc6
+  * updateconfigs following rebase to v3.8-rc6
+  * Release Tracking Bug
+    - LP: #1112573
+  * SAUCE: imx6: enable sata clk if SATA_AHCI_PLATFORM
+  * [Config] SERIAL_AMBA_PL011=y (vexpress serial console)
+  * [Config] MMC_ARMMMCI=y (vexpress mmc)
+  * [Config] FB_ARMCLCD=y (vexpress framebuffer)
+  * [Config] CONFIG_MAC80211_MESSAGE_TRACING=y
+  * rebase to v3.8-rc6
+    - LP: #1107477
+
+  [ Ubuntu: 3.8.0-3.7 ]
+
+  * SAUCE: ARM: OMAP2+: add cpu id register to MAC address helper
+  * SAUCE: ARM: omap2 add mac address allocation register api
+  * SAUCE: ARM: omap2 panda register ethernet and wlan for automatic mac
+    allocation
+  * rebase to v3.8-rc5
+  * Release Tracking Bug
+    - LP: #1111486
+  * SAUCE: davinci: vpss: compilation fix
+  * [Config] enable TI OMAP4 support (Pandaboard/ES)
+  * [Config] OMAP_USB2=y (since TWL6030_USB depends on it)
+  * [Config] enable Freescale IMX6 support (SabreLite)
+  * [Config] SERIAL_IMX_CONSOLE=y
+  * [Config] MMC_*_IMX=y
+  * [Config] disable USB_SUSPEND
+  * [Config] USB_MXS_PHY=y
+  * [Config] USB_CHIPIDEA=y
+  * SAUCE: DTB: add support for multiple DTBs
+  * SAUCE: DTB: build imx6q-sabrelite
+  * SAUCE: DTB: build beaglexm
+  * SAUCE: DTB: build panda/panda es
+  * [Config] disable CPU_FREQ
+  * [Config] PANEL_TFP410=y (video DVI output)
+  * [Config] SND_OMAP_SOC*=y
+  * [Config] SND_IMX_SOC*=y
+  * [Config] I2C_IMX=y
+  * [Config] SPI_IMX=m
+  * [Config] Move 9p modules into generic package
+    - LP: #1107658
+  * SAUCE: ARM: OMAP2+: Limit omap initcalls to omap only on multiplatform
+    kernels
+  * SAUCE: ARM: OMAP2+: Use omap initcalls
+  * SAUCE: ARM: OMAP: Fix i2c cmdline initcall for multiplatform
+  * SAUCE: ARM: OMAP: Fix dmaengine init for multiplatform
+  * SAUCE: ARM: OMAP2+: Add multiplatform debug_ll support
+  * SAUCE: ARM: OMAP2+: Disable code that currently does not work with
+    multiplaform
+  * SAUCE: ARM: OMAP2+: Enable ARCH_MULTIPLATFORM support
+  * SAUCE: ARM: OMAP2+: Add minimal support for booting vexpress
+  * SAUCE: ARM: OMAP2+: Remove now obsolete uncompress.h and debug-macro.S
+  * rebase to v3.8-rc5
+    - LP: #1096789
+
+  [ Ubuntu: 3.8.0-2.6 ]
+
+  * Fix up linux-tools -> SRCPKGNAME-tools rename
+  * [Config] re-disable CONFIG_SOUND_OSS
+    - LP: #1105230
+  * SAUCE: brcmsmac: fix tx status processing
+  * Release Tracking Bug
+    - LP: #1105104
+
+  [ Ubuntu: 3.8.0-1.5 ]
+
+  * Release Tracking Bug
+    - LP: #1101235
+  * SAUCE: Input: add support for Cypress PS/2 Trackpads
+    - LP: #978807
+  * SAUCE: Input: increase struct ps2dev cmdbuf[] to 8 bytes
+  * SAUCE: Input: Cypress PS/2 Trackpad simulated multitouch
+  * [Config] Add CONFIG_PS2_CYPRESS
+  * rebase to v3.8-rc4
+  * rebase to v3.8-rc4
+    - LP: #1095315
+    - LP: #886975
+    - LP: #1086921
+
+  [ Ubuntu: 3.8.0-0.4 ]
+
+  * [Config] Update CONFIG_TOUCHSCREEN_EGALAX build annotation
+  * [Config] Update CONFIG_IIO build annotation
+  * [Config] Update CONFIG_TOUCHSCREEN_EETI annotation
+  * [Config] Remove CONFIG_SPI_DW_MMIO annotation
+  * [Config] Remove CONFIG_SPI_PL022 annotation
+  * [Config] Update CONFIG_EZX_PCAP annotation
+  * [Config] Update CONFIG_SENSORS_AK8975 annotation
+  * [Config] Disable CONFIG_DRM_MGAG200
+    - LP: #1042903
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 04 Feb 2013 22:32:52 +0000
+
+linux-lowlatency (3.8.0-0.1) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.8.0-0.3
+
+  [ Ubuntu: 3.8.0-0.3 ]
+
+  * Revert "SAUCE: (no-up) trace: add trace events for open(), exec() and
+    uselib()"
+  * SAUCE: (no-up) trace: add trace events for open(), exec() and uselib()
+    (for v3.7+)
+    - LP: #1085766, #462111
+
+  [ Ubuntu: 3.8.0-0.2 ]
+
+  * [packaging] Add macro to selectively disable building perf
+  * [packaging] Cannot depend on universe package libaudit-dev
+
+  [ Ubuntu: 3.8.0-0.1 ]
+
+  * rebase to v3.8-rc3
+    - LP: #1096789
+  * rebase to v3.8-rc2
+    - LP: #1082357
+    - LP: #1075882
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 11 Jan 2013 18:31:32 +0000
+
+linux-lowlatency (3.7.0-7.5) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.7.0-7.15
+
+  [ Ubuntu: 3.7.0-7.15 ]
+
+  * SAUCE: add eeprom_bad_csum_allow module parameter
+    - LP: #1070182
+  * Add ceph to linux-image for virtual instances
+    - LP: #1063784
+  * SAUCE: net: dev_change_net_namespace: send a KOBJ_REMOVED/KOBJ_ADD
+  * [Config] CONFIG_SLUB_DEBUG=y
+    - LP: #1090308
+  * Revert "[SCSI] sd: Implement support for WRITE SAME"
+    - LP: #1089818
+
+  [ Ubuntu: 3.7.0-6.14 ]
+
+  * [Config] annotations: all new annotations scheme including defaults
+  * [Configs] apply annotation updates to main configs (top section)
+  * Revert "SAUCE: include <linux/printk.h> and <stdarg.h> for mmc_core arm
+    build"
+  * Revert "SAUCE: [arm] fixup __aeabi_uldivmod undefined build error"
+  * Temporarily disable module check for build
+  * ubuntu: dm-raid45: Adapt to upstream interface changes
+  * Re-enable build of dm-raid45
+  * SAUCE: Moved scripts/fw-to-ihex.sh to debian/scripts/misc
+  * SAUCE: ACPICA: Fix ACPI mutex object allocation memory leak on error
+  * SAUCE: drm: Fix possible EDID memory allocation oops
+  * SAUCE: ttm: Fix possible _manager memory allocation oops
+  * SAUCE: iwlwifi: iwlagn_request_scan: Fix check for priv->scan_request
+  * SAUCE: i915: intel_set_mode: Reduce stack allocation from 500 bytes to
+    2 pointers
+  * SAUCE: tools: hv: Netlink source address validation allows DoS
+    - LP: #1084777
+    - CVE-2012-5532
+  * rebase to v3.7
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Mon, 17 Dec 2012 16:45:20 +0000
+
+linux-lowlatency (3.7.0-5.4) raring-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.7.0-5.13
+
+  [ Ubuntu: 3.7.0-5.13 ]
+
+  * SAUCE: inotify, fanotify: replace fsnotify_put_group() with
+    fsnotify_destroy_group()
+    - LP: #922906
+  * SAUCE: fsnotify: introduce fsnotify_get_group()
+    - LP: #922906
+  * SAUCE: fsnotify: use reference counting for groups
+    - LP: #922906
+  * SAUCE: fsnotify: take groups mark_lock before mark lock
+    - LP: #922906
+  * SAUCE: fanotify: add an extra flag to mark_remove_from_mask that
+    indicates wheather a mark should be destroyed
+    - LP: #922906
+  * SAUCE: fsnotify: use a mutex instead of a spinlock to protect a groups
+    mark list
+    - LP: #922906
+  * SAUCE: fsnotify: pass group to fsnotify_destroy_mark()
+    - LP: #922906
+  * SAUCE: fsnotify: introduce locked versions of fsnotify_add_mark() and
+    fsnotify_remove_mark()
+    - LP: #922906
+  * SAUCE: fsnotify: dont put marks on temporary list when clearing marks
+    by group
+    - LP: #922906
+  * SAUCE: fsnotify: change locking order
+    - LP: #922906
+  * [Config] CONFIG_NFC_LLCP=y
+  * [Config] get-firmware: Filter new files through fwinfo
+  * [Config] CONFIG_MTD_NAND_DOCG4=m for all arches
+  * [Config] CONFIG_DRM_EXYNOS_HDMI=y
+  * [Config] CONFIG_XEN=y for all arches
+  * [Config] CONFIG_SND_OMAP_SOC_ZOOM2=m
+  * [Config] CONFIG_MMC_DW_EXYNOS=m
+  * [Config] CONFIG_GPIO_ADNP=m
+  * [Config] find-obsolete-firmware: Use correct path
+  * rebase to v3.7-rc8
+    - LP: #1084640
+  * Revert "VFS: don't do protected {sym,hard}links by default"
+    - LP: #1084192
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 05 Dec 2012 15:25:17 +0000
+
+linux-lowlatency (3.7.0-4.3) raring-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.7.0-4.12
+
+  [ Ubuntu: 3.7.0-4.12 ]
+
+  * Revert "[Config] Use -j1 for headers_install"
+  * Revert "[Config] install-arch-headers needs a valid config"
+    Strayed into the weeds in search of the root cause of the periodic
+    build failure.
+    Fixes powerpc FTBS introduced in -4.11.
+  * [Config] hmake -j1
+    The kernel makefile appears to have parallel dependency
+    problems for the install_headers target. This appears to be root
+    cause for a periodic build failure on N-way machines.
+
+  [ Ubuntu: 3.7.0-4.11 ]
+
+  * [Config] Use -j1 for headers_install
+    Also fixes a powerpc FTBS introduced by
+    "[Config] install-arch-headers needs a valid config".
+
+  [ Ubuntu: 3.7.0-4.10 ]
+
+  * [Config] add rebuild-test support for autopkgtest
+    - LP: #1081500
+  * [tests] move build tests out of the way
+    - LP: #1081500
+  * [tests] add an autopkgtest rebuild test
+    - LP: #1081500
+  * rebase to v3.7-rc7
+  * SAUCE: Remove emi62 files duplicated in linux-firmware
+  * SAUCE: Remove sb16 files duplicated in linux-firmware
+  * SAUCE: Remove whiteheat files duplicated in linux-firmware
+  * SAUCE: Remove yamaha files duplicated in linux-firmware
+  * SAUCE: Remove dsp56k files used only by m68k
+  * SAUCE: firmware: Remove last vestiges of dabusb
+  * SAUCE: Remove vicam files duplicated in linux-firmware
+  * [Config] install-arch-headers needs a valid config
+  * rebase to v3.7-rc7
+    - LP: #1076840
+    - LP: #1081466
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 28 Nov 2012 17:52:14 +0000
+
+linux-lowlatency (3.7.0-3.2) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] linux-image-* should Suggests: linux-headers-*
+    - LP: #1029730
+  * rebase to Ubuntu-3.7.0-3.9
+
+  [ Ubuntu: 3.7.0-3.9 ]
+
+  * [Config] Enable CONFIG_X86_CPUFREQ_NFORCE2=y
+    - LP: #1079900
+  * Add nfsv3 to nfs-modules udeb
+  * [Config] SND_OMAP_SOC*=y
+    - LP: #1019321
+  * SAUCE: (no-up) xen/netfront: handle compound page fragments on transmit
+    - LP: #1078926
+  * Revert "SAUCE: SECCOMP: audit: always report seccomp violations"
+    - LP: #1079469
+  * Revert "SAUCE: omap3 clocks .dev_id = NULL"
+  * rebase to v3.7-rc6
+  * SAUCE: script to detect obsolete firmware
+  * SAUCE: Remove yam files duplicated in linux-firmware
+  * SAUCE: Remove tehuti files duplicated in linux-firmware
+  * SAUCE: Remove matrox files duplicated in linux-firmware
+  * SAUCE: Remove cxgb3 files duplicated in linux-firmware
+  * SAUCE: Remove r128 files duplicated in linux-firmware
+  * SAUCE: Remove acenic files duplicated in linux-firmware
+  * SAUCE: Remove keyspan files duplicated in linux-firmware
+  * SAUCE: Remove sun files duplicated in linux-firmware
+  * SAUCE: Remove radeon files duplicated in linux-firmware
+  * SAUCE: Update bnx2x firmware to 7.8.2.0
+  * [Config] generic.inclusion-list: econet has disappeared
+  * seccomp: forcing auditing of kill condition
+    - LP: #1079469
+  * rebase to v3.7-rc6
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 21 Nov 2012 16:46:18 +0000
+
+linux-lowlatency (3.7.0-2.1) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.7.0-2.8
+
+  [ Ubuntu: 3.7.0-2.8 ]
+
+  * Revert "overlayfs: disable until FTBS is fixed"
+  * Revert "ubuntu: overlayfs"
+  * Revert "ubuntu: AUFS"
+  * ubuntu: overlayfs -- overlayfs: add statfs support
+  * ubuntu: overlayfs -- ovl: switch to __inode_permission()
+  * ubuntu: overlayfs -- overlayfs: copy up i_uid/i_gid from the underlying
+    inode
+    - LP: #944386
+  * ubuntu: AUFS (no-squash): basic framework and update machinary
+  * ubuntu: AUFS (no-squash) -- aufs3-base.patch
+  * ubuntu: AUFS (no-squash) -- aufs3-standalone.patch
+  * ubuntu: AUFS: aufs-update -- follow the uapi header changes
+  * ubuntu: AUFS -- update to f2873474324d0a31af4340554b9715f51331bc7f
+  * ubuntu: AUFS (no-squash) -- reenable
+    - LP: #1079193
+  * ubuntu: overlayfs -- overlayfs: implement show_options
+  * ubuntu: overlayfs -- vfs: add i_op->dentry_open()
+  * ubuntu: overlayfs -- vfs: export do_splice_direct() to modules
+  * ubuntu: overlayfs -- vfs: introduce clone_private_mount()
+  * ubuntu: overlayfs -- overlay filesystem
+  * ubuntu: overlayfs -- fs: limit filesystem stacking depth
+  * ubuntu: overlayfs -- vfs: export __inode_permission() to modules
+  * ubuntu: overlayfs -- overlay: overlay filesystem documentation
+  * ubuntu: overlayfs -- overlayfs: fix possible leak in ovl_new_inode
+  * ubuntu: overlayfs -- overlayfs: create new inode in ovl_link
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 15 Nov 2012 16:25:40 +0000
+
+linux-lowlatency (3.7.0-1.20) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * add a common headers package from this package
+  * [Config] drop lowlatency-pae from d-i configuration
+  * rebase to Ubuntu-3.7.0-1.7
+
+  [ Ubuntu: 3.7.0-1.7 ]
+
+  * [Config] Drop dependency on libaudit-dev
+    Its a universe package which causes an FTBS on the builders.
+    libaudit-dev is not strictly required for the perf tools build.
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 14 Nov 2012 17:51:51 +0000
+
+linux-lowlatency (3.7.0-0.19) raring; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.7.0-0.5
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 14 Nov 2012 03:59:55 +0000
+
+linux-lowlatency (3.5.0-18.18) quantal-proposed; urgency=low
+
+  [Andy Whitcroft]
+
+  * Release Tracking Bug
+    - LP: #1068866
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-18.29
+
+  [ Ubuntu: 3.5.0-18.29 ]
+
+  * Release Tracking Bug
+    - LP: #1068224
+  * [packaging] do not fail secure copy on older kernels
+  * SAUCE: efivarfs: efivarfs_file_read ensure we free data in error paths
+    - LP: #1063061
+  * SAUCE: efivars: efivarfs_create() ensure we drop our reference on inode
+    on error
+    - LP: #1063061
+  * SAUCE: efivarfs: efivarfs_fill_super() fix inode reference counts
+    - LP: #1063061
+  * SAUCE: efivarfs: efivarfs_fill_super() ensure we free our temporary
+    name
+    - LP: #1063061
+  * SAUCE: efivarfs: efivarfs_fill_super() ensure we clean up correctly on
+    error
+    - LP: #1063061
+  * [Config] add fs/udf to linux-image to support DVD/CD formats in virtual
+    instances
+    - LP: #1066921
+  * SAUCE: efi: Handle deletions and size changes in efivarfs_write_file
+    - LP: #1063061
+  * SAUCE: efivarfs: Implement exclusive access for {get, set}_variable
+    - LP: #1063061
+  * SAUCE: input: Cypress PS/2 Trackpad list additional contributors
+  * SAUCE: input: Cypress PS/2 Trackpad fix lost sync upon palm contact
+    - LP: #1048258
+  * SAUCE: input: Cypress PS/2 Trackpad fix taps turning into hardware
+    clicks
+    - LP: #1064086
+  * Revert "SAUCE: ext4: fix crash when accessing /proc/mounts
+    concurrently"
+    - LP: #1066176
+  * Revert "SAUCE: ALSA: hda/realtek - Fix detection of ALC271X codec"
+    - LP: #1066176
+  * SAUCE: efi: add efivars kobject to efi sysfs folder
+    - LP: #1063061
+  * SAUCE: efivarfs: Add documentation for the EFI variable filesystem
+    - LP: #1063061
+  * SAUCE: efi: Add support for a UEFI variable filesystem
+    - LP: #1063061
+  * SAUCE: bridge: Pull ip header into skb->data before looking into ip
+    header.
+    - LP: #1065150
+  * Revert "drm/i915: correctly order the ring init sequence"
+    - LP: #1066176
+  * vfs: dcache: fix deadlock in tree traversal
+    - LP: #1063761
+  * dm mpath: only retry ioctl when no paths if queue_if_no_path set
+    - LP: #1063761
+  * dm: handle requests beyond end of device instead of using BUG_ON
+    - LP: #1063761
+  * dm table: clear add_random unless all devices have it set
+    - LP: #1063761
+  * dm verity: fix overflow check
+    - LP: #1063761
+  * usb: gadget: make g_printer enumerate again
+    - LP: #1063761
+  * usb: gadget: initialize the strings in tcm_usb_gadget properly
+    - LP: #1063761
+  * USB: option: blacklist QMI interface on ZTE MF683
+    - LP: #1063761
+  * USB: ftdi_sio: add TIAO USB Multi-Protocol Adapter (TUMPA) support
+    - LP: #1063761
+  * USB: qcaux: add Pantech vendor class match
+    - LP: #1063761
+  * usb: host: xhci: Fix Null pointer dereferencing with 71c731a for
+    non-x86 systems
+    - LP: #1063761
+  * USB: serial: fix up bug with missing {}
+    - LP: #1063761
+  * staging: speakup_soft: Fix reading of init string
+    - LP: #1063761
+  * tty: keyboard.c: Remove locking from vt_get_leds.
+    - LP: #1063761
+  * staging: r8712u: Do not queue cloned skb
+    - LP: #1063761
+  * staging: comedi: s626: don't dereference insn->data
+    - LP: #1063761
+  * staging: comedi: jr3_pci: fix iomem dereference
+    - LP: #1063761
+  * staging: comedi: don't dereference user memory for INSN_INTTRIG
+    - LP: #1063761
+  * staging: comedi: fix memory leak for saved channel list
+    - LP: #1063761
+  * Remove BUG_ON from n_tty_read()
+    - LP: #1063761
+  * TTY: ttyprintk, don't touch behind tty->write_buf
+    - LP: #1063761
+  * serial: omap: fix software flow control
+    - LP: #1063761
+  * serial: pl011: handle corruption at high clock speeds
+    - LP: #1063761
+  * serial: set correct baud_base for EXSYS EX-41092 Dual 16950
+    - LP: #1063761
+  * tools/hv: Fix file handle leak
+    - LP: #1063761
+  * tools/hv: Fix exit() error code
+    - LP: #1063761
+  * tools/hv: Check for read/write errors
+    - LP: #1063761
+  * b43legacy: Fix crash on unload when firmware not available
+    - LP: #1063761
+  * firmware: Add missing attributes to EFI variable attribute print out
+    from sysfs
+    - LP: #1063761
+  * xhci: Intel Panther Point BEI quirk.
+    - LP: #1063761
+  * xHCI: add cmd_ring_state
+    - LP: #1063761
+  * xHCI: add aborting command ring function
+    - LP: #1063761
+  * xHCI: cancel command after command timeout
+    - LP: #1063761
+  * xHCI: handle command after aborting the command ring
+    - LP: #1063761
+  * Increase XHCI suspend timeout to 16ms
+    - LP: #1063761
+  * HID: keep dev_rdesc unmodified and use it for comparisons
+    - LP: #1049623, #1063761
+  * ath9k: Disable ASPM only for AR9285
+    - LP: #1063761
+  * xen/pciback: Restore the PCI config space after an FLR.
+    - LP: #1063761
+  * coredump: prevent double-free on an error path in core dumper
+    - LP: #1063761
+  * n_gsm.c: Implement 3GPP27.010 DLC start-up procedure in MUX
+    - LP: #1063761
+  * n_gsm: uplink SKBs accumulate on list
+    - LP: #1063761
+  * n_gsm: added interlocking for gsm_data_lock for certain code paths
+    - LP: #1063761
+  * n_gsm: memory leak in uplink error path
+    - LP: #1063761
+  * UBI: fix autoresize handling in R/O mode
+    - LP: #1063761
+  * UBI: erase free PEB with bitflip in EC header
+    - LP: #1063761
+  * Yama: handle 32-bit userspace prctl
+    - LP: #1063761
+  * SCSI: ibmvscsi: Fix host config length field overflow
+    - LP: #1063761
+  * SCSI: hpsa: Use LUN reset instead of target reset
+    - LP: #1063761
+  * can: mscan-mpc5xxx: fix return value check in mpc512x_can_get_clock()
+    - LP: #1063761
+  * remoteproc: select VIRTIO to avoid build breakage
+    - LP: #1063761
+  * remoteproc: fix a potential NULL-dereference on cleanup
+    - LP: #1063761
+  * IPoIB: Fix use-after-free of multicast object
+    - LP: #1063761
+  * IB/srp: Fix use-after-free in srp_reset_req()
+    - LP: #1063761
+  * IB/srp: Avoid having aborted requests hang
+    - LP: #1063761
+  * isci: fix isci_pci_probe() generates warning on efi failure path
+    - LP: #1063761
+  * x86/alternatives: Fix p6 nops on non-modular kernels
+    - LP: #1063761
+  * SCSI: scsi_remove_target: fix softlockup regression on hot remove
+    - LP: #1063761
+  * SCSI: scsi_dh_alua: Enable STPG for unavailable ports
+    - LP: #1063761
+  * Linux 3.5.6
+    - LP: #1063761
+  * au0828: fix case where STREAMOFF being called on stopped stream causes
+    BUG()
+    - LP: #1062917
+  * ALSA: hda - do not detect jack on internal speakers for Realtek
+    - LP: #1064621
+  * HID: Remove QUANTA from special drivers list
+    - LP: #1064921
+  * drm/i915: no lvds quirk for Zotac ZDBOX SD ID12/ID13
+    - LP: #1064924
+  * Revert dyndbg: fix for SOH in logging messages
+    - LP: #1066176
+  * mn10300: only add -mmem-funcs to KBUILD_CFLAGS if gcc supports it
+    - LP: #1066176
+  * kbuild: make: fix if_changed when command contains backslashes
+    - LP: #1066176
+  * kbuild: Fix gcc -x syntax
+    - LP: #1066176
+  * slab: fix the DEADLOCK issue on l3 alien lock
+    - LP: #1066176
+  * intel-iommu: Default to non-coherent for domains unattached to iommus
+    - LP: #1066176
+  * ARM: 7548/1: include linux/sched.h in syscall.h
+    - LP: #1066176
+  * em28xx: Make all em28xx extensions to be initialized asynchronously
+    - LP: #1066176
+  * media: rc: ite-cir: Initialise ite_dev::rdev earlier
+    - LP: #1066176
+  * media: gspca_pac7302: add support for device 1ae7:2001 Speedlink Snappy
+    Microphone SL-6825-SBK
+    - LP: #1066176
+  * ACPI: run _OSC after ACPI_FULL_INITIALIZATION
+    - LP: #1066176
+  * PCI: acpiphp: check whether _ADR evaluation succeeded
+    - LP: #1066176
+  * mfd: max8925: Move _IO resources out of ioport_ioresource
+    - LP: #1066176
+  * lib/gcd.c: prevent possible div by 0
+    - LP: #1066176
+  * kernel/sys.c: call disable_nonboot_cpus() in kernel_restart()
+    - LP: #1066176
+  * drivers/scsi/atp870u.c: fix bad use of udelay
+    - LP: #1066176
+  * lguest: fix occasional crash in example launcher.
+    - LP: #1066176
+  * powerpc/eeh: Fix crash on converting OF node to edev
+    - LP: #1066176
+  * ixgbe: fix PTP ethtool timestamping function
+    - LP: #1066176
+  * rapidio/rionet: fix multicast packet transmit logic
+    - LP: #1066176
+  * PM / Sleep: use resume event when call dpm_resume_early
+    - LP: #1066176
+  * workqueue: add missing smp_wmb() in process_one_work()
+    - LP: #1066176
+  * jbd2: don't write superblock when if its empty
+    - LP: #1066176
+  * localmodconfig: Fix localyesconfig to set to 'y' not 'm'
+    - LP: #1066176
+  * bnx2x: fix rx checksum validation for IPv6
+    - LP: #1066176
+  * tcp: fix regression in urgent data handling
+    - LP: #1066176
+  * xfrm: Workaround incompatibility of ESN and async crypto
+    - LP: #1066176
+  * xfrm_user: return error pointer instead of NULL
+    - LP: #1066176
+  * xfrm_user: return error pointer instead of NULL #2
+    - LP: #1066176
+  * xfrm: fix a read lock imbalance in make_blackhole
+    - LP: #1066176
+  * xfrm_user: fix info leak in copy_to_user_auth()
+    - LP: #1066176
+  * xfrm_user: fix info leak in copy_to_user_state()
+    - LP: #1066176
+  * xfrm_user: fix info leak in copy_to_user_policy()
+    - LP: #1066176
+  * xfrm_user: fix info leak in copy_to_user_tmpl()
+    - LP: #1066176
+  * xfrm_user: don't copy esn replay window twice for new states
+    - LP: #1066176
+  * net: ethernet: davinci_cpdma: decrease the desc count when cleaning up
+    the remaining packets
+    - LP: #1066176
+  * ixp4xx_hss: fix build failure due to missing linux/module.h inclusion
+    - LP: #1066176
+  * netxen: check for root bus in netxen_mask_aer_correctable
+    - LP: #1066176
+  * net-sched: sch_cbq: avoid infinite loop
+    - LP: #1066176
+  * pkt_sched: fix virtual-start-time update in QFQ
+    - LP: #1066176
+  * sierra_net: Endianess bug fix.
+    - LP: #1066176
+  * 8021q: fix mac_len recomputation in vlan_untag()
+    - LP: #1066176
+  * batman-adv: make batadv_test_bit() return 0 or 1 only
+    - LP: #1066176
+  * ipv6: release reference of ip6_null_entry's dst entry in __ip6_del_rt
+    - LP: #1066176
+  * ipv6: del unreachable route when an addr is deleted on lo
+    - LP: #1066176
+  * ipv6: fix return value check in fib6_add()
+    - LP: #1066176
+  * tcp: flush DMA queue before sk_wait_data if rcv_wnd is zero
+    - LP: #1066176
+  * sctp: Don't charge for data in sndbuf again when transmitting packet
+    - LP: #1066176
+  * pppoe: drop PPPOX_ZOMBIEs in pppoe_release
+    - LP: #1066176
+  * net: small bug on rxhash calculation
+    - LP: #1066176
+  * net: guard tcp_set_keepalive() to tcp sockets
+    - LP: #1066176
+  * ipv4: raw: fix icmp_filter()
+    - LP: #1066176
+  * ipv6: raw: fix icmpv6_filter()
+    - LP: #1066176
+  * ipv6: mip6: fix mip6_mh_filter()
+    - LP: #1066176
+  * l2tp: fix a typo in l2tp_eth_dev_recv()
+    - LP: #1066176
+  * netrom: copy_datagram_iovec can fail
+    - LP: #1066176
+  * net: do not disable sg for packets requiring no checksum
+    - LP: #1066176
+  * aoe: assert AoE packets marked as requiring no checksum
+    - LP: #1066176
+  * drm/savage: re-add busmaster enable, regression fix
+    - LP: #1066176
+  * SCSI: zfcp: Adapt to new FC_PORTSPEED semantics
+    - LP: #1066176
+  * SCSI: zfcp: Make trace record tags unique
+    - LP: #1066176
+  * SCSI: zfcp: Bounds checking for deferred error trace
+    - LP: #1066176
+  * SCSI: zfcp: Do not wakeup while suspended
+    - LP: #1066176
+  * SCSI: zfcp: remove invalid reference to list iterator variable
+    - LP: #1066176
+  * SCSI: zfcp: restore refcount check on port_remove
+    - LP: #1066176
+  * SCSI: zfcp: only access zfcp_scsi_dev for valid scsi_device
+    - LP: #1066176
+  * PCI: Check P2P bridge for invalid secondary/subordinate range
+    - LP: #1066176
+  * ext4: ignore last group w/o enough space when resizing instead of
+    BUG'ing
+    - LP: #1066176
+  * ext4: don't copy non-existent gdt blocks when resizing
+    - LP: #1066176
+  * ext4: avoid duplicate writes of the backup bg descriptor blocks
+    - LP: #1066176
+  * ext4: fix potential deadlock in ext4_nonda_switch()
+    - LP: #1066176
+  * ext4: fix crash when accessing /proc/mounts concurrently
+    - LP: #1066176
+  * ext4: move_extent code cleanup
+    - LP: #1066176
+  * ext4: online defrag is not supported for journaled files
+    - LP: #1066176
+  * ext4: always set i_op in ext4_mknod()
+    - LP: #1066176
+  * ext4: fix fdatasync() for files with only i_size changes
+    - LP: #1066176
+  * xfrm_user: ensure user supplied esn replay window is valid
+    - LP: #1066176
+  * ASoC: wm_hubs: Ensure volume updates are handled during class W startup
+    - LP: #1066176
+  * ASoC: wm9712: Fix name of Capture Switch
+    - LP: #1066176
+  * kpageflags: fix wrong KPF_THP on non-huge compound pages
+    - LP: #1066176
+  * hugetlb: do not use vma_hugecache_offset() for vma_prio_tree_foreach
+    - LP: #1066176
+  * mm: fix invalidate_complete_page2() lock ordering
+    - LP: #1066176
+  * mm: thp: fix pmd_present for split_huge_page and PROT_NONE with THP
+    - LP: #1066176
+  * MIPS: ath79: use correct fractional dividers for {CPU,DDR}_PLL on
+    AR934x
+    - LP: #1066176
+  * drm/i915: prevent possible pin leak on error path
+    - LP: #1066176
+  * ALSA: hda - Add inverted internal mic quirk for Lenovo IdeaPad U310
+    - LP: #1066176
+  * ALSA: aloop - add locking to timer access
+    - LP: #1066176
+  * ALSA: hda/realtek - Fix detection of ALC271X codec
+    - LP: #1006690, #1066176
+  * ALSA: hda - limit internal mic boost for Asus X202E
+    - LP: #1052460, #1066176
+  * ALSA: usb - disable broken hw volume for Tenx TP6911
+    - LP: #1066176, #559939
+  * ALSA: USB: Support for (original) Xbox Communicator
+    - LP: #1066176
+  * drm/nvc0/fence: restore pre-suspend fence buffer context on resume
+    - LP: #1066176
+  * drm: Destroy the planes prior to destroying the associated CRTC
+    - LP: #1066176
+  * drm/radeon: only adjust default clocks on NI GPUs
+    - LP: #1066176
+  * drm/radeon: Add MSI quirk for gateway RS690
+    - LP: #1066176
+  * drm/radeon: force MSIs on RS690 asics
+    - LP: #1066176
+  * drm/i915: Flush the pending flips on the CRTC before modification
+    - LP: #1066176
+  * drm/i915: call drm_handle_vblank before finish_page_flip
+    - LP: #1066176
+  * drm/i915: Fix GT_MODE default value
+    - LP: #1066176
+  * ia64: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * h8300: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * parisc: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * xtensa: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * frv: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * mn10300: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * m68k: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * alpha: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * cris: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * m32r: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * score: Add missing RCU idle APIs on idle loop
+    - LP: #1066176
+  * rcu: Fix day-one dyntick-idle stall-warning bug
+    - LP: #1066176
+  * revert "mm: mempolicy: Let vma_merge and vma_split handle
+    vma->vm_policy linkages"
+    - LP: #1066176
+  * mempolicy: remove mempolicy sharing
+    - LP: #1066176
+  * mempolicy: fix a race in shared_policy_replace()
+    - LP: #1066176
+  * mempolicy: fix refcount leak in mpol_set_shared_policy()
+    - LP: #1066176
+  * mempolicy: fix a memory corruption by refcount imbalance in
+    alloc_pages_vma()
+    - LP: #1066176
+  * efi: Build EFI stub with EFI-appropriate options
+    - LP: #1066176
+  * efi: initialize efi.runtime_version to make
+    query_variable_info/update_capsule workable
+    - LP: #1066176
+  * CPU hotplug, cpusets, suspend: Don't modify cpusets during
+    suspend/resume
+    - LP: #1066176
+  * mtd: mtdpart: break it as soon as we parse out the partitions
+    - LP: #1066176
+  * mtd: autcpu12-nvram: Fix compile breakage
+    - LP: #1066176
+  * mtd: nandsim: bugfix: fail if overridesize is too big
+    - LP: #1066176
+  * mtd: nand: Use the mirror BBT descriptor when reading its version
+    - LP: #1066176
+  * mtd: omap2: fix omap_nand_remove segfault
+    - LP: #1066176
+  * mtd: omap2: fix module loading
+    - LP: #1066176
+  * mmc: omap_hsmmc: Pass on the suspend failure to the PM core
+    - LP: #1066176
+  * mmc: sh-mmcif: avoid oops on spurious interrupts
+    - LP: #1066176
+  * JFFS2: fix unmount regression
+    - LP: #1066176
+  * JFFS2: don't fail on bitflips in OOB
+    - LP: #1066176
+  * cifs: reinstate the forcegid option
+    - LP: #1066176
+  * Convert properly UTF-8 to UTF-16
+    - LP: #1066176
+  * Linux 3.5.7
+    - LP: #1066176
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 19 Oct 2012 20:46:48 +0100
+
+linux-lowlatency (3.5.0-17.17) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-17.28
+
+  [ Ubuntu: 3.5.0-17.28 ]
+
+  * [packaging] we already have a valid src_pkg_name
+  * [packaging] allow us to select which builds have uefi signed versions
+  * SAUCE: input: fix weird issue of synaptics psmouse sync lost after
+    resume
+    - LP: #717970
+  * SAUCE: omap3 clocks .dev_id = NULL
+    - LP: #1061599
+  * [Config] omap: disable USB_[EHCI|OHCI]_HCD_PLATFORM
+    - LP: #1061599
+  * [Config] omap: enforce USB_[EHCI|OHCI]_HCD_PLATFORM=n
+    - LP: #1061599
+  * SAUCE: net/ipv4: Always flush route cache on unregister batch call
+    - LP: #1021471
+  * Bluetooth: Add USB_VENDOR_AND_INTERFACE_INFO() for Broadcom/Foxconn
+    - LP: #1030233
+  * SAUCE: Bluetooth: Remove rules for matching Broadcom vendor specific
+    IDs
+    - LP: #1030233
+
+  [ Ubuntu: 3.5.0-17.27 ]
+
+  * [packaging] add custom upload for the kernel binary package
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 09 Oct 2012 20:31:30 +0100
+
+linux-lowlatency (3.5.0-17.16) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-17.26
+
+  [ Ubuntu: 3.5.0-17.26 ]
+
+  * SAUCE: ALSA: hda - fix indices on boost volume on Conexant
+    - LP: #1059523
+  * [Config] Build in CONFIG_X86_PCC_CPUFREQ=y
+    - LP: #1061126
+  * Revert "SAUCE: ahci_platform: add custom hard reset for Calxeda ahci
+    ctrlr"
+    - LP: #1059432
+  * Revert "SAUCE: net: calxedaxgmac: add write barriers around setting
+    owner bit"
+    - LP: #1059432
+  * Revert "SAUCE: ARM: highbank: use writel_relaxed variant for pwr
+    requests"
+    - LP: #1059432
+  * Revert "SAUCE: force DMA buffers to non-bufferable on highbank"
+    - LP: #1059432
+  * Revert "SAUCE: input: add a key driver for highbank"
+    - LP: #1059432
+  * [Config] Align highbank config with amd64-generic and add new configs
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: enable operate on 2nd frame mode
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: remove explicit rx dma buffer polling
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: use relaxed i/o accessors in rx and tx paths
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: drop some unnecessary register writes
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: rework transmit ring handling
+    - LP: #1059432
+  * SAUCE: ARM: highbank: retry wfi on reset request
+    - LP: #1059432
+  * [Config] TIDSPBRIDGE=m
+    - LP: #1058022
+  * rebase to v3.5.5
+  * common: DMA-mapping: add DMA_ATTR_NO_KERNEL_MAPPING attribute
+    - LP: #1059432
+  * common: DMA-mapping: add DMA_ATTR_SKIP_CPU_SYNC attribute
+    - LP: #1059432
+  * ARM: dma-mapping: add support for DMA_ATTR_SKIP_CPU_SYNC attribute
+    - LP: #1059432
+  * ARM: add coherent dma ops
+    - LP: #1059432
+  * ARM: add coherent iommu dma ops
+    - LP: #1059432
+  * ARM: highbank: add coherent DMA setup
+    - LP: #1059432
+  * sata: add platform driver for Calxeda AHCI controller
+    - LP: #1059432
+  * xhci: Rate-limit XHCI_TRUST_TX_LENGTH quirk warning.
+    - LP: #1039478
+  * agp/intel-gtt: remove dead code
+    - LP: #1011440
+  * drm/i915: stop using dev->agp->base
+    - LP: #1011440
+  * agp/intel-gtt: don't require the agp bridge on setup
+    - LP: #1011440
+  * drm/i915 + agp/intel-gtt: prep work for direct setup
+    - LP: #1011440
+  * agp/intel-gtt: move gart base addres setup
+    - LP: #1011440
+  * drm/i915: don't use dev->agp
+    - LP: #1011440
+  * drm/i915: disable drm agp support for !gen3 with kms enabled
+    - LP: #1011440
+  * agp/intel-agp: remove snb+ host bridge pciids
+    - LP: #1011440
+  * rebase to v3.5.5
+    - LP: #1000424
+
+  [ Ubuntu: 3.5.0-16.25 ]
+
+  * SAUCE: input: Cypress PS/2 Trackpad fix multi-source, double-click
+    - LP: #1055788
+  * [Config] revert '[Config] enable CONFIG_X86_X32=y'
+    - LP: #1041883
+  * vmwgfx: corruption in vmw_event_fence_action_create()
+  * drm/nvd0/disp: hopefully fix selection of 6/8bpc mode on DP outputs
+    - LP: #1058088
+  * drm/nv50-/gpio: initialise to vbios defaults during init
+    - LP: #1058088
+  * igb: A fix to VF TX rate limit
+    - LP: #1058188
+  * igb: Add switch case for supported hardware to igb_ptp_remove.
+    - LP: #1058188
+  * igb: Support the get_ts_info ethtool method.
+    - LP: #1058188
+  * igb: Streamline RSS queue and queue pairing assignment logic.
+    - LP: #1058188
+  * igb: Update firmware info output
+    - LP: #1058188
+  * igb: Version bump
+    - LP: #1058188
+  * igb: reset PHY in the link_up process to recover PHY setting after
+    power down.
+    - LP: #1058188
+  * igb: Fix for failure to init on some 82576 devices.
+    - LP: #1058188
+  * igb: correct hardware type (i210/i211) check in igb_loopback_test()
+    - LP: #1058188
+  * igb: don't break user visible strings over multiple lines in
+    igb_ethtool.c
+    - LP: #1058188
+  * igb: add delay to allow igb loopback test to succeed on 8086:10c9
+    - LP: #1058188
+  * igb: fix panic while dumping packets on Tx hang with IOMMU
+    - LP: #1058188
+  * igb: Fix register defines for all non-82575 hardware
+    - LP: #1058188
+  * e1000e: use more informative logging macros when netdev not yet
+    registered
+    - LP: #1058219
+  * e1000e: Cleanup code logic in e1000_check_for_serdes_link_82571()
+    - LP: #1058219
+  * e1000e: Program the correct register for ITR when using MSI-X.
+    - LP: #1058219
+  * e1000e: advertise transmit time stamping
+    - LP: #1058219
+  * e1000e: 82571 Tx Data Corruption during Tx hang recovery
+    - LP: #1058219
+  * e1000e: fix panic while dumping packets on Tx hang with IOMMU
+    - LP: #1058219
+  * e1000: Combining Bitwise OR in one expression.
+    - LP: #1058221
+  * e1000: advertise transmit time stamping
+    - LP: #1058221
+  * e1000: Small packets may get corrupted during padding by HW
+    - LP: #1058221
+  * sched: Fix migration thread runtime bogosity
+    - LP: #1057593
+  * ACER: Add support for accelerometer sensor
+    - LP: #1055433
+  * ACER: Fix Smatch double-free issue
+    - LP: #1055433
+  * SAUCE: HID: ntrig: change default value of logical/physical
+    width/height to 1
+    - LP: #1044248
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 03 Oct 2012 23:31:47 +0100
+
+linux-lowlatency (3.5.0-16.15) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-16.24
+
+  [ Ubuntu: 3.5.0-16.24 ]
+
+  * SAUCE: ata_piix: add a disable_driver option
+    - LP: #994870
+  * (pre-stable) drm/radeon: make 64bit fences more robust v3 (3.5 stable)
+    - LP: #1029582
+  * SAUCE: ALSA: hda - use both input paths on Conexant auto parser
+    - LP: #1037642
+  * SAUCE: ALSA: hda - fix control names for multiple speaker out on
+    IDT/STAC
+    - LP: #1046734
+  * SAUCE: ALSA: hda/via - don't report presence on HPs with no presence
+    support
+    - LP: #1052499
+  * SAUCE: ext4: fix crash when accessing /proc/mounts concurrently
+    - LP: #1053019
+  * SAUCE: ALSA: hda/realtek - Fix detection of ALC271X codec
+    - LP: #1006690
+  * SAUCE: input: Cypress PS/2 Trackpad fix disabling tap-to-click
+    - LP: #1048816
+  * [Config] Disable CONFIG_DRM_AST
+    - LP: #1053290
+  * [Config] Disable the Cirrus QEMU drm driver
+    - LP: #1038055
+  * Revert "KVM: VMX: Fix KVM_SET_SREGS with big real mode segments"
+    - LP: #1045027
+  * x86, efi: Handover Protocol
+  * drm/i915: HDMI - Clear Audio Enable bit for Hot Plug
+    - LP: #1056729
+  * UBUNTU SAUCE: apparmor: fix IRQ stack overflow
+    - LP: #1056078
+  * drm/nouveau: fix booting with plymouth + dumb support
+    - LP: #1043518
+  * ALSA: hda - Add DeviceID for Haswell HDA
+    - LP: #1057698
+  * ALSA: hda - add Haswell HDMI codec id
+    - LP: #1057698
+  * ALSA: hda - Fix driver type of Haswell controller to AZX_DRIVER_SCH
+    - LP: #1057698
+  * ALSA: hda_intel: Add Device IDs for Intel Lynx Point-LP PCH
+    - LP: #1011438, #1057698
+  * SAUCE: ALSA: hda - Add another pci id for Haswell board
+    - LP: #1057698
+  * SAUCE: drm/i915: Explicitly disable RC6 for certain models
+    - LP: #1002170, #1008867
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 28 Sep 2012 09:58:29 +0100
+
+linux-lowlatency (3.5.0-15.14) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-15.23
+
+  [ Ubuntu: 3.5.0-15.23 ]
+
+  * Revert "drm/i915: don't forget the PCH backlight registers"
+    - LP: #1053269, #1055231, #1055665
+  * Revert "drm/i915: fix up PCH backlight #define mixup"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: allow pipe A for lvds on gen4"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: properly enable the blc controller on the right pipe"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: clear up backlight #define confusion on gen4+"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: pnv has a backlight polarity control bit, too"
+    - LP: #1053269, #1055665
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 26 Sep 2012 09:41:38 +0100
+
+linux-lowlatency (3.5.0-15.13) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-15.22
+
+  [ Ubuntu: 3.5.0-15.22 ]
+
+  * fix regressions introduced by the last batch of i915 patches.
+  * drm/i915: fix up PCH backlight #define mixup
+    - LP: #954661
+  * drm/i915: don't forget the PCH backlight registers
+    - LP: #954661
+
+  [ Ubuntu: 3.5.0-15.21 ]
+
+  * ubuntu: AUFS -- update to 18e455787597579fe144cdb2f18aa6a0a32c46a4
+  * [Config] Enable aufs
+    - LP: #908784
+  * eCryptfs: check for eCryptfs cipher support at mount
+    - LP: #338914
+  * drm/i915: pnv has a backlight polarity control bit, too
+    - LP: #954661
+  * drm/i915: clear up backlight #define confusion on gen4+
+    - LP: #954661
+  * drm/i915: properly enable the blc controller on the right pipe
+    - LP: #954661
+  * drm/i915: allow pipe A for lvds on gen4
+    - LP: #954661
+
+  [ Ubuntu: 3.5.0-15.20 ]
+
+  * rebase to v3.5.4
+  * SAUCE: CONFIG_HID_BATTERY_STRENGTH=y
+    - LP: #1003090
+  * eCryptfs: Copy up attributes of the lower target inode after rename
+    - LP: #561129
+  * eCryptfs: Write out all dirty pages just before releasing the lower
+    file
+    - LP: #1047261
+  * eCryptfs: Call lower ->flush() from ecryptfs_flush()
+    - LP: #1047261
+  * af_netlink: force credentials passing [CVE-2012-3520]
+    - LP: #1052097
+    - CVE-2012-3520
+  * drm/i915: clarify IBX dp workaround
+    - LP: #1011440
+  * drm/i915: Implement w/a for sporadic read failures on waking from rc6
+    - LP: #1011440
+  * drm/i915: support Haswell force waking
+    - LP: #1011440
+  * drm/i915: add RPS configuration for Haswell
+    - LP: #1011440
+  * drm/i915: enable RC6 by default on Haswell
+    - LP: #1011440
+  * drm/i915: introduce haswell_init_clock_gating
+    - LP: #1011440
+  * drm/i915: enable RC6 workaround on Haswell
+    - LP: #1011440
+  * drm/i915: re-initialize DDI buffer translations after resume
+    - LP: #1011440
+  * drm/i915: fix PIPE_DDI_PORT_MASK
+    - LP: #1011440
+  * drm/i915: try to train DP even harder
+    - LP: #1011440
+  * drm/i915: add more Haswell PCI IDs
+    - LP: #1011440
+  * rebase to v3.5.4
+    - LP: #1038651
+
+  [ Ubuntu: 3.5.0-14.19 ]
+
+  * [Config] Fix debug FTBS on non-x86
+
+  [ Ubuntu: 3.5.0-14.18 ]
+
+  * SAUCE: Add 'used' to the video_cards structure attributes
+    - LP: #1049650
+
+  [ Ubuntu: 3.5.0-14.17 ]
+
+  * SAUCE: Intel xhci: Only switch the switchable ports
+    - LP: #1034814
+
+ -- Andy Whitcroft <apw@canonical.com>  Sat, 22 Sep 2012 14:42:41 +0100
+
+linux-lowlatency (3.5.0-14.12) quantal-proposed; urgency=low
+
+  [ Tim Gardner ]
+
+  * rebase to Ubuntu-3.5.0-14.16
+
+  [ Ubuntu: 3.5.0-14.16 ]
+
+  * SAUCE: apple-gmux: Fix index read functions
+  * SAUCE: input: Cypress PS/2 Trackpad move PSMOUSE_CYPRESS enum
+    - LP: #1041594
+  * SAUCE: Input: synaptics - Adjust threshold for treating position values
+    as negative
+    - LP: #1046512
+  * mei: check for error codes that mei_flow_ctrl_creds retuns
+  * mei: make mei_write_message more readable
+  * mei: mei_irq_thread_write_handler check for overflow
+  * mei: group wd_interface_reg with watchdog variables within struct
+    mei_device
+  * mei: don't query HCSR for host buffer depth
+  * mei: revamp host buffer interface function
+  * mei: mei_device can be const for mei register access functions
+  * mei: remove write only wariable wd_due_counter
+  * mei: mei_wd_host_init: update the comment
+  * mei: introduce mei_data2slots wrapper
+  * mei: streamline the _mei_irq_thread_close/ioctol functions
+  * mei: mei_irq_thread_write_handler - line break fix
+  * mei: use module_pci_driver
+  * mei: fix device stall after wd is stopped
+
+  [ Ubuntu: 3.5.0-14.15 ]
+
+  * SAUCE: fs: d_revalidate methods may be passed a NULL nameidata
+    - LP: #1038075
+  * SAUCE: drm/vmwgfx: add MODULE_DEVICE_TABLE so vmwgfx loads at boot
+    - LP: #1039157
+  * [Config] Enable CONFIG_DEVPTS_MULTIPLE_INSTANCES for highbank
+    - LP: #1038259
+  * SAUCE: wlcore: Declare MODULE_FIRMWARE usage
+    - LP: #1042918
+  * asus-nb-wmi: add some video toggle keys
+    - LP: #1022427
+  * [media] uvcvideo: Fix frame drop in bulk video stream
+  * [media] uvcvideo: Fix alternate setting selection
+  * Input: wacom - add support to Cintiq 22HD
+    - LP: #1043733
+  * ALSA: HDA: Create phantom jacks for fixed inputs and outputs
+  * ALSA: HDA: Support single 3-pin jack without VREF on the actual pin
+    - LP: #1018262
+  * ALSA: hda - give 3-pin jack the name "Headphone Mic Jack"
+  * ALSA: hda - Do not set GPIOs for speakers on IDT if there are no
+    speakers
+    - LP: #1040077
+  * ALSA: hda - Fix pop noise in headphones on S3 for Asus X55A, X55V
+    - LP: #1034779
+  * ALSA: hda - Always call standard unsolicited event for Realtek codecs
+    - LP: #1021192
+  * ALSA: hda - Add the inverted digital mic workaround to Realtek codecs
+  * ALSA: hda - Add inverted mic quirks for Asus U41SV, Acer 1810TZ and
+    AOD260
+    - LP: #1006089, #996611, #997227
+  * ALSA: hda - don't create dysfunctional mixer controls for ca0132
+    - LP: #1038651
+  * ALSA: hda - Don't send invalid volume knob command on IDT 92hd75bxx
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 12 Sep 2012 08:45:47 -0600
+
+linux-lowlatency (3.5.0-13.11) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-13.14
+
+  [ Ubuntu: 3.5.0-13.14 ]
+
+  * [Config] Disable CONFIG_DRM_MGAG200
+    - LP: #1042903
+  * [media] uvcvideo: Reset the bytesused field when recycling an erroneous
+    buffer
+    - LP: #1042809
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 29 Aug 2012 17:29:12 +0100
+
+linux-lowlatency (3.5.0-13.10) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-13.13
+
+  [ Ubuntu: 3.5.0-13.13 ]
+
+  * rebase to v3.5.3
+  * [Config] Add smsc{79}5xx to nic-usb-modules
+    - LP: #1041397
+  * rebase to v3.5.3
+
+  [ Ubuntu: 3.5.0-12.12 ]
+
+  * [Config] Fix typo on control.stub.in
+  * [Config] installing omapdrm specific headers for external drivers
+    - LP: #1038846
+  * SAUCE: apple-gmux: Fix port address calculation in gmux_pio_write32()
+  * SAUCE: (no-up) x86/mm: Fix 64bit size of mapping tables
+    - LP: #1022561
+  * SAUCE: firmware: Remove sb16 files duplicated in linux-firmware
+  * net: Allow driver to limit number of GSO segments per skb
+    - LP: #1037456
+    - CVE-2012-3412
+  * sfc: Fix maximum number of TSO segments and minimum TX queue size
+    - LP: #1037456
+    - CVE-2012-3412
+  * tcp: Apply device TSO segment limit earlier
+    - LP: #1037456
+    - CVE-2012-3412
+  * cfg80211: add channel flag to prohibit OFDM operation
+  * brcmsmac: use channel flags to restrict OFDM
+  * gmux: Add generic write32 function
+  * apple_gmux: Add support for newer hardware
+  * apple_gmux: Fix ACPI video unregister
+  * apple-gmux: Fix kconfig dependencies
+  * vga_switcheroo: Don't require handler init callback
+  * vga_switcheroo: Remove assumptions about registration/unregistration
+    ordering
+  * apple-gmux: Add display mux support
+  * mei: add mei_quirk_probe function
+    - LP: #1041164
+  * mutex: Place lock in contended state after fastpath_lock failure
+    - LP: #1041114
+
+  [ Ubuntu: 3.5.0-11.11 ]
+
+  * [Config] enable CONFIG_X86_X32=y
+  * SAUCE: input: Cypress PS/2 Trackpad mouse driver
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad link driver into psmouse-base
+    - LP: #978807
+  * [Config] compile the rtc-pl031 driver as static on the highbank kernel
+    flavour
+    - LP: #1035110
+  * [Config] Enable CONFIG_DEBUG_HIGHBANK_UART for highbank
+    - LP: #1034781
+  * SAUCE: input: Cypress PS/2 Trackpad code style cleanup
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad eliminate dead code
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad fix no-config stubs
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad set default debug_level=0
+    - LP: #978807
+  * SAUCE: [Config] add MOUSE_PS2_CYPRESS=y
+    - LP: #978807
+  * SAUCE: Yama: access task_struct->comm directly
+  * SAUCE: Yama: add link restrictions
+  * SAUCE: security: unconditionally chain to Yama LSM
+  * SAUCE: (drop after 3.6) irq_remap: disable IRQ remapping if any IOAPIC
+    lacks an IOMMU
+    - LP: #1034459
+  * (config) Enable getabis to use local package copies
+  * rebase to v3.5.2
+  * rds: set correct msg_namelen
+    - LP: #1031112
+    - CVE-2012-2340
+  * rebase to v3.5.2
+    - LP: #1027789
+    - LP: #1001251
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Wed, 29 Aug 2012 14:45:08 +0100
+
+linux-lowlatency (3.5.0-10.9) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-10.10
+
+  [ Ubuntu: 3.5.0-10.10 ]
+
+  * rebase to v3.5.1
+  * [Config] Enable CONFIG_AFS_FSCACHE=y
+    - LP: #728977
+  * SAUCE: firmware: Remove emi62 files duplicated in linux-firmware
+  * SAUCE: firmware: Remove tehuti files duplicated in linux-firmware
+  * overlayfs: copy up i_uid/i_gid from the underlying inode
+    - LP: #944386
+  * hwmon: (applesmc) Shorten minimum wait time
+    - LP: #1034449
+  * hwmon: (applesmc) Decode and act on read/write status codes
+    - LP: #1034449
+  * rebase to v3.5.1
+    - LP: #1026953
+    - LP: #1025377
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Tue, 14 Aug 2012 10:11:22 +0100
+
+linux-lowlatency (3.5.0-9.8) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] fix ABI copy in update script
+  * rebase to Ubuntu-3.5.0-9.9
+
+  [ Ubuntu: 3.5.0-9.9 ]
+
+  * SAUCE: (drop after 3.6) Forbid invocation of kexec_load() outside
+    initial PID namespace
+    - LP: #1034125
+  * SAUCE: Unlock the rc_dev lock when the raw device is missing
+    - LP: #1015836
+  * [Config] Enable EDAC/CLK for highbank
+    - LP: #1008345
+  * Revert "ubuntu: AUFS -- reenable"
+  * SAUCE: net: calxedaxgmac: add write barriers around setting owner bit
+    - LP: #1008345
+  * SAUCE: ARM smp_twd: add back "arm,smp-twd" compatible property
+    - LP: #1008345
+  * SAUCE: ARM: highbank: add soft power and reset key event handling
+    - LP: #1008345
+  * SAUCE: ARM: highbank: use writel_relaxed variant for pwr requests
+    - LP: #1008345
+  * SAUCE: ahci: un-staticize ahci_dev_classify
+    - LP: #1008345
+  * SAUCE: ahci_platform: add custom hard reset for Calxeda ahci ctrlr
+    - LP: #1008345
+  * rt2x00: Add support for BUFFALO WLI-UC-GNM2 to rt2800usb.
+    - LP: #871904
+  * Avoid sysfs oops when an rc_dev's raw device is absent
+    - LP: #1015836
+  * eCryptfs: Copy up POSIX ACL and read-only flags from lower mount
+  * clk: add DT clock binding support
+    - LP: #1008345
+  * clk: add DT fixed-clock binding support
+    - LP: #1008345
+  * clk: add highbank clock support
+  * edac: add support for Calxeda highbank memory controller
+    - LP: #1008345
+  * edac: add support for Calxeda highbank L2 cache ecc
+    - LP: #1008345
+  * net: calxedaxgmac: enable rx cut-thru mode
+    - LP: #1008345
+  * net: calxedaxgmac: fix hang on rx refill
+    - LP: #1008345
+  * eCryptfs: Revert to a writethrough cache model
+    - LP: #1034012
+  * eCryptfs: Initialize empty lower files when opening them
+    - LP: #911507
+  * eCryptfs: Unlink lower inode when ecryptfs_create() fails
+    - LP: #872905
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 09 Aug 2012 17:01:28 +0100
+
+linux-lowlatency (3.5.0-8.7) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] add update-from-master script
+  * rebase to Ubuntu-3.5.0-8.8
+
+  [ Ubuntu: 3.5.0-8.8 ]
+
+  * ubuntu: AUFS -- add BOM and automated update script
+  * ubuntu: AUFS -- include the aufs_types.h file in linux-libc-headers
+    - LP: #684666
+  * ubuntu: AUFS -- update aufs-update to track new locations of headers
+  * ubuntu: AUFS -- clean up the aufs updater and BOM
+  * ubuntu: AUFS -- documentation on updating aufs2
+  * ubuntu: AUFS -- fix undefined __devcgroup_inode_permission
+  * ubuntu: AUFS -- update to 4cf5db36bcd9748e8e7270022f295f84d1fc2245
+  * ubuntu: AUFS -- updateconfigs following update
+  * ubuntu: AUFS -- suppress benign plink warning messages
+    - LP: #621195
+  * ubuntu: AUFS -- enable in config and makefile
+  * ubuntu: AUFS -- disable in favor of overlayfs
+  * ubuntu: AUFS -- adapt to the new changelog handling
+  * ubuntu: AUFS -- sort out the relative header paths
+  * ubuntu: AUFS -- update to d266b0c5d0693d6383976ee54b9e2c0fa9a3f5b0
+  * ubuntu: AUFS -- aufs3-base.patch
+  * ubuntu: AUFS -- aufs3-standalone.patch
+  * ubuntu: AUFS -- update to 4a5e660ed7f5c1d0467c81c535d0fedcfe62d15f
+  * ubuntu: AUFS -- reenable
+  * [Config] Add cifs support to the nfs-modules list
+    - LP: #1031398
+  * (pre-stable) iwlwifi: Check BSS ctx active before call mac80211
+    - LP: #1021086
+  * SAUCE: Update aufs for build failure caused by apparmor backport
+  * SAUCE: firmware: Remove ess files duplicated in linux-firmware
+  * SAUCE: firmware: Remove kaweth files duplicated in linux-firmware
+  * SAUCE: firmware: Remove obsolete Chelsio cxgb3 firmware
+  * SAUCE: firmware: Remove cxgb3 files duplicated in linux-firmware
+  * SAUCE: firmware: Remove edgeport files duplicated in linux-firmware
+  * SAUCE: firmware: Remove ti_usb_3410_5052 duplicated in linux-firmware
+  * SAUCE: firmware: Remove adaptec files duplicated in linux-firmware
+  * SAUCE: firmware: Remove advansys files duplicated in linux-firmware
+  * SAUCE: firmware: Remove ambassador files duplicated in linux-firmware
+  * SAUCE: firmware: Remove av7110 files duplicated in linux-firmware
+  * SAUCE: cpia2: Declare MODULE_FIRMWARE usage
+  * SAUCE: firmware: Remove cpia2 files duplicated in linux-firmware
+  * SAUCE: firmware: Remove korg files duplicated in linux-firmware
+  * SAUCE: firmware: Remove matrox files duplicated in linux-firmware
+  * SAUCE: firmware: Remove r128 files duplicated in linux-firmware
+  * SAUCE: firmware: Remove radeon files duplicated in linux-firmware
+  * intel_idle: initial IVB support
+  * KVM: x86: change PT_FIRST_AVAIL_BITS_SHIFT to avoid conflict with EPT
+    Dirty bit
+  * KVM: VMX: Use EPT Access bit in response to memory notifiers
+  * KVM: VMX: Enable EPT A/D bits if supported by turning on relevant bit
+    in EPTP
+  * KVM: VMX: Add parameter to control A/D bits support, default is on
+  * KVM: VMX: Add EPT A/D bits definitions
+  * KVM: VMX: Implement PCID/INVPCID for guests with EPT
+  * xhci: Export Latency Tolerance Messaging capabilities.
+  * USB: Fix LPM disable/enable during device reset.
+  * usb: convert port_owners type from void * to struct dev_state *
+  * USB: Disable LPM while the device is unconfigured.
+  * USB: Fix LPM disable count mismatch on driver unbind.
+  * USB: Enable Latency Tolerance Messaging (LTM).
+  * drm/i915: enable parity error interrupts
+  * drm/i915: Dynamic Parity Detection handling
+  * drm/i915: l3 parity sysfs interface
+  * drm/i915: remap l3 on hw init
+  * drm/i915: initialize the parity work only once
+  * drm/i915: ivybridge_handle_parity_error should be static
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Mon, 06 Aug 2012 10:01:03 +0100
+
+linux-lowlatency (3.5.0-7.6) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-7.7
+
+  [ Ubuntu: 3.5.0-7.7 ]
+
+  * [Config] CONFIG_X86_POWERNOW_K6=m
+  * [Config] CONFIG_X86_POWERNOW_K7=m
+  * [Config] CONFIG_X86_LONGHAUL=m
+  * [Config] CONFIG_X86_LONGRUN=m
+  * [Config] CONFIG_X86_GX_SUSPMOD=m
+  * [Config] CONFIG_X86_CPUFREQ_NFORCE2=m
+  * SAUCE: rds_ib_send() -- prevent local pings triggering BUG_ON()
+    - LP: #1016299
+    - CVE-2012-2372
+  * [Config] enable CONFIG_VFAT_FS=y for EFI systems
+  * [Config] CONFIG_USB_G_MULTI=n on highbank
+  * [Config] annotate: CONFIG_USB_INVENTRA_DMA OMAP2 specific
+  * [Config] CONFIG_WAN_ROUTER disable for arm
+  * add support for generating binary device trees and install them in
+    /lib/firmware
+    - LP: #1030600
+  * [Config] add dtb_file configuration for highbank
+    - LP: #1030600
+  * SAUCE: ene_ub6250: Use macros for firmware names
+  * SAUCE: s2255drv: Add MODULE_FIRMWARE statement
+  * SAUCE: xc5000: Add MODULE_FIRMWARE statements
+  * SAUCE: firmware: remove computone driver firmware and documentation
+  * SAUCE: lgs8gxx: Declare MODULE_FIRMWARE usage
+  * SAUCE: firmware: Remove obsolete Myricom firmware
+  * SAUCE: staging rtl8192e: Declare MODULE_FIRMWARE usage
+  * SAUCE: tlg2300: Declare MODULE_FIRMWARE usage
+  * SAUCE: ueagle-atm: Declare MODULE_FIRMWARE usage
+  * SAUCE: usbduxfast: Declare MODULE_FIRMWARE usage
+  * SAUCE: usbdux: Declare MODULE_FIRMWARE usage
+  * SAUCE: usbduxsigma: Declare MODULE_FIRMWARE usage
+  * SAUCE: cx25840: Declare MODULE_FIRMWARE usage
+  * SAUCE: cx18: Declare MODULE_FIRMWARE usage
+  * SAUCE: ivtv: Declare MODULE_FIRMWARE usage
+  * SAUCE: cx231xx: Declare MODULE_FIRMWARE usage
+  * SAUCE: cx23885: Declare MODULE_FIRMWARE usage
+  * SAUCE: pvrusb2: Declare MODULE_FIRMWARE usage
+  * SAUCE: vxge: Declare MODULE_FIRMWARE usage
+  * mac80211: fix crash with single-queue drivers
+    - LP: #1022351
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Tue, 31 Jul 2012 18:10:21 +0100
+
+linux-lowlatency (3.5.0-6.5) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-6.6
+
+  [ Ubuntu: 3.5.0-6.6 ]
+
+  * [Config] CONFIG_INET6_XFRM_MODE_ROUTEOPTIMIZATION enable IPv6
+    experimental features
+  * SAUCE: highbank -- export clock functions for modules
+  * [Config] highbank -- reenable CONFIG_TOUCHSCREEN_W90X900
+  * [Config] highbank -- renenable CONFIG_SERIO_AMBAKMI
+  * [Config] highbank -- reenable CONFIG_RFKILL_GPIO
+  * [Config] highbank -- reenable CONFIG_MMC_SDHCI_PXAV3
+  * [Config] highbank -- reenable CONFIG_MMC_SDHCI_PXAV3
+  * [Config] highbank -- reenable CONFIG_KEYBOARD_SAMSUNG
+  * [Config] highbank -- reenable CONFIG_FB_ARMCLCD
+  * [Config] highbank -- reenable CONFIG_DW_DMAC
+  * [Config] highbank -- reenable CONFIG_USB_R8A66597_HCD
+  * [Config] highbank -- reenable CONFIG_USB_MV_UDC
+  * [Config] highbank -- reenable CONFIG_USB_DWC3
+  * [Config] highbank -- reenable CONFIG_SATA_MV
+  * [Config] highbank -- reenable CONFIG_PATA_ARASAN_CF
+  * [Config] highbank -- CONFIG_CAN_C_CAN_PLATFORM
+  * [Config] highbank -- reenable CONFIG_MMC_ARMMMCI
+  * [Config] highbank -- reenable CONFIG_SERIAL_AMBA_PL010
+  * [Config] highbank -- reenable CONFIG_ATMEL_PWM
+  * [Config] highbank -- enable CONFIG_CHECKPOINT_RESTORE
+  * [Config] highbank -- enable CONFIG_EXPERT
+  * [Config] highbank -- enable CONFIG_CHECKPOINT_RESTORE
+  * [Config] enable CONFIG_USB_DYNAMIC_MINORS
+  * [Config] enable CONFIG_USB_EHCI_TT_NEWSCHED
+  * [Config] enable CONFIG_USB_ETH_EEM
+  * [Config] enable CONFIG_USB_HCD_BCMA/CONFIG_USB_HCD_SSB
+  * [Config] disable CONFIG_USB_M66592
+  * [Config] enable CONFIG_USB_NET2272
+  * [Config] enable CONFIG_USB_R8A66597
+  * [Config] annotate: CONFIG_USB_OMAP not required for our h/w
+  * [Config] set CONFIG_USB_MUSB_HDRC=m for omap
+  * [Config] annotate: CONFIG_USB_G_MULTI fix rule
+  * [Config] CONFIG_USB_GPIO_VBUS=m for OMAP
+  * [Config] Enable CONFIG_DRM_AST/_CIRRUS_QEMU/_MGAG200
+  * [Config] sync configuration armhf omap -> armel omap
+  * [Config] annotate: CONFIG_IIO triggers build failures on OMAP4
+  * [Config] disable CONFIG_OMAP_IOVMM is deprecated
+  * [Config] change default IO scheduler from CFQ to Deadline
+  * Revert "[Config] Temporarily disable CONFIG_MV643XX_ETH on powerpc"
+  * [Config] Disable CONFIG_MOUSE_INPORT
+  * SAUCE: firmware: Update bnx2x to current firmware version 7.2.51
+  * [Config] Add bnx2x firmware to nic-modules udeb
+  * SAUCE: Add script to convert firmware to ihex format
+  * SAUCE: firmware: Upgrade bnx2 to current versions
+  * [Config] Add tigon firmware to nic-modules udeb
+  * [Config] CONFIG_EARLY_PRINTK_DBGP=y
+    - LP: #1026761
+  * SAUCE: Remove redundant cis firmware
+  * SAUCE: Remove redundant emi26 firmware
+  * SAUCE: Remove redundant ttusb-budget firmware
+  * SAUCE: Remove redundant sun/cassini firmware
+  * SAUCE: Remove redundant ositech/Xilinx7OD firmware
+  * SAUCE: Remove redundant 3com/typhoon.bin firmware
+  * SAUCE: Remove redundant yamaha/ds1 firmware
+  * SAUCE: Remove redundant keyspan_pda firmware
+  * rebase to v3.5
+  * rebase to v3.5
+    - LP: #1027828
+
+  [ Ubuntu: 3.5.0-5.5 ]
+
+  * [Config] annotations: initial import of configuration annotations
+  * [Config] enforcer -- add CONFIG_I2C_DESIGNWARE_PLATFORM enforce checker
+  * Rebase to v3.5-rc7
+  * SAUCE: Bluetooth: btusb: Add vendor specific ID (0a5c:21f4) BCM20702A0
+    - LP: #1010281
+  * [Config] enable CONFIG_I2C_HELPER_AUTO for all flavours as policy
+    expects
+  * [Config] CONFIG_I2O_CONFIG_OLD_IOCTL=n
+  * [Config] CONFIG_BRIDGE_EBT_ULOG=n
+  * [Config] CONFIG_IP_NF_QUEUE=n
+  * [Config] CONFIG_MTD_DOC2000=n
+  * [Config] CONFIG_PRINT_QUOTA_WARNING=n
+  * [Config] CONFIG_PRISM54=n
+  * [Config] CONFIG_SCx200_I2C=n
+  * [Config] CONFIG_USB_ANNOUNCE_NEW_DEVICES=y
+  * rebase to v3.5-rc7
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 24 Jul 2012 16:05:39 +0100
+
+linux-lowlatency (3.5.0-4.4) quantal-proposed; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to Ubuntu-3.5.0-4.4
+
+  [ Ubuntu: 3.5.0-4.4 ]
+
+  * [Packaging] getabis should be extracting all packages
+    - LP: #1021174
+  * [Config] getabis -- series uses linux-image-extra
+    - LP: #1021174
+  * rebase to v3.5-rc6
+  * [Config] built-in CONFIG_MICREL_PHY as other PHY drivers for all
+    flavours
+  * [Config] sync CONFIG_MOUSE_PS2_ config for all flavours
+  * [Config] Enable CONFIG_RT2800USB_RT35XX and CONFIG_RT2800USB_RT53XX
+    - LP: #1019561
+  * [Config] SND_OMAP_SOC, SND_OMAP_SOC_MCBSP and SND_OMAP_SOC_OMAP3_BEAGLE =y
+    - LP: #1019321
+  * SAUCE: (pre-up) net: dont use __netdev_alloc_skb for bounce buffer
+    - LP: #1018456
+  * (config) Disable ACPI_PROCFS_POWER
+  * [Config] CONFIG_ACPI_BGRT=y
+  * Extract firmware module info during getabi
+    - LP: #1021174
+  * rebase to v3.5-rc6
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Tue, 10 Jul 2012 16:15:51 +0100
+
+linux-lowlatency (3.5.0-3.3) quantal; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] drop -pae from d-i configuration.
+  * rebase to Ubuntu-3.5.0-3.3
+
+  [ Ubuntu: 3.5.0-3.3 ]
+
+  * [Config] enable CONFIG_MEMTEST=y
+    - LP: #1004535
+  * [Config] config-check: add support for a cut operation
+  * [Config] enforcer -- switch to cut where appropriate
+  * Rebase to v3.5-rc5
+  * [Config] Updateconfigs after rebase to v3.5-rc5
+  * SAUCE: ocfs2: Fix NULL pointer dereferrence in
+    __ocfs2_change_file_space
+    - LP: #1006012
+  * SAUCE: (drop after 3.5) drm/i915: ignore pipe select bit when checking
+    for LVDS register initialization
+    - LP: #1012800
+  * rebase to v3.5-rc5
+    - LP: #1013183
+    - LP: #1017017
+    - LP: #884652
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Tue, 03 Jul 2012 09:23:14 +0100
+
+linux-lowlatency (3.5.0-2.2) quantal; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * hooks -- should use :: to maintain unordered hooks
+  * rebase to Ubuntu-3.5.0-2.2
+  * [Config] update Vcs-git: to point to current home
+  * [Config] drop last references to lowlatency-pae
+
+  [ Ubuntu: 3.5.0-2.2 ]
+
+  * rebase to v3.5-rc4
+  * SAUCE: (drop after 3.5) brcmsmac: fix NULL pointer crash in
+    brcms_c_regd_init()
+    - LP: #950320
+  * [Config] Sync CONFIG_CGROUP_MEM_RES_CTLR_SWAP for ARM
+  * PACKAGING: add .gnu_debuglink sections to .ko files
+    - LP: #669641
+  * d-i: Add hid-generic to input-modules
+    - LP: #1017879
+  * SAUCE: Revert "mmc: omap_hsmmc: Enable Auto CMD12"
+    - LP: #1017717, #225
+  * SAUCE: Revert "Fix OMAP EHCI suspend/resume failure (i693)"
+    - LP: #1017718
+  * [Config] Disable generic USB_EHCI_HCD_PLATFORM on omap3
+  * SAUCE: (drop after 3.5) brcm80211: smac: don't set up tx power limits
+    during initialization
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: always set channel specified
+    by mac80211
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: remove unused code for 40MHz
+    channels
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: clean up channel.c
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: inform mac80211 of the X2
+    regulatory domain
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: enable/disable radio on
+    regulatory updates
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: use mac80211 channel data for
+    tx power limits
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: don't validate channels
+    against internal regulatory data
+    - LP: #950320
+  * SAUCE: (drop after 3.5) brcm80211: smac: use current regulatory domain
+    when checking whether OFDM is allowed
+    - LP: #950320
+  * [Config] Enable CONFIG_CGROUPS for highbank
+    - LP: #1014692
+  * [Config] FB_OMAP*=y and PANEL_TFP410=y
+  * rebase to v3.5-rc4
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 28 Jun 2012 23:36:21 +0100
+
+linux-lowlatency (3.5.0-1.1) quantal; urgency=low
+
+  [ Andy Whitcroft]
+
+  * Rebuild lowlatency against Ubuntu-3.5.0-1.1
+  * All new configuration system to allow configuration deltas to be
+    exposed via debian.lowlatency/config-delta
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Thu, 21 Jun 2012 09:16:38 +0100
+
+linux-lowlatency (3.2.0-23.31) precise-proposed; urgency=low
+
+  [ Luke Yelavich ]
+
+  * Rebase against Ubuntu-3.2.0-23.36
+  * [Config] Fix invalid linux-headers link for low-latency kernels
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 11 Apr 2012 10:07:26 +1000
+
+linux-lowlatency (3.2.0-22.30) precise; urgency=low
+
+  [ Luke Yelavich ]
+
+  * [Config] Update configs after rebase against Ubuntu-3.2.0-22.35
+
+  [ Upstream Kernel Changes ]
+
+  * Low-latency: Rebase against Ubuntu-3.2.0-22.35
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 04 Apr 2012 18:49:36 +1000
+
+linux-lowlatency (3.2.0-19.27) precise; urgency=low
+
+  [ Stefan Bader ]
+
+  * d-i: Add dm-multipath and scsi device handlers
+    - LP: #959749
+  * d-i: Move multipath modules into their own udeb
+    - LP: #598251, #959749
+
+  [ Tim Gardner ]
+
+  * [Config] Auto-detect do_tools setting
+  * [Config] correctly specify CROSS_COMPILE for tools build
+  * [Config] CONFIG_DRM_PSB_CDV=n
+  * Rebase to v3.2.12
+
+  [ Luke Yelavich ]
+  * UBUNTU: Look for releases marked Lowlatency instead of Ubuntu
+  * UBUNTU: [Config] Adjust Poulsbo config options to match precise mainline,
+    to satisfy enforcer
+
+  [ Upstream Kernel Changes ]
+
+  * powerpc/pmac: Fix SMP kernels on pre-core99 UP machines
+    - LP: #959959
+  * rebase to v3.2.12
+
+  [ Andy Whitcroft ]
+
+  * [Config] Fix typeo in the Hyper-V module names
+
+  [ Colin Watson ]
+
+  * [Config] Move kernels to "Section: kernel"
+    - LP: #499557
+
+  [ John Johansen ]
+
+  * SAUCE: AppArmor: Add ability to load extended policy
+  * SAUCE: AppArmor: Add the ability to mediate mount
+  * SAUCE: AppArmor: Add profile introspection file to interface
+  * SAUCE: AppArmor: basic networking rules
+
+  [ Leann Ogasawara ]
+
+  * [Config] Disable CONFIG_SECURITY_TOMOYO_OMIT_USERSPACE_LOADER
+    - LP: #952035
+  * Rebase to v3.2.10
+  * [Config] Update configs after rebase to v3.2.10
+  * Rebase to v3.2.11
+  * [Config] Disable CONFIG_STUB_POULSBO
+    - LP: #899244
+  * [Config] Add CONFIG_DRM_PSB check to enforcer
+    - LP: #899244
+
+  [ Tim Gardner ]
+
+  * [Config] Drop non-SMP powerpc
+
+  [ Upstream Kernel Changes ]
+
+  * net/hyperv: Use the built-in macro KBUILD_MODNAME for this driver
+  * x86: Derandom delay_tsc for 64 bit
+  * Bluetooth: Fix l2cap conn failures for ssp devices
+    - LP: #872044
+  * KVM: x86: extend "struct x86_emulate_ops" with "get_cpuid"
+    - LP: #917842
+    - CVE-2012-0045
+  * KVM: x86: fix missing checks in syscall emulation
+    - LP: #917842
+    - CVE-2012-0045
+  * rebase to v3.2.11
+  * rebase to v3.2.10
+
+  [ Andy Whitcroft ]
+
+  * [Config] restore build-% shortcut
+  * SAUCE: ata_piix: defer disks to the Hyper-V drivers by default
+    - LP: #929545, #942316
+
+  [ Eugeni Dodonov ]
+
+  * SAUCE: drm: give up on edid retries when i2c bus is not responding
+    - LP: #855124
+
+  [ Seth Forshee ]
+
+  * SAUCE: (drop after 3.3) platform/x86: Add driver for Apple gmux device
+    - LP: #925544
+
+  [ Upstream Kernel Changes ]
+
+  * bsg: fix sysfs link remove warning
+    - LP: #946928
+  * regset: Prevent null pointer reference on readonly regsets
+    - LP: #949905
+    - CVE-2012-1097
+  * regset: Return -EFAULT, not -EIO, on host-side memory fault
+    - LP: #949905
+    - CVE-2012-1097
+
+  [ Wu Fengguang ]
+
+  * SAUCE: (drop after 3.4) ALSA: hda - add id for Atom Cedar Trail HDMI
+    codec
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 21 Mar 2012 23:51:57 +1100
+
+linux-lowlatency (3.2.0-18.26) precise; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] clean up the human consumable package descriptions
+  * [Config] fix generic flavour description
+  * [Config] clean up linux-tools package descriptions
+    - LP: #593107
+  * deviations -- note the source of the Hyper-V updates
+  * SAUCE: ata_piix: defer to the Hyper-V drivers by default
+    - LP: #929545
+  * ubuntu: AUFS -- adapt to the new changelog handling
+  * ubuntu: AUFS -- sort out the relative header paths
+  * ubuntu: AUFS -- update to d266b0c5d0693d6383976ee54b9e2c0fa9a3f5b0
+
+  [ Chase Douglas ]
+
+  * SAUCE: (drop after 3.3) HID: hid-magicmouse: Add pointer and buttonpad
+    properties for Magic Trackpad
+  * SAUCE: Input: synaptics - add second variant of two-button clickpad
+  * SAUCE: Input: synapticss - Set buttonpad property for all clickpads
+
+  [ Eugeni Dodonov ]
+
+  * SAUCE: drm/i915: do not enable RC6p on Sandy Bridge
+  * SAUCE: drm/i915: fix operator precedence when enabling RC6p
+
+  [ Ingo Molnar ]
+
+  * ubuntu: nx-emu - i386: NX emulation
+
+  [ Johannes Berg ]
+
+  * SAUCE: iwlwifi: fix key removal
+    - LP: #911059
+
+  [ John Johansen ]
+
+  * Revert "SAUCE: AppArmor: Fix unpack of network tables."
+  * Revert "SAUCE: AppArmor: Allow dfa backward compatibility with broken
+    userspace"
+  * SAUCE: AppArmor: Add mising end of structure test to caps unpacking
+  * SAUCE: AppArmor: Fix dropping of allowed operations that are force
+    audited
+  * SAUCE: AppArmor: Fix underflow in xindex calculation
+  * SAUCE: AppArmor: fix mapping of META_READ to audit and quiet flags
+  * SAUCE: AppArmor: Fix the error case for chroot relative path name
+    lookup
+    - LP: #925028
+  * SAUCE: AppArmor: Retrieve the dentry_path for error reporting when path
+    lookup fails
+    - LP: #925028
+  * SAUCE: AppArmor: Minor cleanup of d_namespace_path to consolidate error
+    handling
+  * SAUCE: AppArmor: Update dfa matching routines.
+  * SAUCE: AppArmor: Move path failure information into aa_get_name and
+    rename
+  * SAUCE: AppArmor: Make chroot relative the default path lookup type
+  * SAUCE: AppArmor: Add ability to load extended policy
+  * SAUCE: AppArmor: basic networking rules
+  * SAUCE: AppArmor: Add profile introspection file to interface
+  * SAUCE: AppArmor: Add the ability to mediate mount
+  * SAUCE: AppArmor: Add mount information to apparmorfs
+
+  [ Kees Cook ]
+
+  * SAUCE: (drop after 3.3) security: create task_free security callback
+  * SAUCE: (drop after 3.3) security: Yama LSM
+  * SAUCE: (drop after 3.3) Yama: add PR_SET_PTRACER_ANY
+  * SAUCE: Yama: add link restrictions
+  * SAUCE: security: unconditionally chain to Yama LSM
+  * SAUCE: AppArmor: refactor securityfs to use structures
+  * SAUCE: AppArmor: add initial "features" directory to securityfs
+  * SAUCE: AppArmor: add "file" details to securityfs
+  * SAUCE: AppArmor: export known rlimit names/value mappings in securityfs
+  * ubuntu: Yama - LSM hooks
+  * ubuntu: Yama - add ptrace relationship tracking interface
+  * ubuntu: Yama - unconditionally chain to Yama LSM
+
+  [ Leann Ogasawara ]
+
+  * Revert "[Config] Enable CONFIG_NVRAM=m"
+    - LP: #942193
+  * Drop ndiswrapper
+  * Ubuntu-3.2.0-17.26
+  * Ubuntu-3.2.0-17.27
+  * Rebase to v3.2.7
+  * [Config] Enable CONFIG_USB_SERIAL_QUATECH2=m on arm and powerpc
+  * [Config] Enable CONFIG_USB_SERIAL_QUATECH_USB2=m on arm and powerpc
+  * [Config] Add CONFIG_NVRAM to config enforcer
+    - LP: #942193
+  * [Config] Enable CONFIG_SCSI_IBMVSCSI=m for powerpc
+    - LP: #943090
+  * [Config] Enable CONFIG_SCSI_IPR=m for powerpc
+    - LP: #943090
+  * provide ipmi udeb
+    - LP: #942926
+  * Rebase to v3.2.9
+  * Add ibmveth to d-i/modules-powerpc/nic-modules
+    - LP: #712188
+  * [Config] Enable CONFIG_SCSI_IBMVFC=m for powerpc
+    - LP: #712188
+  * Add ibmvfc and ibmvscsic to d-i/modules-powerpc/nic-modules
+    - LP: #712188
+  * Ubuntu-3.2.0-18.28
+
+  [ Robert Hooker ]
+
+  * SAUCE: drm/i915: Enable RC6 by default on sandybridge.
+
+  [ Seth Heasley ]
+
+  * SAUCE: ALSA: hda - Add Lynx Point HD Audio Controller DeviceIDs
+    - LP: #900119
+  * SAUCE: ahci: AHCI-mode SATA patch for Intel Lynx Point DeviceIDs
+    - LP: #900119
+  * SAUCE: ata_piix: IDE-mode SATA patch for Intel Lynx Point DeviceIDs
+    - LP: #900119
+  * SAUCE: i2c-i801: Add device IDs for Intel Lynx Point
+    - LP: #900119
+
+  [ Tim Gardner ]
+
+  * dropped hv_mouse
+  * [Config] CONFIG_X86_NUMACHIP=y
+  * [Config] updateconfigs after apparmor patches
+  * [Config] Added hv_netvsc and hv_storvsc to -virtual
+    - LP: #942256
+  * [Config] Enable aufs
+    - LP: #943119
+  * SAUCE: Made kernel irq-threaded by default
+
+  [ Luke Yelavich ]
+
+  * UBUNTU: Depend on crda (>=1.1.1-1ubuntu2) | wireless-crda as per precise
+    mainline packaging
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "Revert "ath9k_hw: fix interpretation of the rx KeyMiss flag""
+  * Revert "AppArmor: compatibility patch for v5 interface"
+  * Revert "AppArmor: compatibility patch for v5 network controll"
+  * Staging: hv: vmbus: Support building the vmbus driver as part of the
+    kernel
+  * hv: Add Kconfig menu entry
+  * Drivers: hv: Fix a memory leak
+  * Drivers: hv: Make the vmbus driver unloadable
+  * Drivers: hv: Get rid of an unnecessary check in hv.c
+  * Staging: hv: mousevsc: Make boolean states boolean
+  * Staging: hv: mousevsc: Inline the code for mousevsc_on_device_add()
+  * Staging: hv: mousevsc: Inline the code for reportdesc_callback()
+  * Staging: hv: mousevsc: Cleanup mousevsc_on_channel_callback()
+  * Staging: hv: mousevsc: Add a new line to a debug string
+  * Staging: hv: mousevsc: Get rid of unnecessary include files
+  * Staging: hv: mousevsc: Address some style issues
+  * Staging: hv: mousevsc: Add a check to prevent memory corruption
+  * Staging: hv: mousevsc: Use the KBUILD_MODNAME macro
+  * Staging: hv: storvsc: Use mempools to allocate struct
+    storvsc_cmd_request
+  * Staging: hv: storvsc: Cleanup error handling in the probe function
+  * Staging: hv: storvsc: Fixup the error when processing SET_WINDOW
+    command
+  * Staging: hv: storvsc: Fix error handling storvsc_host_reset()
+  * Staging: hv: storvsc: Use the accessor function shost_priv()
+  * Staging: hv: storvsc: Use the unlocked version queuecommand
+  * Staging: hv: storvsc: use the macro KBUILD_MODNAME
+  * Staging: hv: storvsc: Get rid of an unnecessary forward declaration
+  * Staging: hv: storvsc: Upgrade the vmstor protocol version
+  * Staging: hv: storvsc: Support hot add of scsi disks
+  * Staging: hv: storvsc: Support hot-removing of scsi devices
+  * staging: hv: Use kmemdup rather than duplicating its implementation
+  * staging: hv: move hv_netvsc out of staging area
+  * Staging: hv: mousevsc: Properly add the hid device
+  * Staging: hv: storvsc: Disable clustering
+  * Staging: hv: storvsc: Cleanup storvsc_device_alloc()
+  * Staging: hv: storvsc: Fix a bug in storvsc_command_completion()
+  * Staging: hv: storvsc: Fix a bug in copy_from_bounce_buffer()
+  * Staging: hv: storvsc: Implement per device memory pools
+  * Staging: hv: remove hv_mouse driver as it's now in the hid directory
+  * Staging: hv: update TODO file
+  * Staging: hv: storvsc: Fix a bug in create_bounce_buffer()
+  * net/hyperv: Fix long lines in netvsc.c
+  * net/hyperv: Add support for promiscuous mode setting
+  * net/hyperv: Fix the stop/wake queue mechanism
+  * net/hyperv: Remove unnecessary kmap_atomic in netvsc driver
+  * net/hyperv: Add NETVSP protocol version negotiation
+  * net/hyperv: Add support for jumbo frame up to 64KB
+  * net/hyperv: fix possible memory leak in do_set_multicast()
+  * net/hyperv: rx_bytes should account the ether header size
+  * net/hyperv: fix the issue that large packets be dropped under bridge
+  * net/hyperv: Use netif_tx_disable() instead of netif_stop_queue() when
+    necessary
+  * net/hyperv: Fix the page buffer when an RNDIS message goes beyond page
+    boundary
+  * HID: Move the hid-hyperv driver out of staging
+  * HID: hv_mouse: Properly add the hid device
+  * HID: hyperv: Properly disconnect the input device
+  * Staging: hv: storvsc: Cleanup some comments
+  * Staging: hv: storvsc: Cleanup storvsc_probe()
+  * Staging: hv: storvsc: Cleanup storvsc_queuecommand()
+  * Staging: hv: storvsc: Introduce defines for srb status codes
+  * Staging: hv: storvsc: Cleanup storvsc_host_reset_handler()
+  * Staging: hv: storvsc: Move and cleanup storvsc_remove()
+  * Staging: hv: storvsc: Add a comment to explain life-cycle management
+  * Staging: hv: storvsc: Get rid of the on_io_completion in
+    hv_storvsc_request
+  * Staging: hv: storvsc: Rename the context field in hv_storvsc_request
+  * Staging: hv: storvsc: Miscellaneous cleanup of storvsc driver
+  * Staging: hv: storvsc: Cleanup the code for generating protocol version
+  * Staging: hv: storvsc: Cleanup some protocol related constants
+  * Staging: hv: storvsc: Get rid of some unused defines
+  * Staging: hv: storvsc: Consolidate the request structure
+  * Staging: hv: storvsc: Consolidate all the wire protocol definitions
+  * Staging: hv: storvsc: Move the storage driver out of the staging area
+  * x86: Make flat_init_apic_ldr() available
+  * x86: Add x86_init platform override to fix up NUMA core numbering
+  * x86: Add NumaChip support
+  * x86/numachip: Drop unnecessary conflict with EDAC
+  * Input: bcm5974 - set BUTTONPAD property
+  * Ubuntu: Rebase to v3.2.8
+  * ACPI / PM: Do not save/restore NVS on Asus K54C/K54HR
+    - LP: #898503
+  * Add low latency source
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Fri, 09 Mar 2012 10:21:12 +1100
+
+linux-lowlatency (3.2.0-16.25) precise; urgency=low
+
+  * Add new lowlatency kernel flavour
+
+ -- Alessio Igor Bogani <abogani@ubuntu.com>  Mon, 26 Oct 2011 11:13:05 +0200

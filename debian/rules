@@ -23,6 +23,9 @@ export DROOT=debian
 # Common variables for all architectures
 include $(DROOT)/rules.d/0-common-vars.mk
 
+# Pull in some branch specific stuff
+-include $(DEBIAN)/rules.d/hooks.mk
+
 # Pull in some arch specific stuff
 -include $(DEBIAN)/rules.d/$(arch).mk
 
@@ -121,8 +124,11 @@ $(DEBIAN)/control.stub: $(DEBIAN)/d-i/kernel-versions.in	\
 	done
 	cp $(DEBIAN)/control.stub $(DEBIAN)/control
 
+.PHONY: hook-before-clean
+hook-before-clean::
+
 .PHONY: debian/control
-debian/control: $(DEBIAN)/control.stub
+debian/control: hook-before-clean $(DEBIAN)/control.stub
 	rm -rf $(builddir)/modules $(builddir)/firmware			\
 		$(builddir)/kernel-versions $(builddir)/package-list	\
 		$(builddir)/$(DEBIAN)
