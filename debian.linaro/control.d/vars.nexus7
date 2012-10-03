@@ -1,0 +1,8 @@
+arch="armhf"
+supported="Nexus 7"
+desc="Nexus 7"
+target="Nexus 7 tablet"
+bootloader="flash-kernel"
+provides=""
+section_image="universe/base"
+do_debug="Yes"
