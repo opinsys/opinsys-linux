@@ -1,6 +1,21 @@
-linux-nexus7 (3.1.10-2.2) UNRELEASED; urgency=low
+linux-nexus7 (3.1.10-2.2) quantal; urgency=low
 
-   * Ubuntu-3.1.10-2.2
+  [ Jani Monoses ]
+
+  * Start new release
+  * [Config] Enable SYSVIPC and POSIX_MQUEUE
+  * [Config] CONFIG_SECURITY_APPARMOR_COMPAT_24=y
+  * [Config] Disable DHD_ENABLE_P2P, makes wifi work
+  * SAUCE: Detect touchscreen
+
+  [ Marc Dietrich ]
+
+  * SAUCE: add Apparmor patches.
+
+  [ Seth Forshee ]
+
+  * SAUCE: bq27541_battery: Demote BAT_NOTICE messages to debug
+  * SAUCE: bq27541_battery: Fix unused variable warnings
 
  -- Jani Monoses <jani.monoses@canonical.com>  Tue, 09 Oct 2012 20:14:33 +0300
 
