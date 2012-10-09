@@ -1,3 +1,9 @@
+linux-nexus7 (3.1.10-2.2) UNRELEASED; urgency=low
+
+   * Ubuntu-3.1.10-2.2
+
+ -- Jani Monoses <jani.monoses@canonical.com>  Tue, 09 Oct 2012 20:14:33 +0300
+
 linux-nexus7 (3.1.10-1.1) quantal; urgency=low
 
    * Ubuntu-3.1.10-1.1
