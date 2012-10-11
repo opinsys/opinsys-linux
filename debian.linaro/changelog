@@ -1,3 +1,9 @@
+linux-nexus7 (3.1.10-3.3) UNRELEASED; urgency=low
+
+  CHANGELOG:XXX
+
+ -- Jani Monoses <jani.monoses@canonical.com>  Thu, 11 Oct 2012 21:38:54 +0300
+
 linux-nexus7 (3.1.10-2.2) quantal; urgency=low
 
   [ Jani Monoses ]
