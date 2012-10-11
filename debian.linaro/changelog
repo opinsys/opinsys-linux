@@ -1,6 +1,16 @@
-linux-nexus7 (3.1.10-3.3) UNRELEASED; urgency=low
+linux-nexus7 (3.1.10-3.3) quantal; urgency=low
 
-  CHANGELOG:XXX
+  [ Jani Monoses ]
+
+  * SAUCE: Report landscape mode coordinates in touchscreen
+
+  [ Oliver Grawert ]
+
+  * [Config] Update config to be more in sync with mainline.
+
+  [ Seth Forshee ]
+
+  * SAUCE: Input: ektf3k: Fix up indentation.
 
  -- Jani Monoses <jani.monoses@canonical.com>  Thu, 11 Oct 2012 21:38:54 +0300
 
