@@ -1,7 +1,0 @@
-binfmt_misc
-fb_sys_fops
-syscopyarea
-sysfillrect
-sysimgblt
-udlfb
-zram

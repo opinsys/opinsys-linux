@@ -8,7 +8,7 @@ Build-Depends-Indep: xmlto, docbook-utils, ghostscript, transfig, bzip2, sharuti
 Build-Conflicts: findutils (= 4.4.1-1ubuntu1)
 Vcs-Git: git://kernel.ubuntu.com/jani/ubuntu-nexus7.git
 
-Package: linux-headers-3.1.10-4
+Package: linux-headers-3.1.10-5
 Architecture: armhf
 Section: devel
 Priority: optional
@@ -17,19 +17,19 @@ Depends: ${misc:Depends}, coreutils | fileutils (>= 4.0)
 Description: Header files related to Linux kernel version 3.1.10
  This package provides kernel header files for version 3.1.10, for sites
  that want the latest kernel headers. Please read
- /usr/share/doc/linux-nexus7-headers-3.1.10-4/debian.README.gz for details
+ /usr/share/doc/linux-nexus7-headers-3.1.10-5/debian.README.gz for details
 
-Package: linux-nexus7-tools-3.1.10-4
+Package: linux-nexus7-tools-3.1.10-5
 Architecture: armhf
 Section: devel
 Priority: optional
 Depends: ${misc:Depends}, ${shlibs:Depends}, linux-tools-common
-Description: Linux kernel tools for version 3.1.10-4
+Description: Linux kernel tools for version 3.1.10-5
  This package provides the architecture dependant parts for kernel
- version locked tools for version 3.1.10-4 on
+ version locked tools for version 3.1.10-5 on
  DESC.
 
-Package: linux-image-3.1.10-4-nexus7
+Package: linux-image-3.1.10-5-nexus7
 Architecture: armhf
 Section: admin
 Priority: optional
@@ -54,19 +54,19 @@ Description: Linux kernel image for version 3.1.10 on Nexus 7
  the linux-nexus7 meta-package, which will ensure that upgrades work
  correctly, and that supporting packages are also installed.
 
-Package: linux-headers-3.1.10-4-nexus7
+Package: linux-headers-3.1.10-5-nexus7
 Architecture: armhf
 Section: devel
 Priority: optional
-Depends: ${misc:Depends}, coreutils | fileutils (>= 4.0), linux-headers-3.1.10-4, ${shlibs:Depends}
+Depends: ${misc:Depends}, coreutils | fileutils (>= 4.0), linux-headers-3.1.10-5, ${shlibs:Depends}
 Description: Linux kernel headers for version 3.1.10 on Nexus 7
  This package provides kernel header files for version 3.1.10 on
  Nexus 7.
  .
  This is for sites that want the latest kernel headers.  Please read
- /usr/share/doc/linux-nexus7-headers-3.1.10-4/debian.README.gz for details.
+ /usr/share/doc/linux-nexus7-headers-3.1.10-5/debian.README.gz for details.
 
-Package: linux-image-3.1.10-4-nexus7-dbgsym
+Package: linux-image-3.1.10-5-nexus7-dbgsym
 Architecture: armhf
 Section: devel
 Priority: optional
