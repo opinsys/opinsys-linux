@@ -1,0 +1,15 @@
+binfmt_misc
+snd-hda-codec
+snd-hda-codec-analog
+snd-hda-codec-ca0110
+snd-hda-codec-ca0132
+snd-hda-codec-cirrus
+snd-hda-codec-cmedia
+snd-hda-codec-conexant
+snd-hda-codec-hdmi
+snd-hda-codec-idt
+snd-hda-codec-realtek
+snd-hda-codec-si3054
+snd-hda-codec-via
+snd-hda-intel
+zram
