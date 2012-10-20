@@ -5546,6 +5546,33 @@ static const struct hda_verb alc268_beep_init_verbs[] = {
 	{ }
 };
 
+enum {
+	ALC268_FIXUP_HP_EAPD,
+};
+
+static const struct alc_fixup alc268_fixups[] = {
+	[ALC268_FIXUP_HP_EAPD] = {
+		.type = ALC_FIXUP_VERBS,
+		.v.verbs = (const struct hda_verb[]) {
+			{0x15, AC_VERB_SET_EAPD_BTLENABLE, 0},
+			{}
+		}
+	},
+};
+
+static const struct alc_model_fixup alc268_fixup_models[] = {
+	{.id = ALC268_FIXUP_HP_EAPD, .name = "hp-eapd"},
+	{}
+};
+
+static const struct snd_pci_quirk alc268_fixup_tbl[] = {
+	/* below is codec SSID since multiple Toshiba laptops have the
+	 * same PCI SSID 1179:ff00
+	 */
+	SND_PCI_QUIRK(0x1179, 0xff06, "Toshiba P200", ALC268_FIXUP_HP_EAPD),
+	{}
+};
+
 /*
  * BIOS auto configuration
  */
@@ -5577,6 +5604,9 @@ static int patch_alc268(struct hda_codec *codec)
 
 	spec = codec->spec;
 
+	alc_pick_fixup(codec, alc268_fixup_models, alc268_fixup_tbl, alc268_fixups);
+	alc_apply_fixup(codec, ALC_FIXUP_ACT_PRE_PROBE);
+
 	/* automatic parse from the BIOS config */
 	err = alc268_parse_auto_config(codec);
 	if (err < 0)
@@ -5605,6 +5635,8 @@ static int patch_alc268(struct hda_codec *codec)
 
 	codec->patch_ops = alc_patch_ops;
 	spec->shutup = alc_eapd_shutup;
+
+	alc_apply_fixup(codec, ALC_FIXUP_ACT_PROBE);
 
 	return 0;
 
