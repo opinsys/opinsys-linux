@@ -1248,6 +1248,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	gnet_stats_start_copy_compat
 EXPORT_SYMBOL vmlinux 0x00000000	grab_cache_page_nowait
 EXPORT_SYMBOL vmlinux 0x00000000	grab_cache_page_write_begin
 EXPORT_SYMBOL vmlinux 0x00000000	grouper_query_pcba_revision
+EXPORT_SYMBOL vmlinux 0x00000000	grouper_query_pmic_id
 EXPORT_SYMBOL vmlinux 0x00000000	groups_alloc
 EXPORT_SYMBOL vmlinux 0x00000000	groups_free
 EXPORT_SYMBOL vmlinux 0x00000000	half_md4_transform
@@ -1875,6 +1876,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	mmc_alloc_host
 EXPORT_SYMBOL vmlinux 0x00000000	mmc_assume_removable
 EXPORT_SYMBOL vmlinux 0x00000000	mmc_bkops_start
 EXPORT_SYMBOL vmlinux 0x00000000	mmc_calc_max_discard
+EXPORT_SYMBOL vmlinux 0x00000000	mmc_can_discard
 EXPORT_SYMBOL vmlinux 0x00000000	mmc_can_erase
 EXPORT_SYMBOL vmlinux 0x00000000	mmc_can_secure_erase_trim
 EXPORT_SYMBOL vmlinux 0x00000000	mmc_can_trim
