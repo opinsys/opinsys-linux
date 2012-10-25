@@ -307,13 +307,13 @@ static void ar9003_hw_init_mode_regs(struct ath_hw *ah)
 
 		/* Awake -> Sleep Setting */
 		INIT_INI_ARRAY(&ah->iniPcieSerdes,
-				PCIE_PLL_ON_CREQ_DIS_L1_2P0,
-				ARRAY_SIZE(PCIE_PLL_ON_CREQ_DIS_L1_2P0),
+				ar9462_pciephy_clkreq_disable_L1_2p0,
+				ARRAY_SIZE(ar9462_pciephy_clkreq_disable_L1_2p0),
 				2);
 		/* Sleep -> Awake Setting */
 		INIT_INI_ARRAY(&ah->iniPcieSerdesLowPower,
-				PCIE_PLL_ON_CREQ_DIS_L1_2P0,
-				ARRAY_SIZE(PCIE_PLL_ON_CREQ_DIS_L1_2P0),
+				ar9462_pciephy_clkreq_disable_L1_2p0,
+				ARRAY_SIZE(ar9462_pciephy_clkreq_disable_L1_2p0),
 				2);
 
 		/* Fast clock modal settings */
