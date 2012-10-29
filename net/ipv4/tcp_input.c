@@ -4713,6 +4713,9 @@ int tcp_send_rcvq(struct sock *sk, struct msghdr *msg, size_t size)
 	struct tcphdr *th;
 	bool fragstolen;
 
+	if (size == 0)
+		return 0;
+
 	if (tcp_try_rmem_schedule(sk, size + sizeof(*th)))
 		goto err;
 
