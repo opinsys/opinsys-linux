@@ -1,4 +1,11 @@
+auth_rpcgss
 binfmt_misc
+blocklayoutdriver
+lockd
+nfs
+nfs_acl
+nfsd
+nfs_layout_nfsv41_files
 snd-hda-codec
 snd-hda-codec-analog
 snd-hda-codec-ca0110
@@ -12,4 +19,5 @@ snd-hda-codec-realtek
 snd-hda-codec-si3054
 snd-hda-codec-via
 snd-hda-intel
+sunrpc
 zram
