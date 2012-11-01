@@ -5842,14 +5842,19 @@ static void intel_unpin_work_fn(struct work_struct *__work)
 {
 	struct intel_unpin_work *work =
 		container_of(__work, struct intel_unpin_work, work);
+	struct drm_device *dev = work->crtc->dev;
 
-	mutex_lock(&work->dev->struct_mutex);
+	mutex_lock(&dev->struct_mutex);
 	intel_unpin_fb_obj(work->old_fb_obj);
 	drm_gem_object_unreference(&work->pending_flip_obj->base);
 	drm_gem_object_unreference(&work->old_fb_obj->base);
 
-	intel_update_fbc(work->dev);
-	mutex_unlock(&work->dev->struct_mutex);
+	intel_update_fbc(dev);
+	mutex_unlock(&dev->struct_mutex);
+
+	BUG_ON(atomic_read(&to_intel_crtc(work->crtc)->unpin_work_count) == 0);
+	atomic_dec(&to_intel_crtc(work->crtc)->unpin_work_count);
+
 	kfree(work);
 }
 
@@ -5925,9 +5930,9 @@ static void do_intel_finish_page_flip(struct drm_device *dev,
 
 	atomic_clear_mask(1 << intel_crtc->plane,
 			  &obj->pending_flip.counter);
-
 	wake_up(&dev_priv->pending_flip_queue);
-	schedule_work(&work->work);
+
+	queue_work(dev_priv->wq, &work->work);
 
 	trace_i915_flip_complete(intel_crtc->plane, work->pending_flip_obj);
 }
@@ -6239,7 +6244,7 @@ static int intel_crtc_page_flip(struct drm_crtc *crtc,
 		return -ENOMEM;
 
 	work->event = event;
-	work->dev = crtc->dev;
+	work->crtc = crtc;
 	intel_fb = to_intel_framebuffer(crtc->fb);
 	work->old_fb_obj = intel_fb->obj;
 	INIT_WORK(&work->work, intel_unpin_work_fn);
@@ -6264,6 +6269,9 @@ static int intel_crtc_page_flip(struct drm_crtc *crtc,
 	intel_fb = to_intel_framebuffer(fb);
 	obj = intel_fb->obj;
 
+	if (atomic_read(&intel_crtc->unpin_work_count) >= 2)
+		flush_workqueue(dev_priv->wq);
+
 	mutex_lock(&dev->struct_mutex);
 
 	/* Reference the objects for the scheduled work. */
@@ -6280,6 +6288,7 @@ static int intel_crtc_page_flip(struct drm_crtc *crtc,
 	 * the flip occurs and the object is no longer visible.
 	 */
 	atomic_add(1 << intel_crtc->plane, &work->old_fb_obj->pending_flip);
+	atomic_inc(&intel_crtc->unpin_work_count);
 
 	ret = dev_priv->display.queue_flip(dev, crtc, fb, obj);
 	if (ret)
@@ -6294,6 +6303,7 @@ static int intel_crtc_page_flip(struct drm_crtc *crtc,
 	return 0;
 
 cleanup_pending:
+	atomic_dec(&intel_crtc->unpin_work_count);
 	atomic_sub(1 << intel_crtc->plane, &work->old_fb_obj->pending_flip);
 	drm_gem_object_unreference(&work->old_fb_obj->base);
 	drm_gem_object_unreference(&obj->base);
