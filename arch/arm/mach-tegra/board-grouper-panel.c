@@ -66,7 +66,7 @@ static struct regulator *grouper_lvds_reg;
 static struct regulator *grouper_lvds_vdd_panel;
 
 static tegra_dc_bl_output grouper_bl_output_measured = {
-	0, 13, 13, 13, 13, 13, 13, 13,
+	13, 13, 13, 13, 13, 13, 13, 13,
 	13, 13, 13, 13, 13, 13, 14, 15,
 	16, 17, 18, 19, 20, 21, 22, 23,
 	24, 25, 26, 27, 28, 29, 30, 31,
