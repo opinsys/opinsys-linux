@@ -1,3 +1,12 @@
+linux (3.6.6-999.1352806650) quantal; urgency=low
+
+  * New release
+    - stable kernel v3.6.6
+    - overlayfs.v15
+    - r8169: Fix WoL on RTL8168d/8111d
+
+ -- Opinsys Debian Builder <opinsys@debuilder.opinsys.fi>  Tue, 13 Nov 2012 13:37:31 +0200
+
 linux (3.5.0-18.29) quantal-proposed; urgency=low
 
   [Luis Henriques]
