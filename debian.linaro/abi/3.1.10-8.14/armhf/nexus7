@@ -415,6 +415,8 @@ EXPORT_SYMBOL vmlinux 0x00000000	backlight_device_register
 EXPORT_SYMBOL vmlinux 0x00000000	backlight_device_unregister
 EXPORT_SYMBOL vmlinux 0x00000000	backlight_force_update
 EXPORT_SYMBOL vmlinux 0x00000000	balance_dirty_pages_ratelimited_nr
+EXPORT_SYMBOL vmlinux 0x00000000	baseband_xmm_ap_resume_work
+EXPORT_SYMBOL vmlinux 0x00000000	baseband_xmm_power_ipc_ap_wake_irq
 EXPORT_SYMBOL vmlinux 0x00000000	baswap
 EXPORT_SYMBOL vmlinux 0x00000000	batostr
 EXPORT_SYMBOL vmlinux 0x00000000	battery_callback
@@ -660,11 +662,15 @@ EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_mgmt_tx_status
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_michael_mic_failure
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_new_sta
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_notify_new_peer_candidate
+EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_pmksa_candidate_notify
+EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_probe_status
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_put_bss
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_ready_on_channel
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_remain_on_channel_expired
+EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_report_obss_beacon
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_roamed
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_rx_mgmt
+EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_rx_spurious_frame
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_scan_done
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_sched_scan_results
 EXPORT_SYMBOL vmlinux 0x00000000	cfg80211_sched_scan_stopped
@@ -1274,6 +1280,10 @@ EXPORT_SYMBOL vmlinux 0x00000000	gnet_stats_start_copy
 EXPORT_SYMBOL vmlinux 0x00000000	gnet_stats_start_copy_compat
 EXPORT_SYMBOL vmlinux 0x00000000	grab_cache_page_nowait
 EXPORT_SYMBOL vmlinux 0x00000000	grab_cache_page_write_begin
+EXPORT_SYMBOL vmlinux 0x00000000	grouper_get_project_id
+EXPORT_SYMBOL vmlinux 0x00000000	grouper_query_audio_codec
+EXPORT_SYMBOL vmlinux 0x00000000	grouper_query_bt_wifi_module
+EXPORT_SYMBOL vmlinux 0x00000000	grouper_query_gps_module
 EXPORT_SYMBOL vmlinux 0x00000000	grouper_query_pcba_revision
 EXPORT_SYMBOL vmlinux 0x00000000	grouper_query_pmic_id
 EXPORT_SYMBOL vmlinux 0x00000000	groups_alloc
@@ -1968,6 +1978,9 @@ EXPORT_SYMBOL vmlinux 0x00000000	mod_timer
 EXPORT_SYMBOL vmlinux 0x00000000	mod_timer_pending
 EXPORT_SYMBOL vmlinux 0x00000000	mod_timer_pinned
 EXPORT_SYMBOL vmlinux 0x00000000	mod_zone_page_state
+EXPORT_SYMBOL vmlinux 0x00000000	modem_flash
+EXPORT_SYMBOL vmlinux 0x00000000	modem_pm
+EXPORT_SYMBOL vmlinux 0x00000000	modem_ver
 EXPORT_SYMBOL vmlinux 0x00000000	module_put
 EXPORT_SYMBOL vmlinux 0x00000000	module_refcount
 EXPORT_SYMBOL vmlinux 0x00000000	mount_bdev
@@ -2215,7 +2228,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	param_set_ushort
 EXPORT_SYMBOL vmlinux 0x00000000	path_get
 EXPORT_SYMBOL vmlinux 0x00000000	path_is_under
 EXPORT_SYMBOL vmlinux 0x00000000	path_put
-EXPORT_SYMBOL vmlinux 0x00000000	pcb_id_version
 EXPORT_SYMBOL vmlinux 0x00000000	pci_add_new_bus
 EXPORT_SYMBOL vmlinux 0x00000000	pci_assign_resource
 EXPORT_SYMBOL vmlinux 0x00000000	pci_back_from_sleep
@@ -3334,6 +3346,8 @@ EXPORT_SYMBOL vmlinux 0x00000000	tegra_periph_reset_assert
 EXPORT_SYMBOL vmlinux 0x00000000	tegra_periph_reset_deassert
 EXPORT_SYMBOL vmlinux 0x00000000	tegra_pinmux_config_table
 EXPORT_SYMBOL vmlinux 0x00000000	tegra_rpc_release
+EXPORT_SYMBOL vmlinux 0x00000000	tegra_usb_resume_hsic
+EXPORT_SYMBOL vmlinux 0x00000000	tegra_usb_suspend_hsic
 EXPORT_SYMBOL vmlinux 0x00000000	test_set_page_writeback
 EXPORT_SYMBOL vmlinux 0x00000000	test_taint
 EXPORT_SYMBOL vmlinux 0x00000000	textsearch_destroy
@@ -3508,6 +3522,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	usb_wwan_tiocmget
 EXPORT_SYMBOL vmlinux 0x00000000	usb_wwan_tiocmset
 EXPORT_SYMBOL vmlinux 0x00000000	usb_wwan_write
 EXPORT_SYMBOL vmlinux 0x00000000	usb_wwan_write_room
+EXPORT_SYMBOL vmlinux 0x00000000	use_hsic_controller
 EXPORT_SYMBOL vmlinux 0x00000000	usecs_to_jiffies
 EXPORT_SYMBOL vmlinux 0x00000000	user_path_at
 EXPORT_SYMBOL vmlinux 0x00000000	user_path_create
@@ -4183,6 +4198,8 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	attribute_container_find_class_device
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	attribute_container_register
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	attribute_container_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	audit_enabled
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	baseband_xmm_L3_resume_check
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	baseband_xmm_set_power_status
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	bd_link_disk_holder
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	bd_unlink_disk_holder
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	bdi_writeout_inc
@@ -5291,6 +5308,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	ricoh583_read
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ricoh583_set_bits
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ricoh583_update
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ricoh583_write
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	ril_change_modem_crash_mode
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ring_buffer_alloc_read_page
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ring_buffer_change_overwrite
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ring_buffer_commit_overrun_cpu
