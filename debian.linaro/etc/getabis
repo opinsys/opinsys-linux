@@ -1,8 +1,5 @@
 repo_list=(
-	"http://archive.ubuntu.com/ubuntu/pool/main/l/linux"
-	"http://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux"
-	"http://archive.ubuntu.com/ubuntu/pool/universe/l/linux"
-	"http://ports.ubuntu.com/ubuntu-ports/pool/universe/l/linux"
+	"http://ports.ubuntu.com/ubuntu-ports/pool/universe/l/linux-nexus7"
 )
 
 getall armhf nexus7
