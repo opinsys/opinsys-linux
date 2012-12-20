@@ -169,8 +169,7 @@ struct dma_buf *i915_gem_prime_export(struct drm_device *dev,
 {
 	struct drm_i915_gem_object *obj = to_intel_bo(gem_obj);
 
-	return dma_buf_export(obj, &i915_dmabuf_ops,
-						  obj->base.size, 0600);
+	return dma_buf_export(obj, &i915_dmabuf_ops, obj->base.size, flags);
 }
 
 struct drm_gem_object *i915_gem_prime_import(struct drm_device *dev,
