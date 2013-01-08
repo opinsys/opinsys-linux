@@ -4180,6 +4180,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	__suspend_report_result
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	__symbol_get
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	__timecompare_update
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	__trace_bprintk
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	__trace_note_message
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	__trace_printk
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	__tracepoint_block_bio_complete
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	__tracepoint_block_bio_remap
@@ -4240,6 +4241,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	bd_unlink_disk_holder
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	bdi_writeout_inc
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_abort_queue
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_abort_request
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_add_driver_data
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_add_request_payload
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_end_request_err
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_execute_rq_nowait
@@ -4255,6 +4257,9 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_rq_check_limits
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_rq_err_bytes
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_rq_prep_clone
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_rq_unprep_clone
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_trace_remove
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_trace_setup
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_trace_startstop
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_unprep_request
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blk_update_request
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	blkcipher_walk_done
@@ -5328,6 +5333,14 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_sync_voltage
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_unregister_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_use_dummy_regulator
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_buf_full
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_close
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_file_operations
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_flush
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_open
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_reset
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_subbufs_consumed
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	relay_switch_subbuf
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	release_pmu
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	remove_irq
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	replace_page_cache_page
