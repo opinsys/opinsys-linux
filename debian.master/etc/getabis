@@ -11,7 +11,7 @@ package_prefixes linux-image linux-image-extra
 getall armel omap
 getall armhf omap highbank
 getall amd64 generic
-getall i386 generic
+getall i386 generic generic-nopae
 
 # Ports arches and flavours.
 getall powerpc powerpc-smp powerpc64-smp

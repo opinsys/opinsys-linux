@@ -1,3 +1,9 @@
+linux (3.6.6-999.1357800806) quantal; urgency=low
+
+  * New flavour for i386: generic-nopae
+
+ -- Opinsys Developers <dev@opinsys.fi>  Thu, 10 Jan 2013 10:26:17 +0200
+
 linux (3.6.6-999.1352806650) quantal; urgency=low
 
   * New release
