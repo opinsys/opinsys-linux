@@ -250,15 +250,11 @@ static bool ath_prepare_reset(struct ath_softc *sc, bool retry_tx)
 	ath9k_debug_samp_bb_mac(sc);
 	ath9k_hw_disable_interrupts(ah);
 
-	tasklet_disable(&sc->intr_tq);
-
 	if (!ath_stoprecv(sc))
 		ret = false;
 
 	if (!ath_drain_all_txq(sc, retry_tx))
 		ret = false;
-
-	tasklet_enable(&sc->intr_tq);
 
 	return ret;
 }
@@ -321,6 +317,7 @@ static int ath_reset_internal(struct ath_softc *sc, struct ath9k_channel *hchan,
 
 	__ath_cancel_work(sc);
 
+	tasklet_disable(&sc->intr_tq);
 	spin_lock_bh(&sc->sc_pcu_lock);
 
 	if (!(sc->sc_flags & SC_OP_OFFCHANNEL)) {
@@ -351,6 +348,8 @@ static int ath_reset_internal(struct ath_softc *sc, struct ath9k_channel *hchan,
 
 out:
 	spin_unlock_bh(&sc->sc_pcu_lock);
+	tasklet_enable(&sc->intr_tq);
+
 	return r;
 }
 
