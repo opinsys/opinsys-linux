@@ -1,3 +1,9 @@
+linux (3.6.6-1000) quantal; urgency=low
+
+  * i386: CONFIG_USB_SERIAL_CONSOLE=y
+
+ -- Tuomas Räsänen <tuomasjjrasanen@opinsys.fi>  Tue, 15 Jan 2013 13:52:40 +0200
+
 linux (3.6.6-999.1357800806) quantal; urgency=low
 
   * New flavour for i386: generic-nopae
