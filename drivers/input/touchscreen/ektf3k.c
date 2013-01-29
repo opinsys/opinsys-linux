@@ -920,8 +920,8 @@ static void elan_ktf3k_ts_report_data(struct i2c_client *client, uint8_t *buf)
 			   pressure_size = touch_size << 4; // shift left touch size value to 4 bits for max pressure value 255   
                       input_report_abs(idev, ABS_MT_TOUCH_MAJOR, touch_size);
                       input_report_abs(idev, ABS_MT_PRESSURE, pressure_size);
-                      input_report_abs(idev, ABS_MT_POSITION_X, x);
-                      input_report_abs(idev, ABS_MT_POSITION_Y, (ts->abs_y_max - y));
+                      input_report_abs(idev, ABS_MT_POSITION_X, y);
+                      input_report_abs(idev, ABS_MT_POSITION_Y, x);
                       if(unlikely(gPrint_point)) touch_debug(DEBUG_INFO, "[elan] finger id=%d X=%d y=%d size=%d pressure=%d\n", i, x, y, touch_size, pressure_size);
 		     }
 		 }
@@ -970,8 +970,8 @@ static void elan_ktf3k_ts_report_data2(struct i2c_client *client, uint8_t *buf)
 			   pressure_size = buf[45 + i];	 
 			   input_report_abs(idev, ABS_MT_TOUCH_MAJOR, touch_size);
 			   input_report_abs(idev, ABS_MT_PRESSURE, pressure_size);
-			   input_report_abs(idev, ABS_MT_POSITION_X, x);
-			   input_report_abs(idev, ABS_MT_POSITION_Y, (ts->abs_y_max -y));
+			   input_report_abs(idev, ABS_MT_POSITION_X, y);
+			   input_report_abs(idev, ABS_MT_POSITION_Y, x);
 			   if(unlikely(gPrint_point)) touch_debug(DEBUG_INFO, "[elan] finger id=%d X=%d y=%d size=%d pressure=%d\n", i, x, y, touch_size, pressure_size);
 		     }
 		 }
@@ -1510,13 +1510,13 @@ static int elan_ktf3k_ts_probe(struct i2c_client *client,
 	ts->abs_y_max = pdata->abs_y_max;
 	touch_debug(DEBUG_INFO, "[Elan] Max X=%d, Max Y=%d\n", ts->abs_x_max, ts->abs_y_max);
 
-	input_set_abs_params(ts->input_dev, ABS_Y, pdata->abs_y_min,  pdata->abs_y_max, 0, 0); // for 800 * 1280
-	input_set_abs_params(ts->input_dev, ABS_X, pdata->abs_x_min,  pdata->abs_x_max, 0, 0);// for 800 * 1280
+	input_set_abs_params(ts->input_dev, ABS_X, pdata->abs_y_min,  pdata->abs_y_max, 0, 0); // for 800 * 1280
+	input_set_abs_params(ts->input_dev, ABS_Y, pdata->abs_x_min,  pdata->abs_x_max, 0, 0);// for 800 * 1280
 	input_set_abs_params(ts->input_dev, ABS_PRESSURE, 0, MAX_FINGER_PRESSURE, 0, 0);
 
 	input_mt_init_slots(ts->input_dev, FINGER_NUM);
-	input_set_abs_params(ts->input_dev, ABS_MT_POSITION_Y, pdata->abs_y_min,  pdata->abs_y_max, 0, 0); // for 800 * 1280
-	input_set_abs_params(ts->input_dev, ABS_MT_POSITION_X, pdata->abs_x_min,  pdata->abs_x_max, 0, 0);// for 800 * 1280
+	input_set_abs_params(ts->input_dev, ABS_MT_POSITION_X, pdata->abs_y_min,  pdata->abs_y_max, 0, 0); // for 800 * 1280 
+	input_set_abs_params(ts->input_dev, ABS_MT_POSITION_Y, pdata->abs_x_min,  pdata->abs_x_max, 0, 0);// for 800 * 1280 
 	input_set_abs_params(ts->input_dev, ABS_MT_TOUCH_MAJOR, 0, MAX_FINGER_SIZE, 0, 0);
 	input_set_abs_params(ts->input_dev, ABS_MT_PRESSURE, 0, MAX_FINGER_PRESSURE, 0, 0);
 
