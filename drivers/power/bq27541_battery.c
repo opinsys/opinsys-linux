@@ -111,6 +111,8 @@ enum {
 	REG_CAPACITY,
 	REG_SERIAL_NUMBER,
 	REG_CHARGE_NOW,
+	REG_CHARGE_FULL,
+	REG_CHARGE_DESIGN,
 	REG_ENERGY,
 	REG_POWER,
 	REG_CYCLE,
@@ -143,6 +145,8 @@ static struct bq27541_device_data {
 	[REG_CAPACITY]				= BQ27541_DATA(CAPACITY, 0x2c, 0, 100),
 
 	[REG_CHARGE_NOW]			= BQ27541_DATA(CHARGE_NOW, 0x10, 0, 65535),
+	[REG_CHARGE_FULL]			= BQ27541_DATA(CHARGE_FULL, 0x12, 0, 65535),
+	[REG_CHARGE_DESIGN]			= BQ27541_DATA(CHARGE_FULL_DESIGN, 0x3c, 0, 65535),
 	[REG_ENERGY]				= BQ27541_DATA(ENERGY_NOW, 0x22, 0, 65535),
 	[REG_POWER]				= BQ27541_DATA(POWER_AVG, 0x24, 0, 65535),
 	[REG_CYCLE]				= BQ27541_DATA(CYCLE_COUNT, 0x2a, 0, 65535),
@@ -159,6 +163,8 @@ static enum power_supply_property bq27541_properties[] = {
 	POWER_SUPPLY_PROP_CAPACITY,
 	POWER_SUPPLY_PROP_TEMP,
 	POWER_SUPPLY_PROP_CHARGE_NOW,
+	POWER_SUPPLY_PROP_CHARGE_FULL,
+	POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN,
 	POWER_SUPPLY_PROP_ENERGY_NOW,
 	POWER_SUPPLY_PROP_CYCLE_COUNT
 };
@@ -510,6 +516,14 @@ static int bq27541_get_psp(int reg_offset, enum power_supply_property psp,
 		val->intval = rt_value * 1000;
 		BAT_NOTICE("charge_now = %u uA\n", val->intval);
 	}
+	if (psp == POWER_SUPPLY_PROP_CHARGE_FULL) {
+		val->intval = rt_value * 1000;
+		BAT_NOTICE("charge_full = %u uAh\n", val->intval);
+	}
+	if (psp == POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN) {
+		val->intval = rt_value * 1000;
+		BAT_NOTICE("charge_design = %u uAh\n", val->intval);
+	}
 	if (psp == POWER_SUPPLY_PROP_ENERGY_NOW) {
 		val->intval = rt_value * 1000;
 		BAT_NOTICE("energy_now = %u uWh\n", val->intval);
@@ -730,6 +744,8 @@ static int bq27541_get_property(struct power_supply *psy,
 		case POWER_SUPPLY_PROP_TEMP:
 		case POWER_SUPPLY_PROP_SERIAL_NUMBER:
 		case POWER_SUPPLY_PROP_CHARGE_NOW:
+		case POWER_SUPPLY_PROP_CHARGE_FULL:
+		case POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN:
 		case POWER_SUPPLY_PROP_ENERGY_NOW:
 		case POWER_SUPPLY_PROP_CYCLE_COUNT:
 			for (count = 0; count < REG_MAX; count++) {
