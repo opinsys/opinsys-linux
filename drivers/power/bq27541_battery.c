@@ -155,6 +155,7 @@ static enum power_supply_property bq27541_properties[] = {
 	POWER_SUPPLY_PROP_PRESENT,
 	POWER_SUPPLY_PROP_TECHNOLOGY,
 	POWER_SUPPLY_PROP_VOLTAGE_NOW,
+	POWER_SUPPLY_PROP_CURRENT_NOW,
 	POWER_SUPPLY_PROP_CAPACITY,
 	POWER_SUPPLY_PROP_TEMP,
 	POWER_SUPPLY_PROP_CHARGE_NOW,
@@ -495,6 +496,7 @@ static int bq27541_get_psp(int reg_offset, enum power_supply_property psp,
 	union power_supply_propval *val)
 {
 	s32 ret;
+	s16 tmp;
 	int rt_value=0;
 
 	bq27541_device->smbus_status = bq27541_smbus_read_data(reg_offset, 0, &rt_value);
@@ -516,6 +518,12 @@ static int bq27541_get_psp(int reg_offset, enum power_supply_property psp,
 	if (psp == POWER_SUPPLY_PROP_CYCLE_COUNT) {
 		val->intval = rt_value;
 		BAT_NOTICE("cycle count = %u\n", val->intval);
+	}
+	if (psp == POWER_SUPPLY_PROP_CURRENT_NOW) {
+		tmp = (s16)rt_value;
+		val->intval = (tmp < 0) ? -tmp : tmp;
+		val->intval *= 1000;
+		BAT_NOTICE("current_now = %u uA\n", val->intval);
 	}
 	if (psp == POWER_SUPPLY_PROP_VOLTAGE_NOW) {
 		if (rt_value >= bq27541_data[REG_VOLTAGE].min_value &&
@@ -719,6 +727,7 @@ static int bq27541_get_property(struct power_supply *psy,
 
 		case POWER_SUPPLY_PROP_STATUS:
 		case POWER_SUPPLY_PROP_VOLTAGE_NOW:
+		case POWER_SUPPLY_PROP_CURRENT_NOW:
 		case POWER_SUPPLY_PROP_TEMP:
 		case POWER_SUPPLY_PROP_SERIAL_NUMBER:
 		case POWER_SUPPLY_PROP_CHARGE_NOW:
