@@ -511,8 +511,7 @@ static int bq27541_get_psp(int reg_offset, enum power_supply_property psp,
 		BAT_NOTICE("charge_now = %u uA\n", val->intval);
 	}
 	if (psp == POWER_SUPPLY_PROP_ENERGY_NOW) {
-		/* energy is reported in 10 mWh */
-		val->intval = rt_value * 10000;
+		val->intval = rt_value * 1000;
 		BAT_NOTICE("energy_now = %u uWh\n", val->intval);
 	}
 	if (psp == POWER_SUPPLY_PROP_CYCLE_COUNT) {
