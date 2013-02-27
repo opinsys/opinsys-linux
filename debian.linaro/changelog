@@ -10,6 +10,9 @@ linux-nexus7 (3.1.10-10.28) UNRELEASED; urgency=low
   * Updated configs to be more device consistent with
     arch/arm/configs/cyanogenmod_grouper_defconfig
 
+https://wiki.ubuntu.com/Touch/Porting#Kernel
+http://phablet.ubuntu.com/gitweb?p=CyanogenMod/android_kernel_asus_grouper.git;a=shortlog;h=refs/heads/phablet-10.1
+
  --  Tim Gardner <tim.gardner@canonical.com>  Wed, 27 Feb 2013 11:55:02 -0700
 
 linux-nexus7 (3.1.10-9.27) raring; urgency=low
