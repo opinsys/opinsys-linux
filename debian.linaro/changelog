@@ -6,12 +6,26 @@ linux-nexus7 (3.1.10-10.28) UNRELEASED; urgency=low
 
   [ Tim Gardner ]
 
-  * Rebased against git://github.com/CyanogenMod/android_kernel_asus_grouper.git cm-10.1
+  * Rebased against git://phablet.ubuntu.com/CyanogenMod/android_kernel_asus_grouper.git phablet-10.1
   * Updated configs to be more device consistent with
     arch/arm/configs/cyanogenmod_grouper_defconfig
-
-https://wiki.ubuntu.com/Touch/Porting#Kernel
-http://phablet.ubuntu.com/gitweb?p=CyanogenMod/android_kernel_asus_grouper.git;a=shortlog;h=refs/heads/phablet-10.1
+    https://wiki.ubuntu.com/Touch/Porting#Kernel
+    http://phablet.ubuntu.com/gitweb?p=CyanogenMod/android_kernel_asus_grouper.git;a=shortlog;h=refs/heads/phablet-10.1
+  * Pull config changes from git://phablet.ubuntu.com/CyanogenMod/android_kernel_asus_grouper.git phablet-10.1
+    CONFIG_NAMESPACES=y
+    CONFIG_UTS_NS=y
+    CONFIG_IPC_NS=y
+    CONFIG_USER_NS=y
+    CONFIG_PID_NS=y
+    CONFIG_NET_NS=y
+    CONFIG_DEVTMPFS=y
+    CONFIG_DEVPTS_MULTIPLE_INSTANCES=y
+    CONFIG_DNOTIFY=y
+    CONFIG_FANOTIFY=y
+    CONFIG_FANOTIFY_ACCESS_PERMISSIONS=y
+    ONFIG_ANDROID_PARANOID_NETWORK=n
+    ONFIG_DEVPTS_MULTIPLE_INSTANCES=y
+    CONFIG_SYSVIPC=y
 
  --  Tim Gardner <tim.gardner@canonical.com>  Wed, 27 Feb 2013 11:55:02 -0700
 
