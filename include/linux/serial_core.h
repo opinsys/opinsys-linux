@@ -48,7 +48,10 @@
 #define PORT_TEGRA	20	/* NVIDIA Tegra internal UART */
 #define PORT_XR17D15X	21	/* Exar XR17D15x UART */
 #define PORT_BRCM_TRUMANAGE	22
-#define PORT_MAX_8250	22	/* max port ID */
+#define PORT_ALTR_16550_F32 23	/* Altera 16550 UART with 32 FIFOs */
+#define PORT_ALTR_16550_F64 24	/* Altera 16550 UART with 64 FIFOs */
+#define PORT_ALTR_16550_F128 25	/* Altera 16550 UART with 128 FIFOs */
+#define PORT_MAX_8250	25	/* max port ID */
 
 /*
  * ARM specific type numbers.  These are not currently guaranteed
