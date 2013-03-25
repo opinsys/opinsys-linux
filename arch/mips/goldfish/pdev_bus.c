@@ -20,10 +20,10 @@
 #include <linux/platform_device.h>
 #include <linux/slab.h>
 
-#include <mach/hardware.h>
+#include <asm/mach-goldfish/hardware.h>
 #include <asm/io.h>
 
-#include <asm-mips/mach-goldfish/irq.h>
+#include <asm/mach-goldfish/irq.h>
 
 #define PDEV_BUS_OP_DONE        (0x00)
 #define PDEV_BUS_OP_REMOVE_DEV  (0x04)
@@ -48,7 +48,7 @@ struct pdev_bus_dev {
 
 static void goldfish_pdev_worker(struct work_struct *work);
 
-static uint32_t pdev_bus_base;
+static void __iomem *pdev_bus_base;
 static uint32_t pdev_bus_irq;
 static LIST_HEAD(pdev_bus_new_devices);
 static LIST_HEAD(pdev_bus_registered_devices);
