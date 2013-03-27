@@ -35,6 +35,7 @@ nfs
 nfs_acl
 nfsd
 nfs_layout_nfsv41_files
+overlayfs
 p8022
 psnap
 snd-rawmidi
