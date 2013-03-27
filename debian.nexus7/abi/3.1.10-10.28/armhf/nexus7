@@ -121,6 +121,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	__dev_get_by_index
 EXPORT_SYMBOL vmlinux 0x00000000	__dev_get_by_name
 EXPORT_SYMBOL vmlinux 0x00000000	__dev_getfirstbyhwtype
 EXPORT_SYMBOL vmlinux 0x00000000	__dev_remove_pack
+EXPORT_SYMBOL vmlinux 0x00000000	__devcgroup_inode_permission
 EXPORT_SYMBOL vmlinux 0x00000000	__devm_release_region
 EXPORT_SYMBOL vmlinux 0x00000000	__devm_request_region
 EXPORT_SYMBOL vmlinux 0x00000000	__div0
@@ -992,6 +993,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	do_gettimeofday
 EXPORT_SYMBOL vmlinux 0x00000000	do_mmap_pgoff
 EXPORT_SYMBOL vmlinux 0x00000000	do_munmap
 EXPORT_SYMBOL vmlinux 0x00000000	do_settimeofday
+EXPORT_SYMBOL vmlinux 0x00000000	do_splice_direct
 EXPORT_SYMBOL vmlinux 0x00000000	do_sync_read
 EXPORT_SYMBOL vmlinux 0x00000000	do_sync_write
 EXPORT_SYMBOL vmlinux 0x00000000	do_unblank_screen
@@ -2745,6 +2747,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	security_inet_conn_request
 EXPORT_SYMBOL vmlinux 0x00000000	security_inode_getsecctx
 EXPORT_SYMBOL vmlinux 0x00000000	security_inode_init_security
 EXPORT_SYMBOL vmlinux 0x00000000	security_inode_notifysecctx
+EXPORT_SYMBOL vmlinux 0x00000000	security_inode_permission
 EXPORT_SYMBOL vmlinux 0x00000000	security_inode_setsecctx
 EXPORT_SYMBOL vmlinux 0x00000000	security_netlink_recv
 EXPORT_SYMBOL vmlinux 0x00000000	security_path_mkdir
@@ -3623,6 +3626,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	vfs_llseek
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_lstat
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_mkdir
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_mknod
+EXPORT_SYMBOL vmlinux 0x00000000	vfs_open
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_path_lookup
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_read
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_readdir
@@ -4357,6 +4361,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	cleanup_srcu_struct
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	clockevent_delta2ns
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	clockevents_notify
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	clockevents_register_device
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	clone_private_mount
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	con_debug_enter
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	con_debug_leave
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	console_drivers
