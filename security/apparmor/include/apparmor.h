@@ -29,9 +29,8 @@
 #define AA_CLASS_NET		4
 #define AA_CLASS_RLIMITS	5
 #define AA_CLASS_DOMAIN		6
-#define AA_CLASS_MOUNT		7
 
-#define AA_CLASS_LAST		AA_CLASS_MOUNT
+#define AA_CLASS_LAST		AA_CLASS_DOMAIN
 
 /* Control parameters settable through module/boot flags */
 extern enum audit_mode aa_g_audit;
