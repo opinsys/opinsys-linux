@@ -6,6 +6,10 @@ linux (3.9.0-0.1) UNRELEASED; urgency=low
 
   [ Upstream Kernel Changes ]
 
+  * rebase to v3.9-rc8
+
+  [ Upstream Kernel Changes ]
+
   * rebase to v3.9-rc7
     - LP: #1128840
 
