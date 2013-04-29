@@ -121,6 +121,7 @@ firmware:       comedi/jr3pci.idm
 firmware:       cp204unx.cod
 firmware:       cpia2/stv0672_vp4.bin
 firmware:       ct2fw-3.1.0.0.bin
+firmware:       ctefx.bin
 firmware:       ctfw-3.1.0.0.bin
 firmware:       cxgb3/ael2005_opt_edc.bin
 firmware:       cxgb3/ael2005_twx_edc.bin
@@ -142,6 +143,10 @@ firmware:       dvb-fe-xc5000c-4.1.30.7.fw
 firmware:       dvb-usb-af9015.fw
 firmware:       dvb-usb-af9035-02.fw
 firmware:       dvb-usb-dib0700-1.20.fw
+firmware:       dvb-usb-dw2101.fw
+firmware:       dvb-usb-dw2102.fw
+firmware:       dvb-usb-dw2104.fw
+firmware:       dvb-usb-dw3101.fw
 firmware:       dvb-usb-ec168.fw
 firmware:       dvb-usb-it9135-01.fw
 firmware:       dvb-usb-it9135-02.fw
@@ -152,6 +157,10 @@ firmware:       dvb-usb-lme2510c-s0194.fw
 firmware:       dvb-usb-lme2510c-s7395.fw
 firmware:       dvb-usb-lme2510-lg.fw
 firmware:       dvb-usb-lme2510-s0194.fw
+firmware:       dvb-usb-p1100.fw
+firmware:       dvb-usb-p7500.fw
+firmware:       dvb-usb-s630.fw
+firmware:       dvb-usb-s660.fw
 firmware:       dvb-usb-terratec-h7-az6007.fw
 firmware:       e100/d101m_ucode.bin
 firmware:       e100/d101s_ucode.bin
@@ -244,6 +253,7 @@ firmware:       iwlwifi-105-6.ucode
 firmware:       iwlwifi-135-6.ucode
 firmware:       iwlwifi-2000-6.ucode
 firmware:       iwlwifi-2030-6.ucode
+firmware:       iwlwifi-3160-6.ucode
 firmware:       iwlwifi-3945-2.ucode
 firmware:       iwlwifi-4965-2.ucode
 firmware:       iwlwifi-5000-5.ucode
@@ -252,6 +262,7 @@ firmware:       iwlwifi-6000-4.ucode
 firmware:       iwlwifi-6000g2a-5.ucode
 firmware:       iwlwifi-6000g2b-6.ucode
 firmware:       iwlwifi-6050-5.ucode
+firmware:       iwlwifi-7260-6.ucode
 firmware:       kaweth/new_code.bin
 firmware:       kaweth/new_code_fix.bin
 firmware:       kaweth/trigger_code.bin
@@ -308,6 +319,7 @@ firmware:       mixart/miXart8AES.xlx
 firmware:       mixart/miXart8.elf
 firmware:       mixart/miXart8.xlx
 firmware:       mrvl/pcie8766_uapsta.bin
+firmware:       mrvl/pcie8897_uapsta.bin
 firmware:       mrvl/sd8786_uapsta.bin
 firmware:       mrvl/sd8787_uapsta.bin
 firmware:       mrvl/sd8797_uapsta.bin
@@ -320,7 +332,7 @@ firmware:       mts_mt9234zba.fw
 firmware:       multiface_firmware.bin
 firmware:       multiface_firmware_rev11.bin
 firmware:       mwl8k/fmimage_8363.fw
-firmware:       mwl8k/fmimage_8366_ap-2.fw
+firmware:       mwl8k/fmimage_8366_ap-3.fw
 firmware:       mwl8k/fmimage_8366.fw
 firmware:       mwl8k/fmimage_8687.fw
 firmware:       mwl8k/helper_8363.fw
@@ -391,6 +403,11 @@ firmware:       radeon/CYPRESS_rlc.bin
 firmware:       radeon/JUNIPER_me.bin
 firmware:       radeon/JUNIPER_pfp.bin
 firmware:       radeon/JUNIPER_rlc.bin
+firmware:       radeon/OLAND_ce.bin
+firmware:       radeon/OLAND_mc.bin
+firmware:       radeon/OLAND_me.bin
+firmware:       radeon/OLAND_pfp.bin
+firmware:       radeon/OLAND_rlc.bin
 firmware:       radeon/PALM_me.bin
 firmware:       radeon/PALM_pfp.bin
 firmware:       radeon/PITCAIRN_ce.bin
@@ -449,6 +466,7 @@ firmware:       radeon/VERDE_me.bin
 firmware:       radeon/VERDE_pfp.bin
 firmware:       radeon/VERDE_rlc.bin
 firmware:       riptide.hex
+firmware:       rp2.fw
 firmware:       rpm_firmware.bin
 firmware:       rt2561.bin
 firmware:       rt2561s.bin
@@ -529,7 +547,7 @@ firmware:       ti-connectivity/wl127x-fw-5-sr.bin
 firmware:       ti-connectivity/wl128x-fw-5-mr.bin
 firmware:       ti-connectivity/wl128x-fw-5-plt.bin
 firmware:       ti-connectivity/wl128x-fw-5-sr.bin
-firmware:       ti-connectivity/wl18xx-fw.bin
+firmware:       ti-connectivity/wl18xx-fw-2.bin
 firmware:       tigon/tg3.bin
 firmware:       tigon/tg3_tso5.bin
 firmware:       tigon/tg3_tso.bin
