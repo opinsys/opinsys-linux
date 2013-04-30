@@ -670,6 +670,7 @@ static struct file_system_type ovl_fs_type = {
 	.mount		= ovl_mount,
 	.kill_sb	= kill_anon_super,
 };
+MODULE_ALIAS_FS("overlayfs");
 
 static int __init ovl_init(void)
 {
