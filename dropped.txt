@@ -1,6 +1,4 @@
-UBUNTU: SAUCE: clk: export __clk_get_name helpers to modules
-UBUNTU: SAUCE: ARM: omap2 add mac address allocation register api
-UBUNTU: ubuntu: overlayfs -- vfs: add i_op->dentry_open()
-UBUNTU: SAUCE: imx6: enable sata clk if SATA_AHCI_PLATFORM
-UBUNTU: SAUCE: imx6: dts: Add IMX6Q AHCI support
-UBUNTU: SAUCE: ARM: omap2 panda register ethernet and wlan for automatic mac allocation
+UBUNTU: SAUCE: (no-up) Bluetooth: Implement broadcom patchram firmware loader
+UBUNTU: SAUCE: (no-up) Bluetooth: Add support for 13d3:3388 and 13d3:3389
+UBUNTU: SAUCE: (no-up) mac80211_hwsim: Register and bind to driver
+
