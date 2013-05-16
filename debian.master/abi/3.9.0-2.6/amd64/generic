@@ -166,7 +166,6 @@ EXPORT_SYMBOL drivers/gpu/drm/drm 0x2ea467a2	drm_gem_object_handle_free
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x3034789c	drm_addbufs_agp
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x3074f033	drm_order
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x31dd3c68	drm_mm_init_scan_with_range
-EXPORT_SYMBOL drivers/gpu/drm/drm 0x3436174c	drm_prime_add_imported_buf_handle
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x344df3d0	drm_mm_scan_add_block
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x3545728b	drm_gem_create_mmap_offset
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x3567f359	drm_gem_prime_export
@@ -315,14 +314,13 @@ EXPORT_SYMBOL drivers/gpu/drm/drm 0xca45efbc	drm_format_horz_chroma_subsampling
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xcac329fa	drm_framebuffer_lookup
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xcb1beab5	drm_mode_vrefresh
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xcd0fc417	drm_ht_just_insert_please
-EXPORT_SYMBOL drivers/gpu/drm/drm 0xcd40e19a	drm_prime_remove_imported_buf_handle
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xcd4e678f	drm_prime_pages_to_sg
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xcda91c46	drm_mode_debug_printmodeline
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xcf19b7f9	drm_release
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xd125790d	drm_hdmi_avi_infoframe_from_display_mode
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xd2335101	drm_fb_get_bpp_depth
+EXPORT_SYMBOL drivers/gpu/drm/drm 0xd40ab9b5	drm_prime_lookup_buf_handle
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xd54dd1d2	drm_mode_destroy
-EXPORT_SYMBOL drivers/gpu/drm/drm 0xd6166745	drm_prime_lookup_imported_buf_handle
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xd87d4e87	drm_mode_detachmode_crtc
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xd9e367e6	drm_framebuffer_unreference
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xda0a93f4	drm_av_sync_delay
@@ -346,6 +344,7 @@ EXPORT_SYMBOL drivers/gpu/drm/drm 0xe8c5da75	drm_mode_remove
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xea1439d2	drm_irq_install
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xed46de48	drm_plane_init
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xed51b19d	drm_warn_on_modeset_not_all_locked
+EXPORT_SYMBOL drivers/gpu/drm/drm 0xee218a81	drm_prime_remove_buf_handle
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xf04ef693	drm_select_eld
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xf1149227	drm_platform_init
 EXPORT_SYMBOL drivers/gpu/drm/drm 0xf122c17a	drm_addbufs_pci
