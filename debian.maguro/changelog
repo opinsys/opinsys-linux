@@ -1,0 +1,11 @@
+linux-maguro (3.0.0-0.1) UNRELEASED; urgency=low
+
+  * 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 20 May 2013 10:10:48 -0600
+
+linux-maguro (3.0.0-0.0) saucy; urgency=low
+
+  * changelog placeholder
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 03 May 2013 17:00:50 +0100
