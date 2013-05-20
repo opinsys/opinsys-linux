@@ -1,6 +1,7 @@
-linux-maguro (3.0.0-0.1) UNRELEASED; urgency=low
+linux-maguro (3.0.0-0.1) saucy; urgency=low
 
-  * 
+  * Based on git://phablet.ubuntu.com/CyanogenMod/android_kernel_samsung_tuna.git phablet-10.1
+  * Build with gcc-4.6
 
  -- Tim Gardner <tim.gardner@canonical.com>  Mon, 20 May 2013 10:10:48 -0600
 
