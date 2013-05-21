@@ -374,6 +374,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	_raw_write_unlock_bh
 EXPORT_SYMBOL vmlinux 0x00000000	_raw_write_unlock_irq
 EXPORT_SYMBOL vmlinux 0x00000000	_raw_write_unlock_irqrestore
 EXPORT_SYMBOL vmlinux 0x00000000	_set_bit
+EXPORT_SYMBOL vmlinux 0x00000000	_snd_ctl_add_slave
 EXPORT_SYMBOL vmlinux 0x00000000	_snd_pcm_hw_param_setempty
 EXPORT_SYMBOL vmlinux 0x00000000	_snd_pcm_hw_params_any
 EXPORT_SYMBOL vmlinux 0x00000000	_snd_pcm_lib_alloc_vmalloc_buffer
@@ -732,19 +733,13 @@ EXPORT_SYMBOL vmlinux 0x00000000	clock_t_to_jiffies
 EXPORT_SYMBOL vmlinux 0x00000000	clocksource_change_rating
 EXPORT_SYMBOL vmlinux 0x00000000	clocksource_register
 EXPORT_SYMBOL vmlinux 0x00000000	clocksource_unregister
-EXPORT_SYMBOL vmlinux 0x00000000	color_table
 EXPORT_SYMBOL vmlinux 0x00000000	commit_creds
 EXPORT_SYMBOL vmlinux 0x00000000	complete
 EXPORT_SYMBOL vmlinux 0x00000000	complete_all
 EXPORT_SYMBOL vmlinux 0x00000000	complete_and_exit
 EXPORT_SYMBOL vmlinux 0x00000000	complete_request_key
 EXPORT_SYMBOL vmlinux 0x00000000	completion_done
-EXPORT_SYMBOL vmlinux 0x00000000	con_copy_unimap
-EXPORT_SYMBOL vmlinux 0x00000000	con_is_bound
-EXPORT_SYMBOL vmlinux 0x00000000	con_set_default_unimap
 EXPORT_SYMBOL vmlinux 0x00000000	congestion_wait
-EXPORT_SYMBOL vmlinux 0x00000000	console_blank_hook
-EXPORT_SYMBOL vmlinux 0x00000000	console_blanked
 EXPORT_SYMBOL vmlinux 0x00000000	console_conditional_schedule
 EXPORT_SYMBOL vmlinux 0x00000000	console_lock
 EXPORT_SYMBOL vmlinux 0x00000000	console_set_on_cmdline
@@ -834,11 +829,8 @@ EXPORT_SYMBOL vmlinux 0x00000000	deactivate_super
 EXPORT_SYMBOL vmlinux 0x00000000	debug_uart_clk
 EXPORT_SYMBOL vmlinux 0x00000000	debug_uart_port_base
 EXPORT_SYMBOL vmlinux 0x00000000	dec_zone_page_state
-EXPORT_SYMBOL vmlinux 0x00000000	default_blu
 EXPORT_SYMBOL vmlinux 0x00000000	default_file_splice_read
-EXPORT_SYMBOL vmlinux 0x00000000	default_grn
 EXPORT_SYMBOL vmlinux 0x00000000	default_llseek
-EXPORT_SYMBOL vmlinux 0x00000000	default_red
 EXPORT_SYMBOL vmlinux 0x00000000	default_wake_function
 EXPORT_SYMBOL vmlinux 0x00000000	del_gendisk
 EXPORT_SYMBOL vmlinux 0x00000000	del_timer
@@ -987,7 +979,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	dmam_pool_destroy
 EXPORT_SYMBOL vmlinux 0x00000000	dmam_release_declared_memory
 EXPORT_SYMBOL vmlinux 0x00000000	dns_query
 EXPORT_SYMBOL vmlinux 0x00000000	do_SAK
-EXPORT_SYMBOL vmlinux 0x00000000	do_blank_screen
 EXPORT_SYMBOL vmlinux 0x00000000	do_brk
 EXPORT_SYMBOL vmlinux 0x00000000	do_gettimeofday
 EXPORT_SYMBOL vmlinux 0x00000000	do_mmap_pgoff
@@ -996,7 +987,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	do_settimeofday
 EXPORT_SYMBOL vmlinux 0x00000000	do_splice_direct
 EXPORT_SYMBOL vmlinux 0x00000000	do_sync_read
 EXPORT_SYMBOL vmlinux 0x00000000	do_sync_write
-EXPORT_SYMBOL vmlinux 0x00000000	do_unblank_screen
 EXPORT_SYMBOL vmlinux 0x00000000	down
 EXPORT_SYMBOL vmlinux 0x00000000	down_interruptible
 EXPORT_SYMBOL vmlinux 0x00000000	down_killable
@@ -1110,13 +1100,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	fb_validate_mode
 EXPORT_SYMBOL vmlinux 0x00000000	fb_var_to_videomode
 EXPORT_SYMBOL vmlinux 0x00000000	fb_videomode_to_modelist
 EXPORT_SYMBOL vmlinux 0x00000000	fb_videomode_to_var
-EXPORT_SYMBOL vmlinux 0x00000000	fbcon_rotate_ccw
-EXPORT_SYMBOL vmlinux 0x00000000	fbcon_rotate_cw
-EXPORT_SYMBOL vmlinux 0x00000000	fbcon_rotate_ud
-EXPORT_SYMBOL vmlinux 0x00000000	fbcon_set_bitops
-EXPORT_SYMBOL vmlinux 0x00000000	fbcon_set_rotate
 EXPORT_SYMBOL vmlinux 0x00000000	fd_install
-EXPORT_SYMBOL vmlinux 0x00000000	fg_console
 EXPORT_SYMBOL vmlinux 0x00000000	fget
 EXPORT_SYMBOL vmlinux 0x00000000	fget_raw
 EXPORT_SYMBOL vmlinux 0x00000000	fib_default_rule_add
@@ -1147,7 +1131,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	files_lglock_local_unlock_cpu
 EXPORT_SYMBOL vmlinux 0x00000000	files_lglock_lock_init
 EXPORT_SYMBOL vmlinux 0x00000000	filp_close
 EXPORT_SYMBOL vmlinux 0x00000000	filp_open
-EXPORT_SYMBOL vmlinux 0x00000000	find_font
 EXPORT_SYMBOL vmlinux 0x00000000	find_get_page
 EXPORT_SYMBOL vmlinux 0x00000000	find_get_pages_contig
 EXPORT_SYMBOL vmlinux 0x00000000	find_get_pages_tag
@@ -1179,7 +1162,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	follow_down
 EXPORT_SYMBOL vmlinux 0x00000000	follow_down_one
 EXPORT_SYMBOL vmlinux 0x00000000	follow_pfn
 EXPORT_SYMBOL vmlinux 0x00000000	follow_up
-EXPORT_SYMBOL vmlinux 0x00000000	font_vga_8x16
 EXPORT_SYMBOL vmlinux 0x00000000	force_sig
 EXPORT_SYMBOL vmlinux 0x00000000	fput
 EXPORT_SYMBOL vmlinux 0x00000000	framebuffer_alloc
@@ -1268,7 +1250,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	genl_unregister_ops
 EXPORT_SYMBOL vmlinux 0x00000000	genlmsg_multicast_allns
 EXPORT_SYMBOL vmlinux 0x00000000	get_anon_bdev
 EXPORT_SYMBOL vmlinux 0x00000000	get_cfcnfg
-EXPORT_SYMBOL vmlinux 0x00000000	get_default_font
 EXPORT_SYMBOL vmlinux 0x00000000	get_disk
 EXPORT_SYMBOL vmlinux 0x00000000	get_fs_type
 EXPORT_SYMBOL vmlinux 0x00000000	get_gendisk
@@ -1290,8 +1271,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	get_zeroed_page
 EXPORT_SYMBOL vmlinux 0x00000000	getname
 EXPORT_SYMBOL vmlinux 0x00000000	getnstimeofday
 EXPORT_SYMBOL vmlinux 0x00000000	getrawmonotonic
-EXPORT_SYMBOL vmlinux 0x00000000	give_up_console
-EXPORT_SYMBOL vmlinux 0x00000000	global_cursor_default
 EXPORT_SYMBOL vmlinux 0x00000000	gnet_stats_copy_app
 EXPORT_SYMBOL vmlinux 0x00000000	gnet_stats_copy_basic
 EXPORT_SYMBOL vmlinux 0x00000000	gnet_stats_copy_queue
@@ -1729,7 +1708,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	journal_wipe
 EXPORT_SYMBOL vmlinux 0x00000000	kasprintf
 EXPORT_SYMBOL vmlinux 0x00000000	kblockd_schedule_delayed_work
 EXPORT_SYMBOL vmlinux 0x00000000	kblockd_schedule_work
-EXPORT_SYMBOL vmlinux 0x00000000	kd_mksound
 EXPORT_SYMBOL vmlinux 0x00000000	kern_path
 EXPORT_SYMBOL vmlinux 0x00000000	kern_path_create
 EXPORT_SYMBOL vmlinux 0x00000000	kern_unmount
@@ -2382,7 +2360,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	pipe_to_file
 EXPORT_SYMBOL vmlinux 0x00000000	pipe_unlock
 EXPORT_SYMBOL vmlinux 0x00000000	pm_idle
 EXPORT_SYMBOL vmlinux 0x00000000	pm_power_off
-EXPORT_SYMBOL vmlinux 0x00000000	pm_set_vt_switch
 EXPORT_SYMBOL vmlinux 0x00000000	pm_suspend
 EXPORT_SYMBOL vmlinux 0x00000000	pneigh_enqueue
 EXPORT_SYMBOL vmlinux 0x00000000	pneigh_lookup
@@ -2526,14 +2503,13 @@ EXPORT_SYMBOL vmlinux 0x00000000	read_cache_pages
 EXPORT_SYMBOL vmlinux 0x00000000	read_dev_sector
 EXPORT_SYMBOL vmlinux 0x00000000	recalc_sigpending
 EXPORT_SYMBOL vmlinux 0x00000000	redirty_page_for_writepage
-EXPORT_SYMBOL vmlinux 0x00000000	redraw_screen
 EXPORT_SYMBOL vmlinux 0x00000000	refrigerator
 EXPORT_SYMBOL vmlinux 0x00000000	register_blkdev
 EXPORT_SYMBOL vmlinux 0x00000000	register_cdrom
 EXPORT_SYMBOL vmlinux 0x00000000	register_chrdev_region
-EXPORT_SYMBOL vmlinux 0x00000000	register_con_driver
 EXPORT_SYMBOL vmlinux 0x00000000	register_console
 EXPORT_SYMBOL vmlinux 0x00000000	register_cpu_notifier
+EXPORT_SYMBOL vmlinux 0x00000000	register_early_suspend
 EXPORT_SYMBOL vmlinux 0x00000000	register_exec_domain
 EXPORT_SYMBOL vmlinux 0x00000000	register_filesystem
 EXPORT_SYMBOL vmlinux 0x00000000	register_framebuffer
@@ -2997,6 +2973,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_enum_info
 EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_find_id
 EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_find_numid
 EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_free_one
+EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_make_virtual_master
 EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_new1
 EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_notify
 EXPORT_SYMBOL vmlinux 0x00000000	snd_ctl_register_ioctl
@@ -3015,6 +2992,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	snd_dma_get_reserved_buf
 EXPORT_SYMBOL vmlinux 0x00000000	snd_dma_reserve_buf
 EXPORT_SYMBOL vmlinux 0x00000000	snd_ecards_limit
 EXPORT_SYMBOL vmlinux 0x00000000	snd_free_pages
+EXPORT_SYMBOL vmlinux 0x00000000	snd_hda_parse_generic_codec
 EXPORT_SYMBOL vmlinux 0x00000000	snd_hwdep_new
 EXPORT_SYMBOL vmlinux 0x00000000	snd_info_create_card_entry
 EXPORT_SYMBOL vmlinux 0x00000000	snd_info_create_module_entry
@@ -3151,7 +3129,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	sock_wake_async
 EXPORT_SYMBOL vmlinux 0x00000000	sock_wfree
 EXPORT_SYMBOL vmlinux 0x00000000	sock_wmalloc
 EXPORT_SYMBOL vmlinux 0x00000000	sockfd_lookup
-EXPORT_SYMBOL vmlinux 0x00000000	soft_cursor
 EXPORT_SYMBOL vmlinux 0x00000000	softirq_work_list
 EXPORT_SYMBOL vmlinux 0x00000000	softnet_data
 EXPORT_SYMBOL vmlinux 0x00000000	sort
@@ -3229,7 +3206,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	system_serial_high
 EXPORT_SYMBOL vmlinux 0x00000000	system_serial_low
 EXPORT_SYMBOL vmlinux 0x00000000	system_state
 EXPORT_SYMBOL vmlinux 0x00000000	tag_pages_for_writeback
-EXPORT_SYMBOL vmlinux 0x00000000	take_over_console
 EXPORT_SYMBOL vmlinux 0x00000000	task_free_register
 EXPORT_SYMBOL vmlinux 0x00000000	task_free_unregister
 EXPORT_SYMBOL vmlinux 0x00000000	task_nice
@@ -3501,9 +3477,9 @@ EXPORT_SYMBOL vmlinux 0x00000000	unregister_binfmt
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_blkdev
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_cdrom
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_chrdev_region
-EXPORT_SYMBOL vmlinux 0x00000000	unregister_con_driver
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_console
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_cpu_notifier
+EXPORT_SYMBOL vmlinux 0x00000000	unregister_early_suspend
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_exec_domain
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_filesystem
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_framebuffer
@@ -3526,7 +3502,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	unregister_tcf_proto_ops
 EXPORT_SYMBOL vmlinux 0x00000000	up
 EXPORT_SYMBOL vmlinux 0x00000000	up_read
 EXPORT_SYMBOL vmlinux 0x00000000	up_write
-EXPORT_SYMBOL vmlinux 0x00000000	update_region
 EXPORT_SYMBOL vmlinux 0x00000000	usb_serial_resume
 EXPORT_SYMBOL vmlinux 0x00000000	usb_serial_suspend
 EXPORT_SYMBOL vmlinux 0x00000000	usb_wwan_chars_in_buffer
@@ -3610,8 +3585,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	v4l2_type_names
 EXPORT_SYMBOL vmlinux 0x00000000	v4l2_video_std_construct
 EXPORT_SYMBOL vmlinux 0x00000000	v4l2_video_std_frame_period
 EXPORT_SYMBOL vmlinux 0x00000000	v4l_printk_ioctl
-EXPORT_SYMBOL vmlinux 0x00000000	vc_cons
-EXPORT_SYMBOL vmlinux 0x00000000	vc_resize
 EXPORT_SYMBOL vmlinux 0x00000000	vesa_modes
 EXPORT_SYMBOL vmlinux 0x00000000	vfree
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_create
@@ -3703,6 +3676,12 @@ EXPORT_SYMBOL vmlinux 0x00000000	wait_iff_congested
 EXPORT_SYMBOL vmlinux 0x00000000	wait_on_page_bit
 EXPORT_SYMBOL vmlinux 0x00000000	wait_on_sync_kiocb
 EXPORT_SYMBOL vmlinux 0x00000000	wake_bit_function
+EXPORT_SYMBOL vmlinux 0x00000000	wake_lock
+EXPORT_SYMBOL vmlinux 0x00000000	wake_lock_active
+EXPORT_SYMBOL vmlinux 0x00000000	wake_lock_destroy
+EXPORT_SYMBOL vmlinux 0x00000000	wake_lock_init
+EXPORT_SYMBOL vmlinux 0x00000000	wake_lock_timeout
+EXPORT_SYMBOL vmlinux 0x00000000	wake_unlock
 EXPORT_SYMBOL vmlinux 0x00000000	wake_up_bit
 EXPORT_SYMBOL vmlinux 0x00000000	wake_up_process
 EXPORT_SYMBOL vmlinux 0x00000000	walk_stackframe
@@ -4362,8 +4341,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	clockevent_delta2ns
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	clockevents_notify
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	clockevents_register_device
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	clone_private_mount
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	con_debug_enter
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	con_debug_leave
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	console_drivers
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	cpu_bit_bitmap
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	cpu_clock
@@ -4864,7 +4841,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	input_ff_upload
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	invalidate_bh_lrus
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	invalidate_inode_pages2
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	invalidate_inode_pages2_range
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	inverse_translate
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ioremap_page_range
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ip6_dst_lookup
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	ip6_dst_lookup_flow
@@ -4893,7 +4869,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	irq_work_sync
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	jprobe_return
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kallsyms_lookup_name
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kallsyms_on_each_symbol
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	kbd_table
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kcrypto_wq
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kern_mount_data
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kernel_halt
@@ -5272,7 +5247,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_die_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_ftrace_event
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_jprobe
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_jprobes
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_keyboard_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_kprobe
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_kprobes
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_kretprobe
@@ -5288,7 +5262,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_pm_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_syscore_ops
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_timer_hook
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_user_hw_breakpoint
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_vt_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	register_wide_hw_breakpoint
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regmap_bulk_read
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regmap_bulk_write
@@ -5454,7 +5427,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	sched_clock
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	sched_setscheduler
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	schedule_hrtimeout
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	schedule_hrtimeout_range
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	screen_glyph
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	scsi_autopm_get_device
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	scsi_autopm_put_device
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	scsi_bus_type
@@ -5918,7 +5890,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_ftrace_event
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_hw_breakpoint
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_jprobe
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_jprobes
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_keyboard_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_kprobe
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_kprobes
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_kretprobe
@@ -5931,7 +5902,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_pernet_subsys
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_pm_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_syscore_ops
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_timer_hook
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_vt_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unregister_wide_hw_breakpoint
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unshare_fs_struct
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	unuse_mm
