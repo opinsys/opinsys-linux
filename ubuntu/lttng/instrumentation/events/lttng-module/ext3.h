@@ -1,4 +1,5 @@
 #undef TRACE_SYSTEM
+#undef TRACE_HEADER_MULTI_READ
 #define TRACE_SYSTEM ext3
 
 #if !defined(_TRACE_EXT3_H) || defined(TRACE_HEADER_MULTI_READ)
