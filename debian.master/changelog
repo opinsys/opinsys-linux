@@ -6,6 +6,7 @@ linux (3.10.0-1.2) UNRELEASED; urgency=low
 
   [ Upstream Kernel Changes ]
 
+  * rebase to v3.10-rc4
   * rebase to v3.10-rc3
 
  --  Tim Gardner <tim.gardner@canonical.com>  Tue, 28 May 2013 06:16:46 -0600
