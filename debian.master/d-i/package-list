@@ -137,6 +137,7 @@ Description: NFS filesystem drivers
 
 Package: block-modules
 Priority: standard
+Provides: nbd-modules
 Depends: kernel-image, storage-core-modules, parport-modules, virtio-modules
 Description: Block storage devices
  This package contains the block storage devices, including DAC960 and
