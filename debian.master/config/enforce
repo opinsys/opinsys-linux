@@ -125,3 +125,6 @@ value CONFIG_I2C_DESIGNWARE_PLATFORM m | \
 # CONFIG_DRM_MGAG200, experimental driver hangs boot on HP Proliant Gen8
 # See LP:1042903
 (!exists CONFIG_DRM_MGAG200 | value CONFIG_DRM_MGAG200 n)
+
+# Required if /init is a shell script.
+value CONFIG_BINFMT_SCRIPT y
