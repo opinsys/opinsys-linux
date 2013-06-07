@@ -18,12 +18,5 @@ source "ubuntu/aufs/Kconfig"
 ##
 ##
 ##
-source "ubuntu/alx/Kconfig"
-##
-##
-##
-##
-##
-##
 
 endmenu
