@@ -20,10 +20,6 @@ obj-$(CONFIG_AUFS_FS)		+= aufs/
 ##
 ##
 ##
-obj-$(CONFIG_ALX)		+= alx/
-##
-##
-##
 #obj-m				+= lttng/
 ##
 ##
