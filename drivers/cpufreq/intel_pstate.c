@@ -720,7 +720,7 @@ static struct cpufreq_driver intel_pstate_driver = {
 	.owner		= THIS_MODULE,
 };
 
-static int __initdata no_load;
+static int __initdata no_load = 1;
 
 static int intel_pstate_msrs_not_valid(void)
 {
@@ -796,6 +796,8 @@ static int __init intel_pstate_setup(char *str)
 
 	if (!strcmp(str, "disable"))
 		no_load = 1;
+	else if (!strcmp(str, "enable"))
+		no_load = 0;
 	return 0;
 }
 early_param("intel_pstate", intel_pstate_setup);
