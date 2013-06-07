@@ -33,6 +33,7 @@ drivers/input/misc/xen-kbdfront.ko
 drivers/md/*
 drivers/message/fusion*
 drivers/misc/vmw_balloon.ko
+drivers/net/mii.ko
 drivers/net/ethernet/8390/8390.ko
 drivers/net/ethernet/realtek/8139too.ko
 drivers/net/ethernet/realtek/8139cp.ko
