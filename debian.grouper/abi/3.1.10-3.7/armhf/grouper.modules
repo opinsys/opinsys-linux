@@ -1,4 +1,6 @@
 cifs
+dns_resolver
+ecryptfs
 ip6table_security
 iptable_security
 lttng-lib-ring-buffer
