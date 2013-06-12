@@ -9,7 +9,7 @@ Build-Conflicts: findutils (= 4.4.1-1ubuntu1)
 Vcs-Git: git://kernel.ubuntu.com/ubuntu/ubuntu-nexus7.git
 
 Package: SRCPKGNAME-headers-PKGVER-ABINUM
-Architecture: all
+Architecture: armhf
 Section: devel
 Priority: optional
 Depends: ${misc:Depends}, coreutils | fileutils (>= 4.0)
@@ -20,7 +20,7 @@ Description: Header files related to Linux kernel version PKGVER
  /usr/share/doc/SRCPKGNAME-headers-PKGVER-ABINUM/debian.README.gz for details
 
 Package: SRCPKGNAME-tools-common
-Architecture: all
+Architecture: armhf
 Section: kernel
 Priority: optional
 Depends: ${misc:Depends}
