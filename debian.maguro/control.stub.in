@@ -19,7 +19,7 @@ Description: Header files related to Linux kernel version PKGVER
  /usr/share/doc/SRCPKGNAME-headers-PKGVER-ABINUM/debian.README.gz for details
 
 Package: SRCPKGNAME-tools-common
-Architecture: all
+Architecture: armhf
 Section: kernel
 Priority: optional
 Depends: ${misc:Depends}
