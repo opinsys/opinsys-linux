@@ -1,4 +1,8 @@
 ansi_cprng
+dns_resolver
+ecryptfs
+ip6table_security
+iptable_security
 lttng-lib-ring-buffer
 lttng-probe-asoc
 lttng-probe-block
@@ -36,3 +40,6 @@ mtdswap
 rpmsg_client_sample
 rpmsg_server_sample
 scsi_wait_scan
+xt_AUDIT
+xt_CONNSECMARK
+xt_SECMARK
