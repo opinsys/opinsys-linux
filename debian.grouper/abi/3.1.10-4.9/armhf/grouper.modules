@@ -1,6 +1,13 @@
+bitblit
 cifs
 dns_resolver
 ecryptfs
+fbcon
+fbcon_ccw
+fbcon_cw
+fbcon_rotate
+fbcon_ud
+font
 ip6table_security
 iptable_security
 lttng-lib-ring-buffer
@@ -40,6 +47,7 @@ lttng-statedump
 lttng-tracer
 lttng-types
 overlayfs
+softcursor
 xt_AUDIT
 xt_CONNSECMARK
 xt_SECMARK
