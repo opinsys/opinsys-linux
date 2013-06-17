@@ -1,4 +1,22 @@
 /*
+ * Copyright (c) 2013 Johannes Berg <johannes@sipsolutions.net>
+ *
+ *  This file is free software: you may copy, redistribute and/or modify it
+ *  under the terms of the GNU General Public License as published by the
+ *  Free Software Foundation, either version 2 of the License, or (at your
+ *  option) any later version.
+ *
+ *  This file is distributed in the hope that it will be useful, but
+ *  WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *  General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
  * Copyright (c) 2012 Qualcomm Atheros, Inc.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -16,14 +34,10 @@
 
 #ifndef ALX_HW_H_
 #define ALX_HW_H_
-
-/* specific error info */
-#define ALX_ERR_SUCCESS          0x0000
-#define ALX_ERR_ALOAD            0x0001
-#define ALX_ERR_RSTMAC           0x0002
-#define ALX_ERR_PARM             0x0003
-#define ALX_ERR_MIIBUSY          0x0004
-#define ALX_LINK_TIMEOUT	 0x0008
+#include <linux/types.h>
+#include <linux/mdio.h>
+#include <linux/pci.h>
+#include "reg.h"
 
 /* Transmit Packet Descriptor, contains 4 32-bit words.
  *
@@ -83,9 +97,9 @@
  *   30-+                                 30-+
  *   31     End of packet                 31     End of packet
  */
-
-struct tpd_desc {
-	__le32 word0;
+struct alx_txd {
+	__le16 len;
+	__le16 vlan_tag;
 	__le32 word1;
 	union {
 		__le64 addr;
@@ -95,12 +109,6 @@ struct tpd_desc {
 		} l;
 	} adrl;
 } __packed;
-
-/* tpd word 0 */
-#define TPD_BUFLEN_MASK			0xFFFF
-#define TPD_BUFLEN_SHIFT		0
-#define TPD_VLTAG_MASK			0xFFFF
-#define TPD_VLTAG_SHIFT			16
 
 /* tpd word 1 */
 #define TPD_CXSUMSTART_MASK		0x00FF
@@ -114,7 +122,7 @@ struct tpd_desc {
 #define TPD_TCP_XSUM_MASK		0x0001
 #define TPD_TCP_XSUM_SHIFT		10
 #define TPD_UDP_XSUM_MASK		0x0001
-#define TPD_UDP_XSUm_SHIFT		11
+#define TPD_UDP_XSUM_SHIFT		11
 #define TPD_LSO_EN_MASK			0x0001
 #define TPD_LSO_EN_SHIFT		12
 #define TPD_LSO_V2_MASK			0x0001
@@ -137,7 +145,7 @@ struct tpd_desc {
 #define DESC_GET(_x, _name) ((_x) >> _name##SHIFT & _name##MASK)
 
 /* Receive Free Descriptor */
-struct rfd_desc {
+struct alx_rfd {
 	__le64 addr;		/* data buffer address, length is
 				 * declared in register --- every
 				 * buffer has the same size
@@ -227,8 +235,7 @@ struct rfd_desc {
  *   30      Length error (for 802.3, length field mismatch with actual len)
  *   31      Updated, indicate to driver that this RRD is refreshed.
  */
-
-struct rrd_desc {
+struct alx_rrd {
 	__le32 word0;
 	__le32 rss_hash;
 	__le32 word2;
@@ -312,88 +319,7 @@ struct rrd_desc {
 #define RRD_UPDATED_SHIFT	31
 
 
-/* Statistics counters collected by the MAC */
-struct alx_hw_stats {
-	/* rx */
-	unsigned long rx_ok;
-	unsigned long rx_bcast;
-	unsigned long rx_mcast;
-	unsigned long rx_pause;
-	unsigned long rx_ctrl;
-	unsigned long rx_fcs_err;
-	unsigned long rx_len_err;
-	unsigned long rx_byte_cnt;
-	unsigned long rx_runt;
-	unsigned long rx_frag;
-	unsigned long rx_sz_64B;
-	unsigned long rx_sz_127B;
-	unsigned long rx_sz_255B;
-	unsigned long rx_sz_511B;
-	unsigned long rx_sz_1023B;
-	unsigned long rx_sz_1518B;
-	unsigned long rx_sz_max;
-	unsigned long rx_ov_sz;
-	unsigned long rx_ov_rxf;
-	unsigned long rx_ov_rrd;
-	unsigned long rx_align_err;
-	unsigned long rx_bc_byte_cnt;
-	unsigned long rx_mc_byte_cnt;
-	unsigned long rx_err_addr;
-
-	/* tx */
-	unsigned long tx_ok;
-	unsigned long tx_bcast;
-	unsigned long tx_mcast;
-	unsigned long tx_pause;
-	unsigned long tx_exc_defer;
-	unsigned long tx_ctrl;
-	unsigned long tx_defer;
-	unsigned long tx_byte_cnt;
-	unsigned long tx_sz_64B;
-	unsigned long tx_sz_127B;
-	unsigned long tx_sz_255B;
-	unsigned long tx_sz_511B;
-	unsigned long tx_sz_1023B;
-	unsigned long tx_sz_1518B;
-	unsigned long tx_sz_max;
-	unsigned long tx_single_col;
-	unsigned long tx_multi_col;
-	unsigned long tx_late_col;
-	unsigned long tx_abort_col;
-	unsigned long tx_underrun;
-	unsigned long tx_trd_eop;
-	unsigned long tx_len_err;
-	unsigned long tx_trunc;
-	unsigned long tx_bc_byte_cnt;
-	unsigned long tx_mc_byte_cnt;
-	unsigned long update;
-};
-
-#define SPEED_0			0
-#define HALF_DUPLEX		1
-#define FULL_DUPLEX		2
 #define ALX_MAX_SETUP_LNK_CYCLE	50
-
-#define ALX_SPEED_TO_ETHADV(_speed) (\
-(_speed) == SPEED_1000 + FULL_DUPLEX ? ADVERTISED_1000baseT_Full :	\
-(_speed) == SPEED_100 + FULL_DUPLEX ? ADVERTISED_100baseT_Full :	\
-(_speed) == SPEED_100 + HALF_DUPLEX ? ADVERTISED_10baseT_Half :		\
-(_speed) == SPEED_10 + FULL_DUPLEX ? ADVERTISED_10baseT_Full :		\
-(_speed) == SPEED_10 + HALF_DUPLEX ? ADVERTISED_10baseT_Half :		\
-0)
-
-#define speed_desc(_s) (\
-	(_s) == SPEED_1000 + FULL_DUPLEX ? \
-	"1 Gbps Full" : \
-	(_s) == SPEED_100 + FULL_DUPLEX ? \
-	"100 Mbps Full" : \
-	(_s) == SPEED_100 + HALF_DUPLEX ? \
-	"100 Mbps Half" : \
-	(_s) == SPEED_10 + FULL_DUPLEX ? \
-	"10 Mbps Full" : \
-	(_s) == SPEED_10 + HALF_DUPLEX ? \
-	"10 Mbps Half" : \
-	"Unknown speed")
 
 /* for FlowControl */
 #define ALX_FC_RX		0x01
@@ -404,21 +330,19 @@ struct alx_hw_stats {
 #define ALX_SLEEP_WOL_PHY	0x00000001
 #define ALX_SLEEP_WOL_MAGIC	0x00000002
 #define ALX_SLEEP_CIFS		0x00000004
-#define ALX_SLEEP_ACTIVE	(\
-	ALX_SLEEP_WOL_PHY | \
-	ALX_SLEEP_WOL_MAGIC | \
-	ALX_SLEEP_CIFS)
+#define ALX_SLEEP_ACTIVE	(ALX_SLEEP_WOL_PHY | \
+				 ALX_SLEEP_WOL_MAGIC | \
+				 ALX_SLEEP_CIFS)
 
 /* for RSS hash type */
 #define ALX_RSS_HASH_TYPE_IPV4		0x1
 #define ALX_RSS_HASH_TYPE_IPV4_TCP	0x2
 #define ALX_RSS_HASH_TYPE_IPV6		0x4
 #define ALX_RSS_HASH_TYPE_IPV6_TCP	0x8
-#define ALX_RSS_HASH_TYPE_ALL		(\
-	ALX_RSS_HASH_TYPE_IPV4 |\
-	ALX_RSS_HASH_TYPE_IPV4_TCP |\
-	ALX_RSS_HASH_TYPE_IPV6 |\
-	ALX_RSS_HASH_TYPE_IPV6_TCP)
+#define ALX_RSS_HASH_TYPE_ALL		(ALX_RSS_HASH_TYPE_IPV4 | \
+					 ALX_RSS_HASH_TYPE_IPV4_TCP | \
+					 ALX_RSS_HASH_TYPE_IPV6 | \
+					 ALX_RSS_HASH_TYPE_IPV6_TCP)
 #define ALX_DEF_RXBUF_SIZE	1536
 #define ALX_MAX_JUMBO_PKT_SIZE	(9*1024)
 #define ALX_MAX_TSO_PKT_SIZE	(7*1024)
@@ -430,232 +354,146 @@ struct alx_hw_stats {
 #define ALX_MAX_TX_QUEUES	4
 #define ALX_MAX_HANDLED_INTRS	5
 
-#define ALX_ISR_MISC		(\
-	ALX_ISR_PCIE_LNKDOWN | \
-	ALX_ISR_DMAW | \
-	ALX_ISR_DMAR | \
-	ALX_ISR_SMB | \
-	ALX_ISR_MANU | \
-	ALX_ISR_TIMER)
+#define ALX_ISR_MISC		(ALX_ISR_PCIE_LNKDOWN | \
+				 ALX_ISR_DMAW | \
+				 ALX_ISR_DMAR | \
+				 ALX_ISR_SMB | \
+				 ALX_ISR_MANU | \
+				 ALX_ISR_TIMER)
 
-#define ALX_ISR_FATAL	(\
-	ALX_ISR_PCIE_LNKDOWN | \
-	 ALX_ISR_DMAW | \
-	 ALX_ISR_DMAR)
+#define ALX_ISR_FATAL		(ALX_ISR_PCIE_LNKDOWN | \
+				 ALX_ISR_DMAW | ALX_ISR_DMAR)
 
-#define ALX_ISR_ALERT	(\
-	ALX_ISR_RXF_OV | \
-	ALX_ISR_TXF_UR | \
-	ALX_ISR_RFD_UR)
+#define ALX_ISR_ALERT		(ALX_ISR_RXF_OV | \
+				 ALX_ISR_TXF_UR | \
+				 ALX_ISR_RFD_UR)
 
-#define ALX_ISR_ALL_QUEUES (\
-	ALX_ISR_TX_Q0 | \
-	ALX_ISR_TX_Q1 | \
-	ALX_ISR_TX_Q2 | \
-	ALX_ISR_TX_Q3 | \
-	ALX_ISR_RX_Q0 | \
-	ALX_ISR_RX_Q1 | \
-	ALX_ISR_RX_Q2 | \
-	ALX_ISR_RX_Q3 | \
-	ALX_ISR_RX_Q4 | \
-	ALX_ISR_RX_Q5 | \
-	ALX_ISR_RX_Q6 | \
-	ALX_ISR_RX_Q7)
+#define ALX_ISR_ALL_QUEUES	(ALX_ISR_TX_Q0 | \
+				 ALX_ISR_TX_Q1 | \
+				 ALX_ISR_TX_Q2 | \
+				 ALX_ISR_TX_Q3 | \
+				 ALX_ISR_RX_Q0 | \
+				 ALX_ISR_RX_Q1 | \
+				 ALX_ISR_RX_Q2 | \
+				 ALX_ISR_RX_Q3 | \
+				 ALX_ISR_RX_Q4 | \
+				 ALX_ISR_RX_Q5 | \
+				 ALX_ISR_RX_Q6 | \
+				 ALX_ISR_RX_Q7)
 
 /* maximum interrupt vectors for msix */
 #define ALX_MAX_MSIX_INTRS	16
 
-#define FIELD_GETX(_x, _name)   (((_x) >> (_name##_SHIFT)) & (_name##_MASK))
-#define FIELD_SETS(_x, _name, _v)   (\
-(_x) =                               \
-((_x) & ~((_name##_MASK) << (_name##_SHIFT)))            |\
-(((u16)(_v) & (_name##_MASK)) << (_name##_SHIFT)))
-#define FIELD_SET32(_x, _name, _v)   (\
-(_x) =                               \
-((_x) & ~((_name##_MASK) << (_name##_SHIFT)))            |\
-(((_v) & (_name##_MASK)) << (_name##_SHIFT)))
-#define FIELDX(_name, _v) (((_v) & (_name##_MASK)) << (_name##_SHIFT))
+#define ALX_GET_FIELD(_data, _field)					\
+	(((_data) >> _field ## _SHIFT) & _field ## _MASK)
+
+#define ALX_SET_FIELD(_data, _field, _value)	do {			\
+		(_data) &= ~(_field ## _MASK << _field ## _SHIFT);	\
+		(_data) |= ((_value) & _field ## _MASK) << _field ## _SHIFT;\
+	} while (0)
 
 struct alx_hw {
-	void *pdev;
+	struct pci_dev *pdev;
 	u8 __iomem *hw_addr;
-
-	/* pci regs */
-	u16 device_id;
-	u16 subdev_id;
-	u16 subven_id;
-	u8  revision;
-
-	unsigned long capability;
 
 	/* current & permanent mac addr */
 	u8 mac_addr[ETH_ALEN];
 	u8 perm_addr[ETH_ALEN];
 
 	u16 mtu;
-	u16			imt;
-	u8			dma_chnl;
-	u8			max_dma_chnl;
+	u16 imt;
+	u8 dma_chnl;
+	u8 max_dma_chnl;
 	/* tpd threshold to trig INT */
-	u32			ith_tpd;
-	u32			rx_ctrl;
-	u32			mc_hash[2];
+	u32 ith_tpd;
+	u32 rx_ctrl;
+	u32 mc_hash[2];
 
-	u8			rss_key[40];
-	u32			rss_idt[32];
-	u16			rss_idt_size;
-	u8			rss_hash_type;
-
-	/* weight round robin for multiple-tx-Q */
-	u32			wrr[ALX_MAX_TX_QUEUES];
-	/* prioirty control */
-	u32			wrr_ctrl;
-
-	/* interrupt mask for ALX_IMR */
-	u32			imask;
-	u32			smb_timer;
-	bool			link_up;
-	u16			link_speed;
-	u8			link_duplex;
+	u32 smb_timer;
+	/* SPEED_* + DUPLEX_*, SPEED_UNKNOWN if link is down */
+	int link_speed;
 
 	/* auto-neg advertisement or force mode config */
-	u32			adv_cfg;
-	u8			flowctrl;
+	u32 adv_cfg;
+	u8 flowctrl;
 
-	struct alx_hw_stats	hw_stats;
-	u32			sleep_ctrl;
-	/* sram address for pattern wol */
-	u32			ptrn_ofs;
-	/* max patterns number */
-	u16			max_ptrns;
+	u32 sleep_ctrl;
 
-	spinlock_t		mdio_lock;
-	struct mdio_if_info	mdio;
-	u16			phy_id[2];
+	spinlock_t mdio_lock;
+	struct mdio_if_info mdio;
+	u16 phy_id[2];
 
-	struct alx_hw_stats	stats;
 	/* PHY link patch flag */
-	bool			lnk_patch;
-	/* PHY hibernation patch flag */
-	bool			hib_patch;
-	/* FPGA or ASIC */
-	bool			is_fpga;
+	bool lnk_patch;
 };
 
-#define ALX_DID(_hw)		((_hw)->device_id)
-#define ALX_SUB_VID(_hw)	((_hw)->subven_id)
-#define ALX_SUB_DID(_hw)	((_hw)->subdev_id)
-#define ALX_REVID(_hw)		((_hw)->revision >> ALX_PCI_REVID_SHIFT)
-#define ALX_WITH_CR(_hw)	((_hw)->revision & 1)
+static inline int alx_hw_revision(struct alx_hw *hw)
+{
+	return hw->pdev->revision >> ALX_PCI_REVID_SHIFT;
+}
 
-enum ALX_CAPS {
-	ALX_CAP_GIGA = 0,
-	ALX_CAP_PTP,
-	ALX_CAP_AZ,
-	ALX_CAP_L0S,
-	ALX_CAP_L1,
-	ALX_CAP_SWOI,
-	ALX_CAP_RSS,
-	ALX_CAP_MSIX,
-	/* support Multi-TX-Q */
-	ALX_CAP_MTQ,
-	/* support Multi-RX-Q */
-	ALX_CAP_MRQ,
-};
-#define ALX_CAP(_hw, _cap) (\
-	test_bit(ALX_CAP_##_cap, &(_hw)->capability))
-#define ALX_CAP_SET(_hw, _cap) (\
-	set_bit(ALX_CAP_##_cap, &(_hw)->capability))
-#define ALX_CAP_CLEAR(_hw, _cap) (\
-	clear_bit(ALX_CAP_##_cap, &(_hw)->capability))
+static inline bool alx_hw_with_cr(struct alx_hw *hw)
+{
+	return hw->pdev->revision & 1;
+}
 
-/* write to 8bit register via pci memory space */
-#define ALX_MEM_W8(s, reg, val) (writeb((val), ((s)->hw_addr + reg)))
+static inline bool alx_hw_giga(struct alx_hw *hw)
+{
+	return hw->pdev->device & 1;
+}
 
-/* read from 8bit register via pci memory space */
-#define ALX_MEM_R8(s, reg, pdat) (\
-		*(u8 *)(pdat) = readb((s)->hw_addr + reg))
+static inline void alx_write_mem8(struct alx_hw *hw, u32 reg, u8 val)
+{
+	writeb(val, hw->hw_addr + reg);
+}
 
-/* write to 16bit register via pci memory space */
-#define ALX_MEM_W16(s, reg, val) (writew((val), ((s)->hw_addr + reg)))
+static inline void alx_write_mem16(struct alx_hw *hw, u32 reg, u16 val)
+{
+	writew(val, hw->hw_addr + reg);
+}
 
-/* read from 16bit register via pci memory space */
-#define ALX_MEM_R16(s, reg, pdat) (\
-		*(u16 *)(pdat) = readw((s)->hw_addr + reg))
+static inline u16 alx_read_mem16(struct alx_hw *hw, u32 reg)
+{
+	return readw(hw->hw_addr + reg);
+}
 
-/* write to 32bit register via pci memory space */
-#define ALX_MEM_W32(s, reg, val) (writel((val), ((s)->hw_addr + reg)))
+static inline void alx_write_mem32(struct alx_hw *hw, u32 reg, u32 val)
+{
+	writel(val, hw->hw_addr + reg);
+}
 
-/* read from 32bit register via pci memory space */
-#define ALX_MEM_R32(s, reg, pdat) (\
-		*(u32 *)(pdat) = readl((s)->hw_addr + reg))
+static inline u32 alx_read_mem32(struct alx_hw *hw, u32 reg)
+{
+	return readl(hw->hw_addr + reg);
+}
 
-/* read from 16bit register via pci config space */
-#define ALX_CFG_R16(s, reg, pdat) (\
-	pci_read_config_word((s)->pdev, (reg), (pdat)))
-
-/* write to 16bit register via pci config space */
-#define ALX_CFG_W16(s, reg, val) (\
-	pci_write_config_word((s)->pdev, (reg), (val)))
-
-/* flush regs */
-#define ALX_MEM_FLUSH(s) (readl((s)->hw_addr))
-
+static inline void alx_post_write(struct alx_hw *hw)
+{
+	readl(hw->hw_addr);
+}
 
 int alx_get_perm_macaddr(struct alx_hw *hw, u8 *addr);
-void alx_add_mc_addr(struct alx_hw *hw, u8 *addr);
-void alx_reset_phy(struct alx_hw *hw, bool hib_en);
+void alx_reset_phy(struct alx_hw *hw);
 void alx_reset_pcie(struct alx_hw *hw);
 void alx_enable_aspm(struct alx_hw *hw, bool l0s_en, bool l1_en);
 int alx_setup_speed_duplex(struct alx_hw *hw, u32 ethadv, u8 flowctrl);
-void alx_post_phy_link(struct alx_hw *hw, u16 speed, bool az_en);
-int alx_pre_suspend(struct alx_hw *hw, u16 speed);
+void alx_post_phy_link(struct alx_hw *hw);
+int alx_pre_suspend(struct alx_hw *hw, int speed);
 int alx_read_phy_reg(struct alx_hw *hw, u16 reg, u16 *phy_data);
 int alx_write_phy_reg(struct alx_hw *hw, u16 reg, u16 phy_data);
 int alx_read_phy_ext(struct alx_hw *hw, u8 dev, u16 reg, u16 *pdata);
 int alx_write_phy_ext(struct alx_hw *hw, u8 dev, u16 reg, u16 data);
-int alx_read_phy_dbg(struct alx_hw *hw, u16 reg, u16 *pdata);
-int alx_write_phy_dbg(struct alx_hw *hw, u16 reg, u16 data);
-int alx_get_phy_link(struct alx_hw *hw, bool *link_up, u16 *speed);
+int alx_get_phy_link(struct alx_hw *hw, int *speed);
 int alx_clear_phy_intr(struct alx_hw *hw);
 int alx_config_wol(struct alx_hw *hw);
-void alx_cfg_mac_fc(struct alx_hw *hw, u8 fc);
+void alx_cfg_mac_flowcontrol(struct alx_hw *hw, u8 fc);
 void alx_start_mac(struct alx_hw *hw);
-int alx_stop_mac(struct alx_hw *hw);
 int alx_reset_mac(struct alx_hw *hw);
-void alx_set_macaddr(struct alx_hw *hw, u8 *addr);
-bool alx_phy_configed(struct alx_hw *hw);
+void alx_set_macaddr(struct alx_hw *hw, const u8 *addr);
+bool alx_phy_configured(struct alx_hw *hw);
 void alx_configure_basic(struct alx_hw *hw);
-void alx_configure_rss(struct alx_hw *hw, bool en);
-void alx_mask_msix(struct alx_hw *hw, int index, bool mask);
-int alx_select_powersaving_speed(struct alx_hw *hw, u16 *speed);
-void __alx_update_hw_stats(struct alx_hw *hw);
-void __alx_start_phy_polling(struct alx_hw *hw, u16 clk_sel);
-
-#define alx_get_readrq(_hw) pcie_get_readrq((_hw)->pdev)
-#define alx_set_readrq(_hw, _v) pcie_set_readrq((_hw)->pdev, _v)
-
-
-/* some issues are relavant to specific platforms
- * we assign those patches for the chip by pci device id
- * vendor id, subsystem id and revision number
- */
-struct alx_platform_patch {
-	u16 pci_did;
-	u8  pci_rev;
-	u16 subsystem_vid;
-	u16 subsystem_did;
-	u32 pflag;
-};
-/* PHY link issue */
-#define ALX_PF_LINK		0x00001
-/* Hibernatation issue */
-#define ALX_PF_HIB		0x00002
-/* not care revision number */
-#define ALX_PF_ANY_REV		0x10000
-
-
-void alx_patch_assign(struct alx_hw *hw);
+void alx_disable_rss(struct alx_hw *hw);
+int alx_select_powersaving_speed(struct alx_hw *hw, int *speed);
 bool alx_get_phy_info(struct alx_hw *hw);
 
 #endif
