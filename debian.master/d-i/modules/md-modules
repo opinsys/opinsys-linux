@@ -1,6 +1,7 @@
 dm-crypt ?
 dm-mirror ?
 dm-raid ?
+dm-snapshot ?
 dm-zero ?
 faulty ?
 linear ?
