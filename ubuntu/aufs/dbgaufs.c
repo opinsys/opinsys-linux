@@ -175,8 +175,10 @@ void dbgaufs_brs_del(struct super_block *sb, aufs_bindex_t bindex)
 	for (; bindex <= bend; bindex++) {
 		br = au_sbr(sb, bindex);
 		xi = &br->br_xino;
-		debugfs_remove(xi->xi_dbgaufs);
-		xi->xi_dbgaufs = NULL;
+		if (xi->xi_dbgaufs) {
+			debugfs_remove(xi->xi_dbgaufs);
+			xi->xi_dbgaufs = NULL;
+		}
 	}
 }
 
