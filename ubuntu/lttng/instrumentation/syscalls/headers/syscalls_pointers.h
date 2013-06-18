@@ -7,5 +7,9 @@
 #endif
 
 #ifdef CONFIG_ARM
-#include "arm-32-syscalls-2.6.38_pointers.h"
+#include "arm-32-syscalls-3.4.25_pointers.h"
+#endif
+
+#ifdef CONFIG_PPC
+#include "powerpc-32-syscalls-3.0.34_pointers.h"
 #endif
