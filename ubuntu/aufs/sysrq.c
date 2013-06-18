@@ -35,18 +35,16 @@ static void sysrq_sb(struct super_block *sb)
 	plevel = au_plevel;
 	au_plevel = KERN_WARNING;
 
-	/* since we define pr_fmt, call printk directly */
-#define pr(str) printk(KERN_WARNING AUFS_NAME ": " str)
-
 	sbinfo = au_sbi(sb);
+	/* since we define pr_fmt, call printk directly */
 	printk(KERN_WARNING "si=%lx\n", sysaufs_si_id(sbinfo));
-	pr("superblock\n");
+	printk(KERN_WARNING AUFS_NAME ": superblock\n");
 	au_dpri_sb(sb);
 
 #if 0
-	pr("root dentry\n");
+	printk(KERN_WARNING AUFS_NAME ": root dentry\n");
 	au_dpri_dentry(sb->s_root);
-	pr("root inode\n");
+	printk(KERN_WARNING AUFS_NAME ": root inode\n");
 	au_dpri_inode(sb->s_root->d_inode);
 #endif
 
@@ -74,7 +72,7 @@ static void sysrq_sb(struct super_block *sb)
 #if 1
 	{
 		struct inode *i;
-		pr("isolated inode\n");
+		printk(KERN_WARNING AUFS_NAME ": isolated inode\n");
 		spin_lock(&inode_sb_list_lock);
 		list_for_each_entry(i, &sb->s_inodes, i_sb_list) {
 			spin_lock(&i->i_lock);
@@ -85,7 +83,7 @@ static void sysrq_sb(struct super_block *sb)
 		spin_unlock(&inode_sb_list_lock);
 	}
 #endif
-	pr("files\n");
+	printk(KERN_WARNING AUFS_NAME ": files\n");
 	lg_global_lock(&files_lglock);
 	do_file_list_for_each_entry(sb, file) {
 		umode_t mode;
@@ -94,9 +92,8 @@ static void sysrq_sb(struct super_block *sb)
 			au_dpri_file(file);
 	} while_file_list_for_each_entry;
 	lg_global_unlock(&files_lglock);
-	pr("done\n");
+	printk(KERN_WARNING AUFS_NAME ": done\n");
 
-#undef pr
 	au_plevel = plevel;
 }
 
