@@ -1,13 +1,7 @@
-EXPORT_SYMBOL drivers/video/console/bitblit 0x00000000	fbcon_set_bitops
-EXPORT_SYMBOL drivers/video/console/fbcon_ccw 0x00000000	fbcon_rotate_ccw
-EXPORT_SYMBOL drivers/video/console/fbcon_cw 0x00000000	fbcon_rotate_cw
-EXPORT_SYMBOL drivers/video/console/fbcon_rotate 0x00000000	fbcon_set_rotate
-EXPORT_SYMBOL drivers/video/console/fbcon_ud 0x00000000	fbcon_rotate_ud
-EXPORT_SYMBOL drivers/video/console/font 0x00000000	find_font
-EXPORT_SYMBOL drivers/video/console/font 0x00000000	font_vga_8x16
-EXPORT_SYMBOL drivers/video/console/font 0x00000000	get_default_font
-EXPORT_SYMBOL drivers/video/console/softcursor 0x00000000	soft_cursor
 EXPORT_SYMBOL net/dns_resolver/dns_resolver 0x00000000	dns_query
+EXPORT_SYMBOL net/netfilter/xt_socket 0x00000000	xt_socket_get4_sk
+EXPORT_SYMBOL net/netfilter/xt_socket 0x00000000	xt_socket_get6_sk
+EXPORT_SYMBOL net/netfilter/xt_socket 0x00000000	xt_socket_put_sk
 EXPORT_SYMBOL ubuntu/lttng/lib/lttng-lib-ring-buffer 0x00000000	lib_ring_buffer_nesting
 EXPORT_SYMBOL vmlinux 0x00000000	I_BDEV
 EXPORT_SYMBOL vmlinux 0x00000000	____pagevec_lru_add
@@ -721,6 +715,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	console_unlock
 EXPORT_SYMBOL vmlinux 0x00000000	consume_skb
 EXPORT_SYMBOL vmlinux 0x00000000	cont_write_begin
 EXPORT_SYMBOL vmlinux 0x00000000	contig_page_data
+EXPORT_SYMBOL vmlinux 0x00000000	cookie_check_timestamp
 EXPORT_SYMBOL vmlinux 0x00000000	copy_from_user_toio
 EXPORT_SYMBOL vmlinux 0x00000000	copy_page
 EXPORT_SYMBOL vmlinux 0x00000000	copy_strings_kernel
@@ -1073,6 +1068,11 @@ EXPORT_SYMBOL vmlinux 0x00000000	fb_validate_mode
 EXPORT_SYMBOL vmlinux 0x00000000	fb_var_to_videomode
 EXPORT_SYMBOL vmlinux 0x00000000	fb_videomode_to_modelist
 EXPORT_SYMBOL vmlinux 0x00000000	fb_videomode_to_var
+EXPORT_SYMBOL vmlinux 0x00000000	fbcon_rotate_ccw
+EXPORT_SYMBOL vmlinux 0x00000000	fbcon_rotate_cw
+EXPORT_SYMBOL vmlinux 0x00000000	fbcon_rotate_ud
+EXPORT_SYMBOL vmlinux 0x00000000	fbcon_set_bitops
+EXPORT_SYMBOL vmlinux 0x00000000	fbcon_set_rotate
 EXPORT_SYMBOL vmlinux 0x00000000	fd_install
 EXPORT_SYMBOL vmlinux 0x00000000	fg_console
 EXPORT_SYMBOL vmlinux 0x00000000	fget
@@ -1105,6 +1105,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	files_lglock_local_unlock_cpu
 EXPORT_SYMBOL vmlinux 0x00000000	files_lglock_lock_init
 EXPORT_SYMBOL vmlinux 0x00000000	filp_close
 EXPORT_SYMBOL vmlinux 0x00000000	filp_open
+EXPORT_SYMBOL vmlinux 0x00000000	find_font
 EXPORT_SYMBOL vmlinux 0x00000000	find_get_page
 EXPORT_SYMBOL vmlinux 0x00000000	find_get_pages_contig
 EXPORT_SYMBOL vmlinux 0x00000000	find_get_pages_tag
@@ -1136,6 +1137,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	follow_down
 EXPORT_SYMBOL vmlinux 0x00000000	follow_down_one
 EXPORT_SYMBOL vmlinux 0x00000000	follow_pfn
 EXPORT_SYMBOL vmlinux 0x00000000	follow_up
+EXPORT_SYMBOL vmlinux 0x00000000	font_vga_8x16
 EXPORT_SYMBOL vmlinux 0x00000000	force_sig
 EXPORT_SYMBOL vmlinux 0x00000000	fput
 EXPORT_SYMBOL vmlinux 0x00000000	framebuffer_alloc
@@ -1224,6 +1226,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	genl_unregister_ops
 EXPORT_SYMBOL vmlinux 0x00000000	genlmsg_multicast_allns
 EXPORT_SYMBOL vmlinux 0x00000000	get_anon_bdev
 EXPORT_SYMBOL vmlinux 0x00000000	get_cfcnfg
+EXPORT_SYMBOL vmlinux 0x00000000	get_default_font
 EXPORT_SYMBOL vmlinux 0x00000000	get_disk
 EXPORT_SYMBOL vmlinux 0x00000000	get_fs_type
 EXPORT_SYMBOL vmlinux 0x00000000	get_gendisk
@@ -3107,6 +3110,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	sock_wake_async
 EXPORT_SYMBOL vmlinux 0x00000000	sock_wfree
 EXPORT_SYMBOL vmlinux 0x00000000	sock_wmalloc
 EXPORT_SYMBOL vmlinux 0x00000000	sockfd_lookup
+EXPORT_SYMBOL vmlinux 0x00000000	soft_cursor
 EXPORT_SYMBOL vmlinux 0x00000000	softirq_work_list
 EXPORT_SYMBOL vmlinux 0x00000000	softnet_data
 EXPORT_SYMBOL vmlinux 0x00000000	sort
@@ -3159,6 +3163,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	sync_inodes_sb
 EXPORT_SYMBOL vmlinux 0x00000000	sync_mapping_buffers
 EXPORT_SYMBOL vmlinux 0x00000000	synchronize_irq
 EXPORT_SYMBOL vmlinux 0x00000000	synchronize_net
+EXPORT_SYMBOL vmlinux 0x00000000	syncookie_secret
 EXPORT_SYMBOL vmlinux 0x00000000	sys_close
 EXPORT_SYMBOL vmlinux 0x00000000	sys_tz
 EXPORT_SYMBOL vmlinux 0x00000000	sysctl_ip_default_ttl
@@ -3761,9 +3766,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	xt_register_match
 EXPORT_SYMBOL vmlinux 0x00000000	xt_register_matches
 EXPORT_SYMBOL vmlinux 0x00000000	xt_register_target
 EXPORT_SYMBOL vmlinux 0x00000000	xt_register_targets
-EXPORT_SYMBOL vmlinux 0x00000000	xt_socket_get4_sk
-EXPORT_SYMBOL vmlinux 0x00000000	xt_socket_get6_sk
-EXPORT_SYMBOL vmlinux 0x00000000	xt_socket_put_sk
 EXPORT_SYMBOL vmlinux 0x00000000	xt_unregister_match
 EXPORT_SYMBOL vmlinux 0x00000000	xt_unregister_matches
 EXPORT_SYMBOL vmlinux 0x00000000	xt_unregister_target
@@ -3782,6 +3784,8 @@ EXPORT_SYMBOL vmlinux 0x00000000	zlib_inflateInit2
 EXPORT_SYMBOL vmlinux 0x00000000	zlib_inflateReset
 EXPORT_SYMBOL vmlinux 0x00000000	zlib_inflate_blob
 EXPORT_SYMBOL vmlinux 0x00000000	zlib_inflate_workspacesize
+EXPORT_SYMBOL_GPL net/netfilter/xt_RATEEST 0x00000000	xt_rateest_lookup
+EXPORT_SYMBOL_GPL net/netfilter/xt_RATEEST 0x00000000	xt_rateest_put
 EXPORT_SYMBOL_GPL ubuntu/lttng/lib/lttng-lib-ring-buffer 0x00000000	__lib_ring_buffer_copy_to_user
 EXPORT_SYMBOL_GPL ubuntu/lttng/lib/lttng-lib-ring-buffer 0x00000000	_lib_ring_buffer_copy_from_user_inatomic
 EXPORT_SYMBOL_GPL ubuntu/lttng/lib/lttng-lib-ring-buffer 0x00000000	_lib_ring_buffer_memset
