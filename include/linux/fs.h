@@ -2703,4 +2703,10 @@ static inline void inode_has_no_xattr(struct inode *inode)
 		inode->i_flags |= S_NOSEC;
 }
 
+/*
+ * splice.c
+ */
+extern long do_splice_direct(struct file *in, loff_t *ppos, struct file *out,
+		loff_t *opos, size_t len, unsigned int flags);
+
 #endif /* _LINUX_FS_H */
