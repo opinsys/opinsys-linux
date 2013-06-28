@@ -347,7 +347,6 @@ static int ovl_do_lookup(struct dentry *dentry)
 				      oe);
 		if (!inode)
 			goto out_dput;
-		ovl_copyattr(realdentry->d_inode, inode);
 	}
 
 	if (upperdentry)
