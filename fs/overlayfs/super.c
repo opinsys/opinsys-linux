@@ -385,6 +385,7 @@ struct dentry *ovl_lookup(struct inode *dir, struct dentry *dentry,
 
 struct file *ovl_path_open(struct path *path, int flags)
 {
+	path_get(path);
 	return dentry_open(path, flags, current_cred());
 }
 
