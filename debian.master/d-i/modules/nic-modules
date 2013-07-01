@@ -41,7 +41,7 @@ bnx2x ?
 bonding ?
 brcmfmac ?
 brcmsmac ?
-calxedaxgmac ?
+xgmac ?
 cassini ?
 com20020 ?
 com20020-pci ?
