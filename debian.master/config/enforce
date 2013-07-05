@@ -12,6 +12,7 @@ value CONFIG_SECURITY_SMACK y
 value CONFIG_SECURITY_YAMA y
 value CONFIG_SYN_COOKIES y
 value CONFIG_DEFAULT_SECURITY_APPARMOR y
+value CONFIG_DEBUG_INFO y
 # For architectures which support this option ensure it is enabled.
 !exists CONFIG_XEN_ACPI_PROCESSOR | value CONFIG_XEN_ACPI_PROCESSOR y
 !exists CONFIG_SECCOMP | value CONFIG_SECCOMP y
