@@ -6916,6 +6916,7 @@ EXPORT_SYMBOL vmlinux 0xbe1ac3f6	__pci_register_driver
 EXPORT_SYMBOL vmlinux 0xbe203ac3	nonseekable_open
 EXPORT_SYMBOL vmlinux 0xbe254e92	param_set_ushort
 EXPORT_SYMBOL vmlinux 0xbe2c0274	add_timer
+EXPORT_SYMBOL vmlinux 0xbe3ca503	kfree_skb_list
 EXPORT_SYMBOL vmlinux 0xbe45435e	input_unregister_device
 EXPORT_SYMBOL vmlinux 0xbe53302a	ip6_frag_init
 EXPORT_SYMBOL vmlinux 0xbe63ee40	request_resource
@@ -8301,9 +8302,9 @@ EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0x49a4fcbd	adxl34x_remove
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0x66535a18	adxl34x_suspend
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0xdfc0e92e	adxl34x_probe
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0xe4586827	adxl34x_resume
-EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x149427ea	cyttsp_probe
+EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x11ee6196	cyttsp_probe
+EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x500b58a5	cyttsp_remove
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x5ed204d4	cyttsp_pm_ops
-EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0xc44cb5fd	cyttsp_remove
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x079f1ed4	wm97xx_read_aux_adc
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x0a74fb0d	wm97xx_config_gpio
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x26d96a9a	wm97xx_register_mach_ops
