@@ -5559,6 +5559,7 @@ EXPORT_SYMBOL vmlinux 0x5143c678	param_get_invbool
 EXPORT_SYMBOL vmlinux 0x5152e605	memcmp
 EXPORT_SYMBOL vmlinux 0x51601ffd	dquot_commit
 EXPORT_SYMBOL vmlinux 0x5160df40	md_error
+EXPORT_SYMBOL vmlinux 0x51749374	kfree_skb_list
 EXPORT_SYMBOL vmlinux 0x5186518f	profile_pc
 EXPORT_SYMBOL vmlinux 0x518edb6c	d_drop
 EXPORT_SYMBOL vmlinux 0x519d626f	ip6_expire_frag_queue
@@ -8895,8 +8896,8 @@ EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0x49a4fcbd	adxl34x_remove
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0x66535a18	adxl34x_suspend
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0xda00717d	adxl34x_probe
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0xe4586827	adxl34x_resume
-EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x6472d364	cyttsp_remove
-EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x8152f19d	cyttsp_probe
+EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x71167a38	cyttsp_probe
+EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x83ab3945	cyttsp_remove
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0xbcb6db39	cyttsp_pm_ops
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x048db0bc	wm97xx_set_gpio
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x05bbdad3	wm97xx_reg_read
@@ -12335,6 +12336,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x0fcc1969	copy_from_user_nmi
 EXPORT_SYMBOL_GPL vmlinux 0x0fdfd63e	btree_insert
 EXPORT_SYMBOL_GPL vmlinux 0x0fe2d570	xenbus_directory
 EXPORT_SYMBOL_GPL vmlinux 0x0ff7b622	tcp_reno_min_cwnd
+EXPORT_SYMBOL_GPL vmlinux 0x100a6252	register_hotplug_dock_device
 EXPORT_SYMBOL_GPL vmlinux 0x10138352	tracing_on
 EXPORT_SYMBOL_GPL vmlinux 0x1025b259	acpi_dev_runtime_suspend
 EXPORT_SYMBOL_GPL vmlinux 0x10291853	devm_regulator_put
@@ -13650,7 +13652,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x7de96d0a	rtc_set_alarm
 EXPORT_SYMBOL_GPL vmlinux 0x7df736a5	spi_register_master
 EXPORT_SYMBOL_GPL vmlinux 0x7e0e78b7	adp5520_write
 EXPORT_SYMBOL_GPL vmlinux 0x7e0ef97c	regmap_irq_get_domain
-EXPORT_SYMBOL_GPL vmlinux 0x7e1ecdc5	register_hotplug_dock_device
 EXPORT_SYMBOL_GPL vmlinux 0x7e20a1b8	usb_bus_start_enum
 EXPORT_SYMBOL_GPL vmlinux 0x7e64181d	usb_calc_bus_time
 EXPORT_SYMBOL_GPL vmlinux 0x7e6fb8e2	blkdev_ioctl
