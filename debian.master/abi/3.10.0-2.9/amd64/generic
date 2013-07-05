@@ -5805,6 +5805,7 @@ EXPORT_SYMBOL vmlinux 0x6605f97f	flex_array_clear
 EXPORT_SYMBOL vmlinux 0x66119fab	scsi_device_lookup_by_target
 EXPORT_SYMBOL vmlinux 0x6616d768	security_path_rmdir
 EXPORT_SYMBOL vmlinux 0x663f7cd0	acpi_install_table_handler
+EXPORT_SYMBOL vmlinux 0x6646ca27	kfree_skb_list
 EXPORT_SYMBOL vmlinux 0x6647fbd8	pci_scan_bus_parented
 EXPORT_SYMBOL vmlinux 0x665b5831	setup_new_exec
 EXPORT_SYMBOL vmlinux 0x66888502	pci_stop_and_remove_bus_device
@@ -8813,9 +8814,9 @@ EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0x44bb1b9f	adxl34x_probe
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0x49a4fcbd	adxl34x_remove
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0x66535a18	adxl34x_suspend
 EXPORT_SYMBOL_GPL drivers/input/misc/adxl34x 0xe4586827	adxl34x_resume
-EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x13c1679e	cyttsp_probe
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x3d2737e7	cyttsp_pm_ops
-EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0xa0bc39f9	cyttsp_remove
+EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0x4765d3d8	cyttsp_remove
+EXPORT_SYMBOL_GPL drivers/input/touchscreen/cyttsp_core 0xe385ec3b	cyttsp_probe
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x02ca03dc	wm97xx_set_gpio
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x064d8c1c	wm97xx_read_aux_adc
 EXPORT_SYMBOL_GPL drivers/input/touchscreen/wm97xx-ts 0x0cc5ff8c	wm9712_codec
@@ -12279,6 +12280,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x0faa049d	usb_poison_urb
 EXPORT_SYMBOL_GPL vmlinux 0x0fcc1969	copy_from_user_nmi
 EXPORT_SYMBOL_GPL vmlinux 0x0fe2d570	xenbus_directory
 EXPORT_SYMBOL_GPL vmlinux 0x0ff09f52	fat_dir_empty
+EXPORT_SYMBOL_GPL vmlinux 0x100a6252	register_hotplug_dock_device
 EXPORT_SYMBOL_GPL vmlinux 0x10138352	tracing_on
 EXPORT_SYMBOL_GPL vmlinux 0x10291853	devm_regulator_put
 EXPORT_SYMBOL_GPL vmlinux 0x10363076	wm8350_reg_write
@@ -13608,7 +13610,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x7d8cd09b	xenbus_dev_resume
 EXPORT_SYMBOL_GPL vmlinux 0x7da88b57	usb_hcd_is_primary_hcd
 EXPORT_SYMBOL_GPL vmlinux 0x7dab26b6	wm831x_isinkv_values
 EXPORT_SYMBOL_GPL vmlinux 0x7e0ef97c	regmap_irq_get_domain
-EXPORT_SYMBOL_GPL vmlinux 0x7e1ecdc5	register_hotplug_dock_device
 EXPORT_SYMBOL_GPL vmlinux 0x7e3029d8	devm_clk_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x7e3cdbbd	anon_inode_getfile
 EXPORT_SYMBOL_GPL vmlinux 0x7e44b668	cpuidle_register
