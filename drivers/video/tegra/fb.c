@@ -411,8 +411,23 @@ static int tegra_fb_ioctl(struct fb_info *info, unsigned int cmd, unsigned long 
 	return 0;
 }
 
-int tegra_fb_get_mode(struct tegra_dc *dc) {
-	return dc->fb->info->mode->refresh;
+int tegra_fb_get_mode(struct tegra_dc *dc, int *mode) {
+	int err = 0;
+	if (dc && dc->fb && dc->fb->info && dc->fb->info->mode)
+		*mode = dc->fb->info->mode->refresh;
+	else {
+		err = -EFAULT;
+		*mode = 0;
+		if (!dc)
+			pr_err("%s dc==NULL\n",__FUNCTION__);
+		else if (!dc->fb)
+			pr_err("%s dc->fb==NULL\n",__FUNCTION__);
+		else if (!dc->fb->info)
+			pr_err("%s dc->fb-info==NULL\n",__FUNCTION__);
+		else if (!dc->fb->info->mode)
+			pr_err("%s dc->fb->info->mode==NULL\n",__FUNCTION__);
+	}
+	return err;
 }
 
 int tegra_fb_set_mode(struct tegra_dc *dc, int fps) {

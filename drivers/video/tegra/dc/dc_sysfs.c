@@ -286,11 +286,13 @@ static DEVICE_ATTR(stereo_mode,
 static ssize_t nvdps_show(struct device *device,
 	struct device_attribute *attr, char *buf)
 {
-	int refresh_rate;
+	int err, refresh_rate;
 	struct nvhost_device *ndev = to_nvhost_device(device);
 	struct tegra_dc *dc = nvhost_get_drvdata(ndev);
 
-	refresh_rate = tegra_fb_get_mode(dc);
+	err = tegra_fb_get_mode(dc, &refresh_rate);
+	if (err < 0)
+		return err;
 	return snprintf(buf, PAGE_SIZE, "%d\n", refresh_rate);
 }
 
