@@ -1019,12 +1019,17 @@ static ssize_t smb347_reg_show(struct device *dev, struct device_attribute *attr
 	uint8_t config_reg[15], cmd_reg[2], status_reg[11];
 	int i, ret = 0;
 
-	ret += i2c_smbus_read_i2c_block_data(client, smb347_CHARGE, 15, config_reg)
-	     + i2c_smbus_read_i2c_block_data(client, smb347_CMD_REG, 2, cmd_reg)
-	     + i2c_smbus_read_i2c_block_data(client, smb347_INTR_STS_A, 11, status_reg);
+	ret = i2c_smbus_read_i2c_block_data(client, smb347_CHARGE, 15, config_reg);
+	if (ret != 15)
+		SMB_ERR("failed to read CHARGE reg !\n");
 
-	if (ret < 0)
-		SMB_ERR("failed to read charger reg !\n");
+	ret = i2c_smbus_read_i2c_block_data(client, smb347_CMD_REG, 2, cmd_reg);
+	if (ret != 2)
+		SMB_ERR("failed to read CMD reg !\n");
+
+	ret = i2c_smbus_read_i2c_block_data(client, smb347_INTR_STS_A, 11, status_reg);
+	if (ret != 11)
+		SMB_ERR("failed to read INTR_STS_A reg !\n");
 
 	SMB_INFO("smb347 Registers\n");
 	SMB_INFO("------------------\n");
