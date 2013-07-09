@@ -1067,8 +1067,16 @@ static ssize_t smb347_reg_show(struct device *dev, struct device_attribute *attr
 	int i, cfg_ret, cmd_ret, sts_ret = 0;
 
 	cfg_ret = i2c_smbus_read_i2c_block_data(client, smb347_CHARGE, 15, config_reg);
+	if (cfg_ret != 15)
+		SMB_ERR("failed to read CHARGE reg !\n");
+
 	cmd_ret = i2c_smbus_read_i2c_block_data(client, smb347_CMD_REG, 2, cmd_reg);
+	if (cmd_ret != 2)
+		SMB_ERR("failed to read CMD reg !\n");
+
 	sts_ret = i2c_smbus_read_i2c_block_data(client, smb347_INTR_STS_A, 11, status_reg);
+	if (sts_ret != 11)
+		SMB_ERR("failed to read INTR_STS_A reg !\n");
 
 	sprintf(tmp_buf, "SMB34x Configuration Registers Detail\n"
 					"==================\n");
