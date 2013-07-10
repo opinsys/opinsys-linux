@@ -511,6 +511,9 @@ ifeq ($(do_tools),true)
 	dh_builddeb -p$(toolspkg)
 endif
 
+build-debs: $(addprefix build-,$(flavours))
+	@echo Debug: $@
+
 binary-debs: signed = $(CURDIR)/debian/$(bin_pkg_name)-signed
 binary-debs: signedv = $(CURDIR)/debian/$(bin_pkg_name)-signed/$(release)-$(revision)
 binary-debs: signed_tar = $(src_pkg_name)_$(release)-$(revision)_$(arch).tar.gz
