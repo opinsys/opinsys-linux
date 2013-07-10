@@ -1,4 +1,7 @@
 # Do udebs if not disabled in the arch-specific makefile
+build-udebs: build-debs
+	@echo Debug: $@
+
 binary-udebs: binary-debs
 	@echo Debug: $@
 ifeq ($(disable_d_i),)
