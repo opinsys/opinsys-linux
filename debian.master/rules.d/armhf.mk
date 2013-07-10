@@ -11,6 +11,7 @@ no_dumpfile	= true
 loader		= grub
 do_tools	= true
 do_tools_perf	= true
+gcc		= gcc-4.7
 
 # Flavour specific configuration.
 dtb_files_generic	= imx6q-sabrelite.dtb omap3-beagle-xm.dtb omap4-panda.dtb omap4-panda-es.dtb highbank.dtb
