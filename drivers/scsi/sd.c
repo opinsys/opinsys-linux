@@ -2103,6 +2103,8 @@ static int sd_try_rc16_first(struct scsi_device *sdp)
 		return 1;
 	if (scsi_device_protection(sdp))
 		return 1;
+	if (sdp->try_rc_16_first)
+		return 1;
 	return 0;
 }
 
