@@ -2666,8 +2666,12 @@ static int sd_try_extended_inquiry(struct scsi_device *sdp)
 	 * Although VPD inquiries can go to SCSI-2 type devices,
 	 * some USB ones crash on receiving them, and the pages
 	 * we currently ask for are for SPC-3 and beyond
+	 * Allow devices to request use of VPD inquiry at SPC-2
+	 * as some devices implement these extensions (inc Hyper-V)
 	 */
-	if (sdp->scsi_level > SCSI_SPC_2 && !sdp->skip_vpd_pages)
+	if ((sdp->scsi_level > SCSI_SPC_2 ||
+	     (sdp->use_vpd_spc2 && sdp->scsi_level >= SCSI_SPC_2)) &&
+	    !sdp->skip_vpd_pages)
 		return 1;
 	return 0;
 }
