@@ -1437,6 +1437,7 @@ static int storvsc_device_configure(struct scsi_device *sdevice)
 	blk_queue_rq_timeout(sdevice->request_queue, (storvsc_timeout * HZ));
 
 	sdevice->no_write_same = 1;
+	sdevice->use_vpd_spc2 = 1;
 
 	return 0;
 }
