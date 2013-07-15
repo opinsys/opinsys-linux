@@ -25,6 +25,7 @@ pd ?
 pf ?
 pg ?
 pt ?
+sdhci-tegra ?
 sx8 ?
 umem ?
 virtio_blk ?
