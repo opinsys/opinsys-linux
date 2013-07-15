@@ -14,4 +14,8 @@ do_tools_perf	= true
 gcc		= gcc-4.7
 
 # Flavour specific configuration.
-dtb_files_generic	= imx6q-sabrelite.dtb omap3-beagle-xm.dtb omap4-panda.dtb omap4-panda-es.dtb highbank.dtb
+dtb_files_generic	+= highbank.dtb
+dtb_files_generic	+= imx6q-sabrelite.dtb
+dtb_files_generic	+= omap3-beagle-xm.dtb
+dtb_files_generic	+= omap4-panda.dtb
+dtb_files_generic	+= omap4-panda-es.dtb
