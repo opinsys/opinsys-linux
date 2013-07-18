@@ -2,6 +2,7 @@ gpio-pca953x ?
 gpio-regulator ?
 i2c-mux ?
 i2c-mux-pinctrl ?
+i2c-tegra ?
 max8907 ?
 max8907-regulator ?
 nvec ?
