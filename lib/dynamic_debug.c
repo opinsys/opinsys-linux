@@ -905,7 +905,7 @@ static int ddebug_dyndbg_param_cb(char *param, char *val,
 
 /* handle both dyndbg and $module.dyndbg params at boot */
 static int ddebug_dyndbg_boot_param_cb(char *param, char *val,
-				const char *unused, int unused2)
+				const char *unused)
 {
 	vpr_info("%s=\"%s\"\n", param, val);
 	return ddebug_dyndbg_param_cb(param, val, NULL, 0);
@@ -916,7 +916,7 @@ static int ddebug_dyndbg_boot_param_cb(char *param, char *val,
  * passes them to load_module().  This callback gets unknown params,
  * processes dyndbg params, rejects others.
  */
-int ddebug_dyndbg_module_param_cb(char *param, char *val, const char *module, int all)
+int ddebug_dyndbg_module_param_cb(char *param, char *val, const char *module)
 {
 	vpr_info("module: %s %s=\"%s\"\n", module, param, val);
 	return ddebug_dyndbg_param_cb(param, val, module, -ENOENT);
