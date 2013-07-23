@@ -117,6 +117,13 @@ sed -in '1s/^\(linux.*(\)\(.*\-[0-9]*\)\(.*).*\)$/\1'"${VERSION}"'\3/' ${DEBIAN_
 git commit -s -F debian/commit-templates/bumpabi ${DEBIAN_TARGET}/changelog
 
 #
+# Update the build dependancies from master.
+#
+BUILD_DEPENDS=`sed -n 's/^Build-Depends: \(.*\)/\1/p' ${DEBIAN_SOURCE}/control.stub.in`
+sed -in "s/^\(Build-Depends: \).*/\1$BUILD_DEPENDS/" ${DEBIAN_TARGET}/control.stub.in
+git commit -s -m 'UBUNTU: [Config] update Build-Depends: from master' ${DEBIAN_TARGET}/control.stub.in || true
+
+#
 # ALL DONE: close the release up.
 #
 VERSION=`sed -n '1s/^linux.*(\(.*\)).*$/\1/p' ${DEBIAN_TARGET}/changelog`
