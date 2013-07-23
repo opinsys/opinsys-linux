@@ -535,8 +535,8 @@ firmware:       rtlwifi/rtl8192cufw.bin
 firmware:       rtlwifi/rtl8192defw.bin
 firmware:       rtlwifi/rtl8192sefw.bin
 firmware:       rtlwifi/rtl8712u.bin
-firmware:       rtlwifi/rtl8723aefw_B.bin
-firmware:       rtlwifi/rtl8723aefw.bin
+firmware:       rtlwifi/rtl8723fw_B.bin
+firmware:       rtlwifi/rtl8723fw.bin
 firmware:       sb16/alaw_main.csp
 firmware:       sb16/ima_adpcm_capture.csp
 firmware:       sb16/ima_adpcm_init.csp
