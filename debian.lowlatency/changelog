@@ -4,6 +4,32 @@ linux-lowlatency (3.10.0-3.17) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.10.0-5.14 ]
+
+  * Release Tracking Bug
+    - LP: #1203779
+  * Revert "SAUCE: (no-up) add option to hand off all kernel parameters to
+    init"
+    - LP: #1203211
+  * [Packaging] generate a SRCPKGNAME-udebs-FLAVOUR-di depending on all
+    built udebs
+  * [Config] enable SRCPKG-udeb-FLAVOUR-di for master
+  * [Config] enforcer -- relax CONFIG_INIT_PASS_ALL_PARAMS until we fix the
+    associated patch
+    - LP: #1203211
+  * rebase to v3.10.2
+  * add missing i2c-tegra module into armhf udebs
+  * rebase to v3.10.2
+
+  [ Ubuntu: 3.10.0-4.13 ]
+
+  * SAUCE: (no-up) hyperv: Fix the NETIF_F_SG flag setting in netvsc
+    - LP: #1200243
+  * [Config] CONFIG_DYNAMIC_DEBUG=y
+    - LP: #1202018
+  * mfd: rtsx: Add support for RTL8411B
+    - LP: #1201321
+
  -- Andy Whitcroft <apw@canonical.com>  Tue, 23 Jul 2013 12:04:24 +0100
 
 linux-lowlatency (3.10.0-3.16) saucy; urgency=low
