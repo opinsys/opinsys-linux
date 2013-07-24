@@ -5,5 +5,7 @@ i386	PKGVER-ABINUM	generic		PKGVER-ABINUM-generic		-
 
 armhf	PKGVER-ABINUM	generic		PKGVER-ABINUM-generic		-
 
+armhf	PKGVER-ABINUM	generic-lpae		PKGVER-ABINUM-generic-lpae		-
+
 # Ports
 # arch	version		flavour		installedname			suffix	bdep

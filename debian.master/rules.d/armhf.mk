@@ -2,7 +2,7 @@ human_arch	= ARM (hard float)
 build_arch	= arm
 header_arch	= arm
 defconfig	= defconfig
-flavours	= generic
+flavours	= generic generic-lpae
 build_image	= zImage
 kernel_file	= arch/$(build_arch)/boot/zImage
 install_file	= vmlinuz
@@ -25,3 +25,5 @@ dtb_files_generic	+= tegra20-seaboard.dtb
 dtb_files_generic	+= tegra20-trimslice.dtb
 dtb_files_generic	+= tegra20-ventana.dtb
 dtb_files_generic	+= tegra20-whistler.dtb
+
+dtb_files_generic-lpae   += highbank.dtb
