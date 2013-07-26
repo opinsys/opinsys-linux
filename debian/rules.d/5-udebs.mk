@@ -47,7 +47,7 @@ do-binary-udebs: debian/control
 	done
 	
 	# Generate the meta-udeb dependancy lists.
-	awk '								\
+	gawk '								\
 		/Package: /		{ package=$$2 }			\
 		(/Package-Type: udeb/ && package !~ /^'$(src_pkg_name)'-udebs-/) { 	\
 			match(package, "'$(release)'-'$(abinum)'-(.*)-di", bits);	\
