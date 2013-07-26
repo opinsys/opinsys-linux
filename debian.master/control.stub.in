@@ -90,4 +90,5 @@ Description: Linux kernel version specific tools for version PKGVER-ABINUM
  version locked tools (such as perf and x86_energy_perf_policy) for
  version PKGVER-ABINUM on
  =HUMAN=.
+ You probabally want to install linux-tools-PKGVER-ABINUM-<flavour>.
 
