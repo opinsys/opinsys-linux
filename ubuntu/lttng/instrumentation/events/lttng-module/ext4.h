@@ -410,6 +410,7 @@ TRACE_EVENT(ext4_da_writepages,
 		  (unsigned long) __entry->writeback_index)
 )
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 TRACE_EVENT(ext4_da_write_pages,
 	TP_PROTO(struct inode *inode, struct mpage_da_data *mpd),
 
@@ -462,6 +463,7 @@ TRACE_EVENT(ext4_da_write_pages,
 #endif
                   )
 )
+#endif
 
 TRACE_EVENT(ext4_da_writepages_result,
 	TP_PROTO(struct inode *inode, struct writeback_control *wbc,
@@ -604,6 +606,7 @@ DEFINE_EVENT(ext4__page_op, ext4_releasepage,
 	TP_ARGS(page)
 )
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 TRACE_EVENT(ext4_invalidatepage,
 	TP_PROTO(struct page *page, unsigned long offset),
 
@@ -629,6 +632,7 @@ TRACE_EVENT(ext4_invalidatepage,
 		  (unsigned long) __entry->ino,
 		  (unsigned long) __entry->index, __entry->offset)
 )
+#endif
 #endif
 
 TRACE_EVENT(ext4_discard_blocks,
@@ -1884,6 +1888,7 @@ DECLARE_EVENT_CLASS(ext4__map_blocks_exit,
 		  __entry->len, __entry->flags, __entry->ret)
 )
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 DEFINE_EVENT(ext4__map_blocks_exit, ext4_ext_map_blocks_exit,
 	TP_PROTO(struct inode *inode, struct ext4_map_blocks *map, int ret),
 
@@ -1895,6 +1900,7 @@ DEFINE_EVENT(ext4__map_blocks_exit, ext4_ind_map_blocks_exit,
 
 	TP_ARGS(inode, map, ret)
 )
+#endif
 
 #else	/* #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,8,0)) */
 
@@ -1992,6 +1998,8 @@ TRACE_EVENT(ext4_load_inode,
 #endif
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,1,0))
+
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 TRACE_EVENT(ext4_journal_start,
 	TP_PROTO(struct super_block *sb, int nblocks, unsigned long IP),
 
@@ -2013,6 +2021,7 @@ TRACE_EVENT(ext4_journal_start,
 		  MAJOR(__entry->dev), MINOR(__entry->dev),
 		  __entry->nblocks, (void *)__entry->ip)
 )
+#endif
 
 DECLARE_EVENT_CLASS(ext4__trim,
 	TP_PROTO(struct super_block *sb,
@@ -2292,6 +2301,7 @@ TRACE_EVENT(ext4_ext_show_extent,
 		  (unsigned short) __entry->len)
 )
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 TRACE_EVENT(ext4_remove_blocks,
 	    TP_PROTO(struct inode *inode, struct ext4_extent *ex,
 		ext4_lblk_t from, ext4_fsblk_t to,
@@ -2369,6 +2379,7 @@ TRACE_EVENT(ext4_ext_rm_leaf,
 		  (unsigned short) __entry->ee_len,
 		  (unsigned) __entry->partial)
 )
+#endif
 
 TRACE_EVENT(ext4_ext_rm_idx,
 	TP_PROTO(struct inode *inode, ext4_fsblk_t pblk),
@@ -2393,6 +2404,7 @@ TRACE_EVENT(ext4_ext_rm_idx,
 		  (unsigned long long) __entry->pblk)
 )
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 TRACE_EVENT(ext4_ext_remove_space,
 	TP_PROTO(struct inode *inode, ext4_lblk_t start, int depth),
 
@@ -2452,6 +2464,7 @@ TRACE_EVENT(ext4_ext_remove_space_done,
 		  (unsigned) __entry->partial,
 		  (unsigned short) __entry->eh_entries)
 )
+#endif
 #endif
 
 #endif /* _TRACE_EXT4_H */
