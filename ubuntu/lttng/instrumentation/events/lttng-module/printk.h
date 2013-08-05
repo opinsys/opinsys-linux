@@ -9,6 +9,7 @@
 
 #define MSG_TRACE_MAX_LEN	2048
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 TRACE_EVENT_CONDITION(console,
 	TP_PROTO(const char *log_buf, unsigned start, unsigned end,
 		 unsigned log_buf_len),
@@ -58,6 +59,7 @@ TRACE_EVENT_CONDITION(console,
 
 	TP_printk("%s", __get_str(msg))
 )
+#endif
 #endif /* _TRACE_PRINTK_H */
 
 /* This part must be outside protection */
