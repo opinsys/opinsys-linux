@@ -20,7 +20,7 @@ obj-$(CONFIG_AUFS_FS)		+= aufs/
 ##
 ##
 ##
-#obj-m				+= lttng/
+obj-m				+= lttng/
 ##
 ##
 ##

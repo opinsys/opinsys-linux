@@ -295,6 +295,7 @@ DEFINE_EVENT(ext3__page_op, ext3_releasepage,
 	TP_ARGS(page)
 )
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0))
 TRACE_EVENT(ext3_invalidatepage,
 	TP_PROTO(struct page *page, unsigned long offset),
 
@@ -320,6 +321,7 @@ TRACE_EVENT(ext3_invalidatepage,
 		  (unsigned long) __entry->ino,
 		  __entry->index, __entry->offset)
 )
+#endif
 
 TRACE_EVENT(ext3_discard_blocks,
 	TP_PROTO(struct super_block *sb, unsigned long blk,
