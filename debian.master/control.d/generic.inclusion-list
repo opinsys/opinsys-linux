@@ -64,7 +64,6 @@ drivers/net/vmxnet3/vmxnet3.ko
 drivers/net/xen-netback/*
 drivers/parport/parport.ko
 drivers/parport/parport_pc.ko
-drivers/pci/hotplug/acpiphp.ko
 drivers/pps/pps_core.ko
 drivers/ptp/ptp.ko
 drivers/net/ethernet/dec/tulip/*
@@ -81,7 +80,6 @@ drivers/scsi/raid_class.ko
 drivers/scsi/scsi_transport_fc.ko
 drivers/scsi/scsi_transport_iscsi.ko
 drivers/scsi/scsi_transport_sas.ko
-drivers/scsi/scsi_wait_scan.ko
 drivers/scsi/scsi_tgt.ko
 drivers/scsi/vmw_pvscsi.ko
 drivers/scsi/hv_storvsc.ko
@@ -108,7 +106,6 @@ fs/configfs/*
 fs/exofs/libore.ko
 fs/ext*/*
 fs/fat/*
-fs/nls/nls_cp437.ko
 fs/nls/nls_iso8859-1.ko
 fs/isofs/*
 fs/cifs/*
@@ -152,7 +149,6 @@ net/rxrpc/*
 net/sched/*
 net/sctp/*
 net/tipc/*
-net/wanrouter/*
 net/x25/*
 net/xfrm/*
 net/sunrpc/auth_gss/auth_rpcgss.ko
