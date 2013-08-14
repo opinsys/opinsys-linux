@@ -71,11 +71,11 @@ static int audit_caps(struct aa_profile *profile, struct task_struct *task,
 	struct common_audit_data sa;
 	struct apparmor_audit_data aad = {0,};
 	sa.type = LSM_AUDIT_DATA_CAP;
-	sa.aad = &aad;
+	aad_set(&sa, &aad);
 	sa.u.cap = cap;
-	sa.aad->tsk = task;
-	sa.aad->op = OP_CAPABLE;
-	sa.aad->error = error;
+	aad.tsk = task;
+	aad.op = OP_CAPABLE;
+	aad.error = error;
 
 	if (likely(!error)) {
 		/* test if auditing is being forced */
