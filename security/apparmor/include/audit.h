@@ -21,12 +21,15 @@
 #include <linux/sched.h>
 #include <linux/slab.h>
 
-#include "backport.h"
 #include "file.h"
-#include "label.h"
 
-extern const char *const audit_mode_names[];
+struct aa_profile;
+
+extern const char *audit_mode_names[];
 #define AUDIT_MAX_INDEX 5
+
+#define AUDIT_APPARMOR_AUTO 0	/* auto choose audit message type */
+
 enum audit_mode {
 	AUDIT_NORMAL,		/* follow normal auditing of accesses */
 	AUDIT_QUIET_DENIED,	/* quiet all denied access messages */
@@ -42,11 +45,10 @@ enum audit_type {
 	AUDIT_APPARMOR_HINT,
 	AUDIT_APPARMOR_STATUS,
 	AUDIT_APPARMOR_ERROR,
-	AUDIT_APPARMOR_KILL,
-	AUDIT_APPARMOR_AUTO
+	AUDIT_APPARMOR_KILL
 };
 
-extern const char *const op_table[];
+extern const char *op_table[];
 enum aa_ops {
 	OP_NULL,
 
@@ -71,10 +73,6 @@ enum aa_ops {
 	OP_FLOCK,
 	OP_FMMAP,
 	OP_FMPROT,
-
-	OP_PIVOTROOT,
-	OP_MOUNT,
-	OP_UMOUNT,
 
 	OP_CREATE,
 	OP_POST_CREATE,
@@ -106,50 +104,8 @@ enum aa_ops {
 };
 
 
-struct apparmor_audit_data {
-	int error;
-	int op;
-	int type;
-	struct aa_label *label;
-	const char *name;
-	const char *info;
-	union {
-		void *target;
-		struct {
-			long pos;
-			void *target;
-		} iface;
-		struct {
-			int rlim;
-			unsigned long max;
-		} rlim;
-		struct {
-			const char *src_name;
-			const char *type;
-			const char *trans;
-			const char *data;
-			unsigned long flags;
-		} mnt;
-		struct {
-			const char *target;
-			u32 request;
-			u32 denied;
-			kuid_t ouid;
-		} fs;
-		struct {
-			int type, protocol;
-			struct sock *sk;
-		} net;
-	};
-};
-
-/* define a short hand for apparmor_audit_data structure */
-#define aad(SA) ((struct apparmor_audit_data *)(SA)->apparmor_audit_data.profile)
-#define aad_set(SA, I)					\
-	do {						\
-		(SA)->tsk = NULL;			\
-		(SA)->apparmor_audit_data.profile = (I);\
-	} while (0)
+/* define a short hand for apparmor_audit_data portion of common_audit_data */
+#define aad apparmor_audit_data
 
 void aa_audit_msg(int type, struct common_audit_data *sa,
 		  void (*cb) (struct audit_buffer *, void *));
