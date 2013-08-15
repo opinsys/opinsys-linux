@@ -69,7 +69,7 @@ void aa_info_message(const char *str)
 		struct common_audit_data sa;
 		struct apparmor_audit_data aad = {0,};
 		sa.type = LSM_AUDIT_DATA_NONE;
-		sa.aad = &aad;
+		aad_set(&sa, &aad);
 		aad.info = str;
 		aa_audit_msg(AUDIT_APPARMOR_STATUS, &sa, NULL);
 	}
@@ -97,11 +97,6 @@ void *__aa_kvmalloc(size_t size, gfp_t flags)
 	if (size <= (16*PAGE_SIZE))
 		buffer = kmalloc(size, flags | GFP_NOIO | __GFP_NOWARN);
 	if (!buffer) {
-		/* see kvfree for why size must be at least work_struct size
-		 * when allocated via vmalloc
-		 */
-		if (size < sizeof(struct work_struct))
-			size = sizeof(struct work_struct);
 		if (flags & __GFP_ZERO)
 			buffer = vzalloc(size);
 		else
@@ -122,4 +117,21 @@ void kvfree(void *buffer)
 		vfree(buffer);
 	else
 		kfree(buffer);
+}
+
+
+__counted char *aa_str_alloc(int size, gfp_t gfp)
+{
+	struct counted_str *str;
+	str = kmalloc(sizeof(struct counted_str) + size, gfp);
+	if (!str)
+		return NULL;
+
+	kref_init(&str->count);
+	return str->name;
+}
+
+void aa_str_kref(struct kref *kref)
+{
+	kfree(container_of(kref, struct counted_str, count));
 }
