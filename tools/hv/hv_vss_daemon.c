@@ -148,8 +148,10 @@ int main(void)
 	int	op;
 	struct hv_vss_msg *vss_msg;
 
+#if 0   /* It's much easier to manage from upstart if we don't fork */
 	if (daemon(1, 0))
 		return 1;
+#endif
 
 	openlog("Hyper-V VSS", 0, LOG_USER);
 	syslog(LOG_INFO, "VSS starting; pid is:%d", getpid());
