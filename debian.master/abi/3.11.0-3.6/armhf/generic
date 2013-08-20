@@ -2132,6 +2132,7 @@ EXPORT_SYMBOL drivers/net/wireless/iwlegacy/iwlegacy 0xf501278b	il_bcast_addr
 EXPORT_SYMBOL drivers/net/wireless/iwlegacy/iwlegacy 0xf5d31da4	il_setup_scan_deferred_work
 EXPORT_SYMBOL drivers/net/wireless/iwlegacy/iwlegacy 0xf7787e90	il_send_bt_config
 EXPORT_SYMBOL drivers/net/wireless/iwlegacy/iwlegacy 0xf9de353c	il_tx_cmd_complete
+EXPORT_SYMBOL drivers/net/wireless/iwlegacy/iwlegacy 0xfb9ee5bd	il_force_reset
 EXPORT_SYMBOL drivers/net/wireless/iwlwifi/iwlwifi 0x08ee1e7d	__tracepoint_iwlwifi_dev_ucode_event
 EXPORT_SYMBOL drivers/net/wireless/iwlwifi/iwlwifi 0x0d9eb5ff	__tracepoint_iwlwifi_dev_ucode_wrap_event
 EXPORT_SYMBOL drivers/net/wireless/iwlwifi/iwlwifi 0x0e7bc05f	__tracepoint_iwlwifi_warn
@@ -4861,7 +4862,6 @@ EXPORT_SYMBOL vmlinux 0x35d0429e	is_bad_inode
 EXPORT_SYMBOL vmlinux 0x35d9544e	fb_set_suspend
 EXPORT_SYMBOL vmlinux 0x35ec86c4	sync_fence_install
 EXPORT_SYMBOL vmlinux 0x36010f8e	write_dirty_buffer
-EXPORT_SYMBOL vmlinux 0x3608c9c1	psched_ratecfg_precompute
 EXPORT_SYMBOL vmlinux 0x360b1afe	probe_irq_mask
 EXPORT_SYMBOL vmlinux 0x360eff21	blk_get_backing_dev_info
 EXPORT_SYMBOL vmlinux 0x3612c10f	tmio_core_mmc_enable
@@ -5346,6 +5346,7 @@ EXPORT_SYMBOL vmlinux 0x51ef33b8	kstrndup
 EXPORT_SYMBOL vmlinux 0x52024e4d	bfifo_qdisc_ops
 EXPORT_SYMBOL vmlinux 0x52026cdf	security_sb_parse_opts_str
 EXPORT_SYMBOL vmlinux 0x5208b3ad	mb_cache_entry_find_next
+EXPORT_SYMBOL vmlinux 0x521b36b5	qdisc_put_rtab
 EXPORT_SYMBOL vmlinux 0x52230df5	dmam_pool_create
 EXPORT_SYMBOL vmlinux 0x52428cc8	parent_mem_cgroup
 EXPORT_SYMBOL vmlinux 0x524b5e43	__seq_open_private
@@ -6531,7 +6532,6 @@ EXPORT_SYMBOL vmlinux 0x9c979f1a	snd_pcm_hw_constraint_pow2
 EXPORT_SYMBOL vmlinux 0x9c9ec2a0	proc_dointvec_minmax
 EXPORT_SYMBOL vmlinux 0x9ca8a467	sock_update_classid
 EXPORT_SYMBOL vmlinux 0x9cab34a6	rfkill_set_led_trigger_name
-EXPORT_SYMBOL vmlinux 0x9cb96e92	qdisc_put_rtab
 EXPORT_SYMBOL vmlinux 0x9cd60539	sg_free_table
 EXPORT_SYMBOL vmlinux 0x9ceb163c	memcpy_toiovec
 EXPORT_SYMBOL vmlinux 0x9cfd56c5	scsi_print_status
@@ -6704,6 +6704,7 @@ EXPORT_SYMBOL vmlinux 0xa5cef8ad	release_resource
 EXPORT_SYMBOL vmlinux 0xa5cf2f43	pci_disable_ido
 EXPORT_SYMBOL vmlinux 0xa5d1954a	blk_queue_io_min
 EXPORT_SYMBOL vmlinux 0xa5dd45f3	prandom_bytes_state
+EXPORT_SYMBOL vmlinux 0xa61a1e3e	psched_ratecfg_precompute
 EXPORT_SYMBOL vmlinux 0xa61aa028	snd_pcm_format_unsigned
 EXPORT_SYMBOL vmlinux 0xa61e4362	omap_request_dma
 EXPORT_SYMBOL vmlinux 0xa6213981	blk_execute_rq
@@ -6976,7 +6977,6 @@ EXPORT_SYMBOL vmlinux 0xb6896671	crc_t10dif
 EXPORT_SYMBOL vmlinux 0xb68bdd1a	tcf_destroy_chain
 EXPORT_SYMBOL vmlinux 0xb6936ffe	_bcd2bin
 EXPORT_SYMBOL vmlinux 0xb693c33d	xfrm_policy_flush
-EXPORT_SYMBOL vmlinux 0xb6a61a86	qdisc_get_rtab
 EXPORT_SYMBOL vmlinux 0xb6a648d2	__elv_add_request
 EXPORT_SYMBOL vmlinux 0xb6a68816	find_last_bit
 EXPORT_SYMBOL vmlinux 0xb6bb0d27	dev_set_allmulti
@@ -7830,6 +7830,7 @@ EXPORT_SYMBOL vmlinux 0xed1503b1	tty_do_resize
 EXPORT_SYMBOL vmlinux 0xed2d62a4	dev_err
 EXPORT_SYMBOL vmlinux 0xed319e5d	mmc_interrupt_hpi
 EXPORT_SYMBOL vmlinux 0xed3a8abd	blk_fetch_request
+EXPORT_SYMBOL vmlinux 0xed597524	qdisc_get_rtab
 EXPORT_SYMBOL vmlinux 0xed60f667	sock_no_poll
 EXPORT_SYMBOL vmlinux 0xed6f7ec7	blk_rq_map_integrity_sg
 EXPORT_SYMBOL vmlinux 0xed847a83	mmc_set_blockcount
