@@ -3513,7 +3513,6 @@ EXPORT_SYMBOL vmlinux 0x35b6b772	param_ops_charp
 EXPORT_SYMBOL vmlinux 0x35d0429e	is_bad_inode
 EXPORT_SYMBOL vmlinux 0x35dd9273	blk_queue_physical_block_size
 EXPORT_SYMBOL vmlinux 0x35e98c13	submit_bh
-EXPORT_SYMBOL vmlinux 0x3608c9c1	psched_ratecfg_precompute
 EXPORT_SYMBOL vmlinux 0x360b1afe	probe_irq_mask
 EXPORT_SYMBOL vmlinux 0x3612c10f	tmio_core_mmc_enable
 EXPORT_SYMBOL vmlinux 0x3616aeb9	crypto_sha512_update
@@ -3947,6 +3946,7 @@ EXPORT_SYMBOL vmlinux 0x52026cdf	security_sb_parse_opts_str
 EXPORT_SYMBOL vmlinux 0x520e6c18	scsi_report_device_reset
 EXPORT_SYMBOL vmlinux 0x52179c51	tcp_v4_conn_request
 EXPORT_SYMBOL vmlinux 0x521aeb53	blk_put_request
+EXPORT_SYMBOL vmlinux 0x521b36b5	qdisc_put_rtab
 EXPORT_SYMBOL vmlinux 0x52289476	__starget_for_each_device
 EXPORT_SYMBOL vmlinux 0x52325025	__lru_cache_add
 EXPORT_SYMBOL vmlinux 0x52428cc8	parent_mem_cgroup
@@ -5065,7 +5065,6 @@ EXPORT_SYMBOL vmlinux 0x9c9ec2a0	proc_dointvec_minmax
 EXPORT_SYMBOL vmlinux 0x9c9f1a7d	mfd_add_devices
 EXPORT_SYMBOL vmlinux 0x9ca9f6a7	scm_fp_dup
 EXPORT_SYMBOL vmlinux 0x9cab34a6	rfkill_set_led_trigger_name
-EXPORT_SYMBOL vmlinux 0x9cb96e92	qdisc_put_rtab
 EXPORT_SYMBOL vmlinux 0x9cd60539	sg_free_table
 EXPORT_SYMBOL vmlinux 0x9ce97ca7	tty_wait_until_sent
 EXPORT_SYMBOL vmlinux 0x9ceb163c	memcpy_toiovec
@@ -5222,6 +5221,7 @@ EXPORT_SYMBOL vmlinux 0xa5bbcbf2	tcp_get_md5sig_pool
 EXPORT_SYMBOL vmlinux 0xa5c105dc	set_bdi_congested
 EXPORT_SYMBOL vmlinux 0xa5dd45f3	prandom_bytes_state
 EXPORT_SYMBOL vmlinux 0xa5ee8610	netif_napi_del
+EXPORT_SYMBOL vmlinux 0xa61a1e3e	psched_ratecfg_precompute
 EXPORT_SYMBOL vmlinux 0xa61aa028	snd_pcm_format_unsigned
 EXPORT_SYMBOL vmlinux 0xa620917c	poll_freewait
 EXPORT_SYMBOL vmlinux 0xa623b42a	skb_try_coalesce
@@ -5473,7 +5473,6 @@ EXPORT_SYMBOL vmlinux 0xb6822a33	radix_tree_gang_lookup_tag
 EXPORT_SYMBOL vmlinux 0xb6896671	crc_t10dif
 EXPORT_SYMBOL vmlinux 0xb6936ffe	_bcd2bin
 EXPORT_SYMBOL vmlinux 0xb6a5c0de	ps2_cmd_aborted
-EXPORT_SYMBOL vmlinux 0xb6a61a86	qdisc_get_rtab
 EXPORT_SYMBOL vmlinux 0xb6a68816	find_last_bit
 EXPORT_SYMBOL vmlinux 0xb6c5a973	scsi_show_result
 EXPORT_SYMBOL vmlinux 0xb6c7f939	jbd2_journal_release_jbd_inode
@@ -6237,6 +6236,7 @@ EXPORT_SYMBOL vmlinux 0xed224e14	skb_tx_error
 EXPORT_SYMBOL vmlinux 0xed291c63	pm860x_page_bulk_write
 EXPORT_SYMBOL vmlinux 0xed2b5ca5	blk_post_runtime_resume
 EXPORT_SYMBOL vmlinux 0xed3083ab	qdisc_class_hash_grow
+EXPORT_SYMBOL vmlinux 0xed597524	qdisc_get_rtab
 EXPORT_SYMBOL vmlinux 0xed7d38fb	ip6_route_me_harder
 EXPORT_SYMBOL vmlinux 0xed7e525f	devfreq_add_governor
 EXPORT_SYMBOL vmlinux 0xed93f29e	__kunmap_atomic
