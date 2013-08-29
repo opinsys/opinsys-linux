@@ -1,3 +1,13 @@
+linux-grouper (3.1.10-6.24) saucy; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * prctl: add PR_{SET,GET}_CHILD_SUBREAPER to allow simple process
+    supervision
+    - LP: #1218415
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 29 Aug 2013 09:50:08 -0600
+
 linux-grouper (3.1.10-6.23) saucy; urgency=low
 
   [ John Johansen ]
