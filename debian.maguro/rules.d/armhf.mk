@@ -16,3 +16,4 @@ do_libc_dev_package	= false
 do_tools		= true
 do_tools_perf		= true
 disable_d_i		= true
+skipabi			= true
