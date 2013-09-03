@@ -14,9 +14,5 @@ source "ubuntu/dm-raid4-5/Kconfig"
 ##
 ##
 ##
-source "ubuntu/aufs/Kconfig"
-##
-##
-##
 
 endmenu
