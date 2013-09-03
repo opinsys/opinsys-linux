@@ -20,7 +20,7 @@
  * support for loopback block device as a branch
  */
 
-#include "../../drivers/block/loop.h"
+#include <linux/loop.h>
 #include "aufs.h"
 
 /*
