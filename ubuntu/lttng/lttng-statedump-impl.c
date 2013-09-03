@@ -295,7 +295,7 @@ void lttng_statedump_process_ns(struct lttng_session *session,
 	rcu_read_lock();
 	proxy = task_nsproxy(p);
 	if (proxy) {
-		pid_ns = proxy->pid_ns;
+		pid_ns = proxy->pid_ns_for_children;
 		do {
 			trace_lttng_statedump_process_state(session,
 				p, type, mode, submode, status, pid_ns);
