@@ -1330,6 +1330,7 @@ lttng-probe-irq
 lttng-probe-jbd
 lttng-probe-jbd2
 lttng-probe-kmem
+lttng-probe-kvm
 lttng-probe-lttng
 lttng-probe-module
 lttng-probe-napi
@@ -2628,7 +2629,11 @@ videodev
 viperboard
 viperboard_adc
 virtio
+virtio_balloon
+virtio_blk
 virtio_console
+virtio_mmio
+virtio_net
 virtio_ring
 virtio-rng
 virtio_scsi
