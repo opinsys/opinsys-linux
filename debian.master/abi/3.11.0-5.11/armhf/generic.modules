@@ -986,7 +986,6 @@ gpio-regulator
 gpio_tilt_polled
 gpio-tps65912
 gpio-ts5500
-gpio-twl6040
 gpio-viperboard
 gpio-vx855
 gpio-wm831x
@@ -2220,7 +2219,6 @@ physmap
 physmap_of
 phy-twl4030-usb
 phy-twl6030-usb
-pinctrl-single
 pixcir_i2c_ts
 pktcdvd
 pktgen
@@ -3051,7 +3049,6 @@ spi-imx
 spi_ks8995
 spi-lm70llp
 spi-oc-tiny
-spi-omap2-mcspi
 spi-pl022
 spi-pxa2xx-pci
 spi-pxa2xx-platform
