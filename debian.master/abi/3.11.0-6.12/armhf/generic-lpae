@@ -5158,6 +5158,7 @@ EXPORT_SYMBOL vmlinux 0xa2506271	xfrm_state_lookup
 EXPORT_SYMBOL vmlinux 0xa250c838	param_get_charp
 EXPORT_SYMBOL vmlinux 0xa267841b	address_space_init_once
 EXPORT_SYMBOL vmlinux 0xa2848c50	ecryptfs_get_auth_tok_key
+EXPORT_SYMBOL vmlinux 0xa294a917	loop_backing_file
 EXPORT_SYMBOL vmlinux 0xa2a5fd77	inet_ehash_secret
 EXPORT_SYMBOL vmlinux 0xa2a90b71	blk_complete_request
 EXPORT_SYMBOL vmlinux 0xa2b18e47	sock_common_getsockopt
