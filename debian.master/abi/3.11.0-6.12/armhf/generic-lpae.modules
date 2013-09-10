@@ -779,6 +779,7 @@ gpio-regulator
 gpio_tilt_polled
 gpio-tps65912
 gpio-ts5500
+gpio-twl6040
 gpio-viperboard
 gpio-wm831x
 gpio-wm8350
