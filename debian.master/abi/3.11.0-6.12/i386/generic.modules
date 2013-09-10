@@ -937,7 +937,6 @@ eeprom_93cx6
 eeprom_93xx46
 eeti_ts
 efficeon-agp
-efivarfs
 efs
 einj
 elo
