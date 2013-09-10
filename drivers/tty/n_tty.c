@@ -147,9 +147,16 @@ static int set_room(struct tty_struct *tty)
 	 * pending newlines, let characters through without limit, so
 	 * that erase characters will be handled.  Other excess
 	 * characters will be beeped.
+	 * If there is no reader waiting for the input, block instead of
+	 * letting the characters through.
 	 */
 	if (left <= 0)
-		left = ldata->icanon && !ldata->canon_data;
+		if (waitqueue_active(&tty->read_wait)) {
+			left = ldata->icanon && !ldata->canon_data;
+		} else {
+			left = 0;
+		}
+
 	old_left = tty->receive_room;
 	tty->receive_room = left;
 
