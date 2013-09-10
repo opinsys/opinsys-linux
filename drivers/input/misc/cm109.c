@@ -351,7 +351,8 @@ static void cm109_urb_irq_callback(struct urb *urb)
 	if (status) {
 		if (status == -ESHUTDOWN)
 			return;
-		dev_err(&dev->intf->dev, "%s: urb status %d\n", __func__, status);
+		dev_err_ratelimited(&dev->intf->dev, "%s: urb status %d\n",
+			__func__, status);
 	}
 
 	/* Special keys */
@@ -419,7 +420,8 @@ static void cm109_urb_ctl_callback(struct urb *urb)
 	     dev->ctl_data->byte[3]);
 
 	if (status)
-		dev_err(&dev->intf->dev, "%s: urb status %d\n", __func__, status);
+		dev_err_ratelimited(&dev->intf->dev, "%s: urb status %d\n",
+			__func__, status);
 
 	spin_lock(&dev->ctl_submit_lock);
 
@@ -436,7 +438,7 @@ static void cm109_urb_ctl_callback(struct urb *urb)
 			dev->irq_urb_pending = 1;
 			error = usb_submit_urb(dev->urb_irq, GFP_ATOMIC);
 			if (error)
-				dev_err(&dev->intf->dev,
+				dev_err_ratelimited(&dev->intf->dev,
 					"%s: usb_submit_urb (urb_irq) failed %d\n",
 					__func__, error);
 		}
@@ -480,7 +482,7 @@ static void cm109_toggle_buzzer_sync(struct cm109_dev *dev, int on)
 				dev->ctl_data,
 				USB_PKT_LEN, USB_CTRL_SET_TIMEOUT);
 	if (error < 0 && error != -EINTR)
-		dev_err(&dev->intf->dev, "%s: usb_control_msg() failed %d\n",
+		dev_err_ratelimited(&dev->intf->dev, "%s: usb_control_msg() failed %d\n",
 			__func__, error);
 }
 
@@ -542,8 +544,9 @@ static int cm109_input_open(struct input_dev *idev)
 
 	error = usb_submit_urb(dev->urb_ctl, GFP_KERNEL);
 	if (error)
-		dev_err(&dev->intf->dev, "%s: usb_submit_urb (urb_ctl) failed %d\n",
-			__func__, error);
+		dev_err_ratelimited(&dev->intf->dev,
+			"%s: usb_submit_urb (urb_ctl) failed %d\n", __func__,
+			error);
 	else
 		dev->open = 1;
 
@@ -716,7 +719,7 @@ static int cm109_usb_probe(struct usb_interface *intf,
 	pipe = usb_rcvintpipe(udev, endpoint->bEndpointAddress);
 	ret = usb_maxpacket(udev, pipe, usb_pipeout(pipe));
 	if (ret != USB_PKT_LEN)
-		dev_err(&intf->dev, "invalid payload size %d, expected %d\n",
+		dev_err_ratelimited(&intf->dev, "invalid payload size %d, expected %d\n",
 			ret, USB_PKT_LEN);
 
 	/* initialise irq urb */
