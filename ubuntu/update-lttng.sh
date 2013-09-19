@@ -5,12 +5,7 @@
 #
 
 REPO=git://git.lttng.org/lttng-modules.git
-TMP=$$.tmp
 
-mkdir -p $TMP
-cd $TMP
 git clone $REPO
-rsync -av --exclude=.git * ..
-cd ..
-git add -u
+rsync -av --delete --exclude=.git lttng-modules/ lttng/
 
