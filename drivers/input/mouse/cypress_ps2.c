@@ -441,7 +441,7 @@ static int cypress_get_finger_count(unsigned char header_byte)
 			case 2: return 5;
 			default:
 				/* Invalid contact (e.g. palm). Ignore it. */
-				return -1;
+				return 0;
 		}
 	}
 
@@ -460,7 +460,7 @@ static int cypress_parse_packet(struct psmouse *psmouse,
 
 	contact_cnt = cypress_get_finger_count(header_byte);
 
-	if (contact_cnt < 0) /* e.g. palm detect */
+	if (contact_cnt < 0)
 		return -EINVAL;
 
 	report_data->contact_cnt = contact_cnt;
