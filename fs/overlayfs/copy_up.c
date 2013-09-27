@@ -110,7 +110,6 @@ static int ovl_copy_up_data(struct path *old, struct path *new, loff_t len)
 			error = bytes;
 			break;
 		}
-		WARN_ON(old_pos != new_pos);
 
 		len -= bytes;
 	}
