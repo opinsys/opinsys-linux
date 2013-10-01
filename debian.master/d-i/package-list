@@ -1,4 +1,7 @@
 Package: kernel-image
+Provides: ext3-modules, ext4-modules
+Provides_amd64: efi-modules, ext3-modules, ext4-modules
+Provides_i386: efi-modules, ext3-modules, ext4-modules
 
 Package: fat-modules
 Depends: kernel-image
@@ -24,14 +27,14 @@ Description: Floppy driver support
 Package: fs-core-modules
 Depends: kernel-image
 Priority: standard
-Provides: jfs-modules, reiserfs-modules, xfs-modules
+Provides: ext2-modules, jfs-modules, reiserfs-modules, xfs-modules
 Description: Base filesystem modules
  This includes jfs, reiserfs and xfs.
 
 Package: fs-secondary-modules
 Depends: kernel-image, fat-modules
 Priority: standard
-Provides: ntfs-modules, hfs-modules
+Provides: btrfs-modules, ntfs-modules, hfs-modules
 Description: Extra filesystem modules
  This includes support for Windows NTFS and MacOS HFS/HFSPlus
 
@@ -48,6 +51,7 @@ Description: Support for Infrared protocols
 Package: md-modules
 Depends: kernel-image
 Priority: standard
+Provides: crypto-dm-modules
 Description: Multi-device support (raid, device-mapper, lvm)
 
 Package: nic-modules
