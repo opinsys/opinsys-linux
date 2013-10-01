@@ -7,6 +7,7 @@ if [ -f "$this" ]; then
 	exec "$this" "$@"
 fi
 
+# FALLBACK for older kernel layouts
 # Removing flavour from version i.e. generic or server.
 flavour_abi=${full_version#*-}
 flavour=${flavour_abi#*-}
@@ -14,6 +15,13 @@ version=${full_version%-$flavour}
 this="$0_$version"
 if [ -f "$this" ]; then
 	exec "$this" "$@"
+fi
+
+# If we have the appropriate package installed but no
+# tool then the tool does not exist.
+if [ -d "/usr/lib/linux-tools/$full_version" ]; then
+	echo "`basename $0` not available for kernel $version" >&2
+	exit 2
 fi
 
 # Give them a hint as to what to install.
