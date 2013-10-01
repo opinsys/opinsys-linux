@@ -87,7 +87,7 @@ install-tools: toolssbin = $(CURDIR)/debian/$(toolspkg)/usr/sbin
 install-tools: toolsman = $(CURDIR)/debian/$(toolspkg)/usr/share/man
 install-tools: install-source $(stampdir)/stamp-build-perarch
 	@echo Debug: $@
-ifeq ($(do_tools),true)
+ifeq ($(do_tools_common),true)
 
 	install -d $(toolsbin)
 	install -d $(toolsman)/man1

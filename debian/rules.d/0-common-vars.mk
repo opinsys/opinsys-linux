@@ -168,6 +168,7 @@ ifneq ($(wildcard $(CURDIR)/tools),)
 else
 	do_tools?=false
 endif
+do_tools_common?=false
 tools_pkg_name=$(src_pkg_name)-tools-$(abi_release)
 tools_common_pkg_name=$(src_pkg_name)-tools-common
 tools_flavour_pkg_name=linux-tools-$(abi_release)
