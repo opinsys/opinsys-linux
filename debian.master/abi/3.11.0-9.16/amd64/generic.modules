@@ -596,6 +596,7 @@ crc7
 crc8
 crc-ccitt
 crc-itu-t
+crct10dif-pclmul
 cros_ec
 cros_ec_i2c
 cros_ec_keyb
