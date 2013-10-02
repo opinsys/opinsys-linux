@@ -84,7 +84,7 @@ Package: SRCPKGNAME-tools-PKGVER-ABINUM
 Architecture: i386 amd64 armhf
 Section: devel
 Priority: optional
-Depends: ${misc:Depends}, ${shlibs:Depends}, SRCPKGNAME-tools-common
+Depends: ${misc:Depends}, ${shlibs:Depends}, linux-tools-common
 Description: Linux kernel version specific tools for version PKGVER-ABINUM
  This package provides the architecture dependant parts for kernel
  version locked tools (such as perf and x86_energy_perf_policy) for
