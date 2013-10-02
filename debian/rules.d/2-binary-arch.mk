@@ -485,20 +485,21 @@ ifeq ($(do_tools_cpupower),true)
 	# Override LIB_MIN in order to to generate a versioned .so named
 	# libcpupower.so.$(abi_release) and link cpupower with that.
 	make -C $(builddirpa)/tools/power/cpupower \
-		CROSS_COMPILE=$(CROSS_COMPILE) \
+		ARCH=$(arch) \
+		CROSS=$(CROSS_COMPILE) \
 		LIB_MIN=$(abi_release) CPUFREQ_BENCH=false
 endif
 
 ifeq ($(do_tools_perf),true)
 	cd $(builddirpa)/tools/perf && \
-		make prefix=/usr HAVE_CPLUS_DEMANGLE=1 CROSS_COMPILE=$(CROSS_COMPILE) NO_LIBPYTHON=1 NO_LIBPERL=1 PYTHON=python2.7
+		make prefix=/usr ARCH=$(arch) HAVE_CPLUS_DEMANGLE=1 CROSS_COMPILE=$(CROSS_COMPILE) NO_LIBPYTHON=1 NO_LIBPERL=1 PYTHON=python2.7
 endif
 ifeq ($(do_tools_x86),true)
-	cd $(builddirpa)/tools/power/x86/x86_energy_perf_policy && make CROSS_COMPILE=$(CROSS_COMPILE)
-	cd $(builddirpa)/tools/power/x86/turbostat && make CROSS_COMPILE=$(CROSS_COMPILE)
+	cd $(builddirpa)/tools/power/x86/x86_energy_perf_policy && make ARCH=$(arch) CROSS_COMPILE=$(CROSS_COMPILE)
+	cd $(builddirpa)/tools/power/x86/turbostat && make ARCH=$(arch) CROSS_COMPILE=$(CROSS_COMPILE)
 endif
 ifeq ($(do_tools_hyperv),true)
-	cd $(builddirpa)/tools/hv && make CROSS_COMPILE=$(CROSS_COMPILE)
+	cd $(builddirpa)/tools/hv && make ARCH=$(arch) CROSS_COMPILE=$(CROSS_COMPILE)
 endif
 endif
 	@touch $@
