@@ -1536,6 +1536,8 @@ static bool storvsc_scsi_cmd_ok(struct scsi_cmnd *scmnd)
 	 * this. So, don't send it.
 	 */
 	case SET_WINDOW:
+	/* the host does not handle MAINTENANCE_IN preventing boot.*/
+	case MAINTENANCE_IN:
 		scmnd->result = ILLEGAL_REQUEST << 16;
 		allowed = false;
 		break;
