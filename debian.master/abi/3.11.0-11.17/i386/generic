@@ -8902,6 +8902,7 @@ EXPORT_SYMBOL_GPL drivers/gpu/drm/i915/i915 0xe7237b0b	i915_gpu_turbo_disable
 EXPORT_SYMBOL_GPL drivers/gpu/drm/ttm/ttm 0x135e14f5	ttm_dma_page_alloc_debugfs
 EXPORT_SYMBOL_GPL drivers/gpu/drm/ttm/ttm 0x4227c7c5	ttm_dma_populate
 EXPORT_SYMBOL_GPL drivers/gpu/drm/ttm/ttm 0x86e43ea6	ttm_dma_unpopulate
+EXPORT_SYMBOL_GPL drivers/hid/hid 0x02c7978c	hid_validate_values
 EXPORT_SYMBOL_GPL drivers/hid/hid 0x05495392	hid_debug
 EXPORT_SYMBOL_GPL drivers/hid/hid 0x0a44ff3d	hidraw_disconnect
 EXPORT_SYMBOL_GPL drivers/hid/hid 0x0db19de6	hidinput_find_field
@@ -8969,12 +8970,12 @@ EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x18310035	vmbus_sendpacket_multipagebuffe
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x1fb5258f	vmbus_open
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x285addcf	vmbus_recvpacket_raw
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x2d25dc02	vmbus_get_outgoing_channel
+EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x358fafa5	vmbus_prep_negotiate_resp
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x46a417ca	vmbus_proto_version
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x6a78e57f	__vmbus_driver_register
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0x92844f52	vmbus_set_sc_create_callback
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0xb5ff2042	vmbus_sendpacket_pagebuffer
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0xc82efdff	vmbus_driver_unregister
-EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0xc91a78a4	vmbus_prep_negotiate_resp
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0xcb75f7e6	vmbus_teardown_gpadl
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0xcbacd19f	vmbus_are_subchannels_present
 EXPORT_SYMBOL_GPL drivers/hv/hv_vmbus 0xefb83553	vmbus_close
@@ -10095,10 +10096,10 @@ EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xc113e7b1	i2400m_netdev_setup
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xc8b75425	i2400m_reset
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xce1ed3c6	i2400m_tx
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xd9d864fd	i2400m_dev_bootstrap
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x1eedcd5a	cw1200_core_probe
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x5f1bb891	cw1200_can_suspend
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x6a1d501b	cw1200_core_release
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x8b3e89ae	cw1200_irq_handler
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x1903cbbe	cw1200_irq_handler
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x4477477d	cw1200_core_probe
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x811cdacc	cw1200_core_release
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xf2195903	cw1200_can_suspend
 EXPORT_SYMBOL_GPL drivers/net/wireless/ipw2x00/libipw 0x8efc57b8	libipw_rx_any
 EXPORT_SYMBOL_GPL drivers/net/wireless/iwlegacy/iwlegacy 0x1f1f978c	il_mac_tx_last_beacon
 EXPORT_SYMBOL_GPL drivers/net/wireless/iwlegacy/iwlegacy 0x4f9c80b0	il_remove_station

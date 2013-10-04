@@ -6723,6 +6723,7 @@ EXPORT_SYMBOL_GPL drivers/hid/hid 0xd99b85d7	hid_destroy_device
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xe0263005	hid_ignore
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xe0b93253	hid_input_report
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xe6f3555d	hidinput_count_leds
+EXPORT_SYMBOL_GPL drivers/hid/hid 0xe9f62a08	hid_validate_values
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xf205b812	hidraw_report_event
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xf4f45404	hid_dump_field
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xfeca9cb9	hidinput_calc_abs_res
@@ -7553,10 +7554,10 @@ EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xc3e3b652	i2400m_dev_reset_ha
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xcd2650ae	i2400m_init
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xd2d764fa	i2400m_pre_reset
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xf1db5203	i2400m_cmd_enter_powersave
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x1e796d71	cw1200_core_release
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x322d3466	cw1200_irq_handler
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x43ced188	cw1200_core_probe
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x80799f39	cw1200_can_suspend
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x4dff4453	cw1200_core_release
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xc1ce28fb	cw1200_irq_handler
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xc5a1072c	cw1200_core_probe
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xfd08ca28	cw1200_can_suspend
 EXPORT_SYMBOL_GPL drivers/net/wireless/libertas/libertas 0x014978bb	lbs_suspend
 EXPORT_SYMBOL_GPL drivers/net/wireless/libertas/libertas 0x2db9b866	lbs_remove_card
 EXPORT_SYMBOL_GPL drivers/net/wireless/libertas/libertas 0x2f467e02	__lbs_cmd

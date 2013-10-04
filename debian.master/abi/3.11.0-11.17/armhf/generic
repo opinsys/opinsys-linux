@@ -8353,6 +8353,7 @@ EXPORT_SYMBOL_GPL drivers/hid/hid 0x93429f82	hidinput_get_led_field
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xa36bc060	hid_dump_field
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xa6d4139a	hid_connect
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xab241d76	hidinput_disconnect
+EXPORT_SYMBOL_GPL drivers/hid/hid 0xb8d7206d	hid_validate_values
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xcfa8964c	hid_debug_event
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xd31ff167	__hid_register_driver
 EXPORT_SYMBOL_GPL drivers/hid/hid 0xd5b72a0f	hid_set_field
@@ -9397,10 +9398,10 @@ EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xe42492bc	i2400m_pre_reset
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xe652a5b8	i2400m_reset
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xec678058	i2400m_tx
 EXPORT_SYMBOL_GPL drivers/net/wimax/i2400m/i2400m 0xf46dc980	i2400m_release
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x73c1b481	cw1200_core_release
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x99166585	cw1200_irq_handler
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xd3bd2da9	cw1200_can_suspend
-EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xe5b441df	cw1200_core_probe
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x267dd5d7	cw1200_can_suspend
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0x70cd1791	cw1200_core_probe
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xa80c206a	cw1200_core_release
+EXPORT_SYMBOL_GPL drivers/net/wireless/cw1200/cw1200_core 0xc1498f43	cw1200_irq_handler
 EXPORT_SYMBOL_GPL drivers/net/wireless/ipw2x00/libipw 0xd62476df	libipw_rx_any
 EXPORT_SYMBOL_GPL drivers/net/wireless/iwlegacy/iwlegacy 0x17a2fb0a	il_mac_tx_last_beacon
 EXPORT_SYMBOL_GPL drivers/net/wireless/iwlegacy/iwlegacy 0x28b16232	il_prep_station
