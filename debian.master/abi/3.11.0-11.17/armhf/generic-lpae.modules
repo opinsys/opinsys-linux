@@ -2627,13 +2627,8 @@ videobuf-vmalloc
 videodev
 viperboard
 viperboard_adc
-virtio
 virtio_balloon
-virtio_blk
 virtio_console
-virtio_mmio
-virtio_net
-virtio_ring
 virtio-rng
 virtio_scsi
 virtual
