@@ -1791,7 +1791,6 @@ lms501kf03
 lnbp21
 lnbp22
 lockd
-logger
 lp
 lp3971
 lp3972
@@ -3445,7 +3444,6 @@ timb_dma
 timberdale
 timblogiw
 timbuart
-timed_gpio
 timeriomem-rng
 tipc
 ti_usb_3410_5052
