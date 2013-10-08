@@ -267,6 +267,12 @@ static inline ulong kvmppc_get_pc(struct kvm_vcpu *vcpu)
 	return vcpu->arch.pc;
 }
 
+static inline int kvmppc_ld32(struct kvm_vcpu *vcpu, ulong *eaddr,
+			      u32 *ptr, bool data)
+{
+	return kvmppc_ld(vcpu, eaddr, sizeof(u32), ptr, data);
+}
+
 static inline u32 kvmppc_get_last_inst(struct kvm_vcpu *vcpu)
 {
 	ulong pc = kvmppc_get_pc(vcpu);
@@ -274,7 +280,7 @@ static inline u32 kvmppc_get_last_inst(struct kvm_vcpu *vcpu)
 	/* Load the instruction manually if it failed to do so in the
 	 * exit path */
 	if (vcpu->arch.last_inst == KVM_INST_FETCH_FAILED)
-		kvmppc_ld(vcpu, &pc, sizeof(u32), &vcpu->arch.last_inst, false);
+		kvmppc_ld32(vcpu, &pc, &vcpu->arch.last_inst, false);
 
 	return vcpu->arch.last_inst;
 }
@@ -291,7 +297,7 @@ static inline u32 kvmppc_get_last_sc(struct kvm_vcpu *vcpu)
 	/* Load the instruction manually if it failed to do so in the
 	 * exit path */
 	if (vcpu->arch.last_inst == KVM_INST_FETCH_FAILED)
-		kvmppc_ld(vcpu, &pc, sizeof(u32), &vcpu->arch.last_inst, false);
+		kvmppc_ld32(vcpu, &pc, &vcpu->arch.last_inst, false);
 
 	return vcpu->arch.last_inst;
 }
