@@ -351,7 +351,7 @@ CONFIG_USB_EHCI_HCD				y note<ensures USB 2.0/1.1 probe ordering>
 CONFIG_USB_OHCI_HCD				y note<ensures USB 2.0/1.1 probe ordering>
 CONFIG_USB_UHCI_HCD				y note<ensures USB 2.0/1.1 probe ordering>
 CONFIG_USB_XHCI_HCD				y note<ensures USB 2.0/1.1 probe ordering>
-CONFIG_USB_OTG					p policy<(arch armel armhf &/ value y) | value n> note<triggers breakage on x86>
+CONFIG_USB_OTG					n note<triggers breakage on x86>
 #  options:
 CONFIG_BRCMFMAC_USB				y
 CONFIG_COMEDI_USB_DRIVERS			y
