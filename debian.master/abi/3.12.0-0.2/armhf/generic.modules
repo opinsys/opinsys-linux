@@ -196,8 +196,6 @@ afs
 ah4
 ah6
 ahci
-ahci_imx
-ahci_platform
 aic79xx
 aic7xxx
 aic94xx
