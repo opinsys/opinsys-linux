@@ -11,4 +11,4 @@ no_dumpfile = true
 loader		= grub
 do_tools	= false
 #do_flavour_image_package = false
-disable_d_i	= true
+#disable_d_i	= true
