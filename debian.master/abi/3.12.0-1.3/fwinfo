@@ -107,7 +107,7 @@ firmware:       BT3CPCC.bin
 firmware:       c218tunx.cod
 firmware:       c320tunx.cod
 firmware:       carl9170-1.fw
-firmware:       cbfw-3.2.1.0.bin
+firmware:       cbfw-3.2.1.1.bin
 firmware:       cis/3CCFEM556.cis
 firmware:       cis/3CXEM556.cis
 firmware:       cis/COMpad2.cis
@@ -130,9 +130,9 @@ firmware:       cmmb_venice_12mhz.inp
 firmware:       comedi/jr3pci.idm
 firmware:       cp204unx.cod
 firmware:       cpia2/stv0672_vp4.bin
-firmware:       ct2fw-3.2.1.0.bin
+firmware:       ct2fw-3.2.1.1.bin
 firmware:       ctefx.bin
-firmware:       ctfw-3.2.1.0.bin
+firmware:       ctfw-3.2.1.1.bin
 firmware:       cxgb3/ael2005_opt_edc.bin
 firmware:       cxgb3/ael2005_twx_edc.bin
 firmware:       cxgb3/ael2020_twx_edc.bin
@@ -426,6 +426,7 @@ firmware:       radeon/BONAIRE_mec.bin
 firmware:       radeon/BONAIRE_pfp.bin
 firmware:       radeon/BONAIRE_rlc.bin
 firmware:       radeon/BONAIRE_sdma.bin
+firmware:       radeon/BONAIRE_smc.bin
 firmware:       radeon/BONAIRE_uvd.bin
 firmware:       radeon/BTC_rlc.bin
 firmware:       radeon/CAICOS_mc.bin
