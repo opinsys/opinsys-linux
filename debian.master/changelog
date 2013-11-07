@@ -1,4 +1,4 @@
-linux (3.12.0-2.4) trusty; urgency=low
+linux (3.12.0-2.5) trusty; urgency=low
 
   [ Andy Whitcroft ]
 
@@ -35,6 +35,9 @@ linux (3.12.0-2.4) trusty; urgency=low
 
   * rebase to v3.12
     - LP: #1222850
+
+  [ Adam Conrad ]
+  * etc/getabis: Fetch arm64/generic abis as well
 
  -- Andy Whitcroft <apw@canonical.com>  Wed, 06 Nov 2013 21:00:21 +0000
 
