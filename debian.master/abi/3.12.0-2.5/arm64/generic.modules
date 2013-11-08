@@ -1927,14 +1927,14 @@ xt_cpu
 xt_CT
 xt_dccp
 xt_devgroup
-xt_DSCP
 xt_dscp
+xt_DSCP
 xt_ecn
 xt_esp
 xt_hashlimit
 xt_helper
-xt_HL
 xt_hl
+xt_HL
 xt_HMARK
 xt_IDLETIMER
 xt_iprange
@@ -1958,8 +1958,8 @@ xt_physdev
 xt_pkttype
 xt_policy
 xt_quota
-xt_RATEEST
 xt_rateest
+xt_RATEEST
 xt_realm
 xt_recent
 xt_REDIRECT
@@ -1971,8 +1971,8 @@ xt_socket
 xt_state
 xt_statistic
 xt_string
-xt_TCPMSS
 xt_tcpmss
+xt_TCPMSS
 xt_TCPOPTSTRIP
 xt_tcpudp
 xt_TEE
