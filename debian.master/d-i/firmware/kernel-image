@@ -1,5 +1,7 @@
 device-tree/highbank.dtb ?
+device-tree/imx6dl-wandboard.dtb ?
 device-tree/imx6q-sabrelite.dtb ?
+device-tree/imx6q-wandboard.dtb ?
 device-tree/omap3-beagle-xm.dtb ?
 device-tree/omap4-panda.dtb ?
 device-tree/omap4-panda-es.dtb ?
