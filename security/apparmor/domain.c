@@ -641,7 +641,7 @@ int aa_change_hat(const char *hats[], int count, u64 token, bool permtest)
 	/* released below */
 	cred = get_current_cred();
 	cxt = cred_cxt(cred);
-	label = aa_cred_label(cred);
+	label = aa_get_newest_cred_label(cred);
 	previous = cxt->previous;
 
 	profile = labels_profile(label);
@@ -739,6 +739,7 @@ audit:
 
 out:
 	aa_put_profile(hat);
+	aa_put_label(label);
 	kfree(name);
 	put_cred(cred);
 
@@ -784,7 +785,7 @@ int aa_change_profile(const char *ns_name, const char *hname, bool onexec,
 	}
 
 	cred = get_current_cred();
-	label = aa_cred_label(cred);
+	label = aa_get_newest_cred_label(cred);
 	profile = labels_profile(label);
 
 	/*
@@ -795,6 +796,7 @@ int aa_change_profile(const char *ns_name, const char *hname, bool onexec,
 	 * of permissions.
 	 */
 	if (current->no_new_privs && !unconfined(label)) {
+		aa_put_label(label);
 		put_cred(cred);
 		return -EPERM;
 	}
@@ -866,6 +868,7 @@ audit:
 
 	aa_put_namespace(ns);
 	aa_put_profile(target);
+	aa_put_label(label);
 	put_cred(cred);
 
 	return error;
