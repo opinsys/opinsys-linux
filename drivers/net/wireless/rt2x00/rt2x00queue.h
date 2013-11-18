@@ -633,7 +633,7 @@ static inline int rt2x00queue_dma_timeout(struct queue_entry *entry)
 {
 	if (!test_bit(ENTRY_OWNER_DEVICE_DATA, &entry->flags))
 		return false;
-	return time_after(jiffies, entry->last_action + msecs_to_jiffies(100));
+	return time_after(jiffies, entry->last_action + msecs_to_jiffies(500));
 }
 
 /**
