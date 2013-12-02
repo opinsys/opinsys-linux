@@ -786,10 +786,10 @@ static void set_pin_eapd(struct hda_codec *codec, hda_nid_t pin, bool enable)
 	if (spec->own_eapd_ctl ||
 	    !(snd_hda_query_pin_caps(codec, pin) & AC_PINCAP_EAPD))
 		return;
-	if (codec->inv_eapd)
-		enable = !enable;
 	if (spec->keep_eapd_on && !enable)
 		return;
+	if (codec->inv_eapd)
+		enable = !enable;
 	snd_hda_codec_update_cache(codec, pin, 0,
 				   AC_VERB_SET_EAPD_BTLENABLE,
 				   enable ? 0x02 : 0x00);
@@ -4383,9 +4383,11 @@ int snd_hda_gen_build_controls(struct hda_codec *codec)
 					    true, &spec->vmaster_mute.sw_kctl);
 		if (err < 0)
 			return err;
-		if (spec->vmaster_mute.hook)
+		if (spec->vmaster_mute.hook) {
 			snd_hda_add_vmaster_hook(codec, &spec->vmaster_mute,
 						 spec->vmaster_mute_enum);
+			snd_hda_sync_vmaster_hook(&spec->vmaster_mute);
+		}
 	}
 
 	free_kctls(spec); /* no longer needed */
