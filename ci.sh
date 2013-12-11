@@ -26,7 +26,7 @@ cp -a -t /tmp/kernel-package/pkg/image \
 cp -a -t /tmp/kernel-package/pkg/headers \
     opinsys/headers-postinst
 
-CONCURRENCLY_LEVEL=4 make-kpkg --initrd --overlay-dir=/tmp/kernel-package --revision="${debian_revision}" kernel_image kernel_headers
+CONCURRENCY_LEVEL=4 make-kpkg --initrd --overlay-dir=/tmp/kernel-package --revision="${debian_revision}" kernel_image kernel_headers
 
 aptirepo-upload -r "${APTIREPO_REMOTE}" -b "git-$(echo "$GIT_BRANCH" | cut -d / -f 2)" "../linux-image-${upstream_version}_${debian_revision}_${arch}.deb"
 aptirepo-upload -r "${APTIREPO_REMOTE}" -b "git-$(echo "$GIT_BRANCH" | cut -d / -f 2)" "../linux-headers-${upstream_version}_${debian_revision}_${arch}.deb"
