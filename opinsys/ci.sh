@@ -11,7 +11,7 @@ sublevel=$(sed -r -n 's/^SUBLEVEL = //p' Makefile)
 extraversion=$(sed -r -n 's/^EXTRAVERSION = //p' Makefile)
 
 upstream_version="${version}.${patchlevel}.${sublevel}${extraversion}"
-debian_revision="${BUILD_NUMBER}~$(git rev-parse HEAD)"
+debian_revision="${upstream_version}-${BUILD_NUMBER}~$(git rev-parse HEAD)"
 
 arch=i386
 
