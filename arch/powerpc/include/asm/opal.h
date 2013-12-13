@@ -727,7 +727,7 @@ int64_t opal_pci_poll(uint64_t phb_id);
 int64_t opal_return_cpu(void);
 int64_t opal_reinit_cpus(uint64_t flags);
 
-int64_t opal_xscom_read(uint32_t gcid, uint32_t pcb_addr, uint64_t *val);
+int64_t opal_xscom_read(uint32_t gcid, uint32_t pcb_addr, __be64 *val);
 int64_t opal_xscom_write(uint32_t gcid, uint32_t pcb_addr, uint64_t val);
 
 int64_t opal_lpc_write(uint32_t chip_id, enum OpalLPCAddressType addr_type,
