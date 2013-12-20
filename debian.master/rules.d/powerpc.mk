@@ -10,3 +10,6 @@ no_dumpfile	= true
 do_tools	= false
 loader		= yaboot
 do_flavour_image_package = false
+
+flavours =
+do_flavour_image_package = false

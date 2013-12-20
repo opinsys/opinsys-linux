@@ -16,3 +16,6 @@ do_tools	= false
 dtb_files_generic += apm-mustang.dtb
 dtb_files_generic += foundation-v8.dtb
 dtb_files_generic += rtsm_ve-aemv8a.dtb
+
+flavours =
+do_flavour_image_package = false
