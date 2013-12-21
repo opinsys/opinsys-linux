@@ -6,6 +6,10 @@ linux (3.12.0-8.16) UNRELEASED; urgency=low
 
   [ Upstream Kernel Changes ]
 
+  * rebase to v3.12.6
+
+  [ Upstream Kernel Changes ]
+
   * rebase to v3.12.5
     - LP: #1256212
     - LP: #1256840
