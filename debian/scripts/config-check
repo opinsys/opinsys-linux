@@ -2,8 +2,6 @@
 #
 # check-config -- check the current config for issues
 #
-exit 0;
-
 use strict;
 
 my $P = 'check-config';
