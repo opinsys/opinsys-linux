@@ -15,7 +15,7 @@ upstream_version="${version}.${patchlevel}.${sublevel}${extraversion}"
 git_commit="~$(git rev-parse HEAD)" || {
     git_commit=
 }
-debian_revision="${upstream_version}-${BUILD_NUMBER}${git_commit}"
+debian_revision="${upstream_version}-${BUILD_NUMBER:-0}${git_commit}"
 
 arch=i386
 
