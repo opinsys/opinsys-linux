@@ -113,7 +113,7 @@
  * Constants for extra TX headroom for alignment purposes.
  */
 #define RT2X00_ALIGN_SIZE	4 /* Only whole frame needs alignment */
-#define RT2X00_L2PAD_SIZE	8 /* Both header & payload need alignment */
+#define RT2X00_L2PAD_SIZE	12 /* Both header & payload need alignment */
 
 /*
  * Standard timing and size defines.
