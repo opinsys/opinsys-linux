@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/i386 3.10.23.opinsys1 Kernel Configuration
+# Linux/i386 3.10.28.opinsys1 Kernel Configuration
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -5786,7 +5786,6 @@ CONFIG_DMA_ACPI=y
 #
 # DMA Clients
 #
-CONFIG_NET_DMA=y
 CONFIG_ASYNC_TX_DMA=y
 # CONFIG_DMATEST is not set
 CONFIG_DCA=m
