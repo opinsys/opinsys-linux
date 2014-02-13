@@ -1,7 +1,7 @@
 VERSION = 3
 PATCHLEVEL = 12
 SUBLEVEL = 10
-EXTRAVERSION = .opinsys1
+EXTRAVERSION = .opinsys2
 NAME = One Giant Leap for Frogkind
 
 # *DOCUMENTATION*
