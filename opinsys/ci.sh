@@ -11,7 +11,11 @@ sublevel=$(sed -r -n 's/^SUBLEVEL = //p' Makefile)
 extraversion=$(sed -r -n 's/^EXTRAVERSION = //p' Makefile)
 
 upstream_version="${version}.${patchlevel}.${sublevel}${extraversion}"
-debian_revision="${upstream_version}-${BUILD_NUMBER}~${GIT_BRANCH}.$(git rev-parse HEAD)"
+
+git_commit="~$(git rev-parse HEAD)" || {
+    git_commit=
+}
+debian_revision="${upstream_version}-${BUILD_NUMBER:-0}${git_commit}"
 
 arch=i386
 
@@ -28,5 +32,7 @@ cp -a -t /tmp/kernel-package/pkg/headers \
 
 CONCURRENCY_LEVEL=4 make-kpkg --initrd --overlay-dir=/tmp/kernel-package --revision="${debian_revision}" kernel_image kernel_headers
 
-aptirepo-upload -r "${APTIREPO_REMOTE}" -b "git-$(echo "$GIT_BRANCH" | cut -d / -f 2)" "../linux-image-${upstream_version}_${debian_revision}_${arch}.deb"
-aptirepo-upload -r "${APTIREPO_REMOTE}" -b "git-$(echo "$GIT_BRANCH" | cut -d / -f 2)" "../linux-headers-${upstream_version}_${debian_revision}_${arch}.deb"
+if [ -n "${APTIREPO_REMOTE:-}" ]; then
+    aptirepo-upload -r "${APTIREPO_REMOTE}" -b "kernels" "../linux-image-${upstream_version}_${debian_revision}_${arch}.deb"
+    aptirepo-upload -r "${APTIREPO_REMOTE}" -b "kernels" "../linux-headers-${upstream_version}_${debian_revision}_${arch}.deb"
+fi
