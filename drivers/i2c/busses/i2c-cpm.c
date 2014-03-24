@@ -42,6 +42,8 @@
 #include <linux/dma-mapping.h>
 #include <linux/of_device.h>
 #include <linux/of_platform.h>
+#include <linux/of_irq.h>
+#include <linux/of_address.h>
 #include <sysdev/fsl_soc.h>
 #include <asm/cpm.h>
 
