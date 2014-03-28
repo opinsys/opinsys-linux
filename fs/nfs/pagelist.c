@@ -87,6 +87,7 @@ nfs_page_free(struct nfs_page *p)
 static void
 nfs_iocounter_inc(struct nfs_io_counter *c)
 {
+	set_bit(NFS_IO_INPROGRESS, &c->flags);
 	atomic_inc(&c->io_count);
 }
 
