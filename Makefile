@@ -1,7 +1,7 @@
 VERSION = 3
 PATCHLEVEL = 14
 SUBLEVEL = 1
-EXTRAVERSION = .opinsys0
+EXTRAVERSION = .opinsys1
 NAME = Shuffling Zombie Juror
 
 # *DOCUMENTATION*
