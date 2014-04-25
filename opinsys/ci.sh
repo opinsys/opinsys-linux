@@ -30,7 +30,7 @@ cp -a -t /tmp/kernel-package/pkg/image \
 cp -a -t /tmp/kernel-package/pkg/headers \
     opinsys/headers-postinst
 
-CONCURRENCY_LEVEL=4 make-kpkg --initrd --overlay-dir=/tmp/kernel-package --revision="${debian_revision}" kernel_image kernel_headers
+CONCURRENCY_LEVEL=4 make-kpkg --initrd --overlay-dir=/tmp/kernel-package --revision="${debian_revision}" kernel_image kernel_headers kernel_debug
 
 if [ -n "${APTIREPO_REMOTE:-}" ]; then
     aptirepo-upload -r "${APTIREPO_REMOTE}" -b "kernels" "../linux-image-${upstream_version}_${debian_revision}_${arch}.deb"
