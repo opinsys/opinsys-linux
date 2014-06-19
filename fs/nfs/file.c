@@ -780,7 +780,11 @@ do_unlk(struct file *filp, int cmd, struct file_lock *fl, int is_local)
 
 	l_ctx = nfs_get_lock_context(nfs_file_open_context(filp));
 	if (!IS_ERR(l_ctx)) {
-		status = nfs_iocounter_wait(&l_ctx->io_count);
+		struct nfs_io_counter *io_count = &l_ctx->io_count;
+		status = wait_on_bit(&io_count->flags,
+				     NFS_IO_INPROGRESS,
+				     nfs_wait_bit_killable,
+				     TASK_KILLABLE);
 		nfs_put_lock_context(l_ctx);
 		if (status < 0)
 			return status;
