@@ -1,4 +1,183 @@
-linux-lts-utopic (3.16.0-1.3~trusty1) trusty; urgency=low
+linux-lts-utopic (3.16.0-3.8~14.10) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1340091
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 10 Jul 2014 10:06:47 +0100
+
+linux (3.16.0-2.7) utopic; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * ubuntu: aufs3 -- avoid aufs3-mmap.patch include hell for arm64
+    ubuntu: aufs3 -- (no-up) aufs3-mmap.patch
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 09 Jul 2014 16:16:28 +0100
+
+linux (3.16.0-2.6) utopic; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Revert "ubuntu: aufs3 -- (no-up) aufs3-mmap.patch"
+    Fixes FTBS.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 08 Jul 2014 17:29:26 +0100
+
+linux (3.16.0-2.5) utopic; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * ubuntu -- fix basic format for ubuntu/Makefile
+  * ubuntu: AUFS (no-squash): basic framework and update machinary
+  * ubuntu: aufs3 -- update update scripting
+  * ubuntu: aufs3 -- (no-up) aufs3-base.patch
+  * ubuntu: aufs3 -- (no-up) aufs3-mmap.patch
+  * ubuntu: aufs3 -- (no-up) aufs3-standalone.patch
+  * ubuntu: AUFS -- update to dcf336a754c86d5ee1c3d50699fd75c586d037cb
+  * [Configs] AUFS configs
+  * ubuntu: aufs3 -- reenable
+
+  [ Tim Gardner ]
+
+  * CONFIG_LATENCYTOP=n
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 08 Jul 2014 15:27:35 +0100
+
+linux (3.16.0-2.4) utopic; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] flip VIRTIO*=y
+  * [Config] commonise CONFIG_SWIOTLB=y
+  * [Config] apply Bus options (PCI etc.) >> PCI support config defaults
+  * [Config] apply Device Drivers >> ATA/ATAPI/MFM/RLL support (DEPRECATED)
+    config defaults
+  * [Config] apply Device Drivers >> Block devices config defaults
+  * [Config] apply Device Drivers >> Character devices config defaults
+  * [Config] apply Device Drivers >> DMA Engine support config defaults
+  * [Config] apply Device Drivers >> EDAC (Error Detection And Correction)
+    reporting config defaults
+  * [Config] apply Device Drivers >> Graphics support >> Direct Rendering
+    Manager >> Direct Rendering Manager (XFree86 4.1.0 and higher DRI
+    support) config defaults
+  * [Config] apply Device Drivers >> GPIO Support config defaults
+  * [Config] apply Device Drivers >> Graphics support >> Console display
+    driver support config defaults
+  * [Config] apply Device Drivers >> IIO staging drivers >> Accelerometers
+    config defaults
+  * [Config] apply Device Drivers >> IOMMU Hardware Support config defaults
+  * [Config] apply Device Drivers >> Input device support >> Generic input
+    layer (needed for keyboard, mouse, ...) >> Miscellaneous devices config
+    defaults
+  * [Config] apply Device Drivers >> Input device support >> Hardware I/O
+    ports config defaults
+  * [Config] apply Device Drivers >> LED Support >> LED Class Support
+    config defaults
+  * [Config] apply Device Drivers >> Hardware Spinlock drivers config
+    defaults
+  * [Config] apply Device Drivers >> Multimedia support >> Cameras/video
+    grabbers support config defaults
+  * [Config] apply Security options config defaults
+  * [Config] apply Networking options >> Network packet filtering framework
+    (Netfilter) >> Core Netfilter Configuration config defaults
+  * [Config] apply Device Drivers >> MMC/SD/SDIO card support config
+    defaults
+  * [Config] apply Device Drivers >> Graphics support >> Frame buffer
+    Devices >> Support for frame buffer devices config defaults
+  * [Config] apply Power management and ACPI options >> CPU Frequency
+    scaling config defaults
+  * [Config] apply Processor type and features config defaults
+  * [Config] apply Partition Types config defaults
+  * [Config] apply Power management and ACPI options config defaults
+  * [Config] apply Device Drivers >> InfiniBand support config defaults
+  * [Config] apply Device Drivers >> Misc devices config defaults
+  * [Config] apply Device Drivers >> Multifunction device drivers config
+    defaults
+  * [Config] apply Device Drivers >> SCSI device support >> SCSI device
+    support >> SCSI low-level drivers config defaults
+  * [Config] apply Device Drivers >> Network device support >> Ethernet
+    driver support config defaults
+  * [Config] apply Device Drivers >> Network device support >> Network core
+    driver support config defaults
+  * [Config] apply Device Drivers >> Network device support >> PHY Device
+    support and infrastructure config defaults
+  * [Config] apply File systems >> Network File Systems config defaults
+  * [Config] apply Device Drivers >> Input device support >> Generic input
+    layer (needed for keyboard, mouse, ...) >> Touchscreens config defaults
+  * [Config] apply Device Drivers >> Memory Technology Device (MTD) support
+    >> NAND Device Support config defaults
+  * [Config] apply Device Drivers >> Network device support >> Wireless LAN
+    >> Ralink driver support config defaults
+  * [Config] apply Device Drivers >> Staging drivers config defaults
+  * [Config] apply Cryptographic API >> Hardware crypto devices config
+    defaults
+  * [Config] apply Device Drivers >> Macintosh device drivers config
+    defaults
+  * [Config] apply Device Drivers >> Network device support >> Wireless LAN
+    config defaults
+  * [Config] apply Device Drivers >> PPS support config defaults
+  * [Config] apply Device Drivers >> Sound card support config defaults
+  * [Config] apply Networking support >> RF switch subsystem support config
+    defaults
+  * [Config] apply Library routines config defaults
+  * [Config] apply Device Drivers >> CODEC drivers config defaults
+  * [Config] apply Device Drivers >> PHY Subsystem config defaults
+  * [Config] apply Device Drivers >> Pulse-Width Modulation (PWM) Support
+    config defaults
+  * [Config] apply Kernel hacking >> Tracers config defaults
+  * [Config] apply Kernel hacking >> Runtime Testing config defaults
+  * [Config] apply Kernel hacking >> Architecture: powerpc config defaults
+  * [Config] apply Device Drivers >> USB support config defaults
+  * [Config] apply Device Drivers >> Power supply class support config
+    defaults
+  * [Config] apply Device Drivers >> USB Network Adapters config defaults
+  * [Config] apply General setup >> IRQ subsystem config defaults
+  * [Config] apply General setup config defaults
+  * [Config] apply File systems >> Miscellaneous filesystems config
+    defaults
+  * [Config] apply File systems config defaults
+  * [Config] apply Device Drivers >> Userspace I/O drivers config defaults
+  * [Config] apply Device Drivers >> Virtio drivers config defaults
+  * [Config] apply Device Drivers >> USB Peripheral Controller config
+    defaults
+  * [Config] apply Device Drivers >> SCSI device support >> SCSI device
+    support >> SCSI Transports config defaults
+  * [Config] apply Device Drivers >> Real Time Clock config defaults
+  * [Config] apply Device Drivers >> Serial ATA and Parallel ATA drivers
+    (libata) config defaults
+  * [Config] apply Device Drivers >> SoC Audio for Freescale CPUs config
+    defaults
+  * [Config] apply Device Drivers >> Voltage and Current Regulator Support
+    config defaults
+  * [Config] apply Device Drivers >> USB Physical Layer drivers config
+    defaults
+  * [Config] apply Device Drivers >> Watchdog Timer Support config defaults
+  * [Config] powerpc-powerpc-e500mc FTBFS -- CONFIG_CRASH_DUMP=n
+  * [Config] powerpc-powerpc64-emb FTBFS -- CONFIG_IMA=n
+  * [Config] powerpc-powerpc64-emb FTBFS -- CONFIG_HIBERNATION=n
+    CONFIG_HOTPLUG_CPU=n
+  * [Config] ppc64el-generic FTBFS -- CONFIG_LUSTRE_FS=n
+  * [Config] drivers/message/fusion needs scsi_transport_spi in virtual
+  * [Config] drivers/acpi/acpi_ipmi.ko needs
+    drivers/char/ipmi/ipmi_msghandler.ko in virtual
+  * [Config] armhf-* FTBFS -- CONFIG_STACK_TRACER=n
+    CONFIG_FUNCTION_TRACER=n
+  * [Config] ignore modules changing following major config changes
+
+  [ Tim Gardner ]
+
+  * rebase to v3.16-rc4
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v3.16-rc4
+    - LP: #1297581
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 03 Jul 2014 11:00:43 +0100
+
+linux (3.16.0-1.3) utopic; urgency=low
 
   [ Andy Whitcroft ]
 
