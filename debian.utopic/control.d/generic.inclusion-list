@@ -4,6 +4,7 @@ arch/x86/kvm/kvm-intel.ko
 arch/x86/kvm/kvm-amd.ko
 crypto/*
 drivers/acpi/*
+drivers/char/ipmi/ipmi_msghandler.ko
 drivers/ata/ahci_platform.ko
 drivers/ata/ahci.ko
 drivers/ata/acard-ahci.ko
@@ -38,6 +39,7 @@ drivers/input/touchscreen/usbtouchscreen.ko
 drivers/input/misc/xen-kbdfront.ko
 drivers/md/*
 drivers/message/fusion*
+drivers/scsi/scsi_transport_spi.ko
 drivers/misc/vmw_balloon.ko
 drivers/misc/vmw_vmci/vmw_vmci.ko
 drivers/net/caif/caif_virtio.ko
