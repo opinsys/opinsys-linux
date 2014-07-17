@@ -1,4 +1,17 @@
-linux-lts-utopic (3.16.0-3.8~14.10) trusty; urgency=low
+linux-lts-utopic (3.16.0-4.9~14.10) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1341543
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v3.16-rc5
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Sun, 13 Jul 2014 21:30:27 -0400
+
+linux (3.16.0-3.8) utopic; urgency=low
 
   [ Tim Gardner ]
 
