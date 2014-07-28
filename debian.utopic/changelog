@@ -1,4 +1,28 @@
-linux-lts-utopic (3.16.0-5.10~14.10) trusty; urgency=low
+linux-lts-utopic (3.16.0-6.11~14.10) trusty; urgency=low
+
+  [ Paolo Pisati ]
+
+  * [Config] armhf: MXS_DMA=y && MTD_NAND_GPMI_NAND=m
+  * [Config] armhf: KEYBOARD_IMX=m
+  * [Config] armhf: build cubox & imx6 DTBs
+  * [Config] armhf: RTC_DRV_PCF8523=y
+
+  [ Tim Gardner ]
+
+  * [Config] CONFIG_KEYS_DEBUG_PROC_KEYS=y
+    - LP: #1344405
+  * [Config] CONFIG_SCSI_IPR_TRACE=y, CONFIG_SCSI_IPR_DUMP=y
+    - LP: #1343109
+  * Release Tracking Bug
+    - LP: #1349196
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v3.16-rc7
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 24 Jul 2014 09:08:55 -0400
+
+linux (3.16.0-5.10) utopic; urgency=low
 
   [ Tim Gardner ]
 
