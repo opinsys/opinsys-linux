@@ -1488,6 +1488,7 @@ i6300esb
 i7300_edac
 i740fb
 i7core_edac
+i810
 i810fb
 i82092
 i82365
@@ -2147,7 +2148,6 @@ mga
 mgc
 michael_mic
 micrel
-microcode
 microread
 microread_i2c
 microread_mei

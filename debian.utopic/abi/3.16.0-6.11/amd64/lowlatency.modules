@@ -1456,7 +1456,6 @@ i7300_edac
 i7300_idle
 i740fb
 i7core_edac
-i810
 i82092
 i82975x_edac
 i8k
@@ -2096,7 +2095,6 @@ mic_card
 michael_mic
 mic_host
 micrel
-microcode
 microread
 microread_i2c
 microread_mei
