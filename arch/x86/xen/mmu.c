@@ -1902,8 +1902,22 @@ void __init xen_setup_kernel_pagetable(pgd_t *pgd, unsigned long max_pfn)
 		/* L3_i[0] -> level2_ident_pgt */
 		convert_pfn_mfn(level3_ident_pgt);
 		/* L3_k[510] -> level2_kernel_pgt
-		 * L3_i[511] -> level2_fixmap_pgt */
+		 * L3_k[511] -> level2_fixmap_pgt */
 		convert_pfn_mfn(level3_kernel_pgt);
+
+		/* level2_fixmap_pgt contains a single entry for the
+		 * fixmap area at offset 506. The correct way would
+		 * be to convert level2_fixmap_pgt to mfn and set the
+		 * level1_fixmap_pgt (which is completely empty) to RO,
+		 * too. But currently this page table is not delcared,
+		 * so it would be a bit of voodoo to get its address.
+		 * And also the fixmap entry was never set anyway due
+		 * to using the wrong l2 when getting Xen's tables.
+		 * So let's just nuke it.
+		 * This orphans level1_fixmap_pgt, but that should be
+		 * as it always has been.
+		 */
+		memset(level2_fixmap_pgt, 0, 512*sizeof(long));
 	}
 	/* We get [511][511] and have Xen's version of level2_kernel_pgt */
 	l3 = m2v(pgd[pgd_index(__START_KERNEL_map)].pgd);
@@ -1913,21 +1927,15 @@ void __init xen_setup_kernel_pagetable(pgd_t *pgd, unsigned long max_pfn)
 	addr[1] = (unsigned long)l3;
 	addr[2] = (unsigned long)l2;
 	/* Graft it onto L4[272][0]. Note that we creating an aliasing problem:
-	 * Both L4[272][0] and L4[511][511] have entries that point to the same
+	 * Both L4[272][0] and L4[511][510] have entries that point to the same
 	 * L2 (PMD) tables. Meaning that if you modify it in __va space
 	 * it will be also modified in the __ka space! (But if you just
 	 * modify the PMD table to point to other PTE's or none, then you
 	 * are OK - which is what cleanup_highmap does) */
 	copy_page(level2_ident_pgt, l2);
-	/* Graft it onto L4[511][511] */
+	/* Graft it onto L4[511][510] */
 	copy_page(level2_kernel_pgt, l2);
 
-	/* Get [511][510] and graft that in level2_fixmap_pgt */
-	l3 = m2v(pgd[pgd_index(__START_KERNEL_map + PMD_SIZE)].pgd);
-	l2 = m2v(l3[pud_index(__START_KERNEL_map + PMD_SIZE)].pud);
-	copy_page(level2_fixmap_pgt, l2);
-	/* Note that we don't do anything with level1_fixmap_pgt which
-	 * we don't need. */
 	if (!xen_feature(XENFEAT_auto_translated_physmap)) {
 		/* Make pagetable pieces RO */
 		set_page_prot(init_level4_pgt, PAGE_KERNEL_RO);
