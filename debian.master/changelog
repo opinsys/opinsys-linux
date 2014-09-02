@@ -1,10 +1,11 @@
-linux (3.13.0-29.53.opinsys1) trusty; urgency=low
+linux (3.13.0-29.53.opinsys2) trusty; urgency=low
 
   * opinsys: rt2x00: increase L2 pad to 12 bytes to avoid skb_push
     underruns
   * wireless: rt2x00: increase TX status and DMA timeouts
   * net: avoid dependency of net_get_random_once on nop patching
   * OPINSYS: SAUCE: nfs: fix soft lockups in do_unlk()
+  * OPINSYS: SAUCE: fix association issues concerning iwlwifi stations
 
  -- Tuomas Räsänen <tuomasjjrasanen@tjjr.fi>  Thu, 19 Jun 2014 14:40:23 +0300
 
