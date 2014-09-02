@@ -379,6 +379,7 @@ struct ieee80211_mgd_assoc_data {
 	const u8 *supp_rates;
 
 	unsigned long timeout;
+	unsigned long beacon_timeout;
 	int tries;
 
 	u16 capability;

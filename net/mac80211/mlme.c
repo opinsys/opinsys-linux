@@ -39,6 +39,7 @@
 #define IEEE80211_ASSOC_TIMEOUT		(HZ / 5)
 #define IEEE80211_ASSOC_TIMEOUT_LONG	(HZ / 2)
 #define IEEE80211_ASSOC_TIMEOUT_SHORT	(HZ / 10)
+#define IEEE80211_ASSOC_BEACON_TIMEOUT	2 * HZ
 #define IEEE80211_ASSOC_MAX_TRIES	3
 
 static int max_nullfunc_tries = 2;
@@ -3530,6 +3531,24 @@ void ieee80211_mgd_conn_tx_status(struct ieee80211_sub_if_data *sdata,
 	ieee80211_queue_work(&local->hw, &sdata->work);
 }
 
+static int check_beacon(struct ieee80211_sub_if_data *sdata)
+{
+	struct ieee80211_if_managed *ifmgd = &sdata->u.mgd;
+	struct ieee80211_mgd_assoc_data *assoc_data = ifmgd->assoc_data;
+
+	if (!assoc_data->need_beacon || ifmgd->have_beacon)
+		return true;
+
+	if (time_after(jiffies, assoc_data->beacon_timeout)) {
+		sdata_info(sdata, "no beacon from %pM\n", assoc_data->bss->bssid);
+		return true;
+	}
+
+	assoc_data->timeout = TU_TO_EXP_TIME(assoc_data->bss->beacon_interval);
+	run_again(sdata, assoc_data->timeout);
+	return false;
+}
+
 void ieee80211_sta_work(struct ieee80211_sub_if_data *sdata)
 {
 	struct ieee80211_local *local = sdata->local;
@@ -3588,12 +3607,12 @@ void ieee80211_sta_work(struct ieee80211_sub_if_data *sdata)
 
 	if (ifmgd->assoc_data && ifmgd->assoc_data->timeout_started &&
 	    time_after(jiffies, ifmgd->assoc_data->timeout)) {
-		if ((ifmgd->assoc_data->need_beacon && !ifmgd->have_beacon) ||
-		    ieee80211_do_assoc(sdata)) {
-			struct cfg80211_bss *bss = ifmgd->assoc_data->bss;
-
-			ieee80211_destroy_assoc_data(sdata, false);
-			cfg80211_assoc_timeout(sdata->dev, bss);
+		if (check_beacon(sdata)) {
+			if (ieee80211_do_assoc(sdata)) {
+				struct cfg80211_bss *bss = ifmgd->assoc_data->bss;
+				ieee80211_destroy_assoc_data(sdata, false);
+				cfg80211_assoc_timeout(sdata->dev, bss);
+			}
 		}
 	} else if (ifmgd->assoc_data && ifmgd->assoc_data->timeout_started)
 		run_again(sdata, ifmgd->assoc_data->timeout);
@@ -4519,6 +4538,7 @@ int ieee80211_mgd_assoc(struct ieee80211_sub_if_data *sdata,
 		sdata_info(sdata, "waiting for beacon from %pM\n",
 			   ifmgd->bssid);
 		assoc_data->timeout = TU_TO_EXP_TIME(req->bss->beacon_interval);
+		assoc_data->beacon_timeout = jiffies + IEEE80211_ASSOC_BEACON_TIMEOUT;
 		assoc_data->timeout_started = true;
 		assoc_data->need_beacon = true;
 	} else if (beacon_ies) {
