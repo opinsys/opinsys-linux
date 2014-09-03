@@ -1,4 +1,11 @@
-linux (3.13.0-35.62) trusty; urgency=low
+linux (3.13.0-35.62.opinsys1) trusty; urgency=low
+
+  [ Opinsys ]
+
+  * nfs: Don't busy-wait on SIGKILL in __nfs_iocounter_wait
+  * OPINSYS: SAUCE: fix association issues concerning iwlwifi stations
+  * OPINSYS: SAUCE: rt2x00: increase TX status and DMA timeouts
+  * OPINSYS: SAUCE: rt2x00: increase L2 pad to 12 bytes to avoid skb_push underruns
 
   [ Joseph Salisbury ]
 
