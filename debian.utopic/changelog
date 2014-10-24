@@ -1,12 +1,4 @@
-linux-lts-utopic (3.16.0-23.31~14.04.1) trusty; urgency=low
-
-  [ Tim Gardner ]
-
-  * UBUNTU: [Config] Enable usbip tools
-
- -- Tim Gardner <tim.gardner@canonical.com>  Thu, 23 Oct 2014 15:56:04 -0400
-
-linux-lts-utopic (3.16.0-23.31~14.04) trusty; urgency=low
+linux-lts-utopic (3.16.0-23.31~14.04.2) trusty; urgency=low
 
   [ Andy Whitcroft ]
 
