@@ -1,3 +1,13 @@
+linux-lts-utopic (3.16.0-25.33~14.04.1) trusty; urgency=low
+
+  * UBUNTU: [Config] clean up flavour-control.stub
+  * UBUNTU: [Debian] basic hook support
+  * UBUNTU: [Config] suppress abi and common packages
+  * UBUNTU: update-from-utopic-master: Refresh arch makefiles from master
+  * UBUNTU: Refresh arch makefiles from master
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 05 Nov 2014 08:50:25 -0700
+
 linux-lts-utopic (3.16.0-25.33~14.04) trusty; urgency=low
 
   [ Luis Henriques ]
