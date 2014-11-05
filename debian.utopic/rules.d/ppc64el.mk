@@ -11,13 +11,8 @@ vdso		= vdso_install
 loader		= grub
 do_extras_package = true
 
-do_tools_usbip  = true
+do_tools_usbip    = true
 do_tools_cpupower = true
 do_tools_perf	  = true
 
 #do_flavour_image_package = false
-skipabi		= true
-skipmodule	= true
-do_libc_dev_package=false
-do_source_package=false
-do_doc_package  = false
