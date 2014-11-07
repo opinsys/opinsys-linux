@@ -109,15 +109,6 @@ rsync -av --delete ${DEBIAN_SOURCE}/config/ ${DEBIAN_TARGET}/config
 #
 rsync -av ${DEBIAN_SOURCE}/rules.d/*.mk ${DEBIAN_TARGET}/rules.d/
 
-#
-# Build in these 2 modules for arm in order to avoid
-# a missing __aeabi_uldivmod symbol.
-#
-for i in CONFIG_MEGARAID_LEGACY CONFIG_MEGARAID_MAILBOX CONFIG_MEGARAID_MM CONFIG_MEGARAID_NEWGEN CONFIG_MEGARAID_SAS
-do
-	echo "$i=n" >> ${DEBIAN_TARGET}/config/armhf/config.common.armhf
-done
-
 # Make sure CONFIG_SECURITY_APPARMOR_AA3_SEMANTICS=n
 sed -i 's/CONFIG_SECURITY_APPARMOR_AA3_SEMANTICS=y/CONFIG_SECURITY_APPARMOR_AA3_SEMANTICS=n/' ${DEBIAN_TARGET}/config/config.* ${DEBIAN_TARGET}/config/*/config.*
 
