@@ -1,3 +1,11 @@
+linux-lts-utopic (3.16.0-25.33~14.04.2) trusty; urgency=low
+
+  * UBUNTU: [Config] Enable MEGARAID for armhf
+  * UBUNTU: [Config] update-from-utopic-master: CONFIG_SECURITY_APPARMOR_AA3_SEMANTICS no longer exists
+  * UBUNTU: [Config] update-from-utopic-master: MEGARAID configs no longer cause an FTBS
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 06 Nov 2014 18:27:53 -0700
+
 linux-lts-utopic (3.16.0-25.33~14.04.1) trusty; urgency=low
 
   * UBUNTU: [Config] clean up flavour-control.stub
