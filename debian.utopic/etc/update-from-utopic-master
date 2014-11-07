@@ -109,9 +109,6 @@ rsync -av --delete ${DEBIAN_SOURCE}/config/ ${DEBIAN_TARGET}/config
 #
 rsync -av ${DEBIAN_SOURCE}/rules.d/*.mk ${DEBIAN_TARGET}/rules.d/
 
-# Make sure CONFIG_SECURITY_APPARMOR_AA3_SEMANTICS=n
-sed -i 's/CONFIG_SECURITY_APPARMOR_AA3_SEMANTICS=y/CONFIG_SECURITY_APPARMOR_AA3_SEMANTICS=n/' ${DEBIAN_TARGET}/config/config.* ${DEBIAN_TARGET}/config/*/config.*
-
 fakeroot debian/rules clean updateconfigs
 
 #
