@@ -62,6 +62,12 @@ config IPMI_SI_PROBE_DEFAULTS
 	 only be available on older systems if the "ipmi_si_intf.trydefaults=1"
 	 boot argument is passed.
 
+config IPMI_POWERNV
+       depends on PPC_POWERNV
+       tristate 'POWERNV (OPAL firmware) IPMI interface'
+       help
+         Provides a driver for OPAL firmware-based IPMI interfaces.
+
 config IPMI_WATCHDOG
        tristate 'IPMI Watchdog Timer'
        help
