@@ -1,9 +1,24 @@
-linux-lts-utopic (3.16.0-26.34~14.04.1) trusty; urgency=low
+linux-lts-utopic (3.16.0-26.35~14.04.1) trusty; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1396028
+    - LP: #1398430
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "drm/nouveau: punt fbcon resume out to a workqueue"
+  * Revert "drm/nouveau/kms: take more care when pulling down accelerated
+    fbcon"
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 02 Dec 2014 15:35:30 +0000
+
+linux (3.16.0-26.34) utopic; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1395892
 
   [ Chris J Arges ]
 
@@ -453,7 +468,7 @@ linux-lts-utopic (3.16.0-26.34~14.04.1) trusty; urgency=low
   * powerpc: Fill in si_addr_lsb siginfo field
     - LP: #1370425
 
- -- Luis Henriques <luis.henriques@canonical.com>  Wed, 26 Nov 2014 14:50:34 +0000
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 05 Nov 2014 11:23:22 -0500
 
 linux (3.16.0-25.33) utopic; urgency=low
 
