@@ -1,3 +1,17 @@
+linux (3.13.0-41.70+opinsys1) trusty; urgency=low
+
+  * nfs: Don't busy-wait on SIGKILL in __nfs_iocounter_wait
+  * NFSv4: Ensure that we remove NFSv4.0 delegations when state has expired
+  * NFSv4.1: nfs41_clear_delegation_stateid shouldn't trust NFS_DELEGATED_STATE
+  * NFSv4: Fix races between nfs_remove_bad_delegation() and delegation return
+  * NFSv4: Ensure that we call FREE_STATEID when NFSv4.x stateids are revoked
+  * NFS: Don't try to reclaim delegation open state if recovery failed
+  * OPINSYS: SAUCE: fix association issues concerning iwlwifi stations
+  * OPINSYS: SAUCE: rt2x00: increase TX status and DMA timeouts
+  * OPINSYS: SAUCE: rt2x00: increase L2 pad to 12 bytes to avoid skb_push underruns
+
+ -- Tuomas Räsänen <tuomasjjrasanen@tjjr.fi>  Thu, 04 Dec 2014 10:01:03 +0200
+
 linux (3.13.0-41.70) trusty; urgency=low
 
   [ Luis Henriques ]
