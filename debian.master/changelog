@@ -1,3 +1,9 @@
+linux (3.13.0-41.70+opinsys2) trusty; urgency=low
+
+  * rt2x00: do not align payload on modern H/W
+
+ -- Tuomas Räsänen <tuomasjjrasanen@tjjr.fi>  Thu, 04 Dec 2014 15:38:38 +0200
+
 linux (3.13.0-41.70+opinsys1) trusty; urgency=low
 
   * nfs: Don't busy-wait on SIGKILL in __nfs_iocounter_wait
