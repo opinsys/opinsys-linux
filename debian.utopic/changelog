@@ -1,9 +1,45 @@
-linux-lts-utopic (3.16.0-26.35~14.04.1) trusty; urgency=low
+linux-lts-utopic (3.16.0-28.37~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1400561
+
+  [ Upstream Kernel Changes ]
+
+  * x86_64, traps: Fix the espfix64 #DF fixup and rewrite it in C
+    - LP: #1398795
+    - CVE-2014-9090
+  * x86_64, traps: Rework bad_iret
+    - LP: #1398795
+    - CVE-2014-9090
+  * x86, kvm: Clear paravirt_enabled on KVM guests for espfix32's benefit
+    - LP: #1400314
+    - CVE-2014-8134
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 09 Dec 2014 10:05:00 +0000
+
+linux (3.16.0-27.36) utopic; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1399630
+
+  [ Upstream Kernel Changes ]
+
+  * x86_64, traps: Stop using IST for #SS
+    - LP: #1398795
+    - CVE-2014-9090
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 05 Dec 2014 11:59:40 +0000
+
+linux (3.16.0-26.35) utopic; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1398430
+    - LP: #1398118
 
   [ Upstream Kernel Changes ]
 
@@ -11,7 +47,7 @@ linux-lts-utopic (3.16.0-26.35~14.04.1) trusty; urgency=low
   * Revert "drm/nouveau/kms: take more care when pulling down accelerated
     fbcon"
 
- -- Luis Henriques <luis.henriques@canonical.com>  Tue, 02 Dec 2014 15:35:30 +0000
+ -- Brad Figg <brad.figg@canonical.com>  Mon, 01 Dec 2014 10:21:56 -0800
 
 linux (3.16.0-26.34) utopic; urgency=low
 
