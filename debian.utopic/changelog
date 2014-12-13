@@ -1,9 +1,23 @@
-linux-lts-utopic (3.16.0-28.37~14.04.1) trusty; urgency=low
+linux-lts-utopic (3.16.0-28.38~14.04.1) trusty; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1402125
+
+  [ Upstream Kernel Changes ]
+
+  * net: skb_fclone_busy() needs to detect orphaned skb
+    - LP: #1401079
+
+ -- Brad Figg <brad.figg@canonical.com>  Sat, 13 Dec 2014 07:55:37 -0800
+
+linux (3.16.0-28.37) utopic; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1400561
+    - LP: #1400382
 
   [ Upstream Kernel Changes ]
 
@@ -17,7 +31,7 @@ linux-lts-utopic (3.16.0-28.37~14.04.1) trusty; urgency=low
     - LP: #1400314
     - CVE-2014-8134
 
- -- Luis Henriques <luis.henriques@canonical.com>  Tue, 09 Dec 2014 10:05:00 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 08 Dec 2014 16:18:29 +0000
 
 linux (3.16.0-27.36) utopic; urgency=low
 
