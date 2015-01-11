@@ -1571,6 +1571,10 @@ static void vnt_configure(struct ieee80211_hw *hw,
 
 	if (changed_flags & FIF_ALLMULTI) {
 		if (*total_flags & FIF_ALLMULTI) {
+			unsigned long flags;
+
+			spin_lock_irqsave(&priv->lock, flags);
+
 			if (priv->mc_list_count > 2) {
 				MACvSelectPage1(priv->PortOffset);
 
@@ -1591,6 +1595,8 @@ static void vnt_configure(struct ieee80211_hw *hw,
 
 				MACvSelectPage0(priv->PortOffset);
 			}
+
+			spin_unlock_irqrestore(&priv->lock, flags);
 
 			rx_mode |= RCR_MULTICAST | RCR_BROADCAST;
 		} else {
