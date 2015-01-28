@@ -30,6 +30,8 @@
 #include <linux/phy/phy.h>
 #include "ahci.h"
 
+#define DRV_NAME "xgene-ahci"
+
 /* Max # of disk per a controller */
 #define MAX_AHCI_CHN_PERCTR		2
 
@@ -446,6 +448,10 @@ static int xgene_ahci_mux_select(struct xgene_ahci_context *ctx)
 	return val & CFG_SATA_ENET_SELECT_MASK ? -1 : 0;
 }
 
+static struct scsi_host_template ahci_platform_sht = {
+	AHCI_SHT(DRV_NAME),
+};
+
 static int xgene_ahci_probe(struct platform_device *pdev)
 {
 	struct device *dev = &pdev->dev;
@@ -523,7 +529,8 @@ static int xgene_ahci_probe(struct platform_device *pdev)
 skip_clk_phy:
 	hpriv->flags = AHCI_HFLAG_NO_PMP | AHCI_HFLAG_NO_NCQ;
 
-	rc = ahci_platform_init_host(pdev, hpriv, &xgene_ahci_port_info);
+	rc = ahci_platform_init_host(pdev, hpriv, &xgene_ahci_port_info,
+				     &ahci_platform_sht);
 	if (rc)
 		goto disable_resources;
 
@@ -545,7 +552,7 @@ static struct platform_driver xgene_ahci_driver = {
 	.probe = xgene_ahci_probe,
 	.remove = ata_platform_remove_one,
 	.driver = {
-		.name = "xgene-ahci",
+		.name = DRV_NAME,
 		.of_match_table = xgene_ahci_of_match,
 	},
 };
