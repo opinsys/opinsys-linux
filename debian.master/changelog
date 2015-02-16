@@ -1,3 +1,11 @@
+linux (3.13.0-46.75+opinsys1) trusty; urgency=medium
+
+  * OPINSYS: SAUCE: fix association issues concerning iwlwifi stations
+  * OPINSYS: SAUCE: rt2x00: increase TX status and DMA timeouts
+  * OPINSYS: SAUCE: rt2x00: increase L2 pad to 12 bytes to avoid skb_push underruns
+
+ -- Tuomas Räsänen <tuomasjjrasanen@tjjr.fi>  Mon, 16 Feb 2015 22:46:05 +0200
+
 linux (3.13.0-46.75) trusty; urgency=low
 
   [ Seth Forshee ]
