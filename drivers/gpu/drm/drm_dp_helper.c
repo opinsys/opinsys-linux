@@ -578,11 +578,13 @@ static u32 drm_dp_i2c_functionality(struct i2c_adapter *adapter)
 /*
  * Transfer a single I2C-over-AUX message and handle various error conditions,
  * retrying the transaction as appropriate.
+ *
+ * Returns bytes transferred on success, or a negative error code on failure.
  */
 static int drm_dp_i2c_do_msg(struct drm_dp_aux *aux, struct drm_dp_aux_msg *msg)
 {
 	unsigned int retry;
-	int err;
+	int ret;
 
 	/*
 	 * DP1.2 sections 2.7.7.1.5.6.1 and 2.7.7.1.6.6.1: A DP Source device
@@ -590,16 +592,16 @@ static int drm_dp_i2c_do_msg(struct drm_dp_aux *aux, struct drm_dp_aux_msg *msg)
 	 * before giving up the AUX transaction.
 	 */
 	for (retry = 0; retry < 7; retry++) {
-		err = aux->transfer(aux, msg);
-		if (err < 0) {
-			if (err == -EBUSY)
+		ret = aux->transfer(aux, msg);
+		if (ret < 0) {
+			if (ret == -EBUSY)
 				continue;
 
-			DRM_DEBUG_KMS("transaction failed: %d\n", err);
-			return err;
+			DRM_DEBUG_KMS("transaction failed: %d\n", ret);
+			return ret;
 		}
 
-		if (err < msg->size)
+		if (ret < msg->size)
 			return -EPROTO;
 
 		switch (msg->reply & DP_AUX_NATIVE_REPLY_MASK) {
@@ -660,11 +662,65 @@ static int drm_dp_i2c_do_msg(struct drm_dp_aux *aux, struct drm_dp_aux_msg *msg)
 	return -EREMOTEIO;
 }
 
+
+/*
+ * Keep retrying drm_dp_i2c_do_msg until all data has been transferred.
+ *
+ * Returns an error code on failure, or a recommended transfer size on success.
+ */
+static int drm_dp_i2c_drain_msg(struct drm_dp_aux *aux, struct drm_dp_aux_msg *msg)
+{
+        int ret;
+        struct drm_dp_aux_msg drain_msg;
+        int drain_bytes;
+
+        ret = drm_dp_i2c_do_msg(aux, msg);
+
+        if (ret == msg->size || ret <= 0)
+                return ret == 0 ? -EPROTO : ret;
+
+        /*
+         * We had a partial reply. Drain out the rest of the bytes we
+         * originally requested, then return the size of the partial
+         * reply. In theory, this should match DP 1.2's desired behaviour
+         * for I2C over AUX.
+         */
+        DRM_DEBUG_KMS("Partial I2C reply: requested %zu bytes got %d bytes\n", msg->size, ret);
+        drain_msg = *msg;
+        drain_msg.size -= ret;
+        drain_msg.buffer += ret;
+        while (drain_msg.size != 0) {
+                drain_bytes = drm_dp_i2c_do_msg(aux, &drain_msg);
+                if (drain_bytes <= 0)
+                        return drain_bytes == 0 ? -EPROTO : drain_bytes;
+                drain_msg.size -= drain_bytes;
+                drain_msg.buffer += drain_bytes;
+        }
+        return ret;
+}
+
+/*
+ * Bizlink designed DP->DVI-D Dual Link adapters require the I2C over AUX
+ * packets to be as large as possible. If not, the I2C transactions never
+ * succeed. Hence the default is maximum.
+ */
+static int dp_aux_i2c_transfer_size __read_mostly = DP_AUX_MAX_PAYLOAD_BYTES;
+module_param_named(dp_aux_i2c_transfer_size, dp_aux_i2c_transfer_size, int, 0600);
+MODULE_PARM_DESC(dp_aux_i2c_transfer_size,
+                 "Number of bytes to transfer in a single I2C over DP AUX CH message, (1-16, default 16)");
+
 static int drm_dp_i2c_xfer(struct i2c_adapter *adapter, struct i2c_msg *msgs,
 			   int num)
 {
 	struct drm_dp_aux *aux = adapter->algo_data;
+	int transfer_size;
 	unsigned int i, j;
+
+	if (dp_aux_i2c_transfer_size < 1 || dp_aux_i2c_transfer_size > DP_AUX_MAX_PAYLOAD_BYTES) {
+		DRM_ERROR("dp_aux_i2c_transfer_size invalid - changing from %d to %d\n",
+			  dp_aux_i2c_transfer_size, DP_AUX_MAX_PAYLOAD_BYTES);
+		dp_aux_i2c_transfer_size = DP_AUX_MAX_PAYLOAD_BYTES;
+	}
 
 	for (i = 0; i < num; i++) {
 		struct drm_dp_aux_msg msg;
@@ -677,7 +733,8 @@ static int drm_dp_i2c_xfer(struct i2c_adapter *adapter, struct i2c_msg *msgs,
 		 * decreased performance. Therefore each message is simply
 		 * transferred byte-by-byte.
 		 */
-		for (j = 0; j < msgs[i].len; j++) {
+		transfer_size = dp_aux_i2c_transfer_size;
+		for (j = 0; j < msgs[i].len; j += msg.size) {
 			memset(&msg, 0, sizeof(msg));
 			msg.address = msgs[i].addr;
 
@@ -693,11 +750,11 @@ static int drm_dp_i2c_xfer(struct i2c_adapter *adapter, struct i2c_msg *msgs,
 				msg.request |= DP_AUX_I2C_MOT;
 
 			msg.buffer = msgs[i].buf + j;
-			msg.size = 1;
+			msg.size = min((unsigned)transfer_size, msgs[i].len - j);
 
-			err = drm_dp_i2c_do_msg(aux, &msg);
-			if (err < 0)
-				return err;
+			transfer_size = drm_dp_i2c_drain_msg(aux, &msg);
+			if (transfer_size < 0)
+				return transfer_size;
 		}
 	}
 
