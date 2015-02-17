@@ -1,3 +1,9 @@
+linux (3.13.0-46.75+opinsys2) trusty; urgency=medium
+
+  * drm/dp: Use large transactions for I2C over AUX
+
+ -- Tuomas Räsänen <tuomasjjrasanen@tjjr.fi>  Tue, 17 Feb 2015 13:02:45 +0200
+
 linux (3.13.0-46.75+opinsys1) trusty; urgency=medium
 
   * OPINSYS: SAUCE: fix association issues concerning iwlwifi stations
