@@ -305,16 +305,11 @@ void opal_notifier_disable(void)
  * Opal message notifier based on message type. Allow subscribers to get
  * notified for specific messgae type.
  */
-int opal_message_notifier_register(enum OpalMessageType msg_type,
+int opal_message_notifier_register(enum opal_msg_type msg_type,
 					struct notifier_block *nb)
 {
-	if (!nb) {
-		pr_warning("%s: Invalid argument (%p)\n",
-			   __func__, nb);
-		return -EINVAL;
-	}
-	if (msg_type > OPAL_MSG_TYPE_MAX) {
-		pr_warning("%s: Invalid message type argument (%d)\n",
+	if (!nb || msg_type >= OPAL_MSG_TYPE_MAX) {
+		pr_warning("%s: Invalid arguments, msg_type:%d\n",
 			   __func__, msg_type);
 		return -EINVAL;
 	}
@@ -322,7 +317,7 @@ int opal_message_notifier_register(enum OpalMessageType msg_type,
 				&opal_msg_notifier_head[msg_type], nb);
 }
 
-int opal_message_notifier_unregister(enum OpalMessageType msg_type,
+int opal_message_notifier_unregister(enum opal_msg_type msg_type,
 				     struct notifier_block *nb)
 {
 	return atomic_notifier_chain_unregister(
