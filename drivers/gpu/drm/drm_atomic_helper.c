@@ -1681,12 +1681,13 @@ backoff:
 EXPORT_SYMBOL(drm_atomic_helper_set_config);
 
 /**
- * drm_atomic_helper_crtc_set_property - helper for crtc prorties
+ * drm_atomic_helper_crtc_set_property - helper for crtc properties
  * @crtc: DRM crtc
  * @property: DRM property
  * @val: value of property
  *
- * Provides a default plane disablle handler using the atomic driver interface.
+ * Provides a default crtc set_property handler using the atomic driver
+ * interface.
  *
  * RETURNS:
  * Zero on success, error code on failure
@@ -1740,12 +1741,13 @@ backoff:
 EXPORT_SYMBOL(drm_atomic_helper_crtc_set_property);
 
 /**
- * drm_atomic_helper_plane_set_property - helper for plane prorties
+ * drm_atomic_helper_plane_set_property - helper for plane properties
  * @plane: DRM plane
  * @property: DRM property
  * @val: value of property
  *
- * Provides a default plane disable handler using the atomic driver interface.
+ * Provides a default plane set_property handler using the atomic driver
+ * interface.
  *
  * RETURNS:
  * Zero on success, error code on failure
@@ -1799,12 +1801,13 @@ backoff:
 EXPORT_SYMBOL(drm_atomic_helper_plane_set_property);
 
 /**
- * drm_atomic_helper_connector_set_property - helper for connector prorties
+ * drm_atomic_helper_connector_set_property - helper for connector properties
  * @connector: DRM connector
  * @property: DRM property
  * @val: value of property
  *
- * Provides a default plane disablle handler using the atomic driver interface.
+ * Provides a default connector set_property handler using the atomic driver
+ * interface.
  *
  * RETURNS:
  * Zero on success, error code on failure
