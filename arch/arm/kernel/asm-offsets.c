@@ -50,7 +50,13 @@
 #error Your compiler is too buggy; it is known to miscompile kernels.
 #error    Known good compilers: 3.3, 4.x
 #endif
-#if GCC_VERSION >= 40800 && GCC_VERSION < 40803
+#ifndef GCC_UBUNTU_VERSION
+#define GCC_UBUNTU_VERSION 0
+#endif
+#define GCC_VERSION_UBUNTU ((GCC_VERSION * 100) + GCC_UBUNTU_VERSION)
+#if GCC_VERSION_UBUNTU >= 4080210 && GCC_VERSION_UBUNTU < 4080300
+/* PATCHED */
+#elif GCC_VERSION >= 40800 && GCC_VERSION < 40803
 #error Your compiler is too buggy; it is known to miscompile kernels
 #error and result in filesystem corruption and oopses.
 #endif
