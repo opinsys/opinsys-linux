@@ -1,19 +1,64 @@
-linux-lts-vivid (3.18.0-14.15~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-7.7~14.04.1) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Release Tracking Bug
+    - LP: #1426013
+
+  [ Upstream Kernel Changes ]
+
+  * x86/irq: Fix regression caused by commit b568b8601f05
+  * cxl: Fix leaking interrupts if attach process fails
+    - LP: #1415102
+  * cxl: Early return from cxl_handle_fault for a shut down context
+    - LP: #1415102
+  * cxl: Disable AFU debug flag
+    - LP: #1415102
+  * cxl: Disable SPAP register when freeing SPA
+    - LP: #1415102
+  * cxl: remove redundant increment of hwirq
+    - LP: #1415102
+  * cxl: Add tracepoints
+    - LP: #1415102
+  * cxl: Update CXL ABI documentation
+    - LP: #1415102
+  * cxl: Use image state defaults for reloading FPGA
+    - LP: #1415102
+  * cxl: Add image control to sysfs
+    - LP: #1415102
+  * cxl: Enable CAPP recovery
+    - LP: #1415102
+  * cxl: Add ability to reset the card
+    - LP: #1415102
+  * cxl: Fix device_node reference counting
+    - LP: #1415102
+  * cxl: Export optional AFU configuration record in sysfs
+    - LP: #1415102
+  * cxl: Fail AFU initialisation if an invalid configuration record is
+    found
+    - LP: #1415102
+  * cxl: Add missing return statement after handling AFU errror
+    - LP: #1415102
+  * powerpc/eeh: Introduce flag EEH_PE_REMOVED
+    - LP: #1415102
+  * powerpc/eeh: Allow to set maximal frozen times
+    - LP: #1415102
+  * HID: i2c-hid: Limit reads to wMaxInputLength bytes for input events
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 26 Feb 2015 16:00:18 +0000
+
+linux (3.19.0-6.6) vivid; urgency=low
 
   [ Andy Whitcroft ]
 
   * systemd -- fix hyper-v units to be non-forking
     - LP: #1401525
+  * [Config] move vbox modules into linux-image
+  * ubuntu: vbox -- update to 4.3.22-dfsg-1
 
   [ Brad Figg ]
 
   * SAUCE: DEP8 test to run our regression tests
-
-  [ Leann Ogasawara ]
-
-  * rebase to v3.18.7
-  * Release Tracking Bug
-    - LP: #1422906
 
   [ Paolo Pisati ]
 
@@ -28,14 +73,17 @@ linux-lts-vivid (3.18.0-14.15~14.04.1) trusty; urgency=low
     controller
     - LP: #1400215
 
- -- Leann Ogasawara <leann.ogasawara@canonical.com>  Tue, 17 Feb 2015 19:47:42 -0800
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 19 Feb 2015 12:44:43 +0000
 
-linux (3.18.0-13.14) vivid; urgency=low
+linux (3.19.0-5.5) vivid; urgency=low
 
   [ Andy Whitcroft ]
 
-  * hyper-v -- fix comment handing in /etc/network/interfaces
-    - LP: #1413020
+  * [Config] CONFIG_FA_DUMP=y
+    - LP: #1415562
+  * ubuntu: (no-squash) vbox -- infrastructure and updater
+  * ubuntu: vbox -- update to 4.3.20-dfsg-1ubuntu1
+  * rebase to v3.19 final
 
   [ Chris J Arges ]
 
@@ -44,20 +92,159 @@ linux (3.18.0-13.14) vivid; urgency=low
   * SAUCE: ext4: disable ext4_punch_hole for indirect filesystems
     - LP: #1292234
 
-  [ Leann Ogasawara ]
+  [ Upstream Kernel Changes ]
 
-  * rebase to v3.18.5
-  * [Config] CONFIG_X86_UP_APIC_MSI=y
-  * Release Tracking Bug
-    - LP: #1417475
+  * rebase to v3.19
 
- -- Leann Ogasawara <leann.ogasawara@canonical.com>  Thu, 05 Feb 2015 09:58:20 +0200
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 09 Feb 2015 10:41:11 +0000
 
-linux (3.18.0-12.13) vivid; urgency=low
+linux (3.19.0-4.4) vivid; urgency=low
 
-  [ dann frazier ]
+  [ Andy Whitcroft ]
 
-  * Include thunder-88xx.dtb in arm64/generic
+  * [Config] apply Kernel hacking >> Tracers config defaults
+  * hyper-v -- fix comment handing in /etc/network/interfaces
+    - LP: #1413020
+  * rebase to v3.19-rc7
+  * updateconfigs following rebase to v3.19-rc7
+
+  [ Ben Hutchings ]
+
+  * SAUCE: rtsx_usb_ms: Use msleep_interruptible() in polling loop
+    - LP: #1413149
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v3.19-rc7
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 02 Feb 2015 17:03:07 +0200
+
+linux (3.19.0-3.3) vivid; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Debian] arm64 -- build ubuntu drivers
+    - LP: #1411284
+  * [Packaging] config-check -- add support for enforced annotations
+  * [Config] annotations -- switch to ENFORCED annotations
+  * [Packaging] config-check -- drop support for enforce file
+  * [Packaging] enforce -- drop empty enforce file
+  * rebase to v3.19-rc5
+  * [Config] add modules removed due to tighter dependencies
+  * [Config] updateconfigs following rebase to v3.19-rc5
+  * [Config] enforce CONFIG_FHANDLE=y
+    - LP: #1412543
+  * [Packaging] hyper-v -- daemons now require -n for non-forking startup
+    - LP: #1408355
+  * [Config] CONFIG_DEBUG_INFO_SPLIT=n
+    - LP: #1413646
+  * [Config] apply Device Drivers >> Character devices >> IPMI top-level
+    message handler config defaults
+  * [Config] apply Device Drivers >> Character devices >> Serial drivers
+    config defaults
+  * [Config] apply Device Drivers >> GPIO Support config defaults
+  * [Config] apply Device Drivers >> Graphics support >> Direct Rendering
+    Manager >> Direct Rendering Manager (XFree86 4.1.0 and higher DRI
+    support) config defaults
+  * [Config] apply Device Drivers >> Graphics support >> Frame buffer
+    Devices >> Support for frame buffer devices config defaults
+  * [Config] apply Device Drivers >> HID support >> HID bus support >>
+    Special HID drivers config defaults
+  * [Config] apply Device Drivers >> Hardware Monitoring support config
+    defaults
+  * [Config] apply Device Drivers >> I2C support >> I2C support >> I2C
+    Hardware Bus support config defaults
+  * [Config] apply Device Drivers >> Industrial I/O support >> Analog to
+    digital converters config defaults
+  * [Config] apply Device Drivers >> Industrial I/O support >> Humidity
+    sensors config defaults
+  * [Config] apply Device Drivers >> Industrial I/O support >> Pressure
+    sensors config defaults
+  * [Config] apply Device Drivers >> Input device support >> Generic input
+    layer (needed for keyboard, mouse, ...) >> Mice config defaults
+  * [Config] apply Device Drivers >> Input device support >> Generic input
+    layer (needed for keyboard, mouse, ...) >> Touchscreens config defaults
+  * [Config] apply Device Drivers >> LED Support >> LED Class Support
+    config defaults
+  * [Config] apply Device Drivers >> MMC/SD/SDIO card support config
+    defaults
+  * [Config] apply Device Drivers >> Multifunction device drivers config
+    defaults
+  * [Config] apply Device Drivers >> Multimedia support >> Cameras/video
+    grabbers support >> Media test drivers config defaults
+  * [Config] apply Device Drivers >> Multimedia support >> Media PCI
+    Adapters config defaults
+  * [Config] apply Device Drivers >> Multimedia support >> Remote
+    Controller devices config defaults
+  * [Config] apply Device Drivers >> Network device support >> Distributed
+    Switch Architecture drivers config defaults
+  * [Config] apply Device Drivers >> Network device support >> Network core
+    driver support config defaults
+  * [Config] apply Device Drivers >> Network device support >> Wireless LAN
+    >> Hermes chipset 802.11b support (Orinoco/Prism2/Symbol) config
+    defaults
+  * [Config] apply Device Drivers >> Network device support >> Wireless LAN
+    >> Intel PRO/Wireless 2200BG and 2915ABG Network Connection config
+    defaults
+  * [Config] apply Device Drivers >> PHY Subsystem config defaults
+  * [Config] apply Device Drivers >> Pin controllers config defaults
+  * [Config] apply Device Drivers >> SPI support config defaults
+  * [Config] apply Device Drivers >> Sound card support >> Advanced Linux
+    Sound Architecture >> ALSA for SoC audio support config defaults
+  * [Config] apply Device Drivers >> Sound card support >> Advanced Linux
+    Sound Architecture >> FireWire sound devices config defaults
+  * [Config] apply Device Drivers >> Sound card support >> Advanced Linux
+    Sound Architecture >> HD-Audio config defaults
+  * [Config] apply Device Drivers >> Staging drivers >> Lustre file system
+    client support config defaults
+  * [Config] apply Device Drivers >> Staging drivers >> Media staging
+    drivers config defaults
+  * [Config] apply Device Drivers >> USB support >> USB Gadget Support >>
+    USB Gadget Drivers >> USB functions configurable through configfs
+    config defaults
+  * [Config] apply Device Drivers >> USB support >> USB Gadget Support >>
+    USB Peripheral Controller config defaults
+  * [Config] apply Networking support >> NFC subsystem support >> Near
+    Field Communication (NFC) devices config defaults
+  * [Config] apply Networking support >> Networking options >> Network
+    packet filtering framework (Netfilter) >> Core Netfilter Configuration
+    >> Netfilter nf_tables support config defaults
+  * [Config] apply Networking support >> Networking options >> QoS and/or
+    fair queueing >> Actions config defaults
+  * [Config] apply Networking support >> Networking options >> TCP/IP
+    networking config defaults
+  * [Config] apply Networking support >> Wireless >> Generic IEEE 802.11
+    Networking Stack (mac80211) config defaults
+  * [Config] apply Device Drivers >> Input device support >> Generic input
+    layer (needed for keyboard, mouse, ...) >> Keyboards config defaults
+  * [Config] apply Device Drivers >> Input device support >> Generic input
+    layer (needed for keyboard, mouse, ...) >> Mice config defaults
+  * [Config] apply Device Drivers >> Pulse-Width Modulation (PWM) Support
+    config defaults
+  * [Config] apply Networking support >> Networking options >> Network
+    packet filtering framework (Netfilter) >> IP: Netfilter Configuration
+    >> IPv4 NAT config defaults
+  * [Config] apply Networking support >> Networking options >> Network
+    packet filtering framework (Netfilter) >> IPv6: Netfilter Configuration
+    >> IPv6 NAT config defaults
+  * [Config] apply Kernel hacking >> Kernel debugging config defaults
+  * [Config] apply General setup >> Timers subsystem >> Timer tick handling
+    config defaults
+  * SAUCE: arm64 -- psci tell the compiler which registers we are needing
+    values in
+    - LP: #1414002
+  * [Config] apply Device Drivers >> Network device support >> Wireless LAN
+    >> Intel Wireless WiFi Next Gen AGN - Wireless-N/Advanced-N/Ultimate-N
+    (iwlwifi) config defaults
+  * [Config] apply Device Drivers >> Real Time Clock config defaults
+  * [Config] apply Device Drivers >> SCSI device support >> SCSI device
+    support >> SCSI low-level drivers config defaults
+  * [Config] apply General setup >> CPU/Task time and stats accounting >>
+    Cputime accounting config defaults
+  * [Config] apply Device Drivers >> Mailbox Hardware Support config
+    defaults
+  * rebase to v3.19-rc6
+  * [Config] updateconfigs following rebase to v3.19-rc6
 
   [ Kamal Mostafa ]
 
@@ -65,63 +252,31 @@ linux (3.18.0-12.13) vivid; urgency=low
 
   [ Leann Ogasawara ]
 
-  * rebase to v3.18.4
-  * [Config] CONFIG_I40E_FCOE=y
-  * Release Tracking Bug
-    - LP: #1415638
-
- -- Leann Ogasawara <leann.ogasawara@canonical.com>  Wed, 28 Jan 2015 12:50:48 -0800
-
-linux (3.18.0-11.12) vivid; urgency=low
-
-  [ Leann Ogasawara ]
-
-  * Release Tracking Bug
-    - LP: #1414085
-
-  [ Andy Whitcroft ]
-
-  * SAUCE: arm64 -- psci tell the compiler which registers we are needing
-    values in
-    - LP: #1414002
-
- -- Leann Ogasawara <leann.ogasawara@canonical.com>  Fri, 23 Jan 2015 09:10:09 -0800
-
-linux (3.18.0-10.11) vivid; urgency=low
-
-  [ Andy Whitcroft ]
-
-  * [Debian] arm64 -- build ubuntu drivers
-    - LP: #1411284
-  * [Config] CONFIG_DEBUG_INFO_SPLIT=n
-    - LP: #1413646
-
-  [ Ben Hutchings ]
-
-  * SAUCE: rtsx_usb_ms: Use msleep_interruptible() in polling loop
-    - LP: #1413149
-
-  [ Leann Ogasawara ]
-
-  * rebase to v3.18.3
   * [Config] Disable CONFIG_USB_OTG
     - LP: #1411295
-  * Release Tracking Bug
-    - LP: #1413674
-
-  [ Steve McIntyre ]
-
-  * SAUCE: efi: Expose underlying UEFI firmware platform size to userland
-    - LP: #1409750
 
   [ Upstream Kernel Changes ]
 
   * overlay: add backwards compatible overlayfs format support (fixes)
     - LP: #1410480
 
- -- Leann Ogasawara <leann.ogasawara@canonical.com>  Thu, 22 Jan 2015 09:53:34 -0800
+  [ Upstream Kernel Changes ]
 
-linux (3.18.0-9.10) vivid; urgency=low
+  * rebase to v3.19-rc5
+  * rebase to v3.19-rc6
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 26 Jan 2015 11:37:39 +0000
+
+linux (3.19.0-2.2) vivid; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * rebase to v3.19-rc4
+  * [Config] updateconfigs following rebase to v3.19-rc4
+  * [Packaging] install all dtb files
+    - LP: #1408002
+  * [Config] switch on "all" dtbs
+    - LP: #1408002
 
   [ Colin Ian King ]
 
@@ -139,40 +294,62 @@ linux (3.18.0-9.10) vivid; urgency=low
   * SAUCE: storvsc: force SPC-3 compliance on win8 and win8 r2 hosts
     - LP: #1406867
 
-  [ Leann Ogasawara ]
+  [ Steve McIntyre ]
 
-  * rebase to v3.18.2
-  * Release Tracking Bug
-    - LP: #1409794
+  * SAUCE: efi: Expose underlying UEFI firmware platform size to userland
+    - LP: #1409750
 
   [ Upstream Kernel Changes ]
 
-  * Drivers: hv: util: make struct hv_do_fcopy match Hyper-V host messages
-    - LP: #1401903
-  * rebase to v3.18.2
+  * rebase to v3.19-rc4
 
- -- Leann Ogasawara <leann.ogasawara@canonical.com>  Mon, 12 Jan 2015 08:53:12 -0800
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 13 Jan 2015 12:35:58 +0000
 
-linux (3.18.0-8.9) vivid; urgency=low
+linux (3.19.0-1.1) vivid; urgency=low
 
-  [ Leann Ogasawara ]
+  [ Andy Whitcroft ]
 
-  * Release Tracking Bug
-    - LP: #1407692
-  * rebase to v3.18.1
-  * ubuntu: AUFS -- Resolve build failure union has no member named
-    'd_child'
+  * Revert "SAUCE: AUFS -- aufs3-standalone.patch"
+  * Revert "SAUCE: AUFS -- aufs3-mmap.patch"
+  * Revert "SAUCE: AUFS -- aufs3-base.patch"
+  * ubuntu: AUFS3 -- follow switch to vfs_fallocate
+  * rebase to v3.19-rc1
+  * rebase to v3.19-rc2
+  * [Config] defaultconfigs following rebase to v3.19-rc2
+  * ubuntu: aufs3 -- follow rename of d_child
+  * ubuntu: aufs3 -- follow switch to d_splice_alias
+  * ubuntu: aufs3 -- follow switch to get_unused_fd_flags()
+  * ubuntu: aufs3 -- follow rename for d_alias
+  * apparmor -- follow change to this_cpu_ptr
+  * disable module checks for rebase
+  * ubuntu: AUFS -- substrate: aufs3-base.patch
+  * ubuntu: AUFS -- substrate: aufs3-mmap.patch
+  * ubuntu: AUFS -- substrate: aufs3-standalone.patch
+  * ubuntu: AUFS -- update to 92ad9cc8bd289bf8e59b6bd8d83137d8e1a58c1c
+  * [Configs] updateconfigs following aufs update
+  * v3.19 series start
+  * rebase to v3.19-rc3
+  * [Configs] updateconfigs following rebase to v3.19-rc3
+  * [Packaging] uploadnum should be the remainder of the version
+    - LP: #1407755
+  * [Packaging] handle dts directories
+    - LP: #1408004
+  * [Config] follow move of arm64 dts' into vendor directories
 
   [ Upstream Kernel Changes ]
 
   * arm64: optimized copy_to_user and copy_from_user assembly code
     - LP: #1400349
-  * x86, kvm: Clear paravirt_enabled on KVM guests for espfix32's benefit
-    - LP: #1400314
-    - CVE-2014-8134
-  * rebase to v3.18.1
+  * iommu/ipmmu-vmsa: follow flag switch to IOMMU_NOEXEC
 
- -- Leann Ogasawara <leann.ogasawara@canonical.com>  Mon, 05 Jan 2015 09:12:32 -0800
+  [ Upstream Kernel Changes ]
+
+  * rebase to v3.19-rc1
+    - LP: #1173681
+  * rebase to v3.19-rc2
+  * rebase to v3.19-rc3
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 06 Jan 2015 14:30:02 +0000
 
 linux (3.18.0-7.8) vivid; urgency=low
 
