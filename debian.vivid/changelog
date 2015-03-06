@@ -1,9 +1,13 @@
-linux-lts-vivid (3.19.0-7.7~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-7.7~14.04.2) trusty; urgency=low
 
   [ Andy Whitcroft ]
 
   * Release Tracking Bug
     - LP: #1426013
+  * SAUCE: allow gcc 4.8.2-10 and later as they are patched for PR58854
+    - LP: #1429056
+  * [Packaging] expose ubuntu gcc sub-version information
+    - LP: #1429056
 
   [ Upstream Kernel Changes ]
 
