@@ -1,13 +1,62 @@
-linux-lts-vivid (3.19.0-7.7~14.04.2) trusty; urgency=low
+linux-lts-vivid (3.19.0-8.8~14.04.1) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * ubuntu: vbox -- elide the new symlinks and reconstruct on clean:
+    - LP: #1426113
+  * rebase to stable v3.19.1
+
+  [ John Johansen ]
+
+  * SAUCE: (no-up): apparmor: fix mediation of fs unix sockets
+    - LP: #1408833
+
+  [ Leann Ogasawara ]
+
+  * Release Tracking Bug
+    - LP: #1429940
+
+  [ Upstream Kernel Changes ]
+
+  * xen: correct bug in p2m list initialization
+  * net/mlx5_core: Fix configuration of log_uar_page_sz
+    - LP: #1419938
+  * tpm/ibmvtpm: Additional LE support for tpm_ibmvtpm_send
+    - LP: #1420575
+  * net/mlx4_core: Maintain a persistent memory for mlx4 device
+    - LP: #1422481
+  * net/mlx4_core: Set device configuration data to be persistent across
+    reset
+    - LP: #1422481
+  * net/mlx4_core: Refactor the catas flow to work per device
+    - LP: #1422481
+  * net/mlx4_core: Enhance the catas flow to support device reset
+    - LP: #1422481
+  * net/mlx4_core: Activate reset flow upon fatal command cases
+    - LP: #1422481
+  * net/mlx4_core: Manage interface state for Reset flow cases
+    - LP: #1422481
+  * net/mlx4_core: Handle AER flow properly
+    - LP: #1422481
+  * net/mlx4_core: Enable device recovery flow with SRIOV
+    - LP: #1422481
+  * net/mlx4_core: Reset flow activation upon SRIOV fatal command cases
+    - LP: #1422481
+  * tg3: Hold tp->lock before calling tg3_halt() from tg3_init_one()
+    - LP: #1428111
+  * rebase to v3.19.1
+    - LP: #1410704
+    - LP: #1411193
+    - LP: #1400215
+
+ -- Leann Ogasawara <leann.ogasawara@canonical.com>  Mon, 09 Mar 2015 10:08:29 -0700
+
+linux (3.19.0-7.7) vivid; urgency=low
 
   [ Andy Whitcroft ]
 
   * Release Tracking Bug
     - LP: #1426013
-  * SAUCE: allow gcc 4.8.2-10 and later as they are patched for PR58854
-    - LP: #1429056
-  * [Packaging] expose ubuntu gcc sub-version information
-    - LP: #1429056
 
   [ Upstream Kernel Changes ]
 
