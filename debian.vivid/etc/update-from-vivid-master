@@ -124,10 +124,12 @@ done
 
 cp -p ${DEBIAN_SOURCE}/control.d/*.inclusion-list ${DEBIAN_TARGET}/control.d
 
+cp -p ${DEBIAN_SOURCE}/reconstruct ${DEBIAN_TARGET}/reconstruct
+
 fakeroot debian/rules clean updateconfigs
 
 # Stage the bits we changed.
-git add ${DEBIAN_TARGET}/abi ${DEBIAN_TARGET}/d-i ${DEBIAN_TARGET}/config ${DEBIAN_TARGET}/rules.d/*.mk
+git add ${DEBIAN_TARGET}/abi ${DEBIAN_TARGET}/d-i ${DEBIAN_TARGET}/config ${DEBIAN_TARGET}/rules.d/*.mk ${DEBIAN_TARGET}/reconstruct
 
 #
 # Update changelog from the source release changelog. Change the release pocket and ABI.
