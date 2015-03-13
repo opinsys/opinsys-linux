@@ -1,9 +1,19 @@
-linux-lts-utopic (3.16.0-32.42~14.04.1) trusty; urgency=low
+linux-lts-utopic (3.16.0-33.44~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1431552
+  * Merged back all changes that were in Ubuntu-3.16.0-32.42
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 13 Mar 2015 09:55:54 +0000
+
+linux (3.16.0-32.42) utopic; urgency=low
 
   [ Seth Forshee ]
 
   * Release Tracking Bug
-    - LP: #1428365
+    - LP: #1427808
 
   [ Chris J Arges ]
 
@@ -417,7 +427,17 @@ linux-lts-utopic (3.16.0-32.42~14.04.1) trusty; urgency=low
   * Linux 3.16.7-ckt7
     - LP: #1427778
 
- -- Seth Forshee <seth.forshee@canonical.com>  Wed, 04 Mar 2015 20:15:58 -0600
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 03 Mar 2015 13:01:14 -0600
+
+linux (3.16.0-31.43) utopic; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * IB/core: Prevent integer overflow in ib_umem_get address arithmetic
+    - LP: #1413741
+    - CVE-2015-8159
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 09 Mar 2015 17:08:16 +0000
 
 linux (3.16.0-31.41) utopic; urgency=low
 
