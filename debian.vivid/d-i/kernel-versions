@@ -1,18 +1,18 @@
 # arch	version		flavour		installedname			suffix	bdep
-amd64	3.19.0-7	generic		3.19.0-7-generic		-	
+amd64	3.19.0-8	generic		3.19.0-8-generic		-	
 
-i386	3.19.0-7	generic		3.19.0-7-generic		-	
+i386	3.19.0-8	generic		3.19.0-8-generic		-	
 
-armhf	3.19.0-7	generic		3.19.0-7-generic		-
+armhf	3.19.0-8	generic		3.19.0-8-generic		-
 
-armhf	3.19.0-7	generic-lpae		3.19.0-7-generic-lpae		-
+armhf	3.19.0-8	generic-lpae		3.19.0-8-generic-lpae		-
 
-arm64	3.19.0-7	generic		3.19.0-7-generic		-
+arm64	3.19.0-8	generic		3.19.0-8-generic		-
 
-ppc64el	3.19.0-7	generic		3.19.0-7-generic		-
+ppc64el	3.19.0-8	generic		3.19.0-8-generic		-
 
 # Ports
 # arch	version		flavour		installedname			suffix	bdep
-powerpc	3.19.0-7	powerpc-smp	3.19.0-7-powerpc-smp	-	
-powerpc	3.19.0-7	powerpc64-smp	3.19.0-7-powerpc64-smp	-	
-powerpc 3.19.0-7	powerpc-e500mc	3.19.0-7-powerpc-e500mc	-	
+powerpc	3.19.0-8	powerpc-smp	3.19.0-8-powerpc-smp	-	
+powerpc	3.19.0-8	powerpc64-smp	3.19.0-8-powerpc64-smp	-	
+powerpc 3.19.0-8	powerpc-e500mc	3.19.0-8-powerpc-e500mc	-	
