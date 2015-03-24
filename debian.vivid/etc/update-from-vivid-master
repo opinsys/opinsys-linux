@@ -129,6 +129,7 @@ cp -p ${DEBIAN_SOURCE}/reconstruct ${DEBIAN_TARGET}/reconstruct
 fakeroot debian/rules clean updateconfigs
 
 # Stage the bits we changed.
+rm -f ${DEBIAN_TARGET}/d-i/kernel-versions
 git add ${DEBIAN_TARGET}/abi ${DEBIAN_TARGET}/d-i ${DEBIAN_TARGET}/config ${DEBIAN_TARGET}/rules.d/*.mk ${DEBIAN_TARGET}/reconstruct
 
 #
