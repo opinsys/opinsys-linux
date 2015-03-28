@@ -362,3 +362,9 @@ SYSCALL(ni_syscall) /* sys_kcmp */
 SYSCALL_SPU(sched_setattr)
 SYSCALL_SPU(sched_getattr)
 SYSCALL_SPU(renameat2)
+SYSCALL(ni_syscall) /* seccomp */
+SYSCALL(ni_syscall) /* getrandom */
+SYSCALL(ni_syscall) /* memfd_create */
+SYSCALL(ni_syscall) /* bpf */
+SYSCALL(ni_syscall) /* execveat */
+PPC64ONLY(switch_endian)
