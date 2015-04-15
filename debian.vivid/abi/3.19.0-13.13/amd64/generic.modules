@@ -1489,10 +1489,12 @@ i7300_edac
 i7300_idle
 i740fb
 i7core_edac
+i810
 i82092
 i82975x_edac
 i8k
 i915
+i915_bpo
 ib700wdt
 ib_addr
 ib_cm
