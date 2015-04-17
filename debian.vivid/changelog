@@ -1,4 +1,16 @@
-linux-lts-vivid (3.19.0-14.14~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-15.15~14.04.1) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Release Tracking Bug
+    - LP: #1445253
+  * update to vivid 3.19.0-15.15
+  * SAUCE: temporarily disable neon raid6 optimisations for armhf
+  * [Packaging] clean up control intermediate files
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 16 Apr 2015 23:03:58 +0100
+
+linux (3.19.0-14.14) vivid; urgency=low
 
   [ Upstream Kernel Changes ]
 
@@ -17,11 +29,6 @@ linux (3.19.0-13.13) vivid; urgency=low
 
   * [Packaging] initscripts need installing when making the package
   * [Packaging] initscripts work around bug in debhelper systemd support
-
-  [ Jay Vosburgh ]
-
-  * SAUCE: fan: Proof of concept implementation
-    - LP: #1439706
 
   [ Leann Ogasawara ]
 
