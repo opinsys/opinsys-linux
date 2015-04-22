@@ -56,7 +56,7 @@
 
 #define DRIVER_NAME		"i915_bpo"
 #define DRIVER_DESC		"Intel Graphics"
-#define DRIVER_DATE		"20150313"
+#define DRIVER_DATE		"20150327"
 
 #undef WARN_ON
 /* Many gcc seem to no see through this and fall over :( */
@@ -427,6 +427,8 @@ struct drm_i915_error_state {
 	u32 forcewake;
 	u32 error; /* gen6+ */
 	u32 err_int; /* gen7 */
+	u32 fault_data0; /* gen8, gen9 */
+	u32 fault_data1; /* gen8, gen9 */
 	u32 done_reg;
 	u32 gac_eco;
 	u32 gam_ecochk;
@@ -544,7 +546,7 @@ struct drm_i915_display_funcs {
 	 * Returns true on success, false on failure.
 	 */
 	bool (*find_dpll)(const struct intel_limit *limit,
-			  struct intel_crtc *crtc,
+			  struct intel_crtc_state *crtc_state,
 			  int target, int refclk,
 			  struct dpll *match_clock,
 			  struct dpll *best_clock);
@@ -553,7 +555,7 @@ struct drm_i915_display_funcs {
 				 struct drm_crtc *crtc,
 				 uint32_t sprite_width, uint32_t sprite_height,
 				 int pixel_size, bool enable, bool scaled);
-	void (*modeset_global_resources)(struct drm_device *dev);
+	void (*modeset_global_resources)(struct drm_atomic_state *state);
 	/* Returns the active state of the crtc, and if the crtc is active,
 	 * fills out the pipe-config with the hw state. */
 	bool (*get_pipe_config)(struct intel_crtc *,
@@ -2441,7 +2443,6 @@ extern int i915_resume_legacy(struct drm_device *dev);
 struct i915_params {
 	int modeset;
 	int panel_ignore_lid;
-	unsigned int powersave;
 	int semaphores;
 	unsigned int lvds_downclock;
 	int lvds_channel_mode;
@@ -2461,6 +2462,7 @@ struct i915_params {
 	bool enable_hangcheck;
 	bool fastboot;
 	bool prefault_disable;
+	bool load_detect_test;
 	bool reset;
 	bool disable_display;
 	bool disable_vtd_wa;
@@ -2765,8 +2767,10 @@ i915_gem_object_set_to_cpu_domain(struct drm_i915_gem_object *obj, bool write);
 int __must_check
 i915_gem_object_pin_to_display_plane(struct drm_i915_gem_object *obj,
 				     u32 alignment,
-				     struct intel_engine_cs *pipelined);
-void i915_gem_object_unpin_from_display_plane(struct drm_i915_gem_object *obj);
+				     struct intel_engine_cs *pipelined,
+				     const struct i915_ggtt_view *view);
+void i915_gem_object_unpin_from_display_plane(struct drm_i915_gem_object *obj,
+					      const struct i915_ggtt_view *view);
 int i915_gem_object_attach_phys(struct drm_i915_gem_object *obj,
 				int align);
 int i915_gem_open(struct drm_device *dev, struct drm_file *file);
@@ -2791,19 +2795,19 @@ void i915_gem_restore_fences(struct drm_device *dev);
 
 unsigned long
 i915_gem_obj_ggtt_offset_view(struct drm_i915_gem_object *o,
-			      enum i915_ggtt_view_type view);
+			      const struct i915_ggtt_view *view);
 unsigned long
 i915_gem_obj_offset(struct drm_i915_gem_object *o,
 		    struct i915_address_space *vm);
 static inline unsigned long
 i915_gem_obj_ggtt_offset(struct drm_i915_gem_object *o)
 {
-	return i915_gem_obj_ggtt_offset_view(o, I915_GGTT_VIEW_NORMAL);
+	return i915_gem_obj_ggtt_offset_view(o, &i915_ggtt_view_normal);
 }
 
 bool i915_gem_obj_bound_any(struct drm_i915_gem_object *o);
 bool i915_gem_obj_ggtt_bound_view(struct drm_i915_gem_object *o,
-				  enum i915_ggtt_view_type view);
+				  const struct i915_ggtt_view *view);
 bool i915_gem_obj_bound(struct drm_i915_gem_object *o,
 			struct i915_address_space *vm);
 
@@ -2851,7 +2855,7 @@ i915_vm_to_ppgtt(struct i915_address_space *vm)
 
 static inline bool i915_gem_obj_ggtt_bound(struct drm_i915_gem_object *obj)
 {
-	return i915_gem_obj_ggtt_bound_view(obj, I915_GGTT_VIEW_NORMAL);
+	return i915_gem_obj_ggtt_bound_view(obj, &i915_ggtt_view_normal);
 }
 
 static inline unsigned long
@@ -2875,7 +2879,13 @@ i915_gem_object_ggtt_unbind(struct drm_i915_gem_object *obj)
 	return i915_vma_unbind(i915_gem_obj_to_ggtt(obj));
 }
 
-void i915_gem_object_ggtt_unpin(struct drm_i915_gem_object *obj);
+void i915_gem_object_ggtt_unpin_view(struct drm_i915_gem_object *obj,
+				     const struct i915_ggtt_view *view);
+static inline void
+i915_gem_object_ggtt_unpin(struct drm_i915_gem_object *obj)
+{
+	i915_gem_object_ggtt_unpin_view(obj, &i915_ggtt_view_normal);
+}
 
 /* i915_gem_context.c */
 int __must_check i915_gem_context_init(struct drm_device *dev);

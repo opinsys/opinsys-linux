@@ -942,8 +942,9 @@ intel_dp_aux_transfer(struct drm_dp_aux *aux, struct drm_dp_aux_msg *msg)
 	size_t txsize, rxsize;
 	int ret;
 
-	txbuf[0] = msg->request << 4;
-	txbuf[1] = msg->address >> 8;
+	txbuf[0] = (msg->request << 4) |
+		((msg->address >> 16) & 0xf);
+	txbuf[1] = (msg->address >> 8) & 0xff;
 	txbuf[2] = msg->address & 0xff;
 	txbuf[3] = msg->size - 1;
 
@@ -1322,7 +1323,7 @@ intel_dp_compute_config(struct intel_encoder *encoder,
 	struct drm_display_mode *adjusted_mode = &pipe_config->base.adjusted_mode;
 	struct intel_dp *intel_dp = enc_to_intel_dp(&encoder->base);
 	enum port port = dp_to_dig_port(intel_dp)->port;
-	struct intel_crtc *intel_crtc = encoder->new_crtc;
+	struct intel_crtc *intel_crtc = to_intel_crtc(pipe_config->base.crtc);
 	struct intel_connector *intel_connector = intel_dp->attached_connector;
 	int lane_count, clock;
 	int min_lane_count = 1;
@@ -4612,6 +4613,7 @@ static const struct drm_connector_funcs intel_dp_connector_funcs = {
 	.atomic_get_property = intel_connector_atomic_get_property,
 	.destroy = intel_dp_connector_destroy,
 	.atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
+	.atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
 };
 
 static const struct drm_connector_helper_funcs intel_dp_connector_helper_funcs = {
@@ -4998,7 +5000,7 @@ static void intel_dp_set_drrs_state(struct drm_device *dev, int refresh_rate)
 
 	dig_port = dp_to_dig_port(intel_dp);
 	encoder = &dig_port->base;
-	intel_crtc = encoder->new_crtc;
+	intel_crtc = to_intel_crtc(encoder->base.crtc);
 
 	if (!intel_crtc) {
 		DRM_DEBUG_KMS("DRRS: intel_crtc not initialized\n");
@@ -5335,8 +5337,6 @@ static bool intel_edp_init_connector(struct intel_dp *intel_dp,
 	struct drm_display_mode *scan;
 	struct edid *edid;
 	enum pipe pipe = INVALID_PIPE;
-
-	dev_priv->drrs.type = DRRS_NOT_SUPPORTED;
 
 	if (!is_edp(intel_dp))
 		return true;

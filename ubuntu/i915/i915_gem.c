@@ -2847,9 +2847,9 @@ i915_gem_wait_ioctl(struct drm_device *dev, void *data, struct drm_file *file)
 	req = obj->last_read_req;
 
 	/* Do this after OLR check to make sure we make forward progress polling
-	 * on this IOCTL with a timeout <=0 (like busy ioctl)
+	 * on this IOCTL with a timeout == 0 (like busy ioctl)
 	 */
-	if (args->timeout_ns <= 0) {
+	if (args->timeout_ns == 0) {
 		ret = -ETIME;
 		goto out;
 	}
@@ -2859,7 +2859,8 @@ i915_gem_wait_ioctl(struct drm_device *dev, void *data, struct drm_file *file)
 	i915_gem_request_reference(req);
 	mutex_unlock(&dev->struct_mutex);
 
-	ret = __i915_wait_request(req, reset_counter, true, &args->timeout_ns,
+	ret = __i915_wait_request(req, reset_counter, true,
+				  args->timeout_ns > 0 ? &args->timeout_ns : NULL,
 				  file->driver_priv);
 	mutex_lock(&dev->struct_mutex);
 	i915_gem_request_unreference(req);
@@ -3509,6 +3510,17 @@ search_free:
 	if (ret)
 		goto err_remove_node;
 
+	/*  allocate before insert / bind */
+	if (vma->vm->allocate_va_range) {
+		trace_i915_va_alloc(vma->vm, vma->node.start, vma->node.size,
+				VM_TO_TRACE_NAME(vma->vm));
+		ret = vma->vm->allocate_va_range(vma->vm,
+						vma->node.start,
+						vma->node.size);
+		if (ret)
+			goto err_remove_node;
+	}
+
 	trace_i915_vma_bind(vma, flags);
 	ret = i915_vma_bind(vma, obj->cache_level,
 			    flags & PIN_GLOBAL ? GLOBAL_BIND : 0);
@@ -3861,7 +3873,8 @@ static bool is_pin_display(struct drm_i915_gem_object *obj)
 int
 i915_gem_object_pin_to_display_plane(struct drm_i915_gem_object *obj,
 				     u32 alignment,
-				     struct intel_engine_cs *pipelined)
+				     struct intel_engine_cs *pipelined,
+				     const struct i915_ggtt_view *view)
 {
 	u32 old_read_domains, old_write_domain;
 	bool was_pin_display;
@@ -3897,7 +3910,9 @@ i915_gem_object_pin_to_display_plane(struct drm_i915_gem_object *obj,
 	 * (e.g. libkms for the bootup splash), we have to ensure that we
 	 * always use map_and_fenceable for all scanout buffers.
 	 */
-	ret = i915_gem_obj_ggtt_pin(obj, alignment, PIN_MAPPABLE);
+	ret = i915_gem_object_ggtt_pin(obj, view, alignment,
+				       view->type == I915_GGTT_VIEW_NORMAL ?
+				       PIN_MAPPABLE : 0);
 	if (ret)
 		goto err_unpin_display;
 
@@ -3925,9 +3940,11 @@ err_unpin_display:
 }
 
 void
-i915_gem_object_unpin_from_display_plane(struct drm_i915_gem_object *obj)
+i915_gem_object_unpin_from_display_plane(struct drm_i915_gem_object *obj,
+					 const struct i915_ggtt_view *view)
 {
-	i915_gem_object_ggtt_unpin(obj);
+	i915_gem_object_ggtt_unpin_view(obj, view);
+
 	obj->pin_display = is_pin_display(obj);
 }
 
@@ -4112,7 +4129,7 @@ i915_gem_object_do_pin(struct drm_i915_gem_object *obj,
 
 		if (i915_vma_misplaced(vma, alignment, flags)) {
 			unsigned long offset;
-			offset = ggtt_view ? i915_gem_obj_ggtt_offset_view(obj, ggtt_view->type) :
+			offset = ggtt_view ? i915_gem_obj_ggtt_offset_view(obj, ggtt_view) :
 					     i915_gem_obj_offset(obj, vm);
 			WARN(vma->pin_count,
 			     "bo is already pinned in %s with incorrect alignment:"
@@ -4133,6 +4150,10 @@ i915_gem_object_do_pin(struct drm_i915_gem_object *obj,
 
 	bound = vma ? vma->bound : 0;
 	if (vma == NULL || !drm_mm_node_allocated(&vma->node)) {
+		/* In true PPGTT, bind has possibly changed PDEs, which
+		 * means we must do a context switch before the GPU can
+		 * accurately read some of the VMAs.
+		 */
 		vma = i915_gem_object_bind_to_vm(obj, vm, ggtt_view, alignment,
 						 flags);
 		if (IS_ERR(vma))
@@ -4200,15 +4221,16 @@ i915_gem_object_ggtt_pin(struct drm_i915_gem_object *obj,
 }
 
 void
-i915_gem_object_ggtt_unpin(struct drm_i915_gem_object *obj)
+i915_gem_object_ggtt_unpin_view(struct drm_i915_gem_object *obj,
+				const struct i915_ggtt_view *view)
 {
-	struct i915_vma *vma = i915_gem_obj_to_ggtt(obj);
+	struct i915_vma *vma = i915_gem_obj_to_ggtt_view(obj, view);
 
 	BUG_ON(!vma);
-	BUG_ON(vma->pin_count == 0);
-	BUG_ON(!i915_gem_obj_ggtt_bound(obj));
+	WARN_ON(vma->pin_count == 0);
+	WARN_ON(!i915_gem_obj_ggtt_bound_view(obj, view));
 
-	if (--vma->pin_count == 0)
+	if (--vma->pin_count == 0 && view->type == I915_GGTT_VIEW_NORMAL)
 		obj->pin_mappable = false;
 }
 
@@ -4528,7 +4550,8 @@ struct i915_vma *i915_gem_obj_to_ggtt_view(struct drm_i915_gem_object *obj,
 		return ERR_PTR(-EINVAL);
 
 	list_for_each_entry(vma, &obj->vma_list, vma_link)
-		if (vma->vm == ggtt && vma->ggtt_view.type == view->type)
+		if (vma->vm == ggtt &&
+		    i915_ggtt_view_equal(&vma->ggtt_view, view))
 			return vma;
 	return NULL;
 }
@@ -4757,6 +4780,9 @@ i915_gem_init_hw(struct drm_device *dev)
 	if (INTEL_INFO(dev)->gen < 6 && !intel_enable_gtt())
 		return -EIO;
 
+	/* Double layer security blanket, see i915_gem_init() */
+	intel_uncore_forcewake_get(dev_priv, FORCEWAKE_ALL);
+
 	if (dev_priv->ellc_size)
 		I915_WRITE(HSW_IDICR, I915_READ(HSW_IDICR) | IDIHASHMSK(0xf));
 
@@ -4789,7 +4815,7 @@ i915_gem_init_hw(struct drm_device *dev)
 	for_each_ring(ring, dev_priv, i) {
 		ret = ring->init_hw(ring);
 		if (ret)
-			return ret;
+			goto out;
 	}
 
 	for (i = 0; i < NUM_L3_SLICES(dev); i++)
@@ -4806,9 +4832,11 @@ i915_gem_init_hw(struct drm_device *dev)
 		DRM_ERROR("Context enable failed %d\n", ret);
 		i915_gem_cleanup_ringbuffer(dev);
 
-		return ret;
+		goto out;
 	}
 
+out:
+	intel_uncore_forcewake_put(dev_priv, FORCEWAKE_ALL);
 	return ret;
 }
 
@@ -4842,6 +4870,14 @@ int i915_gem_init(struct drm_device *dev)
 		dev_priv->gt.stop_ring = intel_logical_ring_stop;
 	}
 
+	/* This is just a security blanket to placate dragons.
+	 * On some systems, we very sporadically observe that the first TLBs
+	 * used by the CS may be stale, despite us poking the TLB reset. If
+	 * we hold the forcewake during initialisation these problems
+	 * just magically go away.
+	 */
+	intel_uncore_forcewake_get(dev_priv, FORCEWAKE_ALL);
+
 	ret = i915_gem_init_userptr(dev);
 	if (ret)
 		goto out_unlock;
@@ -4868,6 +4904,7 @@ int i915_gem_init(struct drm_device *dev)
 	}
 
 out_unlock:
+	intel_uncore_forcewake_put(dev_priv, FORCEWAKE_ALL);
 	mutex_unlock(&dev->struct_mutex);
 
 	return ret;
@@ -5071,13 +5108,14 @@ i915_gem_obj_offset(struct drm_i915_gem_object *o,
 
 unsigned long
 i915_gem_obj_ggtt_offset_view(struct drm_i915_gem_object *o,
-			      enum i915_ggtt_view_type view)
+			      const struct i915_ggtt_view *view)
 {
 	struct i915_address_space *ggtt = i915_obj_to_ggtt(o);
 	struct i915_vma *vma;
 
 	list_for_each_entry(vma, &o->vma_list, vma_link)
-		if (vma->vm == ggtt && vma->ggtt_view.type == view)
+		if (vma->vm == ggtt &&
+		    i915_ggtt_view_equal(&vma->ggtt_view, view))
 			return vma->node.start;
 
 	WARN(1, "global vma for this object not found.\n");
@@ -5101,14 +5139,14 @@ bool i915_gem_obj_bound(struct drm_i915_gem_object *o,
 }
 
 bool i915_gem_obj_ggtt_bound_view(struct drm_i915_gem_object *o,
-				  enum i915_ggtt_view_type view)
+				  const struct i915_ggtt_view *view)
 {
 	struct i915_address_space *ggtt = i915_obj_to_ggtt(o);
 	struct i915_vma *vma;
 
 	list_for_each_entry(vma, &o->vma_list, vma_link)
 		if (vma->vm == ggtt &&
-		    vma->ggtt_view.type == view &&
+		    i915_ggtt_view_equal(&vma->ggtt_view, view) &&
 		    drm_mm_node_allocated(&vma->node))
 			return true;
 
