@@ -95,8 +95,9 @@ clean: debian/control
 	rm -rf $(DEBIAN)/linux-*
 
 	# This gets rid of the d-i packages in control
-	cp -f $(DEBIAN)/control.stub $(DEBIAN)/control
+	cp -f $(DEBIAN)/control.stub debian/control
 	cp $(DEBIAN)/changelog debian/changelog
+	rm -f $(DEBIAN)/control.stub
 
 	# Install the copyright information.
 	cp $(DEBIAN)/copyright debian/copyright
@@ -145,7 +146,7 @@ $(DEBIAN)/control.stub: $(DEBIAN)/d-i/kernel-versions.in	\
 		-e 's/=HUMAN=/$(human_arch)/g'                                    \
 		>> $(DEBIAN)/control.stub;						\
 	done
-	cp $(DEBIAN)/control.stub $(DEBIAN)/control
+	cp $(DEBIAN)/control.stub debian/control
 
 .PHONY: debian/control
 debian/control: $(DEBIAN)/control.stub
@@ -276,3 +277,4 @@ debian/control: $(DEBIAN)/control.stub
 
 	cp $(DEBIAN)/control.stub debian/control.stub
 	cd $(builddir) && LANG=C kernel-wedge gen-control > $(CURDIR)/debian/control
+	rm -rf debian/control.stub
