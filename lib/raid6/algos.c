@@ -73,11 +73,13 @@ const struct raid6_calls * const raid6_algos[] = {
 	&raid6_intx2,
 	&raid6_intx4,
 	&raid6_intx8,
+#if !defined(CONFIG_ARM)
 #ifdef CONFIG_KERNEL_MODE_NEON
 	&raid6_neonx1,
 	&raid6_neonx2,
 	&raid6_neonx4,
 	&raid6_neonx8,
+#endif
 #endif
 	NULL
 };
