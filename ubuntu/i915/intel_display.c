@@ -5126,6 +5126,7 @@ static void skl_set_cdclk(struct drm_i915_private *dev_priv, unsigned int freq)
 {
 	int ret;
 	u32 val, freq_select, freq_decimal, pcu_ack;
+	bool do_pcu_ack = true;
 
 	DRM_DEBUG_DRIVER("Changing CDCLK to %dKHz\n", freq);
 
@@ -5135,8 +5136,8 @@ static void skl_set_cdclk(struct drm_i915_private *dev_priv, unsigned int freq)
 	ret = sandybridge_pcode_read(dev_priv, SKL_PCODE_CDCLK_CONTROL, &val);
 	mutex_unlock(&dev_priv->rps.hw_lock);
 	if (ret || !(val & SKL_CDCLK_READY_FOR_CHANGE)) {
-		DRM_ERROR("failed to inform PCU about cdclk change\n");
-		return;
+		DRM_DEBUG_KMS("failed to inform PCU about cdclk change\n");
+		do_pcu_ack = false;
 	}
 
 	/* set CDCLK_CTL */
@@ -5167,6 +5168,9 @@ static void skl_set_cdclk(struct drm_i915_private *dev_priv, unsigned int freq)
 
 	I915_WRITE(CDCLK_CTL, freq_select | freq_decimal);
 	POSTING_READ(CDCLK_CTL);
+
+	if (!do_pcu_ack)
+		return;
 
 	/* inform PCU of the change */
 	mutex_lock(&dev_priv->rps.hw_lock);
