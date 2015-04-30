@@ -534,6 +534,7 @@ static void intel_suspend_encoders(struct drm_i915_private *dev_priv)
 static int intel_suspend_complete(struct drm_i915_private *dev_priv);
 static int vlv_resume_prepare(struct drm_i915_private *dev_priv,
 			      bool rpm_resume);
+static int skl_resume_prepare(struct drm_i915_private *dev_priv);
 
 static int i915_drm_suspend(struct drm_device *dev)
 {
@@ -741,6 +742,9 @@ static int i915_drm_resume_early(struct drm_device *dev)
 
 	if (IS_VALLEYVIEW(dev_priv))
 		ret = vlv_resume_prepare(dev_priv, false);
+	else if (IS_SKYLAKE(dev_priv))
+		ret = skl_resume_prepare(dev_priv);
+
 	if (ret)
 		DRM_ERROR("Resume prepare failed: %d,Continuing resume\n", ret);
 
@@ -970,6 +974,20 @@ static int i915_pm_resume(struct device *dev)
 static int hsw_suspend_complete(struct drm_i915_private *dev_priv)
 {
 	hsw_enable_pc8(dev_priv);
+
+	return 0;
+}
+
+static int skl_suspend_complete(struct drm_i915_private *dev_priv)
+{
+	skl_display_suspend(dev_priv);
+
+	return 0;
+}
+
+static int skl_resume_prepare(struct drm_i915_private *dev_priv)
+{
+	skl_display_resume(dev_priv);
 
 	return 0;
 }
@@ -1442,6 +1460,9 @@ static int intel_runtime_resume(struct device *device)
 
 	if (IS_GEN6(dev_priv))
 		intel_init_pch_refclk(dev);
+
+	if (IS_SKYLAKE(dev))
+		ret = skl_resume_prepare(dev_priv);
 	else if (IS_HASWELL(dev_priv) || IS_BROADWELL(dev_priv))
 		hsw_disable_pc8(dev_priv);
 	else if (IS_VALLEYVIEW(dev_priv))
@@ -1474,7 +1495,9 @@ static int intel_suspend_complete(struct drm_i915_private *dev_priv)
 	struct drm_device *dev = dev_priv->dev;
 	int ret;
 
-	if (IS_HASWELL(dev) || IS_BROADWELL(dev))
+	if (IS_SKYLAKE(dev))
+		ret = skl_suspend_complete(dev_priv);
+	else if (IS_HASWELL(dev) || IS_BROADWELL(dev))
 		ret = hsw_suspend_complete(dev_priv);
 	else if (IS_VALLEYVIEW(dev))
 		ret = vlv_suspend_complete(dev_priv);

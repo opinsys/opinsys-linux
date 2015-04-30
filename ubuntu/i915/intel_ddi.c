@@ -1882,6 +1882,8 @@ void intel_ddi_pll_init(struct drm_device *dev)
 	if (IS_SKYLAKE(dev)) {
 		if (!(I915_READ(LCPLL1_CTL) & LCPLL_PLL_ENABLE))
 			DRM_ERROR("LCPLL1 is disabled\n");
+		else
+			intel_display_power_get(dev_priv, POWER_DOMAIN_PLLS);
 	} else {
 		/*
 		 * The LCPLL register should be turned on by the BIOS. For now

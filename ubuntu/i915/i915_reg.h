@@ -6251,6 +6251,10 @@ enum skl_disp_power_wells {
 #define   GEN9_MEM_LATENCY_LEVEL_1_5_SHIFT	8
 #define   GEN9_MEM_LATENCY_LEVEL_2_6_SHIFT	16
 #define   GEN9_MEM_LATENCY_LEVEL_3_7_SHIFT	24
+#define   SKL_PCODE_CDCLK_CONTROL              0x7
+#define     SKL_CDCLK_PREPARE_FOR_CHANGE       0x3
+#define     SKL_CDCLK_READY_FOR_CHANGE         0x1
+
 
 #define GEN6_GT_CORE_STATUS		0x138060
 #define   GEN6_CORE_CPD_STATE_MASK	(7<<4)
