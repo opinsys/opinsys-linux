@@ -1,12 +1,27 @@
-linux-lts-utopic (3.16.0-36.48~14.04.1) trusty; urgency=low
+linux-lts-utopic (3.16.0-37.49~14.04.1) trusty; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1444249
+    - LP: #1450311
+
+  [ Upstream Kernel Changes ]
+
+  * fs: take i_mutex during prepare_binprm for set[ug]id executables
+    - LP: #1447373
+    - CVE-2015-3339
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 30 Apr 2015 10:57:15 +0100
+
+linux (3.16.0-36.48) utopic; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1443946
   * Merged back Ubuntu-3.16.0-34.47 security release
 
- -- Luis Henriques <luis.henriques@canonical.com>  Wed, 15 Apr 2015 13:21:11 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 14 Apr 2015 14:04:46 +0100
 
 linux (3.16.0-35.46) utopic; urgency=low
 
