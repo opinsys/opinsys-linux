@@ -2401,8 +2401,7 @@ struct drm_i915_cmd_table {
 #define HAS_PSR(dev)		(IS_HASWELL(dev) || IS_BROADWELL(dev) || \
 				 IS_VALLEYVIEW(dev) || IS_CHERRYVIEW(dev) || \
 				 IS_SKYLAKE(dev))
-#define HAS_RUNTIME_PM(dev)	(IS_GEN6(dev) || IS_HASWELL(dev) || \
-				 IS_BROADWELL(dev) || IS_VALLEYVIEW(dev))
+#define HAS_RUNTIME_PM(dev)	(INTEL_INFO(dev)->gen >= 6)
 #define HAS_RC6(dev)		(INTEL_INFO(dev)->gen >= 6)
 #define HAS_RC6p(dev)		(INTEL_INFO(dev)->gen == 6 || IS_IVYBRIDGE(dev))
 
