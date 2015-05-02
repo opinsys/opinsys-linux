@@ -2048,7 +2048,8 @@ int intel_init_render_ring_buffer(struct drm_device *dev)
 
 	if (INTEL_INFO(dev)->gen >= 8) {
 		ring->init_context = gen8_init_workarounds;
-	} else if (INTEL_INFO(dev)->gen >= 6) {
+	}
+	if (INTEL_INFO(dev)->gen >= 6) {
 		ring->add_request = gen6_add_request;
 		ring->flush = gen7_render_ring_flush;
 		if (INTEL_INFO(dev)->gen == 6)
