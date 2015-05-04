@@ -5298,6 +5298,9 @@ enum skl_disp_power_wells {
 #define  DISP_FBC_WM_DIS		(1<<15)
 #define DISP_ARB_CTL2	0x45004
 #define  DISP_DATA_PARTITION_5_6	(1<<6)
+#define DBUF_CTL       0x45008
+#define  DBUF_POWER_REQUEST            (1<<31)
+#define  DBUF_POWER_STATE              (1<<30)
 #define GEN7_MSG_CTL	0x45010
 #define  WAIT_FOR_PCH_RESET_ACK		(1<<1)
 #define  WAIT_FOR_PCH_FLR_ACK		(1<<0)
