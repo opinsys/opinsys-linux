@@ -1153,7 +1153,11 @@ static int azx_free(struct azx *chip)
 #ifdef CONFIG_SND_HDA_PATCH_LOADER
 	release_firmware(chip->fw);
 #endif
-	if (chip->driver_caps & AZX_DCAPS_I915_POWERWELL) {
+	if ((chip->driver_caps & AZX_DCAPS_INTEL_SKYLAKE) || \
+	    (chip->driver_caps & AZX_DCAPS_INTEL_BRASWELL)) {
+		hda_display_power(false);
+		hda_i915_exit_bpo();
+	} else if (chip->driver_caps & AZX_DCAPS_I915_POWERWELL) {
 		hda_display_power(false);
 		hda_i915_exit();
 	}
@@ -1914,7 +1918,12 @@ static int azx_probe_continue(struct azx *chip)
 	/* Request power well for Haswell HDA controller and codec */
 	if (chip->driver_caps & AZX_DCAPS_I915_POWERWELL) {
 #ifdef CONFIG_SND_HDA_I915
-		err = hda_i915_init();
+		if ((chip->driver_caps & AZX_DCAPS_INTEL_SKYLAKE) || \
+		    (chip->driver_caps & AZX_DCAPS_INTEL_BRASWELL))
+			err = hda_i915_init_bpo();
+		else
+			err = hda_i915_init();
+
 		if (err < 0) {
 			dev_err(chip->card->dev,
 				"Error request power-well from i915\n");

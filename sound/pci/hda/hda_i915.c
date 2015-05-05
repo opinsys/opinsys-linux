@@ -20,6 +20,7 @@
 #include <linux/module.h>
 #include <sound/core.h>
 #include <drm/i915_powerwell.h>
+#include <drm/i915_powerwell_bpo.h>
 #include "hda_priv.h"
 #include "hda_i915.h"
 
@@ -123,6 +124,50 @@ int hda_i915_exit(void)
 	}
 	if (get_cdclk) {
 		symbol_put(i915_get_cdclk_freq);
+		get_cdclk = NULL;
+	}
+
+	return 0;
+}
+
+int hda_i915_init_bpo(void)
+{
+	int err = 0;
+
+	get_power = symbol_request(i915_bpo_request_power_well);
+	if (!get_power) {
+		pr_warn("hda-i915: get_power symbol get fail\n");
+		return -ENODEV;
+	}
+
+	put_power = symbol_request(i915_bpo_release_power_well);
+	if (!put_power) {
+		symbol_put(i915_request_power_well);
+		get_power = NULL;
+		return -ENODEV;
+	}
+
+	get_cdclk = symbol_request(i915_bpo_get_cdclk_freq);
+	if (!get_cdclk)	/* may have abnormal BCLK and audio playback rate */
+		pr_warn("hda-i915: get_cdclk symbol get fail\n");
+
+	pr_debug("HDA driver get symbol successfully from i915_bpo module\n");
+
+	return err;
+}
+
+int hda_i915_exit_bpo(void)
+{
+	if (get_power) {
+		symbol_put(i915_bpo_request_power_well);
+		get_power = NULL;
+	}
+	if (put_power) {
+		symbol_put(i915_bpo_release_power_well);
+		put_power = NULL;
+	}
+	if (get_cdclk) {
+		symbol_put(i915_bpo_get_cdclk_freq);
 		get_cdclk = NULL;
 	}
 

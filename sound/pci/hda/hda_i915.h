@@ -21,6 +21,8 @@ int hda_display_power(bool enable);
 void haswell_set_bclk(struct azx *chip);
 int hda_i915_init(void);
 int hda_i915_exit(void);
+int hda_i915_init_bpo(void);
+int hda_i915_exit_bpo(void);
 #else
 static inline int hda_display_power(bool enable) { return 0; }
 static inline void haswell_set_bclk(struct azx *chip) { return; }
