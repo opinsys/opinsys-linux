@@ -1,4 +1,19 @@
-linux-lts-vivid (3.19.0-15.15~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-16.16~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1450415
+
+  [ Upstream Kernel Changes ]
+
+  * fs: take i_mutex during prepare_binprm for set[ug]id executables
+    - LP: #1447373
+    - CVE-2015-3339
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 30 Apr 2015 11:28:55 +0100
+
+linux (3.19.0-15.15) vivid; urgency=low
 
   [ Andy Whitcroft ]
 
