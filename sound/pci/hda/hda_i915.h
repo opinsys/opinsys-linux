@@ -34,6 +34,14 @@ static inline int hda_i915_exit(void)
 {
 	return 0;
 }
+static inline int hda_i915_init_bpo(void)
+{
+       return -ENODEV;
+}
+static inline int hda_i915_exit_bpo(void)
+{
+       return 0;
+}
 #endif
 
 #endif
