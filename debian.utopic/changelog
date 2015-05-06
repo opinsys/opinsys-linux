@@ -1,9 +1,37 @@
-linux-lts-utopic (3.16.0-37.49~14.04.1) trusty; urgency=low
+linux-lts-utopic (3.16.0-37.51~14.04.1) trusty; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1451820
+
+  [ Upstream Kernel Changes ]
+
+  * Fix a broken backport causing boot failure on gen8 Intel
+    - LP: #1449401
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 06 May 2015 14:54:58 +0100
+
+linux (3.16.0-37.50) utopic; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1451302
+
+  [ Upstream Kernel Changes ]
+
+  * audit: create private file name copies when auditing inodes
+    - LP: #1450442
+
+ -- Brad Figg <brad.figg@canonical.com>  Sun, 03 May 2015 19:48:46 -0700
+
+linux (3.16.0-37.49) utopic; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1450311
+    - LP: #1450126
 
   [ Upstream Kernel Changes ]
 
@@ -11,7 +39,7 @@ linux-lts-utopic (3.16.0-37.49~14.04.1) trusty; urgency=low
     - LP: #1447373
     - CVE-2015-3339
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 30 Apr 2015 10:57:15 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 29 Apr 2015 17:48:53 +0100
 
 linux (3.16.0-36.48) utopic; urgency=low
 
