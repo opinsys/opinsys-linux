@@ -1,19 +1,508 @@
-linux-lts-vivid (3.19.0-16.16~14.04.2) trusty; urgency=low
+linux-lts-vivid (3.19.0-17.17~14.04.1) trusty; urgency=low
 
   [ Andy Whitcroft ]
 
-  * update-from-vivid-master -- copy over the modprobe.d configuration
-  * update-from-vivid-master -- hint as to next steps
-  * [Packaging] fix insertchanges
-  * [Config] copy over initial modprobe.d content
-  * [Config] allow dracult to support initramfs as well
-    - LP: #1109029
-  * [Packaging] Provides: virtualbox-guest-modules when appropriate
-    - LP: #1434579
+  * Release Tracking Bug
+    - LP: #1452521
 
- -- Andy Whitcroft <apw@canonical.com>  Wed, 06 May 2015 11:14:55 +0100
+  [ Damien Lespiau ]
 
-linux-lts-vivid (3.19.0-16.16~14.04.1) trusty; urgency=low
+  * SAUCE: i915_bpo: drm/i915/skl: Fix stepping check for a couple of W/As
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Implement WaDisableVFUnitClockGating
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Add the INIT power domain to the MISC
+    I/O power well
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Fix the CTRL typo in the DPLL_CRTL1
+    defines
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Make the Misc I/O power well part of the
+    PLLS domain
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Deinit/init the display at
+    suspend/resume
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Change CDCLK behind PCU's back
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: gen6+ platforms support runtime PM
+    - LP: #1449469
+
+  [ Imre Deak ]
+
+  * SAUCE: i915_bpo: drm/i915/gen9: fix PIPE_CONTROL flush for
+    VS_INVALIDATE
+    - LP: #1449469
+
+  [ Leann Ogasawara ]
+
+  * [Config] Set CONFIG_XEN_MAX_DOMAIN_MEMORY defaults
+
+  [ Matt Roper ]
+
+  * SAUCE: i915_bpo: drm/i915: Switch to full atomic helpers for plane
+    updates/disable, take two
+    - LP: #1449469
+
+  [ Sonika Jindal ]
+
+  * SAUCE: i915_bpo: drm/i915/skl: Allow universal planes to position
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Support for 90/270 rotation
+    - LP: #1449469
+  * SAUCE: i915_bpo: drm/i915/skl: Add back HDMI translation table
+    - LP: #1449469
+
+  [ Stefan Bader ]
+
+  * SAUCE: vesafb: Set mtrr:3 (write-combining) as default
+    - LP: #1434581
+
+  [ Timo Aaltonen ]
+
+  * SAUCE: Call i915_bpo specific functions from the hda driver
+    - LP: #1449464
+  * SAUCE: i915_bpo: Use get_display_clock_speed
+    - LP: #1449469
+  * SAUCE: i915_bpo: Add a few register definitions
+    - LP: #1449469
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "sparc/PCI: Clip bridge windows to fit in upstream windows"
+    - LP: #1446316
+  * Revert "PM / hibernate: avoid unsafe pages in e820 reserved regions"
+    - LP: #1446316
+  * Revert "libceph: use memalloc flags for net IO"
+    - LP: #1446316
+  * Revert "net: Reset secmark when scrubbing packet"
+    - LP: #1451996
+  * ASoC: da732x: Fix control-less DAPM routes
+    - LP: #1446316
+  * ASoC: ak4671: Fix control-less DAPM routes
+    - LP: #1446316
+  * ASoC: sn95031: Fix control-less DAPM routes
+    - LP: #1446316
+  * ASoC: sgtl5000: remove useless register write clearing CHRGPUMP_POWERUP
+    - LP: #1446316
+  * ASoC: pcm1681: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: cs4271: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: es8238: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm8960: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: tas5086: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm8731: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm2000: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm8903: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm8904: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: ak4641: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: adav80x: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm8955: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm9712: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * ASoC: wm9713: Fix wrong value references for boolean kctl
+    - LP: #1446316
+  * virtio_balloon: set DRIVER_OK before using device
+    - LP: #1446316
+  * virtio-balloon: do not call blocking ops when !TASK_RUNNING
+    - LP: #1446316
+  * clockevents: sun5i: Fix setup_irq init sequence
+    - LP: #1446316
+  * regmap: regcache-rbtree: Fix present bitmap resize
+    - LP: #1446316
+  * regmap: introduce regmap_name to fix syscon regmap trace events
+    - LP: #1446316
+  * clocksource: efm32: Fix a NULL pointer dereference
+    - LP: #1446316
+  * tcm_fc: missing curly braces in ft_invl_hw_context()
+    - LP: #1446316
+  * tcm_qla2xxx: Fix incorrect use of __transport_register_session
+    - LP: #1446316
+  * nl80211: ignore HT/VHT capabilities without QoS/WMM
+    - LP: #1446316
+  * mac80211: disable u-APSD queues by default
+    - LP: #1446316
+  * mac80211: drop unencrypted frames in mesh fwding
+    - LP: #1446316
+  * mac80211: count interfaces correctly for combination checks
+    - LP: #1446316
+  * iwlwifi: mvm: rs: fix BT Coex check to look at the correct ant
+    - LP: #1446316
+  * iwlwifi: fix max_ht_ampdu_exponent for older devices
+    - LP: #1446316
+  * iwlwifi: mvm: BT Coex - fix a NULL pointer exception
+    - LP: #1446316
+  * iwlwifi: mvm: Fix ROC removal
+    - LP: #1446316
+  * uas: Add US_FL_NO_ATA_1X for Initio Corporation controllers / devices
+    - LP: #1446316
+  * usb: phy: am335x-control: check return value of bus_find_device
+    - LP: #1446316
+  * usb: chipidea: otg: add a_alt_hnp_support response for B device
+    - LP: #1446316
+  * usb: common: otg-fsm: only signal connect after switching to peripheral
+    - LP: #1446316
+  * phy: Find the right match in devm_phy_destroy()
+    - LP: #1446316
+  * rtlwifi: Improve handling of IPv6 packets
+    - LP: #1446316
+  * cpuidle: mvebu: Fix the CPU PM notifier usage
+    - LP: #1446316
+  * brcmfmac: Perform bound checking on vendor command buffer
+    - LP: #1446316
+  * of/irq: Fix of_irq_parse_one() returned error codes
+    - LP: #1446316
+  * perf: Fix irq_work 'tail' recursion
+    - LP: #1446316
+  * staging: vt6656: vnt_rf_setpower: fix missing rate RATE_12M
+    - LP: #1446316
+  * vt6655: RFbSetPower fix missing rate RATE_12M
+    - LP: #1446316
+  * vt6655: Fix late setting of byRFType.
+    - LP: #1446316
+  * dmaengine: dw: append MODULE_ALIAS for platform driver
+    - LP: #1446316
+  * dm: hold suspend_lock while suspending device during device deletion
+    - LP: #1446316
+  * dm io: deal with wandering queue limits when handling REQ_DISCARD and
+    REQ_WRITE_SAME
+    - LP: #1446316
+  * dm thin: fix to consistently zero-fill reads to unprovisioned blocks
+    - LP: #1446316
+  * dm snapshot: suspend origin when doing exception handover
+    - LP: #1446316
+  * dm snapshot: suspend merging snapshot when doing exception handover
+    - LP: #1446316
+  * spi: qup: Fix cs-num DT property parsing
+    - LP: #1446316
+  * spi: dw-mid: clear BUSY flag fist and test other one
+    - LP: #1446316
+  * spi: trigger trace event for message-done before mesg->complete
+    - LP: #1446316
+  * hfsplus: fix B-tree corruption after insertion at position 0
+    - LP: #1446316
+  * powerpc/book3s: Fix the MCE code to use CONFIG_KVM_BOOK3S_64_HANDLER
+    - LP: #1446316
+  * regulator: palmas: Correct TPS659038 register definition for REGEN2
+    - LP: #1446316
+  * arm64: Use the reserved TTBR0 if context switching to the init_mm
+    - LP: #1446316
+  * arm64: percpu: Make this_cpu accessors pre-empt safe
+    - LP: #1446316
+  * powerpc/mpc85xx: Add ranges to etsec2 nodes
+    - LP: #1446316
+  * net: ethernet: pcnet32: Setup the SRAM and NOUFLO on Am79C97{3, 5}
+    - LP: #1446316
+  * mfd: kempld-core: Fix callback return value check
+    - LP: #1446316
+  * Linux 3.19.4
+    - LP: #1446316
+  * ALSA: hda - Add dock support for Thinkpad T450s (17aa:5036)
+    - LP: #1446316
+  * ALSA: hda - Add one more node in the EAPD supporting candidate list
+    - LP: #1436745, #1446316
+  * ALSA: usb - Creative USB X-Fi Pro SB1095 volume knob support
+    - LP: #1446316
+  * ALSA: bebob: fix to processing in big-endian machine for sending cue
+    - LP: #1446316
+  * ALSA: hda/realtek - Make more stable to get pin sense for ALC283
+    - LP: #1446316
+  * ALSA: hda - Fix headphone pin config for Lifebook T731
+    - LP: #1446316
+  * PCI/AER: Avoid info leak in __print_tlp_header()
+    - LP: #1446316
+  * PCI: cpcihp: Add missing curly braces in cpci_configure_slot()
+    - LP: #1446316
+  * PCI: Don't look for ACPI hotplug parameters if ACPI is disabled
+    - LP: #1446316
+  * PCI: spear: Drop __initdata from spear13xx_pcie_driver
+    - LP: #1446316
+  * ARC: SA_SIGINFO ucontext regs off-by-one
+    - LP: #1446316
+  * ARC: signal handling robustify
+    - LP: #1446316
+  * ARM: sunxi: Have ARCH_SUNXI select RESET_CONTROLLER for clock driver
+    usage
+    - LP: #1446316
+  * selinux: fix sel_write_enforce broken return value
+    - LP: #1446316
+  * blk-mq: fix use of incorrect goto label in blk_mq_init_queue error path
+    - LP: #1446316
+  * blkmq: Fix NULL pointer deref when all reserved tags in
+    - LP: #1446316
+  * Fix bug in blk_rq_merge_ok
+    - LP: #1446316
+  * block: fix blk_stack_limits() regression due to lcm() change
+    - LP: #1446316
+  * drm: Fixup racy refcounting in plane_force_disable
+    - LP: #1446316
+  * drm/edid: set ELD for firmware and debugfs override EDIDs
+    - LP: #1446316
+  * drm/i915: Reject the colorkey ioctls for primary and cursor planes
+    - LP: #1446316
+  * drm/radeon/dpm: fix 120hz handling harder
+    - LP: #1446316
+  * drm/radeon: add extra check in radeon_ttm_tt_unpin_userptr
+    - LP: #1446316
+  * drm/radeon: fix wait in radeon_mn_invalidate_range_start
+    - LP: #1446316
+  * drm/i915/chv: Remove Wait for a previous gfx force-off
+    - LP: #1446316
+  * drm/i915/vlv: save/restore the power context base reg
+    - LP: #1446316
+  * drm/i915/vlv: remove wait for previous GFX clk disable request
+    - LP: #1446316
+  * drm/i915: Align initial plane backing objects correctly
+    - LP: #1446316
+  * btrfs: simplify insert_orphan_item
+    - LP: #1446316
+  * iwlwifi: dvm: run INIT firmware again upon .start()
+    - LP: #1446316
+  * x86/xen: prepare p2m list for memory hotplug
+    - LP: #1446316
+  * xen/balloon: before adding hotplugged memory, set frames to invalid
+    - LP: #1446316
+  * nfsd: return correct openowner when there is a race to put one in the
+    hash
+    - LP: #1446316
+  * nfsd: return correct lockowner when there is a race on hash insert
+    - LP: #1446316
+  * sunrpc: make debugfs file creation failure non-fatal
+    - LP: #1446316
+  * powerpc: Re-enable dynticks
+    - LP: #1446316
+  * nbd: fix possible memory leak
+    - LP: #1446316
+  * mac80211: fix RX A-MPDU session reorder timer deletion
+    - LP: #1446316
+  * mm: fix anon_vma->degree underflow in anon_vma endless growing
+    prevention
+    - LP: #1446316
+  * mm/memory hotplug: postpone the reset of obsolete pgdat
+    - LP: #1446316
+  * mm/page_alloc.c: call kernel_map_pages in unset_migrateype_isolate
+    - LP: #1446316
+  * sched: Fix RLIMIT_RTTIME when PI-boosting to RT
+    - LP: #1446316
+  * cpufreq: Schedule work for the first-online CPU on resume
+    - LP: #1446316
+  * writeback: add missing INITIAL_JIFFIES init in
+    global_update_bandwidth()
+    - LP: #1446316
+  * 2f800fbd777b ("writeback: fix dirtied pages accounting on redirty")
+  * libata: Update Crucial/Micron blacklist
+    - LP: #1446316
+  * libata: Blacklist queued TRIM on Samsung SSD 850 Pro
+    - LP: #1446316
+  * radeon: Do not directly dereference pointers to BIOS area.
+    - LP: #1446316
+  * USB: keyspan_pda: add new device id
+    - LP: #1446316
+  * USB: ftdi_sio: Added custom PID for Synapse Wireless product
+    - LP: #1446316
+  * USB: ftdi_sio: Use jtag quirk for SNAP Connect E10
+    - LP: #1446316
+  * Defer processing of REQ_PREEMPT requests for blocked devices
+    - LP: #1446316
+  * iio: inv_mpu6050: Clear timestamps fifo while resetting hardware fifo
+    - LP: #1446316
+  * iio: core: Fix double free.
+    - LP: #1446316
+  * iio: bmc150: change sampling frequency
+    - LP: #1446316
+  * iio: adc: vf610: use ADC clock within specification
+    - LP: #1446316
+  * iio: imu: Use iio_trigger_get for indio_dev->trig assignment
+    - LP: #1446316
+  * dmaengine: edma: fix memory leak when terminating running transfers
+    - LP: #1446316
+  * dmaengine: omap-dma: Fix memory leak when terminating running transfer
+    - LP: #1446316
+  * ath9k: fix tracking of enabled AP beacons
+    - LP: #1446316
+  * x86/reboot: Add ASRock Q1900DC-ITX mainboard reboot quirk
+    - LP: #1446316
+  * can: flexcan: fix bus-off error state handling.
+    - LP: #1446316
+  * can: flexcan: Deferred on Regulator return EPROBE_DEFER
+    - LP: #1446316
+  * firmware: dmi_scan: Prevent dmi_num integer overflow
+    - LP: #1446316
+  * cpuidle: remove state_count field from struct cpuidle_device
+    - LP: #1446316
+  * cpuidle: ACPI: do not overwrite name and description of C0
+    - LP: #1446316
+  * usb: xhci: handle Config Error Change (CEC) in xhci driver
+    - LP: #1446316
+  * usb: xhci: apply XHCI_AVOID_BEI quirk to all Intel xHCI controllers
+    - LP: #1446316
+  * tty: serial: fsl_lpuart: specify transmit FIFO size
+    - LP: #1446316
+  * tty: serial: fsl_lpuart: clear receive flag on FIFO flush
+    - LP: #1446316
+  * n_tty: Fix read buffer overwrite when no newline
+    - LP: #1446316
+  * cifs: smb2_clone_range() - exit on unhandled error
+    - LP: #1446316
+  * cifs: fix use-after-free bug in find_writable_file
+    - LP: #1446316
+  * brcmfmac: disable MBSS feature for BCM43362
+    - LP: #1446316
+  * iommu/vt-d: Detach domain *only* from attached iommus
+    - LP: #1446316
+  * rtlwifi: Fix IOMMU mapping leak in AP mode
+    - LP: #1446316
+  * drivers/of: Add empty ranges quirk for PA-Semi
+    - LP: #1446316
+  * be2iscsi: Fix kernel panic when device initialization fails
+    - LP: #1446316
+  * ocfs2: _really_ sync the right range
+    - LP: #1446316
+  * ioctx_alloc(): fix vma (and file) leak on failure
+    - LP: #1446316
+  * iscsi target: fix oops when adding reject pdu
+    - LP: #1446316
+  * sh_veu: v4l2_dev wasn't set
+    - LP: #1446316
+  * media: s5p-mfc: fix mmap support for 64bit arch
+    - LP: #1446316
+  * cx23885: fix querycap
+    - LP: #1446316
+  * soc-camera: Fix devm_kfree() in soc_of_bind()
+    - LP: #1446316
+  * vb2: Fix dma_dir setting for dma-contig mem type
+    - LP: #1446316
+  * vb2: fix 'UNBALANCED' warnings when calling vb2_thread_stop()
+    - LP: #1446316
+  * clk: divider: fix selection of divider when rounding to closest
+    - LP: #1446316
+  * clk: divider: fix calculation of maximal parent rate for a given
+    divider
+    - LP: #1446316
+  * IB/mlx4: Saturate RoCE port PMA counters in case of overflow
+    - LP: #1446316
+  * xfs: ensure truncate forces zeroed blocks to disk
+    - LP: #1446316
+  * drm/i915: Push vblank enable/disable past encoder->enable/disable
+    - LP: #1446316
+  * kvm: avoid page allocation failure in kvm_set_memory_region()
+    - LP: #1446316
+  * Linux 3.19.5
+    - LP: #1446316
+  * PCI: Don't clear ASPM bits when the FADT declares it's unsupported
+    - LP: #1441335
+  * regmap: Skip read-only registers in regcache_sync()
+    - LP: #1448830
+  * tun: return proper error code from tun_do_read
+    - LP: #1448942
+  * i915_bpo: Update to 4.1rc1
+    - LP: #1449469
+  * drm/plane-helper: Test for plane disable earlier
+    - LP: #1449469
+  * drm: Add standardized boolean props
+    - LP: #1449469
+  * drm/atomic: Add drm_crtc_state->active
+    - LP: #1449469
+  * drm/atomic-helper: add connector->dpms() implementation
+    - LP: #1449469
+  * drm/atomic-helpers: Recover full cursor plane behaviour
+    - LP: #1449469
+  * drm: Include drm_crtc_helper.h in DocBook
+    - LP: #1449469
+  * drm/atomic-helpers: Saner encoder/crtc callbacks
+    - LP: #1449469
+  * drm/atomic-helper: debug output for modesets
+    - LP: #1449469
+  * drm/atomic: Fix potential use of state after free
+    - LP: #1449469
+  * drm/plane: Make ->atomic_update() mandatory
+    - LP: #1449469
+  * drm/plane: Add optional ->atomic_disable() callback
+    - LP: #1449469
+  * drm/atomic: Add ->atomic_check() to encoder helpers
+    - LP: #1449469
+  * drm: Add DRM_DEBUG_ATOMIC
+    - LP: #1449469
+  * drm: Pass in new and old plane state to prepare_fb and cleanup_fb
+    - LP: #1449469
+  * drm/atomic: Clear crtcs, connectors and planes when clearing state
+    - LP: #1449469
+  * drm/atomic: Don't try to free a NULL state
+    - LP: #1449469
+  * drm/i915: remove intel_pipe_set_base() (v4)
+    - LP: #1446979
+  * ALSA: hda_intel: add AZX_DCAPS_I915_POWERWELL for SKL and BSW
+    - LP: #1449464
+  * ALSA: hda_intel: apply the Seperate stream_tag for Sunrise Point
+    - LP: #1449464
+  * tcp: prevent fetching dst twice in early demux code
+    - LP: #1451996
+  * rocker: handle non-bridge master change
+    - LP: #1451996
+  * net/mlx4_en: Call register_netdevice in the proper location
+    - LP: #1451996
+  * net: tcp6: fix double call of tcp_v6_fill_cb()
+    - LP: #1451996
+  * bonding: Bonding Overriding Configuration logic restored.
+    - LP: #1451996
+  * openvswitch: Return vport module ref before destruction
+    - LP: #1451996
+  * xen-netfront: transmit fully GSO-sized packets
+    - LP: #1451996
+  * tcp: fix FRTO undo on cumulative ACK of SACKed range
+    - LP: #1451996
+  * ipv6: protect skb->sk accesses from recursive dereference inside the
+    stack
+    - LP: #1451996
+  * net/mlx4_core: Fix error message deprecation for ConnectX-2 cards
+    - LP: #1451996
+  * tcp: tcp_make_synack() should clear skb->tstamp
+    - LP: #1451996
+  * bnx2x: Fix busy_poll vs netpoll
+    - LP: #1451996
+  * bpf: fix verifier memory corruption
+    - LP: #1451996
+  * skbuff: Do not scrub skb mark within the same name space
+    - LP: #1451996
+  * udptunnels: Call handle_offloads after inserting vlan tag.
+    - LP: #1451996
+  * usbnet: Fix tx_packets stat for FLAG_MULTI_FRAME drivers
+    - LP: #1451996
+  * usbnet: Fix tx_bytes statistic running backward in cdc_ncm
+    - LP: #1451996
+  * KVM: nVMX: mask unrestricted_guest if disabled on L0
+    - LP: #1451996
+  * staging: comedi: adv_pci1710: fix AI INSN_READ for non-zero channel
+    - LP: #1451996
+  * mm/hugetlb: reduce arch dependent code around follow_huge_*
+    - LP: #1451996
+  * mm/hugetlb: take page table lock in follow_huge_pmd()
+    - LP: #1451996
+  * rtlwifi: rtl8192ee: Fix handling of new style descriptors
+    - LP: #1451996
+  * Linux 3.19.6
+    - LP: #1451996
+
+  [ Ville Syrjälä ]
+
+  * SAUCE: i915_bpo: drm/i915: Convert the ddi cdclk code to
+    get_display_clock_speed
+    - LP: #1449469
+
+ -- Brad Figg <brad.figg@canonical.com>  Tue, 05 May 2015 13:23:53 -0700
+
+linux (3.19.0-16.16) vivid; urgency=low
 
   [ Luis Henriques ]
 
@@ -34,9 +523,14 @@ linux (3.19.0-15.15) vivid; urgency=low
 
   * Release Tracking Bug
     - LP: #1445253
-  * update to vivid 3.19.0-15.15
-  * SAUCE: temporarily disable neon raid6 optimisations for armhf
-  * [Packaging] clean up control intermediate files
+  * Revert "SAUCE: fan: Proof of concept implementation"
+  * hyper-v -- add hid and fb drivers to linux-virtual
+    - LP: #1444179
+
+  [ Jay Vosburgh ]
+
+  * SAUCE: fan: Proof of concept implementation (v2)
+    - LP: #1439706
 
  -- Andy Whitcroft <apw@canonical.com>  Thu, 16 Apr 2015 23:03:58 +0100
 
@@ -59,6 +553,11 @@ linux (3.19.0-13.13) vivid; urgency=low
 
   * [Packaging] initscripts need installing when making the package
   * [Packaging] initscripts work around bug in debhelper systemd support
+
+  [ Jay Vosburgh ]
+
+  * SAUCE: fan: Proof of concept implementation
+    - LP: #1439706
 
   [ Leann Ogasawara ]
 
