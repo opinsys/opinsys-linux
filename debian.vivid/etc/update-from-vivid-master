@@ -111,6 +111,11 @@ rsync -av --delete ${DEBIAN_SOURCE}/config/ ${DEBIAN_TARGET}/config
 rsync -av ${DEBIAN_SOURCE}/rules.d/*.mk ${DEBIAN_TARGET}/rules.d/
 
 #
+# Update modprobe.d from master
+#
+rsync -av --delete ${DEBIAN_SOURCE}/modprobe.d/ ${DEBIAN_TARGET}/modprobe.d
+
+#
 # Get the master branch ABI files, which can be mostly ignored since
 # the build is skipabi and skipmodule.
 # We can ignore ABI changes with the assurance that the origin
@@ -130,7 +135,9 @@ fakeroot debian/rules clean updateconfigs
 
 # Stage the bits we changed.
 rm -f ${DEBIAN_TARGET}/d-i/kernel-versions
-git add ${DEBIAN_TARGET}/abi ${DEBIAN_TARGET}/d-i ${DEBIAN_TARGET}/config ${DEBIAN_TARGET}/rules.d/*.mk ${DEBIAN_TARGET}/reconstruct
+git add ${DEBIAN_TARGET}/abi ${DEBIAN_TARGET}/d-i ${DEBIAN_TARGET}/config \
+	${DEBIAN_TARGET}/rules.d/*.mk ${DEBIAN_TARGET}/reconstruct \
+	${DEBIAN_TARGET}/modprobe.d
 
 #
 # Update changelog from the source release changelog. Change the release pocket and ABI.
