@@ -777,7 +777,7 @@ static struct file *do_open_exec(struct filename *name)
 
 	fsnotify_open(file);
 
-	trace_open_exec(name);
+	trace_open_exec(name->name);
 
 	err = deny_write_access(file);
 	if (err)
