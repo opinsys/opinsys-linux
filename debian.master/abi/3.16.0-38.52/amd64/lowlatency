@@ -1027,10 +1027,10 @@ EXPORT_SYMBOL drivers/md/dm-log 0x2c6a371b	dm_dirty_log_destroy
 EXPORT_SYMBOL drivers/md/dm-log 0x42bdaefb	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-log 0x448c24d8	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-log 0xa5efe31a	dm_dirty_log_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x273d446a	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x2153f855	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x4154551c	dm_exception_store_destroy
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x45714d8f	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x67b7f655	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x883c42cf	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x8a7a7b6f	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xd165cbaa	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/raid456 0xb1d0e22c	raid5_set_cache_size
@@ -15250,6 +15250,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x3097b26c	get_net_ns_by_pid
 EXPORT_SYMBOL_GPL vmlinux 0x30987f32	rio_mport_chk_dev_access
 EXPORT_SYMBOL_GPL vmlinux 0x30a49be3	m2p_remove_override
 EXPORT_SYMBOL_GPL vmlinux 0x30c55049	clk_get_accuracy
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30d3e269	netdev_set_default_ethtool_ops
 EXPORT_SYMBOL_GPL vmlinux 0x30d6a7e9	ata_link_offline
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
@@ -16200,6 +16201,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x772fbcaf	trace_buffer_unlock_commit_regs
 EXPORT_SYMBOL_GPL vmlinux 0x77313b76	ata_cable_ignore
 EXPORT_SYMBOL_GPL vmlinux 0x773698a4	list_lru_init_key
 EXPORT_SYMBOL_GPL vmlinux 0x774d820c	usb_reset_endpoint
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x775a6ef5	kvm_read_and_reset_pf_reason
 EXPORT_SYMBOL_GPL vmlinux 0x775f42c3	agp_remove_bridge
 EXPORT_SYMBOL_GPL vmlinux 0x7760bca8	input_ff_destroy
@@ -17800,6 +17802,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xedbc6f67	gnttab_end_foreign_access
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xede5a60a	led_trigger_register_simple
 EXPORT_SYMBOL_GPL vmlinux 0xedfb6dc3	rt_mutex_destroy
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee0c5a30	powercap_unregister_zone
 EXPORT_SYMBOL_GPL vmlinux 0xee13e697	set_personality_ia32
 EXPORT_SYMBOL_GPL vmlinux 0xee28ac95	rio_mport_write_config_8

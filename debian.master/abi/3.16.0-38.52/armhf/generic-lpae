@@ -1010,11 +1010,11 @@ EXPORT_SYMBOL drivers/md/dm-log 0x7c98988b	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-log 0xa2814fcb	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-log 0xaaf46572	dm_dirty_log_create
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x0370a3eb	dm_exception_store_destroy
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x150ad106	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x535e3946	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x5f7f68f6	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x62ef3c8b	dm_exception_store_type_unregister
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x7d7aabe9	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x91d7a8c3	dm_exception_store_type_register
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xddd64831	dm_snap_origin
 EXPORT_SYMBOL drivers/md/raid456 0x1224960c	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x267ee773	flexcop_pass_dmx_data
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x38e169a0	flexcop_sram_set_dest
@@ -14435,6 +14435,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x3092d246	iommu_set_fault_handler
 EXPORT_SYMBOL_GPL vmlinux 0x30a4f4ca	bstr_printf
 EXPORT_SYMBOL_GPL vmlinux 0x30b9e384	snd_soc_dapm_sync_unlocked
 EXPORT_SYMBOL_GPL vmlinux 0x30cd3f84	pinctrl_utils_dt_free_map
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30e23ab6	kvm_vcpu_yield_to
 EXPORT_SYMBOL_GPL vmlinux 0x30eb7f00	devm_regulator_get_optional
 EXPORT_SYMBOL_GPL vmlinux 0x310501c7	snd_dmaengine_pcm_unregister
@@ -15372,6 +15373,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x77214cea	sprint_OID
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
 EXPORT_SYMBOL_GPL vmlinux 0x77406151	virtio_check_driver_offered_feature
 EXPORT_SYMBOL_GPL vmlinux 0x77430a41	arizona_dev_init
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x775a95c3	wm8350_reg_unlock
 EXPORT_SYMBOL_GPL vmlinux 0x77604e96	irq_domain_xlate_onecell
 EXPORT_SYMBOL_GPL vmlinux 0x77a35fc3	uprobe_unregister
@@ -17010,6 +17012,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xed606d9a	ata_scsi_unlock_native_capacity
 EXPORT_SYMBOL_GPL vmlinux 0xedbfa018	ata_sas_scsi_ioctl
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xeddb0116	regulator_get_voltage
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee125382	snd_soc_jack_report
 EXPORT_SYMBOL_GPL vmlinux 0xee18a525	__rtnl_link_unregister
 EXPORT_SYMBOL_GPL vmlinux 0xee4f3181	wakeup_source_add

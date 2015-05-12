@@ -973,10 +973,10 @@ EXPORT_SYMBOL drivers/md/dm-log 0xe4f9ff93	dm_dirty_log_create
 EXPORT_SYMBOL drivers/md/dm-log 0xf2fb175a	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x0a2cc099	dm_exception_store_destroy
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x30aa89dc	dm_exception_store_type_register
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x424d0c91	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x5b3a7e4d	dm_exception_store_create
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x6e112abd	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xc950bff6	dm_exception_store_type_unregister
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xf8c3d4ea	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xc95c4bf9	dm_snap_origin
 EXPORT_SYMBOL drivers/md/raid456 0x14680ca9	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x0a71e237	flexcop_sram_set_dest
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x0d61cb33	flexcop_pass_dmx_data
@@ -14284,6 +14284,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x30929dc4	crypto_register_ahash
 EXPORT_SYMBOL_GPL vmlinux 0x30962311	ping_proc_register
 EXPORT_SYMBOL_GPL vmlinux 0x309a274d	attribute_container_find_class_device
 EXPORT_SYMBOL_GPL vmlinux 0x30c9983f	blocking_notifier_call_chain
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30ff183e	of_irq_parse_and_map_pci
 EXPORT_SYMBOL_GPL vmlinux 0x30ff1d8d	virtqueue_is_broken
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
@@ -15161,6 +15162,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x770cff4a	securityfs_create_file
 EXPORT_SYMBOL_GPL vmlinux 0x7712771a	unbind_from_irqhandler
 EXPORT_SYMBOL_GPL vmlinux 0x7713a58c	ata_sff_error_handler
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x778ac670	usb_init_urb
 EXPORT_SYMBOL_GPL vmlinux 0x779a3684	tpm_calc_ordinal_duration
 EXPORT_SYMBOL_GPL vmlinux 0x77b35ae7	usb_block_urb
@@ -16624,6 +16626,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xedc20690	pci_user_write_config_byte
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xede92354	kvm_clear_guest
 EXPORT_SYMBOL_GPL vmlinux 0xedfa1a6e	driver_attach
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee0f2544	ablkcipher_walk_done
 EXPORT_SYMBOL_GPL vmlinux 0xee297ae8	powercap_register_zone
 EXPORT_SYMBOL_GPL vmlinux 0xee379260	crypto_hash_walk_first
