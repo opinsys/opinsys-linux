@@ -1,9 +1,23 @@
-linux-lts-vivid (3.19.0-17.17~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-18.18~14.04.1) trusty; urgency=low
 
-  [ Andy Whitcroft ]
+  [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1452521
+    - LP: #1456862
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "drm/i915: remove intel_pipe_set_base() (v4)"
+    - LP: #1453593
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 20 May 2015 09:42:26 +0100
+
+linux (3.19.0-17.17) vivid; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1452000
 
   [ Damien Lespiau ]
 
