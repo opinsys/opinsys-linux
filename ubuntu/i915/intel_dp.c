@@ -1348,7 +1348,7 @@ intel_dp_compute_config(struct intel_encoder *encoder,
 
 	pipe_config->has_dp_encoder = true;
 	pipe_config->has_drrs = false;
-	pipe_config->has_audio = intel_dp->has_audio;
+	pipe_config->has_audio = intel_dp->has_audio && port != PORT_A;
 
 	if (is_edp(intel_dp) && intel_connector->panel.fixed_mode) {
 		intel_fixed_panel_mode(intel_connector->panel.fixed_mode,
@@ -2211,8 +2211,8 @@ static void intel_dp_get_config(struct intel_encoder *encoder,
 	int dotclock;
 
 	tmp = I915_READ(intel_dp->output_reg);
-	if (tmp & DP_AUDIO_OUTPUT_ENABLE)
-		pipe_config->has_audio = true;
+
+	pipe_config->has_audio = tmp & DP_AUDIO_OUTPUT_ENABLE && port != PORT_A;
 
 	if ((port == PORT_A) || !HAS_PCH_CPT(dev)) {
 		if (tmp & DP_SYNC_HS_HIGH)
@@ -2742,11 +2742,6 @@ static void chv_pre_enable_dp(struct intel_encoder *encoder)
 
 	/* Program Tx lane latency optimal setting*/
 	for (i = 0; i < 4; i++) {
-		/* Set the latency optimal bit */
-		data = (i == 1) ? 0x0 : 0x6;
-		vlv_dpio_write(dev_priv, pipe, CHV_TX_DW11(ch, i),
-				data << DPIO_FRC_LATENCY_SHFIT);
-
 		/* Set the upar bit */
 		data = (i == 1) ? 0x0 : 0x1;
 		vlv_dpio_write(dev_priv, pipe, CHV_TX_DW14(ch, i),
@@ -3817,7 +3812,8 @@ intel_dp_get_dpcd(struct intel_dp *intel_dp)
 			if (val == 0)
 				break;
 
-			intel_dp->sink_rates[i] = val * 200;
+			/* Value read is in kHz while drm clock is saved in deca-kHz */
+			intel_dp->sink_rates[i] = (val * 200) / 10;
 		}
 		intel_dp->num_sink_rates = i;
 	}
@@ -5157,7 +5153,6 @@ static void intel_edp_drrs_downclock_work(struct work_struct *work)
 			downclock_mode->vrefresh);
 
 unlock:
-
 	mutex_unlock(&dev_priv->drrs.mutex);
 }
 
@@ -5179,12 +5174,17 @@ void intel_edp_drrs_invalidate(struct drm_device *dev,
 	struct drm_crtc *crtc;
 	enum pipe pipe;
 
-	if (!dev_priv->drrs.dp)
+	if (dev_priv->drrs.type == DRRS_NOT_SUPPORTED)
 		return;
 
-	cancel_delayed_work_sync(&dev_priv->drrs.work);
+	cancel_delayed_work(&dev_priv->drrs.work);
 
 	mutex_lock(&dev_priv->drrs.mutex);
+	if (!dev_priv->drrs.dp) {
+		mutex_unlock(&dev_priv->drrs.mutex);
+		return;
+	}
+
 	crtc = dp_to_dig_port(dev_priv->drrs.dp)->base.base.crtc;
 	pipe = to_intel_crtc(crtc)->pipe;
 
@@ -5218,12 +5218,17 @@ void intel_edp_drrs_flush(struct drm_device *dev,
 	struct drm_crtc *crtc;
 	enum pipe pipe;
 
-	if (!dev_priv->drrs.dp)
+	if (dev_priv->drrs.type == DRRS_NOT_SUPPORTED)
 		return;
 
-	cancel_delayed_work_sync(&dev_priv->drrs.work);
+	cancel_delayed_work(&dev_priv->drrs.work);
 
 	mutex_lock(&dev_priv->drrs.mutex);
+	if (!dev_priv->drrs.dp) {
+		mutex_unlock(&dev_priv->drrs.mutex);
+		return;
+	}
+
 	crtc = dp_to_dig_port(dev_priv->drrs.dp)->base.base.crtc;
 	pipe = to_intel_crtc(crtc)->pipe;
 	dev_priv->drrs.busy_frontbuffer_bits &= ~frontbuffer_bits;
@@ -5294,6 +5299,9 @@ intel_dp_drrs_init(struct intel_connector *intel_connector,
 	struct drm_i915_private *dev_priv = dev->dev_private;
 	struct drm_display_mode *downclock_mode = NULL;
 
+	INIT_DELAYED_WORK(&dev_priv->drrs.work, intel_edp_drrs_downclock_work);
+	mutex_init(&dev_priv->drrs.mutex);
+
 	if (INTEL_INFO(dev)->gen <= 6) {
 		DRM_DEBUG_KMS("DRRS supported for Gen7 and above\n");
 		return NULL;
@@ -5311,10 +5319,6 @@ intel_dp_drrs_init(struct intel_connector *intel_connector,
 		DRM_DEBUG_KMS("Downclock mode is not found. DRRS not supported\n");
 		return NULL;
 	}
-
-	INIT_DELAYED_WORK(&dev_priv->drrs.work, intel_edp_drrs_downclock_work);
-
-	mutex_init(&dev_priv->drrs.mutex);
 
 	dev_priv->drrs.type = dev_priv->vbt.drrs_type;
 
@@ -5587,7 +5591,7 @@ intel_dp_init(struct drm_device *dev, int output_reg, enum port port)
 	if (!intel_dig_port)
 		return;
 
-	intel_connector = kzalloc(sizeof(*intel_connector), GFP_KERNEL);
+	intel_connector = intel_connector_alloc();
 	if (!intel_connector) {
 		kfree(intel_dig_port);
 		return;

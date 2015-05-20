@@ -2377,10 +2377,11 @@ int __i915_add_request(struct intel_engine_cs *ring,
 		ret = ring->add_request(ring);
 		if (ret)
 			return ret;
+
+		request->tail = intel_ring_get_tail(ringbuf);
 	}
 
 	request->head = request_start;
-	request->tail = intel_ring_get_tail(ringbuf);
 
 	/* Whilst this request exists, batch_obj will be on the
 	 * active_list, and so will hold the active reference. Only when this
@@ -2660,24 +2661,11 @@ i915_gem_retire_requests_ring(struct intel_engine_cs *ring)
 
 	WARN_ON(i915_verify_lists(ring->dev));
 
-	/* Move any buffers on the active list that are no longer referenced
-	 * by the ringbuffer to the flushing/inactive lists as appropriate,
-	 * before we free the context associated with the requests.
+	/* Retire requests first as we use it above for the early return.
+	 * If we retire requests last, we may use a later seqno and so clear
+	 * the requests lists without clearing the active list, leading to
+	 * confusion.
 	 */
-	while (!list_empty(&ring->active_list)) {
-		struct drm_i915_gem_object *obj;
-
-		obj = list_first_entry(&ring->active_list,
-				      struct drm_i915_gem_object,
-				      ring_list);
-
-		if (!i915_gem_request_completed(obj->last_read_req, true))
-			break;
-
-		i915_gem_object_move_to_inactive(obj);
-	}
-
-
 	while (!list_empty(&ring->request_list)) {
 		struct drm_i915_gem_request *request;
 
@@ -2698,6 +2686,23 @@ i915_gem_retire_requests_ring(struct intel_engine_cs *ring)
 		request->ringbuf->last_retired_head = request->postfix;
 
 		i915_gem_free_request(request);
+	}
+
+	/* Move any buffers on the active list that are no longer referenced
+	 * by the ringbuffer to the flushing/inactive lists as appropriate,
+	 * before we free the context associated with the requests.
+	 */
+	while (!list_empty(&ring->active_list)) {
+		struct drm_i915_gem_object *obj;
+
+		obj = list_first_entry(&ring->active_list,
+				      struct drm_i915_gem_object,
+				      ring_list);
+
+		if (!i915_gem_request_completed(obj->last_read_req, true))
+			break;
+
+		i915_gem_object_move_to_inactive(obj);
 	}
 
 	if (unlikely(ring->trace_irq_req &&
