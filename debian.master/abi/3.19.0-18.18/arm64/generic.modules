@@ -565,7 +565,6 @@ cordic
 core
 cp210x
 cpia2
-cpufreq-dt
 cpu-notifier-error-inject
 c-qcam
 cramfs
