@@ -52,6 +52,7 @@ int hda_set_codec_wakeup(struct hda_intel *hda, bool enable);
 int hda_display_power(struct hda_intel *hda, bool enable);
 void haswell_set_bclk(struct hda_intel *hda);
 int hda_i915_init(struct hda_intel *hda);
+int hda_i915_init_bpo(struct hda_intel *hda);
 int hda_i915_exit(struct hda_intel *hda);
 #else
 static inline int hda_set_codec_wakeup(struct hda_intel *hda, bool enable)

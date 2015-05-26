@@ -1907,7 +1907,12 @@ static int azx_probe_continue(struct azx *chip)
 	/* Request power well for Haswell HDA controller and codec */
 	if (chip->driver_caps & AZX_DCAPS_I915_POWERWELL) {
 #ifdef CONFIG_SND_HDA_I915
-		err = hda_i915_init(hda);
+		if (((chip->driver_caps & AZX_DCAPS_INTEL_SKYLAKE) == AZX_DCAPS_INTEL_SKYLAKE) || \
+			((chip->driver_caps & AZX_DCAPS_INTEL_BRASWELL) == AZX_DCAPS_INTEL_BRASWELL))
+			err = hda_i915_init_bpo(hda);
+		else
+			err = hda_i915_init(hda);
+
 		if (err < 0)
 			goto out_free;
 		err = hda_display_power(hda, true);

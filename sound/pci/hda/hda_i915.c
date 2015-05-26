@@ -201,6 +201,46 @@ out_err:
 	return ret;
 }
 
+static int hda_component_master_match_bpo(struct device *dev, void *data)
+{
+	return !strcmp(dev->driver->name, "i915_bpo");
+}
+
+int hda_i915_init_bpo(struct hda_intel *hda)
+{
+	struct component_match *match = NULL;
+	struct device *dev = &hda->chip.pci->dev;
+	struct i915_audio_component *acomp = &hda->audio_component;
+	int ret;
+
+	component_match_add(dev, &match, hda_component_master_match_bpo, hda);
+	ret = component_master_add_with_match(dev, &hda_component_master_ops,
+					      match);
+	if (ret < 0)
+		goto out_err;
+
+	/*
+	 * Atm, we don't support deferring the component binding, so make sure
+	 * i915 is loaded and that the binding successfully completes.
+	 */
+	request_module("i915_bpo");
+
+	if (!acomp->ops) {
+		ret = -ENODEV;
+		goto out_master_del;
+	}
+
+	dev_dbg(dev, "bound to i915_bpo component master\n");
+
+	return 0;
+out_master_del:
+	component_master_del(dev, &hda_component_master_ops);
+out_err:
+	dev_err(dev, "failed to add i915_bpo component master (%d)\n", ret);
+
+	return ret;
+}
+
 int hda_i915_exit(struct hda_intel *hda)
 {
 	struct device *dev = &hda->chip.pci->dev;
