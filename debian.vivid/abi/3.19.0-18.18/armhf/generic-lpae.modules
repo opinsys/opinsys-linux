@@ -573,7 +573,6 @@ core
 cp210x
 cpia2
 cppi41
-cpufreq-dt
 cpu-notifier-error-inject
 c-qcam
 cramfs
