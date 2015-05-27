@@ -566,7 +566,6 @@ core
 cp210x
 cpc925_edac
 cpia2
-cpufreq-cpu0
 c-qcam
 cramfs
 crc32
