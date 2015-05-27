@@ -1043,9 +1043,9 @@ EXPORT_SYMBOL drivers/md/dm-log 0xec19ab68	dm_dirty_log_destroy
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x1dea6a82	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x24878c3d	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x3c843e2b	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x804f89b8	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x6b74ec32	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x834df25e	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xbbd1f040	dm_exception_store_destroy
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xc66e1a25	dm_snap_origin
 EXPORT_SYMBOL drivers/md/raid456 0x2ed2b05d	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x2170f255	flexcop_dump_reg
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x2429ec88	flexcop_eeprom_check_mac_addr
@@ -14585,6 +14585,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x30b39066	ipv4_redirect
 EXPORT_SYMBOL_GPL vmlinux 0x30bcc544	perf_event_read_value
 EXPORT_SYMBOL_GPL vmlinux 0x30c13a65	__clk_round_rate
 EXPORT_SYMBOL_GPL vmlinux 0x30cd3f84	pinctrl_utils_dt_free_map
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30dd8fe7	ahci_platform_suspend_host
 EXPORT_SYMBOL_GPL vmlinux 0x30eb7f00	devm_regulator_get_optional
 EXPORT_SYMBOL_GPL vmlinux 0x310951f7	snd_dmaengine_pcm_open
@@ -15497,6 +15498,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x7720c696	devres_release
 EXPORT_SYMBOL_GPL vmlinux 0x77214cea	sprint_OID
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
 EXPORT_SYMBOL_GPL vmlinux 0x773b9a9b	tcp_twsk_unique
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x77604e96	irq_domain_xlate_onecell
 EXPORT_SYMBOL_GPL vmlinux 0x77849f19	vchan_tx_submit
 EXPORT_SYMBOL_GPL vmlinux 0x77a3c3f4	each_symbol_section
@@ -17162,6 +17164,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xed91466b	snd_ctl_sync_vmaster
 EXPORT_SYMBOL_GPL vmlinux 0xedb0265a	usb_wakeup_notification
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xede4ea34	dapm_regulator_event
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee07826c	regmap_raw_write
 EXPORT_SYMBOL_GPL vmlinux 0xee1f2277	pci_bus_add_device
 EXPORT_SYMBOL_GPL vmlinux 0xee42a537	snd_soc_dapm_put_volsw

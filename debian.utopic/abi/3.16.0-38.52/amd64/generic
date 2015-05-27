@@ -1028,11 +1028,11 @@ EXPORT_SYMBOL drivers/md/dm-log 0x2e55e10a	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-log 0x8c58a1ec	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-log 0xf912289b	dm_dirty_log_create
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x0a4770d7	dm_exception_store_type_register
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x25321d63	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x77465e63	dm_exception_store_destroy
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x7c2b82ce	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x7dd66d1d	dm_exception_store_type_unregister
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x99f1cbb9	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xa02ef2f1	dm_exception_store_create
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xc49c09f7	dm_snap_cow
 EXPORT_SYMBOL drivers/md/raid456 0xc0fdccc3	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x18e45683	flexcop_device_exit
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x31960f4a	flexcop_device_kmalloc
@@ -15235,6 +15235,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x30987f32	rio_mport_chk_dev_access
 EXPORT_SYMBOL_GPL vmlinux 0x30a49be3	m2p_remove_override
 EXPORT_SYMBOL_GPL vmlinux 0x30c51d24	ata_bmdma_port_intr
 EXPORT_SYMBOL_GPL vmlinux 0x30cd88d9	__pm_runtime_suspend
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30d5e9c5	__cpufreq_driver_target
 EXPORT_SYMBOL_GPL vmlinux 0x30d6b3ed	inet6_csk_reqsk_queue_hash_add
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
@@ -16194,6 +16195,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x772fbcaf	trace_buffer_unlock_commit_regs
 EXPORT_SYMBOL_GPL vmlinux 0x773698a4	list_lru_init_key
 EXPORT_SYMBOL_GPL vmlinux 0x773c2d0e	find_vpid
 EXPORT_SYMBOL_GPL vmlinux 0x7746f51d	ata_cable_80wire
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x775a6ef5	kvm_read_and_reset_pf_reason
 EXPORT_SYMBOL_GPL vmlinux 0x775c51c8	clk_disable
 EXPORT_SYMBOL_GPL vmlinux 0x775f42c3	agp_remove_bridge
@@ -17792,6 +17794,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xedc12cca	ata_eh_analyze_ncq_error
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xede5a60a	led_trigger_register_simple
 EXPORT_SYMBOL_GPL vmlinux 0xedf1806f	tcp_unregister_congestion_control
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee015e4c	__mmdrop
 EXPORT_SYMBOL_GPL vmlinux 0xee0c5a30	powercap_unregister_zone
 EXPORT_SYMBOL_GPL vmlinux 0xee13e697	set_personality_ia32

@@ -1027,12 +1027,12 @@ EXPORT_SYMBOL drivers/md/dm-log 0x4d2bdb0c	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-log 0x6c23615b	dm_dirty_log_destroy
 EXPORT_SYMBOL drivers/md/dm-log 0x9cfbaca5	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-log 0xf399b178	dm_dirty_log_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x01540b43	dm_snap_origin
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x0a650ff9	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x130ae3bf	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x1ba09319	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x298a2e19	dm_exception_store_destroy
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x691aa947	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xbc6d1976	dm_exception_store_create
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xde14d6a5	dm_snap_cow
 EXPORT_SYMBOL drivers/md/raid456 0x102430dc	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x0f641828	flexcop_device_exit
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x1addf0a6	flexcop_device_initialize
@@ -15343,6 +15343,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x309febbc	of_css
 EXPORT_SYMBOL_GPL vmlinux 0x30a4f4ca	bstr_printf
 EXPORT_SYMBOL_GPL vmlinux 0x30b63fc1	devm_pinctrl_put
 EXPORT_SYMBOL_GPL vmlinux 0x30c2f739	of_reset_control_get
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30d3d012	xen_xenbus_fops
 EXPORT_SYMBOL_GPL vmlinux 0x30d632e9	regmap_can_raw_write
 EXPORT_SYMBOL_GPL vmlinux 0x30d7ffe4	security_inode_mkdir
@@ -16306,6 +16307,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x77214cea	sprint_OID
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
 EXPORT_SYMBOL_GPL vmlinux 0x7732826d	blk_rq_unprep_clone
 EXPORT_SYMBOL_GPL vmlinux 0x775214ac	sdio_claim_host
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x775a6ef5	kvm_read_and_reset_pf_reason
 EXPORT_SYMBOL_GPL vmlinux 0x775b4632	phy_exit
 EXPORT_SYMBOL_GPL vmlinux 0x775f7781	scsi_autopm_get_device
@@ -17879,6 +17881,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xeddb6f45	clk_register_divider
 EXPORT_SYMBOL_GPL vmlinux 0xede12e7f	put_pid_ns
 EXPORT_SYMBOL_GPL vmlinux 0xedf3f1f1	do_machine_check
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee20c8cf	sata_port_ops
 EXPORT_SYMBOL_GPL vmlinux 0xee511a0c	xen_register_device_domain_owner
 EXPORT_SYMBOL_GPL vmlinux 0xee6b71c4	syscon_regmap_lookup_by_compatible

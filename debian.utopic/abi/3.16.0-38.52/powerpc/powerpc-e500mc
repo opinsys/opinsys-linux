@@ -1003,12 +1003,12 @@ EXPORT_SYMBOL drivers/md/dm-log 0x43bfbfd0	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-log 0x51c43de9	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-log 0x8e0f3be4	dm_dirty_log_create
 EXPORT_SYMBOL drivers/md/dm-log 0xdb5ab4f3	dm_dirty_log_destroy
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x043b2635	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x1938a618	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x2977c84f	dm_exception_store_destroy
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x4ae4a0fb	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x51c401bf	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x9ec94346	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xa2815308	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xc36b9b2e	dm_snap_origin
 EXPORT_SYMBOL drivers/md/raid456 0x907d1a00	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x01bc0dc6	flexcop_pass_dmx_packets
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x01c2b080	flexcop_dump_reg
@@ -14524,6 +14524,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x30a4f4ca	bstr_printf
 EXPORT_SYMBOL_GPL vmlinux 0x30b02f46	__inet_lookup_established
 EXPORT_SYMBOL_GPL vmlinux 0x30b4cb7b	blkcg_print_blkgs
 EXPORT_SYMBOL_GPL vmlinux 0x30c27eb1	irq_gc_mask_set_bit
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x31012838	__of_phy_provider_register
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
 EXPORT_SYMBOL_GPL vmlinux 0x311cc9b5	__rio_local_write_config_8
@@ -15395,6 +15396,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x7716d081	clk_prepare
 EXPORT_SYMBOL_GPL vmlinux 0x771a9f46	alarm_forward_now
 EXPORT_SYMBOL_GPL vmlinux 0x77214cea	sprint_OID
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x7768f32d	component_master_add_child
 EXPORT_SYMBOL_GPL vmlinux 0x777f0aff	of_pci_find_msi_chip_by_node
 EXPORT_SYMBOL_GPL vmlinux 0x778fc0b7	of_clk_get_parent_name
@@ -16854,6 +16856,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xedc2994d	ktime_get_real
 EXPORT_SYMBOL_GPL vmlinux 0xedcf7834	crypto_spawn_tfm2
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xedfcfbd6	ohci_init_driver
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee33704e	driver_find_device
 EXPORT_SYMBOL_GPL vmlinux 0xee44363f	__mmdrop
 EXPORT_SYMBOL_GPL vmlinux 0xee64c7c3	add_page_wait_queue

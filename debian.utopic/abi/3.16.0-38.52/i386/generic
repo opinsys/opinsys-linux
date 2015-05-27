@@ -1028,9 +1028,9 @@ EXPORT_SYMBOL drivers/md/dm-log 0x6818c57d	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-log 0x89089dae	dm_dirty_log_create
 EXPORT_SYMBOL drivers/md/dm-log 0xeb0b99d1	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x08a5cc2a	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x27e0d318	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x12ceb317	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x5520639e	dm_exception_store_destroy
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xac16e0d1	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xab5c6d25	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xc1c6e78d	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xf72f750d	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/raid456 0x1339e33f	raid5_set_cache_size
@@ -15352,6 +15352,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x30b63fc1	devm_pinctrl_put
 EXPORT_SYMBOL_GPL vmlinux 0x30b8b613	__trace_note_message
 EXPORT_SYMBOL_GPL vmlinux 0x30b9b2c1	max8997_bulk_read
 EXPORT_SYMBOL_GPL vmlinux 0x30c2f739	of_reset_control_get
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30deeb7c	device_reset
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
 EXPORT_SYMBOL_GPL vmlinux 0x310a7be0	debugfs_create_x16
@@ -16265,6 +16266,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x7712771a	unbind_from_irqhandler
 EXPORT_SYMBOL_GPL vmlinux 0x77214cea	sprint_OID
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
 EXPORT_SYMBOL_GPL vmlinux 0x77310a11	ata_eh_freeze_port
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x775a6ef5	kvm_read_and_reset_pf_reason
 EXPORT_SYMBOL_GPL vmlinux 0x775b4632	phy_exit
 EXPORT_SYMBOL_GPL vmlinux 0x7779111d	ftrace_set_filter_ip
@@ -17887,6 +17889,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xede79fc1	xfrm_audit_state_notfound
 EXPORT_SYMBOL_GPL vmlinux 0xedeaeb7a	sched_setscheduler
 EXPORT_SYMBOL_GPL vmlinux 0xedf12510	thermal_zone_get_zone_by_name
 EXPORT_SYMBOL_GPL vmlinux 0xedf3f1f1	do_machine_check
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee0d6dc2	fuse_direct_io
 EXPORT_SYMBOL_GPL vmlinux 0xee32a65c	usb_unanchor_urb
 EXPORT_SYMBOL_GPL vmlinux 0xee6b71c4	syscon_regmap_lookup_by_compatible
