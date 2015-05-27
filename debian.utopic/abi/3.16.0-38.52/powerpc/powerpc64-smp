@@ -1001,9 +1001,9 @@ EXPORT_SYMBOL drivers/md/dm-log 0xabe9610e	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-log 0xf791a1a3	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x23d3b268	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x689aa562	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x95e33988	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x9708c3e9	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xb8d97ea1	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xc5b52fce	dm_exception_store_destroy
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xd1f8ab55	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xd32734de	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/raid456 0xafa84cee	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x16f14bbf	flexcop_eeprom_check_mac_addr
@@ -14869,6 +14869,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x30440618	ping_recvmsg
 EXPORT_SYMBOL_GPL vmlinux 0x308b733a	getboottime
 EXPORT_SYMBOL_GPL vmlinux 0x30c1f2c6	ata_sas_async_probe
 EXPORT_SYMBOL_GPL vmlinux 0x30c4b411	__ata_ehi_push_desc
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30f758f1	pmf_put_function
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
 EXPORT_SYMBOL_GPL vmlinux 0x311b78c2	ps3_get_spe_id
@@ -15759,6 +15760,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x77117f2f	ip6_sk_redirect
 EXPORT_SYMBOL_GPL vmlinux 0x7716c7c2	inet_ctl_sock_create
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
 EXPORT_SYMBOL_GPL vmlinux 0x77487027	rio_get_device
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x77ba1aec	usb_choose_configuration
 EXPORT_SYMBOL_GPL vmlinux 0x77bd7ffd	blk_trace_startstop
 EXPORT_SYMBOL_GPL vmlinux 0x77d9028e	regcache_drop_region
@@ -17277,6 +17279,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xedd974c7	crypto_ahash_finup
 EXPORT_SYMBOL_GPL vmlinux 0xede4aff7	usb_disable_lpm
 EXPORT_SYMBOL_GPL vmlinux 0xede8d47a	invalidate_inode_pages2_range
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee0cd04b	wm5110_i2c_regmap
 EXPORT_SYMBOL_GPL vmlinux 0xee30dea1	pci_sriov_get_totalvfs
 EXPORT_SYMBOL_GPL vmlinux 0xee3977ee	regmap_update_bits_async

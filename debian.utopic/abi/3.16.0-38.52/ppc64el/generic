@@ -998,8 +998,8 @@ EXPORT_SYMBOL drivers/md/dm-log 0xa2106a28	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x03cbd0a2	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x107f1fd8	dm_exception_store_destroy
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x37db56fd	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xa856a7a3	dm_snap_cow
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xb971f770	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xd4cbfb11	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xdd27c68b	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xf242f03a	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/raid456 0xc6cd4d05	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x2058318d	flexcop_eeprom_check_mac_addr
@@ -12951,6 +12951,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x30a57ca0	remove_phb_dynamic
 EXPORT_SYMBOL_GPL vmlinux 0x30ac9e76	phy_put
 EXPORT_SYMBOL_GPL vmlinux 0x30c4dc59	kvmppc_do_h_remove
 EXPORT_SYMBOL_GPL vmlinux 0x30caae32	pm_runtime_set_memalloc_noio
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30f0f89a	rt_mutex_trylock
 EXPORT_SYMBOL_GPL vmlinux 0x30fb4754	vfs_setxattr
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
@@ -13861,6 +13862,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x77374359	flush_fp_to_thread
 EXPORT_SYMBOL_GPL vmlinux 0x773c0d87	scsi_queue_work
 EXPORT_SYMBOL_GPL vmlinux 0x77414bd1	find_module
 EXPORT_SYMBOL_GPL vmlinux 0x774cc8d4	securityfs_remove
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x779c8b4f	rio_mport_get_efb
 EXPORT_SYMBOL_GPL vmlinux 0x77a94629	regulator_disable
 EXPORT_SYMBOL_GPL vmlinux 0x77cecb54	kvmppc_clear_ref_hpte
@@ -15286,6 +15288,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xed8ee225	regmap_update_bits_async
 EXPORT_SYMBOL_GPL vmlinux 0xedc2a347	i2c_new_dummy
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xedf48061	kobject_get_path
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee19a35f	ata_bmdma_stop
 EXPORT_SYMBOL_GPL vmlinux 0xee1fd87c	public_key_subtype
 EXPORT_SYMBOL_GPL vmlinux 0xee5b2a61	usb_autopm_get_interface_no_resume
