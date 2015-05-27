@@ -999,9 +999,9 @@ EXPORT_SYMBOL drivers/md/dm-log 0xe0fe3d61	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x30ed64b9	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x539b650a	dm_exception_store_create
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x752bb3aa	dm_exception_store_destroy
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x81272b15	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x89dc53fe	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x8dc44ebe	dm_exception_store_type_unregister
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xecef4243	dm_snap_cow
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xeb3c5662	dm_snap_cow
 EXPORT_SYMBOL drivers/md/raid456 0xee5aa569	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x01914427	flexcop_dump_reg
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x293c9c99	flexcop_eeprom_check_mac_addr
@@ -14531,6 +14531,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x308b733a	getboottime
 EXPORT_SYMBOL_GPL vmlinux 0x308c521f	sata_link_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30a4f4ca	bstr_printf
 EXPORT_SYMBOL_GPL vmlinux 0x30b96962	serial8250_handle_irq
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30e70783	pm_generic_freeze_late
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
 EXPORT_SYMBOL_GPL vmlinux 0x3109b83c	mnt_want_write_file
@@ -15344,6 +15345,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x771a5a98	uart_handle_dcd_change
 EXPORT_SYMBOL_GPL vmlinux 0x771a9f46	alarm_forward_now
 EXPORT_SYMBOL_GPL vmlinux 0x77214cea	sprint_OID
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x775aa3b9	pci_find_ht_capability
 EXPORT_SYMBOL_GPL vmlinux 0x77fcb7e4	hwmon_device_register_with_groups
 EXPORT_SYMBOL_GPL vmlinux 0x780095ad	blk_insert_cloned_request
@@ -16787,6 +16789,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xedd18108	rio_dev_get
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xede14642	ata_port_schedule_eh
 EXPORT_SYMBOL_GPL vmlinux 0xede7be1d	uprobe_register
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee17c0bd	usb_remove_phy
 EXPORT_SYMBOL_GPL vmlinux 0xee3f2945	regmap_add_irq_chip
 EXPORT_SYMBOL_GPL vmlinux 0xee4b60da	inet6_csk_xmit

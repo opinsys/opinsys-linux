@@ -1002,12 +1002,12 @@ EXPORT_SYMBOL drivers/md/dm-log 0x44cc40fc	dm_dirty_log_create
 EXPORT_SYMBOL drivers/md/dm-log 0x75352a1a	dm_dirty_log_type_unregister
 EXPORT_SYMBOL drivers/md/dm-log 0x7fbbcd74	dm_dirty_log_type_register
 EXPORT_SYMBOL drivers/md/dm-log 0xc73f7771	dm_dirty_log_destroy
+EXPORT_SYMBOL drivers/md/dm-snapshot 0x059bc153	dm_snap_origin
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x2214f550	dm_exception_store_type_unregister
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x53553b0b	dm_exception_store_type_register
 EXPORT_SYMBOL drivers/md/dm-snapshot 0x6805dfa3	dm_exception_store_destroy
-EXPORT_SYMBOL drivers/md/dm-snapshot 0x9c5559d5	dm_snap_cow
 EXPORT_SYMBOL drivers/md/dm-snapshot 0xceb75e88	dm_exception_store_create
-EXPORT_SYMBOL drivers/md/dm-snapshot 0xfa3b7e2f	dm_snap_origin
+EXPORT_SYMBOL drivers/md/dm-snapshot 0xeb2f3379	dm_snap_cow
 EXPORT_SYMBOL drivers/md/raid456 0x8def7d0c	raid5_set_cache_size
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x0823643b	flexcop_device_kfree
 EXPORT_SYMBOL drivers/media/common/b2c2/b2c2-flexcop 0x0e49837b	flexcop_dump_reg
@@ -14500,6 +14500,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x308b733a	getboottime
 EXPORT_SYMBOL_GPL vmlinux 0x309ef163	unregister_kretprobe
 EXPORT_SYMBOL_GPL vmlinux 0x30ab63d5	power_supply_register
 EXPORT_SYMBOL_GPL vmlinux 0x30c25430	__init_kthread_worker
+EXPORT_SYMBOL_GPL vmlinux 0x30ceade4	dm_internal_resume
 EXPORT_SYMBOL_GPL vmlinux 0x30eaeb2b	regulator_is_supported_voltage
 EXPORT_SYMBOL_GPL vmlinux 0x3100b612	find_module
 EXPORT_SYMBOL_GPL vmlinux 0x3109b751	cpu_clock
@@ -15352,6 +15353,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x76e517e3	dev_pm_opp_enable
 EXPORT_SYMBOL_GPL vmlinux 0x76e8a117	ata_sff_busy_sleep
 EXPORT_SYMBOL_GPL vmlinux 0x76fe9d88	usb_create_shared_hcd
 EXPORT_SYMBOL_GPL vmlinux 0x7729cbdd	task_handoff_register
+EXPORT_SYMBOL_GPL vmlinux 0x7754bc11	dm_hold
 EXPORT_SYMBOL_GPL vmlinux 0x7796c1df	pci_pasid_features
 EXPORT_SYMBOL_GPL vmlinux 0x77b0de42	crypto_unregister_algs
 EXPORT_SYMBOL_GPL vmlinux 0x77bac519	cpci_hp_unregister_bus
@@ -16764,6 +16766,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xed98dca2	devm_get_free_pages
 EXPORT_SYMBOL_GPL vmlinux 0xeda7a4ee	ata_do_dev_read_id
 EXPORT_SYMBOL_GPL vmlinux 0xedd49930	zs_create_pool
 EXPORT_SYMBOL_GPL vmlinux 0xedf37a30	bio_clone_mddev
+EXPORT_SYMBOL_GPL vmlinux 0xee00ccae	dm_internal_suspend
 EXPORT_SYMBOL_GPL vmlinux 0xee07724d	ata_link_abort
 EXPORT_SYMBOL_GPL vmlinux 0xee0f679c	pci_slots_kset
 EXPORT_SYMBOL_GPL vmlinux 0xee15ce4f	napi_hash_del
