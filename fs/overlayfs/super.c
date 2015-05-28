@@ -41,6 +41,7 @@ struct ovl_fs {
 	int legacy;
 	/* pathnames of lower and upper dirs, for show_options */
 	struct ovl_config config;
+	struct cred *mounter_creds;
 };
 
 struct ovl_dir_cache;
@@ -232,6 +233,22 @@ u64 ovl_dentry_version_get(struct dentry *dentry)
 
 	WARN_ON(!mutex_is_locked(&dentry->d_inode->i_mutex));
 	return oe->version;
+}
+
+int ovl_dentry_root_may(struct dentry *dentry, struct path *realpath, int mode)
+{
+	const struct cred *old_cred;
+	int err = 0;
+        struct ovl_fs *ofs = dentry->d_sb->s_fs_info;
+
+	old_cred = override_creds(ofs->mounter_creds);
+
+	if (inode_permission(realpath->dentry->d_inode, mode))
+		err = -EACCES;
+
+	revert_creds(old_cred);
+
+	return err;
 }
 
 #ifdef CONFIG_OVERLAY_FS_V1
@@ -428,6 +445,7 @@ static void ovl_put_super(struct super_block *sb)
 {
 	struct ovl_fs *ufs = sb->s_fs_info;
 
+	put_cred(ufs->mounter_creds);
 	dput(ufs->workdir);
 	mntput(ufs->upper_mnt);
 	mntput(ufs->lower_mnt);
@@ -810,6 +828,11 @@ static int ovl_fill_super(struct super_block *sb, void *data, int silent)
 	if (!root_dentry)
 		goto out_put_workdir;
 
+	/* Record the mounter. */
+	ufs->mounter_creds = prepare_creds();
+	if (!ufs->mounter_creds)
+		goto out_put_root;
+
 	mntput(upperpath.mnt);
 	mntput(lowerpath.mnt);
 	path_put(&workpath);
@@ -826,6 +849,8 @@ static int ovl_fill_super(struct super_block *sb, void *data, int silent)
 
 	return 0;
 
+out_put_root:
+	dput(root_dentry);
 out_put_workdir:
 	dput(ufs->workdir);
 out_put_lower_mnt:

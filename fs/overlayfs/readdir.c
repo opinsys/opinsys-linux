@@ -14,6 +14,7 @@
 #include <linux/xattr.h>
 #include <linux/rbtree.h>
 #include <linux/security.h>
+#include <linux/sched.h>
 #include <linux/cred.h>
 #include "overlayfs.h"
 
@@ -294,6 +295,10 @@ static int ovl_dir_read_merged(struct dentry *dentry, struct list_head *list)
 	ovl_path_upper(dentry, &upperpath);
 
 	if (upperpath.dentry) {
+		err = ovl_dentry_root_may(dentry, &upperpath, MAY_READ);
+		if (err)
+			goto out;
+
 		err = ovl_dir_read(&upperpath, &rdd);
 		if (err)
 			goto out;
@@ -311,7 +316,9 @@ static int ovl_dir_read_merged(struct dentry *dentry, struct list_head *list)
 		 */
 		list_add(&rdd.middle, rdd.list);
 		rdd.is_merge = true;
-		err = ovl_dir_read(&lowerpath, &rdd);
+		err = ovl_dentry_root_may(dentry, &lowerpath, MAY_READ);
+		if (!err)
+			err = ovl_dir_read(&lowerpath, &rdd);
 		list_del(&rdd.middle);
 	}
 out:
@@ -373,8 +380,13 @@ static int ovl_iterate(struct file *file, struct dir_context *ctx)
 	if (!ctx->pos)
 		ovl_dir_reset(file);
 
-	if (od->is_real)
+	if (od->is_real) {
+		int res = ovl_dentry_root_may(dentry, &(od->realfile->f_path), MAY_READ);
+		if (res)
+			return res;
+
 		return iterate_dir(od->realfile, ctx);
+	}
 
 	if (!od->cache) {
 		struct ovl_dir_cache *cache;
