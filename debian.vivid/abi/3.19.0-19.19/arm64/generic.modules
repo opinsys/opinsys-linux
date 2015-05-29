@@ -1050,6 +1050,7 @@ gpio-crystalcove
 gpio-da9052
 gpio-da9055
 gpio-dln2
+gpio-dwapb
 gpio-fan
 gpio-grgpio
 gpio-ir-recv
