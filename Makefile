@@ -1,8 +1,8 @@
 VERSION = 3
 PATCHLEVEL = 19
 SUBLEVEL = 8
-EXTRAVERSION =
-NAME = Diseased Newt
+EXTRAVERSION = -ckt1
+NAME = Sedated Swine
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
