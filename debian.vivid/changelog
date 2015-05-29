@@ -1,9 +1,20 @@
-linux-lts-vivid (3.19.0-19.19~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-20.20~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1460183
+  * Revert "SAUCE: Call i915_bpo specific functions from the hda driver"
+    - LP: #1457369
+
+ -- Brad Figg <brad.figg@canonical.com>  Fri, 29 May 2015 12:12:52 -0700
+
+linux (3.19.0-19.19) vivid; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1459120
+    - LP: #1458964
 
   [ Duc Dang ]
 
@@ -451,7 +462,7 @@ linux-lts-vivid (3.19.0-19.19~14.04.1) trusty; urgency=low
     together on chv"
     - LP: #1456123
 
- -- Luis Henriques <luis.henriques@canonical.com>  Wed, 27 May 2015 15:16:36 +0100
+ -- Brad Figg <brad.figg@canonical.com>  Tue, 26 May 2015 11:25:19 -0700
 
 linux (3.19.0-18.18) vivid; urgency=low
 
