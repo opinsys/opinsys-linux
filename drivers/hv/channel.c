@@ -71,7 +71,9 @@ int vmbus_open(struct vmbus_channel *newchannel, u32 send_ringbuffer_size,
 	struct vmbus_channel_msginfo *open_info = NULL;
 	void *in, *out;
 	unsigned long flags;
-	int ret, t, err = 0;
+	int ret, err = 0;
+	unsigned long t;
+	struct page *page;
 
 	spin_lock_irqsave(&newchannel->lock, flags);
 	if (newchannel->state == CHANNEL_OPEN_STATE) {
@@ -86,8 +88,17 @@ int vmbus_open(struct vmbus_channel *newchannel, u32 send_ringbuffer_size,
 	newchannel->channel_callback_context = context;
 
 	/* Allocate the ring buffer */
-	out = (void *)__get_free_pages(GFP_KERNEL|__GFP_ZERO,
-		get_order(send_ringbuffer_size + recv_ringbuffer_size));
+	page = alloc_pages_node(cpu_to_node(newchannel->target_cpu),
+				GFP_KERNEL|__GFP_ZERO,
+				get_order(send_ringbuffer_size +
+				recv_ringbuffer_size));
+
+	if (!page)
+		out = (void *)__get_free_pages(GFP_KERNEL|__GFP_ZERO,
+					       get_order(send_ringbuffer_size +
+					       recv_ringbuffer_size));
+	else
+		out = (void *)page_address(page);
 
 	if (!out)
 		return -ENOMEM;
