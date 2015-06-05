@@ -3726,7 +3726,6 @@ usblp
 usbmisc_imx
 usbmon
 usbmouse
-usb-otg-fsm
 usbserial
 usb-serial-simple
 usbsevseg

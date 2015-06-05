@@ -3478,7 +3478,6 @@ usbmisc_imx
 usbmon
 usbmouse
 usbnet
-usb-otg-fsm
 usbserial
 usb-serial-simple
 usbsevseg
