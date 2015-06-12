@@ -1,13 +1,23 @@
-linux-lts-vivid (3.19.0-20.20~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-21.21~14.04.1) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * SAUCE: overlayfs: when copying up and reading directories ensure
+    mounter had permissions V2
+    - CVE-2015-1328
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 12 Jun 2015 10:34:32 +0100
+
+linux (3.19.0-20.20) vivid; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1460183
+    - LP: #1459957
   * Revert "SAUCE: Call i915_bpo specific functions from the hda driver"
     - LP: #1457369
 
- -- Brad Figg <brad.figg@canonical.com>  Fri, 29 May 2015 12:12:52 -0700
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 29 May 2015 09:41:30 +0100
 
 linux (3.19.0-19.19) vivid; urgency=low
 
