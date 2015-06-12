@@ -1,20 +1,19 @@
-linux-lts-utopic (3.16.0-40.54~14.04.1) trusty; urgency=low
+linux-lts-utopic (3.16.0-41.55~14.04.1) trusty; urgency=low
 
-  [ Brad Figg ]
+  [ Andy Whitcroft ]
 
-  * Release Tracking Bug
-    - LP: #1463897
-  * hyper-v -- add hid and fb drivers to linux-virtual
-    - LP: #1444179
+  * SAUCE: overlayfs: when copying up and reading directories ensure
+    mounter had permissions V2
+    - CVE-2015-1328
 
- -- Brad Figg <brad.figg@canonical.com>  Wed, 10 Jun 2015 08:34:12 -0700
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 12 Jun 2015 11:00:29 +0100
 
-linux-lts-utopic (3.16.0-39.53~14.04.1) trusty; urgency=low
+linux (3.16.0-39.53) utopic; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1458977
+    - LP: #1458778
 
   [ Brad Figg ]
 
@@ -423,7 +422,7 @@ linux-lts-utopic (3.16.0-39.53~14.04.1) trusty; urgency=low
   * HID: multitouch: add support of clickpads
     - LP: #1456881
 
- -- Luis Henriques <luis.henriques@canonical.com>  Wed, 27 May 2015 10:09:47 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 26 May 2015 09:19:21 +0100
 
 linux (3.16.0-38.52) utopic; urgency=low
 
