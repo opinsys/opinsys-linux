@@ -1,4 +1,242 @@
-linux-lts-vivid (3.19.0-21.21~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-22.22~14.04.1) trusty; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1465907
+
+  [ Tai Nguyen ]
+
+  * SAUCE: power: reset: Add syscon reboot device node for APM X-Gene
+    platform
+    - LP: #1463211
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "dm crypt: fix deadlock when async crypto algorithm returns
+    -EBUSY"
+    - LP: #1465696
+  * Bluetooth: ath3k: Add a new ID 0cf3:e006 to ath3k list
+    - LP: #1459934
+  * cdc-acm: prevent infinite loop when parsing CDC headers.
+    - LP: #1460657
+  * (upstream) libata: Blacklist queued TRIM on all Samsung 800-series
+    - LP: #1338706, #1449005
+  * powerpc/powernv: Check image loaded or not before calling flash
+    - LP: #1461553
+  * ahci: avoton port-disable reset-quirk
+    - LP: #1458617
+  * Bluetooth: btusb: support public address configuration for ath3012
+    - LP: #1459937
+  * Bluetooth: btusb: Add setup callback for chip init on USB
+    - LP: #1459937
+  * Bluetooth: btusb: Add support for QCA ROME chipset family
+    - LP: #1459937
+  * Bluetooth: btusb: Fix incorrect type in qca_device_info
+    - LP: #1459937
+  * Bluetooth: btusb: Fix minor whitespace issue in QCA ROME device entries
+    - LP: #1459937
+  * Bluetooth: btusb: Add support for 0cf3:e007
+    - LP: #1459937
+  * storvsc: Set the SRB flags correctly when no data transfer is needed
+    - LP: #1439780
+  * vfs: read file_handle only once in handle_to_path
+    - LP: #1416503
+    - CVE-2015-1420
+  * ozwpan: Use unsigned ints to prevent heap overflow
+    - LP: #1463442
+    - CVE-2015-4001
+  * ozwpan: divide-by-zero leading to panic
+    - LP: #1463445
+    - CVE-2015-4003
+  * ozwpan: Use proper check to prevent heap overflow
+    - LP: #1463444
+    - CVE-2015-4002
+  * ozwpan: unchecked signed subtraction leads to DoS
+    - LP: #1463444
+    - CVE-2015-4002
+  * enclosure: fix WARN_ON removing an adapter in multi-path devices
+    - LP: #1415178
+  * ASoC: tfa9879: Fix return value check in tfa9879_i2c_probe()
+    - LP: #1465696
+  * ASoC: samsung: s3c24xx-i2s: Fix return value check in
+    s3c24xx_iis_dev_probe()
+    - LP: #1465696
+  * ASoC: dapm: Enable autodisable on SOC_DAPM_SINGLE_TLV_AUTODISABLE
+    - LP: #1465696
+  * ASoC: rt5677: add register patch for PLL
+    - LP: #1465696
+  * btrfs: unlock i_mutex after attempting to delete subvolume during send
+    - LP: #1465696
+  * ALSA: hda - Fix mute-LED fixed mode
+    - LP: #1465696
+  * ALSA: hda - Add mute-LED mode control to Thinkpad
+    - LP: #1465696
+  * arm64: dma-mapping: always clear allocated buffers
+    - LP: #1465696
+  * ALSA: emu10k1: Fix card shortname string buffer overflow
+    - LP: #1465696
+  * ALSA: emux: Fix mutex deadlock at unloading
+    - LP: #1465696
+  * drm/radeon: Use drm_calloc_ab for CS relocs
+    - LP: #1465696
+  * drm/radeon: adjust pll when audio is not enabled
+    - LP: #1465696
+  * drm/radeon: add SI DPM quirk for Sapphire R9 270 Dual-X 2G GDDR5
+    - LP: #1465696
+  * drm/radeon: fix lockup when BOs aren't part of the VM on release
+    - LP: #1465696
+  * drm/radeon: reset BOs address after clearing it.
+    - LP: #1465696
+  * drm/radeon: check new address before removing old one
+    - LP: #1465696
+  * SCSI: add 1024 max sectors black list flag
+    - LP: #1465696
+  * 3w-sas: fix command completion race
+    - LP: #1465696
+  * 3w-xxxx: fix command completion race
+    - LP: #1465696
+  * 3w-9xxx: fix command completion race
+    - LP: #1465696
+  * uas: Allow uas_use_uas_driver to return usb-storage flags
+    - LP: #1465696
+  * uas: Add US_FL_MAX_SECTORS_240 flag
+    - LP: #1465696
+  * uas: Set max_sectors_240 quirk for ASM1053 devices
+    - LP: #1465696
+  * usb: chipidea: otg: remove mutex unlock and lock while stop and start
+    role
+    - LP: #1465696
+  * serial: xilinx: Use platform_get_irq to get irq description structure
+    - LP: #1465696
+  * serial: of-serial: Remove device_type = "serial" registration
+    - LP: #1465696
+  * tty/serial: at91: maxburst was missing for dma transfers
+    - LP: #1465696
+  * ALSA: emux: Fix mutex deadlock in OSS emulation
+    - LP: #1465696
+  * ACPI / SBS: Enable battery manager when present
+    - LP: #1465696
+  * ALSA: emu10k1: Emu10k2 32 bit DMA mode
+    - LP: #1465696
+  * ASoC: rt5677: fixed wrong DMIC ref clock
+    - LP: #1465696
+  * rbd: end I/O the entire obj_request on error
+    - LP: #1465696
+  * ext4: fix data corruption caused by unwritten and delayed extents
+    - LP: #1465696
+  * ext4: move check under lock scope to close a race.
+    - LP: #1465696
+  * powerpc/pseries: Correct cpu affinity for dlpar added cpus
+    - LP: #1465696
+  * powerpc/powernv: Restore non-volatile CRs after nap
+    - LP: #1465696
+  * efivarfs: Ensure VariableName is NUL-terminated
+    - LP: #1465696
+  * x86/efi: Store upper bits of command line buffer address in
+    ext_cmd_line_ptr
+    - LP: #1465696
+  * blk-mq: fix race between timeout and CPU hotplug
+    - LP: #1465696
+  * blk-mq: fix CPU hotplug handling
+    - LP: #1465696
+  * writeback: use |1 instead of +1 to protect against div by zero
+    - LP: #1465696
+  * ARM: mvebu: armada-xp-openblocks-ax3-4: Disable internal RTC
+    - LP: #1465696
+  * ARM: dts: imx23-olinuxino: Fix polarity of LED GPIO
+    - LP: #1465696
+  * ARM: dts: imx23-olinuxino: Fix dr_mode of usb0
+    - LP: #1465696
+  * ARM: dts: imx6: phyFLEX: USB VBUS control is active-high
+    - LP: #1465696
+  * ARM: dts: imx25: Add #pwm-cells to pwm4
+    - LP: #1465696
+  * ARM: dts: imx28: Fix AUART4 TX-DMA interrupt name
+    - LP: #1465696
+  * marvell-ccic: fix Y'CbCr ordering
+    - LP: #1465696
+  * gpio: sysfs: fix memory leaks and device hotplug
+    - LP: #1465696
+  * ACPI / SBS: Add 5 us delay to fix SBS hangs on MacBook
+    - LP: #1465696
+  * ACPI / PNP: add two IDs to list for PNPACPI device enumeration
+    - LP: #1465696
+  * ARM: OMAP2+: Fix omap off idle power consumption creeping up
+    - LP: #1465696
+  * ARM: dts: OMAP3-N900: Add microphone bias voltages
+    - LP: #1465696
+  * drm/radeon: disable semaphores for UVD V1 (v2)
+    - LP: #1465696
+  * x86/spinlocks: Fix regression in spinlock contention detection
+    - LP: #1465696
+  * RDMA/CMA: Canonize IPv4 on IPV6 sockets properly
+    - LP: #1465696
+  * drm/i915: Assume dual channel LVDS if pixel clock necessitates it
+    - LP: #1465696
+  * drm/i915: Add missing MacBook Pro models with dual channel LVDS
+    - LP: #1465696
+  * efi: Fix error handling in add_sysfs_runtime_map_entry()
+    - LP: #1465696
+  * xen/events: Clear cpu_evtchn_mask before resuming
+    - LP: #1465696
+  * xen/xenbus: Update xenbus event channel on resume
+    - LP: #1465696
+  * xen/console: Update console event channel on resume
+    - LP: #1465696
+  * xen/events: Set irq_info->evtchn before binding the channel to CPU in
+    __startup_pirq()
+    - LP: #1465696
+  * mm/memory-failure: call shake_page() when error hits thp tail page
+    - LP: #1465696
+  * mm: soft-offline: fix num_poisoned_pages counting on concurrent events
+    - LP: #1465696
+  * nilfs2: fix sanity check of btree level in nilfs_btree_root_broken()
+    - LP: #1465696
+  * ocfs2: dlm: fix race between purge and get lock resource
+    - LP: #1465696
+  * drm/i915/dp: there is no audio on port A
+    - LP: #1465696
+  * drm/amdkfd: allow unregister process with queues
+    - LP: #1465696
+  * drm/radeon: fix userptr BO unpin bug v3
+    - LP: #1465696
+  * drm/radeon: make VCE handle check more strict
+    - LP: #1465696
+  * drm/radeon: make UVD handle checking more strict
+    - LP: #1465696
+  * drm/radeon: more strictly validate the UVD codec
+    - LP: #1465696
+  * path_openat(): fix double fput()
+    - LP: #1465696
+  * mnt: Fix fs_fully_visible to verify the root directory is visible
+    - LP: #1465696
+  * drm: Zero out invalid vblank timestamp in drm_update_vblank_count.
+    - LP: #1465696
+  * ARM: ux500: Move GPIO regulator for SD-card into board DTSs
+    - LP: #1465696
+  * ARM: ux500: Enable GPIO regulator for SD-card for HREF boards
+    - LP: #1465696
+  * ARM: ux500: Enable GPIO regulator for SD-card for snowball
+    - LP: #1465696
+  * xen-pciback: Add name prefix to global 'permissive' variable
+    - LP: #1465696
+  * mmc: core: add missing pm event in mmc_pm_notify to fix hib restore
+    - LP: #1465696
+  * ARM: dts: am57xx-beagle-x15: Fix IRQ type for mcp7941x
+    - LP: #1465696
+  * mmc: sh_mmcif: Fix timeout value for command request
+    - LP: #1465696
+  * pinctrl: Don't just pretend to protect pinctrl_maps, do it for real
+    - LP: #1465696
+  * arm64: add missing PAGE_ALIGN() to __dma_free()
+    - LP: #1465696
+  * Linux 3.19.8-ckt1
+    - LP: #1465696
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 17 Jun 2015 09:35:04 +0100
+
+linux (3.19.0-21.21) vivid; urgency=low
 
   [ Andy Whitcroft ]
 
