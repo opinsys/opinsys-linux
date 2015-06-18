@@ -562,6 +562,21 @@ linux (3.16.0-42.56) utopic; urgency=low
 
  -- Brad Figg <brad.figg@canonical.com>  Tue, 16 Jun 2015 08:11:18 -0700
 
+linux (3.16.0-41.57) utopic; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1466250
+
+  [ Andy Whitcroft ]
+
+  * SAUCE: ensure that upper/lower layers are valid before checking
+    permissions
+    - LP: #1465998
+
+ -- Brad Figg <brad.figg@canonical.com>  Wed, 17 Jun 2015 16:19:26 -0700
+
 linux (3.16.0-41.55) utopic; urgency=low
 
   [ Andy Whitcroft ]
