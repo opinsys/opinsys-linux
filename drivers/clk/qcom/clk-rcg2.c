@@ -508,18 +508,16 @@ static int clk_pixel_set_rate(struct clk_hw *hw, unsigned long rate,
 	struct clk_rcg2 *rcg = to_clk_rcg2(hw);
 	struct freq_tbl f = *rcg->freq_tbl;
 	const struct frac_entry *frac = frac_table_pixel;
-	unsigned long request, src_rate;
+	unsigned long request;
 	int delta = 100000;
 	u32 mask = BIT(rcg->hid_width) - 1;
 	u32 hid_div;
-	struct clk *parent = clk_get_parent_by_index(hw->clk, f.src);
 
 	for (; frac->num; frac++) {
 		request = (rate * frac->den) / frac->num;
 
-		src_rate = __clk_round_rate(parent, request);
-		if ((src_rate < (request - delta)) ||
-			(src_rate > (request + delta)))
+		if ((parent_rate < (request - delta)) ||
+			(parent_rate > (request + delta)))
 			continue;
 
 		regmap_read(rcg->clkr.regmap, rcg->cmd_rcgr + CFG_REG,
