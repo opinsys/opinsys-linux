@@ -1,9 +1,514 @@
-linux-lts-vivid (3.19.0-22.22~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-23.24~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1472469
+
+  [ Chris J Arges ]
+
+  * SAUCE: Don't use atomic read in evlist.c
+    - LP: #1410673
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 08 Jul 2015 11:09:42 +0100
+
+linux (3.19.0-23.23) vivid; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1465907
+    - LP: #1472048
+
+  [ Chris J Arges ]
+
+  * [Config] Add CRYPTO_DEV_NX_*, 842_* as modules
+    - LP: #1454687
+
+  [ Lu, Han ]
+
+  * SAUCE: i915_bpo: drm/i915/audio: add codec wakeup override
+    enabled/disable callback
+    - LP: #1460674
+
+  [ Timo Aaltonen ]
+
+  * SAUCE: Backport I915_OVERLAY_DISABLE_DEST_COLORKEY
+    - LP: #1460674
+  * SAUCE: i915_bpo: Rebase to drm-intel-next-fixes-2015-05-29
+    - LP: #1460674
+  * SAUCE: i915_bpo: Revert "drm/i915: Implement the intel_dp_autotest_edid
+    function for DP EDID complaince tests"
+    - LP: #1460674
+  * SAUCE: i915_bpo: Revert "drm/i915: Add debugfs test control files for
+    Displayport compliance testing"
+    - LP: #1460674
+  * SAUCE: Load i915_bpo from the hda driver on SKL/CHV
+    - LP: #1460674
+  * SAUCE: i915_bpo: Don't try to support BXT
+    - LP: #1460674
+  * SAUCE: i915_bpo: drm/i915/skl: Fix DMC API version.
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "usb: dwc2: add bus suspend/resume for dwc2"
+    - LP: #1471252
+  * Revert "HID: logitech-hidpp: support combo keyboard touchpad TK820"
+    - LP: #1471252
+  * Revert "KVM: x86: drop fpu_activate hook"
+    - LP: #1471252
+  * Revert "libceph: clear r_req_lru_item in __unregister_linger_request()"
+    - LP: #1471252
+  * drm/i915: add component support
+    - LP: #1460661
+  * ALSA: hda: export struct hda_intel
+    - LP: #1460661
+  * ALSA: hda: pass intel_hda to all i915 interface functions
+    - LP: #1460661
+  * ALSA: hda: add component support
+    - LP: #1460661
+  * drm/atomic-helpers: Fix documentation typos and wrong copy&paste
+    - LP: #1460674
+  * drm/atomic: Rename drm_atomic_helper_commit_pre_planes() state argument
+    - LP: #1460674
+  * drm/atomic-helper: Rename commmit_post/pre_planes
+    - LP: #1460674
+  * drm/atomic-helpers: make mode_set hooks optional
+    - LP: #1460674
+  * drm/atomic-helper: Fix kerneldoc for prepare_planes
+    - LP: #1460674
+  * drm: Complete moving rotation property to core
+    - LP: #1460674
+  * drm: Share plane pixel format check code between legacy and atomic
+    - LP: #1460674
+  * drm/atomic: Constify a bunch of functions pointer structs
+    - LP: #1460674
+  * drm: Fix some typo mistake of the annotations
+    - LP: #1460674
+  * drm: change connector to tmp_connector
+    - LP: #1460674
+  * drm: atomic: Expose CRTC active property
+    - LP: #1460674
+  * drm: atomic: Allow setting CRTC active property
+    - LP: #1460674
+  * drm/atomic-helpers: Properly avoid full modeset dance
+    - LP: #1460674
+  * drm/atomic: Add helpers for state-subclassing drivers
+    - LP: #1460674
+  * drm: Fix some typos
+    - LP: #1460674
+  * drm/atomic: Add for_each_{connector,crtc,plane}_in_state helper macros
+    - LP: #1460674
+  * drm/atomic-helper: Don't call atomic_update_plane when it stays off
+    - LP: #1460674
+  * drm/atomic-helper: Really recover pre-atomic plane/cursor behavior
+    - LP: #1460674
+  * drm/atomic: Make mode_fixup() optional for check_modeset()
+    - LP: #1460674
+  * drm/atomic-helpers: Update vblank timestamping constants
+    - LP: #1460674
+  * drm/atomic-helpers: Export
+    drm_atomic_helper_update_legacy_modeset_state
+    - LP: #1460674
+  * drm/atomic: add drm_atomic_get_existing_*_state helpers
+    - LP: #1460674
+  * drm/atomic: remove duplicated assignment of old_plane_state
+    - LP: #1460674
+  * drm/atomic: Allow drivers to subclass drm_atomic_state, v3
+    - LP: #1460674
+  * drm/dp: indentation and ordering cleanups
+    - LP: #1460674
+  * drm/dp: add DPCD definitions from eDP 1.2
+    - LP: #1460674
+  * drm/dp: add DPCD definitions from DP 1.1 and 1.2a
+    - LP: #1460674
+  * drm/dp: add DPCD definitions from eDP 1.4
+    - LP: #1460674
+  * drm: Adding drm helper function drm_plane_from_index().
+    - LP: #1460674
+  * ALSA: hda - reset display codec when power on
+    - LP: #1460674
+  * drm/i915/audio: add codec wakeup override enabled/disable callback
+    - LP: #1460674
+  * scsi: storvsc: Increase the ring buffer size
+    - LP: #1445195
+  * scsi: storvsc: Size the queue depth based on the ringbuffer size
+    - LP: #1445195
+  * scsi: storvsc: Always send on the selected outgoing channel
+    - LP: #1445195
+  * scsi: storvsc: Retrieve information about the capability of the target
+    - LP: #1445195
+  * scsi: storvsc: Don't assume that the scatterlist is not chained
+    - LP: #1445195
+  * scsi: storvsc: Set the tablesize based on the information given by the
+    host
+    - LP: #1445195
+  * Drivers: hv: vmbus: Add support for VMBus panic notifier handler
+    - LP: #1463584
+  * Drivers: hv: vmbus: Correcting truncation error for constant
+    HV_CRASH_CTL_CRASH_NOTIFY
+    - LP: #1463584
+  * net: eth: xgene: change APM X-Gene SoC platform ethernet to support
+    ACPI
+    - LP: #1458042
+  * net: eth: xgene: devm_ioremap() returns NULL on error
+    - LP: #1458042
+  * drivers: net: xgene: Make xgene_enet_of_match depend on CONFIG_OF
+    - LP: #1458042
+  * Documentation: dts: Update compatible field description for APM X-Gene
+    - LP: #1458042
+  * dtb: change binding name to match with newer firmware DT
+    - LP: #1458042
+  * drivers: net: xgene: fix new firmware backward compatibility with older
+    driver
+    - LP: #1458042
+  * net: eth: xgene: fix booting with devicetree
+    - LP: #1458042
+  * drivers: net: xgene: constify of_device_id array
+    - LP: #1458042
+  * Documentation: dtb: Add port-id field for APM X-Gene ethernet
+    - LP: #1458042
+  * dtb: xgene: Add second SGMII based 1G interface node
+    - LP: #1458042
+  * drivers: net: xgene: Add second SGMII based 1G interface
+    - LP: #1458042
+  * x86/fpu: Disable XSAVES* support for now
+    - LP: #1468797
+  * powerpc: export of_get_ibm_chip_id function
+    - LP: #1454687
+  * powerpc: Add ICSWX instruction
+    - LP: #1454687
+  * lib: add software 842 compression/decompression
+    - LP: #1454687
+  * crypto: 842 - change 842 alg to use software
+    - LP: #1454687
+  * crypto: nx - rename nx-842.c to nx-842-pseries.c
+    - LP: #1454687
+  * crypto: nx - add NX-842 platform frontend driver
+    - LP: #1454687
+  * crypto: nx - add nx842 constraints
+    - LP: #1454687
+  * crypto: nx - add PowerNV platform NX-842 driver
+    - LP: #1454687
+  * crypto: nx - simplify pSeries nx842 driver
+    - LP: #1454687
+  * crypto: nx - add hardware 842 crypto comp alg
+    - LP: #1454687
+  * lib: make lib/842 decompress functions static
+    - LP: #1454687
+  * lib: correct 842 decompress for 32 bit
+    - LP: #1454687
+  * crypto: nx - remove 842-nx null checks
+    - LP: #1454687
+  * crypto: nx - prevent nx 842 load if no hw driver
+    - LP: #1454687
+  * crypto: nx - fix nx-842 pSeries driver minimum buffer size
+    - LP: #1454687
+  * crypto: nx - move include/linux/nx842.h into drivers/crypto/nx/nx-842.h
+    - LP: #1454687
+  * crypto: nx - replace NX842_MEM_COMPRESS with function
+    - LP: #1454687
+  * crypto: nx - add LE support to pSeries platform driver
+    - LP: #1454687
+  * net/mlx4_en: Disbale GRO for incoming loopback/selftest packets
+    - LP: #1432848
+  * mm/slab_common: support the slub_debug boot option on specific object
+    size
+    - LP: #1456952
+  * perf trace: Fix race condition at the end of started workloads
+    - LP: #1410673
+  * kvm: x86: fix kvm_apic_has_events to check for NULL pointer
+  * cpuidle: powernv/pseries: Auto-promotion of snooze to deeper idle state
+    - LP: #1470404
+  * IB/ipoib: change init sequence ordering
+    - LP: #1467912
+  * IB/ipoib: factor out ah flushing
+    - LP: #1467912
+  * HID: add ALWAYS_POLL quirk for a Logitech 0xc007
+    - LP: #1471252
+  * HID: add HP OEM mouse to quirk ALWAYS_POLL
+    - LP: #1471252
+  * HID: add quirk for PIXART OEM mouse used by HP
+    - LP: #1471252
+  * usb: dwc2: hcd: use new USB_RESUME_TIMEOUT
+    - LP: #1471252
+  * usb: isp1760: hcd: use new USB_RESUME_TIMEOUT
+    - LP: #1471252
+  * nfsd: fix nsfd startup race triggering BUG_ON
+    - LP: #1471252
+  * jhash: Update jhash_[321]words functions to use correct initval
+    - LP: #1471252
+  * firmware/ihex2fw.c: restore missing default in switch statement
+    - LP: #1471252
+  * bridge/mdb: remove wrong use of NLM_F_MULTI
+    - LP: #1471252
+  * iio/axp288_adc: add missing channel info mask
+    - LP: #1471252
+  * iio: light: hid-sensor-prox: Fix modifier
+    - LP: #1471252
+  * iio: pressure: hid-sensor-press: Fix modifier
+    - LP: #1471252
+  * iio: adc: xilinx: Fix register addresses
+    - LP: #1471252
+  * iio: adc: xilinx: Fix "vccaux" channel .address
+    - LP: #1471252
+  * iio: adc: xilinx: Fix VREFP scale
+    - LP: #1471252
+  * iio: adc: xilinx: Fix VREFN sign
+    - LP: #1471252
+  * libata: Add helper to determine when PHY events should be ignored
+    - LP: #1471252
+  * libata: Ignore spurious PHY event on LPM policy change
+    - LP: #1471252
+  * iio:st_sensors: Fix oops when probing SPI devices
+    - LP: #1471252
+  * usb: gadget: configfs: Fix interfaces array NULL-termination
+    - LP: #1471252
+  * rtlwifi: rtl8192cu: Fix kernel deadlock
+    - LP: #1471252
+  * USB: cp210x: add ID for KCF Technologies PRN device
+    - LP: #1471252
+  * USB: pl2303: Remove support for Samsung I330
+    - LP: #1471252
+  * USB: visor: Match I330 phone more precisely
+    - LP: #1471252
+  * net: can: xilinx_can: fix extended frame handling
+    - LP: #1471252
+  * nfsd: fix the check for confirmed openowner in
+    nfs4_preprocess_stateid_op
+    - LP: #1471252
+  * svcrpc: fix potential GSSX_ACCEPT_SEC_CONTEXT decoding failures
+    - LP: #1471252
+  * ACPI / init: Fix the ordering of acpi_reserve_resources()
+    - LP: #1471252
+  * md/raid5: don't record new size if resize_stripes fails.
+    - LP: #1471252
+  * sched: Handle priority boosted tasks proper in setscheduler()
+    - LP: #1471252
+  * staging: vt6656: use ieee80211_tx_info to select packet type.
+    - LP: #1471252
+  * staging: vt6655: device_free_tx_buf use only
+    ieee80211_tx_status_irqsafe
+    - LP: #1471252
+  * staging: vt6655: Fix 80211 control and management status reporting.
+    - LP: #1471252
+  * staging: vt6655: lock MACvWriteBSSIDAddress.
+    - LP: #1471252
+  * arm64: bpf: fix signedness bug in loading 64-bit immediate
+    - LP: #1471252
+  * xhci: fix isoc endpoint dequeue from advancing too far on transaction
+    error
+    - LP: #1471252
+  * xhci: Solve full event ring by increasing TRBS_PER_SEGMENT to 256
+    - LP: #1471252
+  * xhci: gracefully handle xhci_irq dead device
+    - LP: #1471252
+  * ARC: unbork !LLSC build
+    - LP: #1471252
+  * staging: gdm724x: Correction of variable usage after applying ALIGN()
+    - LP: #1471252
+  * usb-storage: Add NO_WP_DETECT quirk for Lacie 059f:0651 devices
+    - LP: #1471252
+  * tty/n_gsm.c: fix a memory leak when gsmtty is removed
+    - LP: #1471252
+  * pty: Fix input race when closing
+    - LP: #1429756, #1471252
+  * ARM: net fix emit_udiv() for BPF_ALU | BPF_DIV | BPF_K intruction.
+    - LP: #1471252
+  * x86/vdso: Fix the x86 vdso2c tool includes
+    - LP: #1471252
+  * x86/vdso: Fix 'make bzImage' on older distros
+    - LP: #1471252
+  * perf/x86/rapl: Enable Broadwell-U RAPL support
+    - LP: #1471252
+  * net: qca_spi: Fix possible race during probe
+    - LP: #1471252
+  * drm/radeon: fix VM_CONTEXT*_PAGE_TABLE_END_ADDR handling
+    - LP: #1471252
+  * RDMA/core: Fix for parsing netlink string attribute
+    - LP: #1471252
+  * drm/radeon: add new bonaire pci id
+    - LP: #1471252
+  * parisc,metag: Fix crashes due to stack randomization on
+    stack-grows-upwards architectures
+    - LP: #1471252
+  * net: phy: micrel: Fix regression in kszphy_probe
+    - LP: #1471252
+  * firmware: dmi_scan: Fix ordering of product_uuid
+    - LP: #1471252
+  * ext4: fix NULL pointer dereference when journal restart fails
+    - LP: #1471252
+  * ext4: check for zero length extent explicitly
+    - LP: #1471252
+  * jbd2: fix r_count overflows leading to buffer overflow in journal
+    recovery
+    - LP: #1471252
+  * tools/vm: fix page-flags build
+    - LP: #1471252
+  * mm, numa: really disable NUMA balancing by default on single node
+    machines
+    - LP: #1471252
+  * igb: Fix oops on changing number of rings
+    - LP: #1471252
+  * power/reset: at91: fix return value check in
+    at91_reset_platform_probe()
+    - LP: #1471252
+  * spi: bitbang: Make setup_transfer() callback optional
+    - LP: #1471252
+  * iwlwifi: pcie: prevent using unmapped memory in fw monitor
+    - LP: #1471252
+  * x86: bpf_jit: fix FROM_BE16 and FROM_LE16/32 instructions
+    - LP: #1471252
+  * igb: Fix NULL assignment to incorrect variable in igb_reset_q_vector
+    - LP: #1471252
+  * thermal: rockchip: fix an error code
+    - LP: #1471252
+  * ARM: net: delegate filter to kernel interpreter when imm_offset()
+    return value can't fit into 12bits.
+    - LP: #1471252
+  * ALSA: hda - Add headphone quirk for Lifebook E752
+    - LP: #1471252
+  * ASoC: mc13783: Fix wrong mask value used in mc13xxx_reg_rmw() calls
+    - LP: #1471252
+  * ASoC: uda1380: Avoid accessing i2c bus when codec is disabled
+    - LP: #1471252
+  * clk: exynos5420: Restore GATE_BUS_TOP on suspend
+    - LP: #1471252
+  * thermal: armada: Update Armada 380 thermal sensor coefficients
+    - LP: #1471252
+  * ALSA: hda/realtek - Support Dell headset mode for ALC256
+    - LP: #1471252
+  * ALSA: hda - fix headset mic detection problem for one more machine
+    - LP: #1447909, #1471252
+  * ALSA: hda - Add headset mic quirk for Dell Inspiron 5548
+    - LP: #1452175, #1471252
+  * mac80211: move WEP tailroom size check
+    - LP: #1471252
+  * KVM: MMU: fix smap permission check
+    - LP: #1471252
+  * KVM: MMU: fix CR4.SMEP=1, CR0.WP=0 with shadow pages
+    - LP: #1471252
+  * KVM: MMU: fix SMAP virtualization
+    - LP: #1471252
+  * powerpc/mce: fix off by one errors in mce event handling
+    - LP: #1471252
+  * ASoC: dapm: Modify widget stream name according to prefix
+    - LP: #1471252
+  * ASoC: wm8960: fix "RINPUT3" audio route error
+    - LP: #1471252
+  * ASoC: wm8994: correct BCLK DIV 348 to 384
+    - LP: #1471252
+  * ktime: Optimize ktime_divns for constant divisors
+    - LP: #1471252
+  * ktime: Fix ktime_divns to do signed division
+    - LP: #1471252
+  * Input: elantech - fix semi-mt protocol for v3 HW
+    - LP: #1471252
+  * powerpc: Align TOC to 256 bytes
+    - LP: #1471252
+  * ALSA: hda - Add Conexant codecs CX20721, CX20722, CX20723 and CX20724
+    - LP: #1454656, #1471252
+  * ALSA: hda/realtek - ALC292 dock fix for Thinkpad L450
+    - LP: #1471252
+  * mmc: atmel-mci: fix bad variable type for clkdiv
+    - LP: #1471252
+  * sd: Disable support for 256 byte/sector disks
+    - LP: #1471252
+  * s390/mm: correct return value of pmd_pfn
+    - LP: #1471252
+  * xen/events: don't bind non-percpu VIRQs with percpu chip
+    - LP: #1471252
+  * kvm: fix crash in kvm_vcpu_reload_apic_access_page
+    - LP: #1471252
+  * kvm/fpu: Enable eager restore kvm FPU for MPX
+    - LP: #1471252
+  * libceph: request a new osdmap if lingering request maps to no osd
+    - LP: #1471252
+  * drm/radeon: retry dcpd fetch
+    - LP: #1471252
+  * crypto: s390/ghash - Fix incorrect ghash icv buffer handling.
+    - LP: #1471252
+  * ipvs: fix memory leak in ip_vs_ctl.c
+    - LP: #1471252
+  * rtnl/bond: don't send rtnl msg for unregistered iface
+    - LP: #1471252
+  * net: sched: fix call_rcu() race on classifier module unloads
+    - LP: #1471252
+  * conntrack: RFC5961 challenge ACK confuse conntrack LAST-ACK transition
+    - LP: #1471252
+  * net: phy: Allow EEE for all RGMII variants
+    - LP: #1471252
+  * bridge: fix parsing of MLDv2 reports
+    - LP: #1471252
+  * cdc_ncm: Fix tx_bytes statistics
+    - LP: #1471252
+  * ipv4: Avoid crashing in ip_error
+    - LP: #1471252
+  * ipv6: do not delete previously existing ECMP routes if add fails
+    - LP: #1471252
+  * net/ipv6/udp: Fix ipv6 multicast socket filter regression
+    - LP: #1471252
+  * ipv6: fix ECMP route replacement
+    - LP: #1471252
+  * tcp/ipv6: fix flow label setting in TIME_WAIT state
+    - LP: #1471252
+  * staging: vt6655: move setting of PSTxDesc->buff_addr to vnt_tx_packet
+    - LP: #1471252
+  * staging: vt6655: Fix TD_FLAGS_NETIF_SKB only on TYPE_AC0DMA
+    - LP: #1471252
+  * staging: vt6655: vnt_tx_packet fix dma_idx selection.
+    - LP: #1471252
+  * staging: vt6655: vnt_tx_packet Correct TX order of OWNED_BY_NIC
+    - LP: #1471252
+  * staging: vt6655: [BUG] Protect MACvSelectPage1 with lock.
+    - LP: #1471252
+  * net: core: Correct an over-stringent device loop detection.
+    - LP: #1471252
+  * x86: bpf_jit: fix compilation of large bpf programs
+    - LP: #1471252
+  * net: dp83640: fix broken calibration routine.
+    - LP: #1471252
+  * net: dp83640: reinforce locking rules.
+    - LP: #1471252
+  * net: dp83640: fix improper double spin locking.
+    - LP: #1471252
+  * unix/caif: sk_socket can disappear when state is unlocked
+    - LP: #1471252
+  * xen/netback: Properly initialize credit_bytes
+    - LP: #1471252
+  * net_sched: invoke ->attach() after setting dev->qdisc
+    - LP: #1471252
+  * sctp: Fix mangled IPv4 addresses on a IPv6 listening socket
+    - LP: #1471252
+  * bridge: fix br_multicast_query_expired() bug
+    - LP: #1471252
+  * udp: fix behavior of wrong checksums
+    - LP: #1471252
+  * xen: netback: read hotplug script once at start of day.
+    - LP: #1471252
+  * ipv4/udp: Verify multicast group is ours in upd_v4_early_demux()
+    - LP: #1471252
+  * bridge: disable softirqs around br_fdb_update to avoid lockup
+    - LP: #1471252
+  * tcp: fix child sockets to use system default congestion control if not
+    set
+    - LP: #1471252
+  * be2net: Replace dma/pci_alloc_coherent() calls with
+    dma_zalloc_coherent()
+    - LP: #1471252
+  * drm/radeon: partially revert "fix VM_CONTEXT*_PAGE_TABLE_END_ADDR
+    handling"
+    - LP: #1471252
+  * Linux 3.19.8-ckt2
+    - LP: #1471252
+
+ -- Brad Figg <brad.figg@canonical.com>  Mon, 06 Jul 2015 19:12:36 -0700
+
+linux (3.19.0-22.22) vivid; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1465755
 
   [ Tai Nguyen ]
 
@@ -234,7 +739,7 @@ linux-lts-vivid (3.19.0-22.22~14.04.1) trusty; urgency=low
   * Linux 3.19.8-ckt1
     - LP: #1465696
 
- -- Luis Henriques <luis.henriques@canonical.com>  Wed, 17 Jun 2015 09:35:04 +0100
+ -- Brad Figg <brad.figg@canonical.com>  Tue, 16 Jun 2015 09:21:59 -0700
 
 linux (3.19.0-21.21) vivid; urgency=low
 
