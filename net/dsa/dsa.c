@@ -627,7 +627,7 @@ static int dsa_of_probe(struct platform_device *pdev)
 			continue;
 
 		cd->sw_addr = be32_to_cpup(sw_addr);
-		if (cd->sw_addr > PHY_MAX_ADDR)
+		if (cd->sw_addr >= PHY_MAX_ADDR)
 			continue;
 
 		if (!of_property_read_u32(np, "eeprom-length", &eeprom_len))
