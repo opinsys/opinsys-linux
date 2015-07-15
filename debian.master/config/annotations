@@ -3515,7 +3515,6 @@ CONFIG_APM_ALLOW_INTS				n
 
 # Menu: Power management and ACPI options >> Architecture: powerpc
 CONFIG_PPC_POWERNV				p policy<{'powerpc': 'y', 'ppc64el': 'y'}>
-CONFIG_PPC_POWERNV_RTAS				p policy<{'powerpc': 'y', 'ppc64el': 'y'}>
 CONFIG_PPC_CHRP					p policy<{'powerpc': 'y'}>
 CONFIG_PPC_PMAC					p policy<{'powerpc': 'y', 'ppc64el': 'n'}>
 CONFIG_PPC_PMAC32_PSURGE			p policy<{'powerpc': 'y'}>
