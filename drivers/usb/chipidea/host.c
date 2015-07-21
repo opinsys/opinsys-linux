@@ -175,7 +175,10 @@ int ci_hdrc_host_init(struct ci_hdrc *ci)
 	rdrv->name	= "host";
 	ci->roles[CI_ROLE_HOST] = rdrv;
 
-	ehci_init_driver(&ci_ehci_hc_driver, &ehci_ci_overrides);
-
 	return 0;
+}
+
+void ci_hdrc_host_driver_init(void)
+{
+	ehci_init_driver(&ci_ehci_hc_driver, &ehci_ci_overrides);
 }
