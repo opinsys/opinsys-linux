@@ -12,14 +12,15 @@ fi
 ver=$1
 revision=$2
 abi=$(echo $revision | sed -r -e 's/([^\+~]*)\.[^\.]+(~.*)?(\+.*)?$/\1/')
+mini=$(echo $revision | awk -F~ '{print $1}')
 
 verabi=$ver-$abi
 verfull=$ver-$revision
 
 WGET="wget --tries=1 --timeout=10 --quiet -c"
 
-abidir="`pwd`/$DEBIAN/abi/$verfull"
-tmpdir="`pwd`/abi-tmp-$verfull"
+abidir="`pwd`/$DEBIAN/abi/$ver-$mini"
+tmpdir="`pwd`/abi-tmp-$ver-$mini"
 origdir="`pwd`"
 fwinfo=$abidir/fwinfo
 
