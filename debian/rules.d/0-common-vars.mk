@@ -10,7 +10,7 @@ revision ?= $(word $(words $(revisions)),$(revisions))
 prev_revisions := $(filter-out $(revision),0.0 $(revisions))
 prev_revision := $(word $(words $(prev_revisions)),$(prev_revisions))
 
-prev_fullver ?= $(shell dpkg-parsechangelog -l$(DEBIAN)/changelog -o1 -c1 | sed -ne 's/^Version: *//p')
+prev_fullver ?= $(shell dpkg-parsechangelog -l$(DEBIAN)/changelog -o1 -c1 | sed -ne 's/^Version: *//p' | awk -F~ '{print $$1}')
 
 family=ubuntu
 
