@@ -1,16 +1,39 @@
-linux-lts-vivid (3.19.0-24.25~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-25.26~14.04.1) trusty; urgency=low
+
+  [ Colin Ian King ]
+
+  * SAUCE: KEYS: ensure we free the assoc array edit if edit is valid
+    - CVE-2015-1333
+
+  [ Upstream Kernel Changes ]
+
+  * x86/asm/entry/64: Fold the 'test_in_nmi' macro into its only user
+  * x86/asm/entry/64: Remove a redundant jump
+  * x86/nmi: Enable nested do_nmi handling for 64-bit kernels
+  * x86/nmi/64: Remove asm code that saves cr2
+  * x86/nmi/64: Switch stacks on userspace NMI entry
+    - CVE-2015-3290, CVE-2015-5157
+  * x86/nmi/64: Improve nested NMI comments
+  * x86/nmi/64: Reorder nested NMI checks
+  * x86/nmi/64: Use DF to avoid userspace RSP confusing nested NMI
+    detection
+    - CVE-2015-3291
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 24 Jul 2015 16:39:26 +0100
+
+linux (3.19.0-24.25) vivid; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1477378
+    - LP: #1477250
 
   [ Andy Whitcroft ]
 
   * SAUCE: fan: tunnel multiple mapping mode (v3)
     - LP: #1470091
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 23 Jul 2015 10:15:55 +0100
+ -- Brad Figg <brad.figg@canonical.com>  Wed, 22 Jul 2015 10:00:36 -0700
 
 linux (3.19.0-23.24) vivid; urgency=low
 
