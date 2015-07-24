@@ -5100,9 +5100,9 @@ EXPORT_SYMBOL net/ipv4/fou 0x5f339c7c	gue_build_header
 EXPORT_SYMBOL net/ipv4/fou 0x87596169	fou_encap_hlen
 EXPORT_SYMBOL net/ipv4/fou 0xfe4c1f2f	gue_encap_hlen
 EXPORT_SYMBOL net/ipv4/ip_tunnel 0x2ae7554a	ip_tunnel_encap_add_ops
-EXPORT_SYMBOL net/ipv4/ip_tunnel 0x79cc275a	ip_tunnel_encap
-EXPORT_SYMBOL net/ipv4/ip_tunnel 0xb1c25fb6	ip_tunnel_dst_reset_all
+EXPORT_SYMBOL net/ipv4/ip_tunnel 0x952f083b	ip_tunnel_encap
 EXPORT_SYMBOL net/ipv4/ip_tunnel 0xc7950147	ip_tunnel_encap_del_ops
+EXPORT_SYMBOL net/ipv4/ip_tunnel 0xe2c6c59e	ip_tunnel_dst_reset_all
 EXPORT_SYMBOL net/ipv4/netfilter/arp_tables 0x096e6727	arpt_unregister_table
 EXPORT_SYMBOL net/ipv4/netfilter/arp_tables 0x333d76a2	arpt_register_table
 EXPORT_SYMBOL net/ipv4/netfilter/arp_tables 0xdead2382	arpt_do_table
@@ -14081,7 +14081,7 @@ EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0x980168f8	inet_sk_diag_fill
 EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0x9de09a3f	inet_diag_unregister
 EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0xc68897d6	inet_diag_dump_icsk
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x42e5ce83	ip_tunnel_init
-EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x4b69b33f	ip_tunnel_rcv
+EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x547e2ab6	ip_tunnel_encap_setup
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x6425316c	ip_tunnel_ioctl
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x7831ac9b	ip_tunnel_change_mtu
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x8f6753d8	ip_tunnel_dellink
@@ -14089,11 +14089,11 @@ EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x943378ba	ip_tunnel_delete_net
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0x9f1abe63	ip_tunnel_xmit
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xa7201750	ip_tunnel_newlink
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xa8758d2d	ip_tunnel_changelink
+EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xb37536a6	ip_tunnel_rcv
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xbd7093de	ip_tunnel_uninit
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xc139c07b	ip_tunnel_setup
-EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xc45c43f3	ip_tunnel_encap_setup
-EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xcf949324	ip_tunnel_lookup
 EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xd67fda61	ip_tunnel_init_net
+EXPORT_SYMBOL_GPL net/ipv4/ip_tunnel 0xf425b56e	ip_tunnel_lookup
 EXPORT_SYMBOL_GPL net/ipv4/netfilter/arp_tables 0xea5a6527	arpt_alloc_initial_table
 EXPORT_SYMBOL_GPL net/ipv4/netfilter/ip_tables 0x57514d38	ipt_alloc_initial_table
 EXPORT_SYMBOL_GPL net/ipv4/netfilter/nf_defrag_ipv4 0x6b6c3d10	nf_defrag_ipv4_enable
