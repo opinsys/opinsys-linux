@@ -384,6 +384,8 @@ EXPORT_SYMBOL_GPL(wait_for_device_probe);
  *
  * This function must be called with @dev lock held.  When called for a
  * USB interface, @dev->parent lock must be held as well.
+ *
+ * If the device has a parent, runtime-resume the parent before driver probing.
  */
 int driver_probe_device(struct device_driver *drv, struct device *dev)
 {
@@ -395,9 +397,15 @@ int driver_probe_device(struct device_driver *drv, struct device *dev)
 	pr_debug("bus: '%s': %s: matched device %s with driver %s\n",
 		 drv->bus->name, __func__, dev_name(dev), drv->name);
 
+	if (dev->parent)
+		pm_runtime_get_sync(dev->parent);
+
 	pm_runtime_barrier(dev);
 	ret = really_probe(dev, drv);
 	pm_request_idle(dev);
+
+	if (dev->parent)
+		pm_runtime_put(dev->parent);
 
 	return ret;
 }
@@ -431,6 +439,10 @@ int device_attach(struct device *dev)
 	int ret = 0;
 
 	device_lock(dev);
+
+	if (dev->parent)
+		pm_runtime_get_sync(dev->parent);
+
 	if (dev->driver) {
 		if (klist_node_attached(&dev->p->knode_driver)) {
 			ret = 1;
@@ -448,6 +460,9 @@ int device_attach(struct device *dev)
 		pm_request_idle(dev);
 	}
 out_unlock:
+	if (dev->parent)
+		pm_runtime_put(dev->parent);
+
 	device_unlock(dev);
 	return ret;
 }
