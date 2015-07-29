@@ -18,7 +18,6 @@ set +pattern '(^|_)DEBUG(_|$)' ?type tristate	= n flag<DEBUG>
 #  exceptions
 CONFIG_DEBUG_FS					y note<required debug option>
 CONFIG_DEBUG_KERNEL				y note<required debug option>
-CONFIG_DEBUG_RODATA				y 
 CONFIG_SLUB_DEBUG				y
 CONFIG_SCHED_DEBUG				y
 
@@ -641,7 +640,7 @@ CONFIG_DRM_EXYNOS_IPP				p policy<{'armhf': 'n'}>
 
 # Menu: Device Drivers >> Graphics support >> Direct Rendering Manager >> Direct Rendering Manager (XFree86 4.1.0 and higher DRI support) >> Intel 8xx/9xx/G3x/G4x/HD Graphics
 CONFIG_DRM_I915_FBDEV				y
-CONFIG_DRM_I915_PRELIMINARY_HW_SUPPORT		y
+CONFIG_DRM_I915_PRELIMINARY_HW_SUPPORT		n note<LP:1473319>
 
 # Menu: Device Drivers >> Graphics support >> Direct Rendering Manager >> Direct Rendering Manager (XFree86 4.1.0 and higher DRI support) >> Intel GMA5/600 KMS Framebuffer
 CONFIG_DRM_GMA600				y
@@ -2476,8 +2475,8 @@ CONFIG_IOSCHED_CFQ				y
 CONFIG_CFQ_GROUP_IOSCHED			y
 
 # Menu: Enable the block layer >> IO Schedulers >> Default I/O scheduler
-CONFIG_DEFAULT_DEADLINE				p policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'powerpc': 'y', 'ppc64el': 'n'}>
-CONFIG_DEFAULT_CFQ				p policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'powerpc': 'n', 'ppc64el': 'y'}>
+CONFIG_DEFAULT_DEADLINE				p policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'powerpc': 'y', 'ppc64el': 'y'}>
+CONFIG_DEFAULT_CFQ				p policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'powerpc': 'n', 'ppc64el': 'n'}>
 
 # Menu: Enable the block layer >> Partition Types
 set +tree 'Enable the block layer>>Partition Types' ?pattern _PARTITION$ !flag EXPERIMENTAL         = y
@@ -2486,13 +2485,13 @@ set +tree 'Enable the block layer>>Partition Types' ?pattern _DISKLABEL$ !flag E
 # Menu: Enable the block layer >> Partition Types >> Advanced partition selection
 CONFIG_PARTITION_ADVANCED			y
 
-# Menu: Enable the block layer >> Partition Types >> Advanced partition selection >> Acorn partition support
-CONFIG_ACORN_PARTITION_CUMANA			D
-CONFIG_ACORN_PARTITION_EESOX			D
-CONFIG_ACORN_PARTITION_ICS			D
-CONFIG_ACORN_PARTITION_ADFS			D
-CONFIG_ACORN_PARTITION_POWERTEC			D
-CONFIG_ACORN_PARTITION_RISCIX			D
+# Menu: Disable the block layer >> Partition Types >> Advanced partition selection >> Acorn partition support
+CONFIG_ACORN_PARTITION_CUMANA			n
+CONFIG_ACORN_PARTITION_EESOX			n
+CONFIG_ACORN_PARTITION_ICS			n
+CONFIG_ACORN_PARTITION_ADFS			n
+CONFIG_ACORN_PARTITION_POWERTEC			n
+CONFIG_ACORN_PARTITION_RISCIX			n
 
 # Menu: Enable the block layer >> Partition Types >> Advanced partition selection >> PC BIOS (MSDOS partition tables) support
 CONFIG_MINIX_SUBPARTITION			y
@@ -2917,7 +2916,7 @@ CONFIG_PANIC_TIMEOUT				0
 CONFIG_STACKTRACE				y
 CONFIG_PROVIDE_OHCI1394_DMA_INIT		n
 CONFIG_STRICT_DEVMEM				y mark<ENFORCED>
-CONFIG_DEBUG_RODATA				p mark<ENFORCED> policy<{'amd64': 'y', 'i386': 'y', 'armhf': 'y'}>
+CONFIG_DEBUG_RODATA				p mark<ENFORCED> policy<{'amd64': 'y', 'i386': 'y', 'arm64': 'y'}>
 CONFIG_DEBUG_SET_MODULE_RONX			p mark<ENFORCED> policy<{'powerpc': '-', 'ppc64el': '-', '*': 'y'}>
 CONFIG_EARLY_PRINTK				y
 CONFIG_DEBUG_RODATA				p policy<{'amd64': 'y', 'i386': 'y', 'armhf': 'y'}>
@@ -3484,7 +3483,7 @@ CONFIG_ACPI_PROCESSOR				y
 CONFIG_ACPI_THERMAL				y
 CONFIG_ACPI_CONTAINER				y note<dependancy ACPI_HOTPLUG_CPU>
 CONFIG_ACPI_HED					y
-CONFIG_ACPI_CUSTOM_METHOD			p mark<ENFORCED> policy<{'amd64': 'n', 'i386': 'n'}> note<SECURITY: allows arbitrary execution>
+CONFIG_ACPI_CUSTOM_METHOD			p mark<ENFORCED> policy<{'amd64': 'n', 'i386': 'n', 'arm64': 'n'}> note<SECURITY: allows arbitrary execution>
 CONFIG_ACPI_NUMA				y
 CONFIG_ACPI_CUSTOM_DSDT_FILE			"" note<might allow hardware damage>
 CONFIG_ACPI_INITRD_TABLE_OVERRIDE		n
@@ -3515,7 +3514,6 @@ CONFIG_APM_ALLOW_INTS				n
 
 # Menu: Power management and ACPI options >> Architecture: powerpc
 CONFIG_PPC_POWERNV				p policy<{'powerpc': 'y', 'ppc64el': 'y'}>
-CONFIG_PPC_POWERNV_RTAS				p policy<{'powerpc': 'y', 'ppc64el': 'y'}>
 CONFIG_PPC_CHRP					p policy<{'powerpc': 'y'}>
 CONFIG_PPC_PMAC					p policy<{'powerpc': 'y', 'ppc64el': 'n'}>
 CONFIG_PPC_PMAC32_PSURGE			p policy<{'powerpc': 'y'}>
@@ -3821,7 +3819,7 @@ CONFIG_GART_IOMMU                               p policy<{'amd64': 'y'}>
 CONFIG_CALGARY_IOMMU                            p policy<{'amd64': 'y'}>
 CONFIG_CALGARY_IOMMU_ENABLED_BY_DEFAULT         p policy<{'amd64': 'y'}>
 CONFIG_X86_REROUTE_FOR_BROKEN_BOOT_IRQS         p policy<{'amd64': 'y', 'i386': 'y'}>
-CONFIG_VM86                                     p policy<{'i386': 'y'}>
+CONFIG_VM86                                     p policy<{'i386': 'n'}>
 CONFIG_X86_16BIT                                p policy<{'amd64': 'y', 'i386': 'y'}>
 CONFIG_X86_VSYSCALL_EMULATION                   p policy<{'amd64': 'y'}>
 CONFIG_TOSHIBA                                  p policy<{'i386': 'n'}>
