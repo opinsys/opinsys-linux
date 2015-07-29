@@ -2486,13 +2486,13 @@ set +tree 'Enable the block layer>>Partition Types' ?pattern _DISKLABEL$ !flag E
 # Menu: Enable the block layer >> Partition Types >> Advanced partition selection
 CONFIG_PARTITION_ADVANCED			y
 
-# Menu: Enable the block layer >> Partition Types >> Advanced partition selection >> Acorn partition support
-CONFIG_ACORN_PARTITION_CUMANA			D
-CONFIG_ACORN_PARTITION_EESOX			D
-CONFIG_ACORN_PARTITION_ICS			D
-CONFIG_ACORN_PARTITION_ADFS			D
-CONFIG_ACORN_PARTITION_POWERTEC			D
-CONFIG_ACORN_PARTITION_RISCIX			D
+# Menu: Disable the block layer >> Partition Types >> Advanced partition selection >> Acorn partition support
+CONFIG_ACORN_PARTITION_CUMANA			n
+CONFIG_ACORN_PARTITION_EESOX			n
+CONFIG_ACORN_PARTITION_ICS			n
+CONFIG_ACORN_PARTITION_ADFS			n
+CONFIG_ACORN_PARTITION_POWERTEC			n
+CONFIG_ACORN_PARTITION_RISCIX			n
 
 # Menu: Enable the block layer >> Partition Types >> Advanced partition selection >> PC BIOS (MSDOS partition tables) support
 CONFIG_MINIX_SUBPARTITION			y
@@ -3515,7 +3515,6 @@ CONFIG_APM_ALLOW_INTS				n
 
 # Menu: Power management and ACPI options >> Architecture: powerpc
 CONFIG_PPC_POWERNV				p policy<{'powerpc': 'y', 'ppc64el': 'y'}>
-CONFIG_PPC_POWERNV_RTAS				p policy<{'powerpc': 'y', 'ppc64el': 'y'}>
 CONFIG_PPC_CHRP					p policy<{'powerpc': 'y'}>
 CONFIG_PPC_PMAC					p policy<{'powerpc': 'y', 'ppc64el': 'n'}>
 CONFIG_PPC_PMAC32_PSURGE			p policy<{'powerpc': 'y'}>
