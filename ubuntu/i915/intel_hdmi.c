@@ -1735,6 +1735,24 @@ void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
 			intel_hdmi->ddc_bus = GMBUS_PIN_DPD;
 		intel_encoder->hpd_pin = HPD_PORT_D;
 		break;
+	case PORT_E:
+		/* On SKL PORT E doesn't have seperate GMBUS pin
+		 *  We rely on VBT to set a proper alternate GMBUS pin. */
+		switch (dev_priv->vbt.ddi_port_info[PORT_E].alternate_ddc_pin) {
+		case DDC_PIN_B:
+			intel_hdmi->ddc_bus = GMBUS_PIN_DPB;
+			break;
+		case DDC_PIN_C:
+			intel_hdmi->ddc_bus = GMBUS_PIN_DPC;
+			break;
+		case DDC_PIN_D:
+			intel_hdmi->ddc_bus = GMBUS_PIN_DPD;
+			break;
+		default:
+			BUG();
+		}
+		intel_encoder->hpd_pin = HPD_PORT_E;
+		break;
 	case PORT_A:
 		intel_encoder->hpd_pin = HPD_PORT_A;
 		/* Internal port only for eDP. */
