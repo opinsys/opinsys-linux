@@ -400,11 +400,7 @@ static const struct intel_device_info intel_skylake_info = {
 	INTEL_HSW_D_IDS(&intel_haswell_d_info), \
 	INTEL_HSW_M_IDS(&intel_haswell_m_info), \
 	INTEL_VLV_M_IDS(&intel_valleyview_m_info),	\
-	INTEL_VLV_D_IDS(&intel_valleyview_d_info),	\
-	INTEL_BDW_GT12M_IDS(&intel_broadwell_m_info),	\
-	INTEL_BDW_GT12D_IDS(&intel_broadwell_d_info),	\
-	INTEL_BDW_GT3M_IDS(&intel_broadwell_gt3m_info),	\
-	INTEL_BDW_GT3D_IDS(&intel_broadwell_gt3d_info)
+	INTEL_VLV_D_IDS(&intel_valleyview_d_info)
 
 static const struct pci_device_id pciidlist[] = {		/* aka */
 	INTEL_PCI_IDS,

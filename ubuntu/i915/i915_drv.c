@@ -402,6 +402,10 @@ static const struct intel_device_info intel_broxton_info = {
  * PCI ID matches, otherwise we'll use the wrong info struct above.
  */
 #define INTEL_PCI_IDS \
+	INTEL_BDW_GT12M_IDS(&intel_broadwell_m_info),   \
+	INTEL_BDW_GT12D_IDS(&intel_broadwell_d_info),   \
+	INTEL_BDW_GT3M_IDS(&intel_broadwell_gt3m_info), \
+	INTEL_BDW_GT3D_IDS(&intel_broadwell_gt3d_info), \
 	INTEL_CHV_IDS(&intel_cherryview_info),	\
 	INTEL_SKL_GT1_IDS(&intel_skylake_info),	\
 	INTEL_SKL_GT2_IDS(&intel_skylake_info),	\

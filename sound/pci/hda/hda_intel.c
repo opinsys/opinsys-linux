@@ -1908,6 +1908,7 @@ static int azx_probe_continue(struct azx *chip)
 	if (chip->driver_caps & AZX_DCAPS_I915_POWERWELL) {
 #ifdef CONFIG_SND_HDA_I915
 		if (((chip->driver_caps & AZX_DCAPS_INTEL_SKYLAKE) == AZX_DCAPS_INTEL_SKYLAKE) || \
+			((chip->driver_caps & AZX_DCAPS_INTEL_BROADWELL) == AZX_DCAPS_INTEL_BROADWELL) || \
 			((chip->driver_caps & AZX_DCAPS_INTEL_BRASWELL) == AZX_DCAPS_INTEL_BRASWELL))
 			err = hda_i915_init_bpo(hda);
 		else
