@@ -1,4 +1,166 @@
-linux-lts-wily (4.1.0-2.2~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-4.4~14.04.1) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1483677
+
+  [ Achiad Shochat ]
+
+  * SAUCE: net/mlx5e: Support TX packet copy into WQE
+  * SAUCE: net/mlx5e: TX latency optimization to save DMA reads
+  * SAUCE: net/mlx5e: Cosmetics: use BIT() instead of "1 <<", and others
+  * SAUCE: net/mlx5e: Input IPSEC.SPI into the RX RSS hash function
+
+  [ Adam Lee ]
+
+  * SAUCE: serial: 8250_pci: Add support for Pericom PI7C9X795[1248]
+    - LP: #1480142
+
+  [ dann frazier ]
+
+  * [Config] CONFIG_NR_CPUS=128 on arm64
+
+  [ Leann Ogasawara ]
+
+  * [Config] d-i -- Add sfc to nic-modules udeb
+    - LP: #1481490
+
+  [ Saeed Mahameed ]
+
+  * SAUCE: net/mlx5e: Support ETH_RSS_HASH_XOR
+  * SAUCE: net/mlx5e: Allocate DMA coherent memory on reader NUMA node
+
+  [ Tim Gardner ]
+
+  * [Config] CONFIG_X86_INTEL_MPX=y
+    - LP: #1460902
+  * [Debian] change dependency on module-init-tools to kmod
+    - LP: #1481986
+  * rebase to v4.2-rc6
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v4.2-rc6
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 04 Aug 2015 16:59:45 -0600
+
+linux (4.2.0-3.3) wily; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1481462
+  * SAUCE: workqueue: Make flush_workqueue() available again to non GPL modules
+    Fixes an FTBS for at least one DKMS package.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 04 Aug 2015 11:26:53 -0600
+
+linux (4.2.0-2.2) wily; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1481067
+  * rebase to v4.2-rc5
+
+  [ Andy Whitcroft ]
+
+  * [Packaging] module-inclusion -- commonise copy code and simplify
+  * [Packaging] module-inclusion -- add manual command entries
+  * [Packaging] module blacklists -- add support for manual blacklists
+  * [Packaging] do_common_tools should always be on
+  * [Packaging] initscripts need installing when making the package
+  * [Packaging] initscripts work around bug in debhelper systemd support
+  * [Config] exclude oss modules from linux-image
+    - LP: #1434842
+  * hyper-v -- add hid and fb drivers to linux-virtual
+    - LP: #1444179
+  * ubuntu: (no-squash) vbox -- infrastructure and updater
+  * ubuntu: vbox -- elide the new symlinks and reconstruct on clean:
+    - LP: #1426113
+  * ubuntu: vbox -- update to 5.0.0-dfsg-1
+    - LP: #1480879
+  * SAUCE: vbox: follow v4.2 updates to follow_link()/put_link() API
+  * [Config] move vbox modules into linux-image
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v4.2-rc5
+    - LP: #1478497
+    - LP: #1477900
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 03 Aug 2015 12:20:10 +0100
+
+linux (4.2.0-1.1~rc1) wily; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Release Tracking Bug
+    - LP: #1479903
+  * Initial upload of v4.2 based kernel (currently v4.-rc4)
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v4.2-rc4
+    - LP: #1476987
+    - LP: #1476888
+  * rebase to v4.2-rc3
+  * rebase to v4.2-rc2
+  * rebase to v4.2-rc1
+    - LP: #1394368
+    - LP: #1427680
+    - LP: #1462614
+    - LP: #1397021
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 30 Jul 2015 18:42:46 +0100
+
+linux (4.1.0-3.3) wily; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Release Tracking Bug
+    - LP: #1478897
+
+  [ Colin Ian King ]
+
+  * SAUCE: KEYS: ensure we free the assoc array edit if edit is valid
+    - CVE-2015-1333
+
+  [ Seth Forshee ]
+
+  * SAUCE: overlayfs: Enable user namespace mounts for the "overlay" fstype
+    - LP: #1478578
+
+  [ Upstream Kernel Changes ]
+
+  * sched/stop_machine: Fix deadlock between multiple stop_two_cpus()
+    - LP: #1461620
+  * x86/nmi: Enable nested do_nmi() handling for 64-bit kernels
+  * x86/nmi/64: Remove asm code that saves cr2
+  * x86/nmi/64: Switch stacks on userspace NMI entry
+  * x86/nmi/64: Reorder nested NMI checks
+  * x86/nmi/64: Use DF to avoid userspace RSP confusing nested NMI
+    detection
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 28 Jul 2015 11:59:03 +0100
+
+linux (4.1.0-2.4) wily; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * SAUCE: overlayfs: when copying up and reading directories ensure
+    mounter had permissions V2
+    - CVE-2015-1328
+
+  [ Leann Ogasawara ]
+
+  * Release Tracking Bug
+    - LP: #1465419
+
+ -- Leann Ogasawara <leann.ogasawara@canonical.com>  Mon, 15 Jun 2015 14:09:22 -0700
+
+linux (4.1.0-2.2) wily; urgency=low
 
   [ Tim Gardner ]
 
@@ -12069,3 +12231,4 @@ linux (2.6.30-1.1) karmic; urgency=low
   * Initial release after rebasing against v2.6.30-rc3
 
  --  Tim Gardner <tim.gardner@canonical.com>  Thu, 12 Mar 2009 19:16:07 -0600
+
