@@ -16,11 +16,12 @@ mini=$(echo $revision | awk -F~ '{print $1}')
 
 verabi=$ver-$abi
 verfull=$ver-$revision
+vermini=$ver-$mini
 
 WGET="wget --tries=1 --timeout=10 --quiet -c"
 
-abidir="`pwd`/$DEBIAN/abi/$ver-$mini"
-tmpdir="`pwd`/abi-tmp-$ver-$mini"
+abidir="`pwd`/$DEBIAN/abi/$vermini"
+tmpdir="`pwd`/abi-tmp-$vermini"
 origdir="`pwd`"
 fwinfo=$abidir/fwinfo
 
@@ -128,4 +129,4 @@ rmdir $tmpdir
 
 # Add the new ABI directory, remove the old
 git add $abidir
-find $DEBIAN/abi/* -maxdepth 0 -type d | grep -v $verfull | while read f; do git rm -r $f;done
+find $DEBIAN/abi/* -maxdepth 0 -type d | grep -v $vermini | while read f; do git rm -r $f;done
