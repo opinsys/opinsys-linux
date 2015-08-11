@@ -6161,6 +6161,7 @@ EXPORT_SYMBOL vmlinux 0x21f6a70c	init_buffer
 EXPORT_SYMBOL vmlinux 0x21f8cd95	netpoll_print_options
 EXPORT_SYMBOL vmlinux 0x220b5766	dev_set_group
 EXPORT_SYMBOL vmlinux 0x220c23b8	sys_imageblit
+EXPORT_SYMBOL vmlinux 0x22130ad4	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0x22175ad6	uart_get_baud_rate
 EXPORT_SYMBOL vmlinux 0x222e7ce2	sysfs_streq
 EXPORT_SYMBOL vmlinux 0x222fa684	lg_global_lock
@@ -9441,7 +9442,6 @@ EXPORT_SYMBOL vmlinux 0xe26a71d0	inc_nlink
 EXPORT_SYMBOL vmlinux 0xe2765702	mmc_put_card
 EXPORT_SYMBOL vmlinux 0xe28fdd37	dispc_ovl_setup
 EXPORT_SYMBOL vmlinux 0xe29e1d0e	out_of_line_wait_on_atomic_t
-EXPORT_SYMBOL vmlinux 0xe2a57a4d	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0xe2c8dee9	up_write
 EXPORT_SYMBOL vmlinux 0xe2d31f63	kmalloc_caches
 EXPORT_SYMBOL vmlinux 0xe2d5255a	strcmp
@@ -14147,6 +14147,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x1cafc496	snd_hwparams_to_dma_slave_config
 EXPORT_SYMBOL_GPL vmlinux 0x1cb34b10	spi_new_device
 EXPORT_SYMBOL_GPL vmlinux 0x1cd461ce	ata_scsi_slave_config
 EXPORT_SYMBOL_GPL vmlinux 0x1cf2bb28	scsi_bus_type
+EXPORT_SYMBOL_GPL vmlinux 0x1cfc74e0	sysfs_remove_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x1d27d0af	bdi_writeout_inc
 EXPORT_SYMBOL_GPL vmlinux 0x1d55210d	component_master_add_child
 EXPORT_SYMBOL_GPL vmlinux 0x1d565072	ping_init_sock
@@ -15625,6 +15626,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x888ce948	dma_wait_for_async_tx
 EXPORT_SYMBOL_GPL vmlinux 0x889a4243	kobject_uevent
 EXPORT_SYMBOL_GPL vmlinux 0x88ab6fe3	kgdb_active
 EXPORT_SYMBOL_GPL vmlinux 0x88b5647c	trace_clock_local
+EXPORT_SYMBOL_GPL vmlinux 0x88c37b28	sysfs_create_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x88ccecb7	__pm_runtime_resume
 EXPORT_SYMBOL_GPL vmlinux 0x88d90a2a	kvm_vcpu_block
 EXPORT_SYMBOL_GPL vmlinux 0x88ec565d	dma_buf_unmap_attachment

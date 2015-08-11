@@ -8865,6 +8865,7 @@ EXPORT_SYMBOL vmlinux 0xba7d870a	__mxc_cpu_type
 EXPORT_SYMBOL vmlinux 0xba7d9914	tcp_poll
 EXPORT_SYMBOL vmlinux 0xba86fe77	nf_log_bind_pf
 EXPORT_SYMBOL vmlinux 0xbac8e09d	bio_endio_nodec
+EXPORT_SYMBOL vmlinux 0xbacbf35f	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0xbaf6ab31	tty_port_lower_dtr_rts
 EXPORT_SYMBOL vmlinux 0xbafc308b	kfree_skb_partial
 EXPORT_SYMBOL vmlinux 0xbafeee36	dispc_runtime_get
@@ -9550,7 +9551,6 @@ EXPORT_SYMBOL vmlinux 0xe2d5255a	strcmp
 EXPORT_SYMBOL vmlinux 0xe2d930f2	xfrm_state_alloc
 EXPORT_SYMBOL vmlinux 0xe2d966a8	scsi_block_when_processing_errors
 EXPORT_SYMBOL vmlinux 0xe2e8065e	memdup_user
-EXPORT_SYMBOL vmlinux 0xe2e8cd72	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0xe2f3611e	tcp_v4_do_rcv
 EXPORT_SYMBOL vmlinux 0xe2fae716	kmemdup
 EXPORT_SYMBOL vmlinux 0xe2fbef9c	rwsem_down_write_failed
@@ -14311,6 +14311,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x1c80d27d	btree_geo128
 EXPORT_SYMBOL_GPL vmlinux 0x1c87a811	__round_jiffies_up
 EXPORT_SYMBOL_GPL vmlinux 0x1ca5c8b1	fat_fill_super
 EXPORT_SYMBOL_GPL vmlinux 0x1cb61b2f	snd_soc_component_init_io
+EXPORT_SYMBOL_GPL vmlinux 0x1cfc74e0	sysfs_remove_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x1d1da6ba	crypto_hash_walk_first
 EXPORT_SYMBOL_GPL vmlinux 0x1d55210d	component_master_add_child
 EXPORT_SYMBOL_GPL vmlinux 0x1d58ae14	lpddr2_jedec_timings
@@ -15753,6 +15754,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x88979e0c	regulator_get_mode
 EXPORT_SYMBOL_GPL vmlinux 0x88ab6fe3	kgdb_active
 EXPORT_SYMBOL_GPL vmlinux 0x88b5647c	trace_clock_local
 EXPORT_SYMBOL_GPL vmlinux 0x88c0bb68	tty_ldisc_ref
+EXPORT_SYMBOL_GPL vmlinux 0x88c37b28	sysfs_create_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x88d7b3c3	platform_add_devices
 EXPORT_SYMBOL_GPL vmlinux 0x890d5d7e	snd_soc_of_parse_daifmt
 EXPORT_SYMBOL_GPL vmlinux 0x89218d75	power_supply_set_battery_charged

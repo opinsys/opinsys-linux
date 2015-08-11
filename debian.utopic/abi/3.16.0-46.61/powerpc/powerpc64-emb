@@ -8590,6 +8590,7 @@ EXPORT_SYMBOL vmlinux 0xaeb27a96	skb_find_text
 EXPORT_SYMBOL vmlinux 0xaee9471a	ppp_channel_index
 EXPORT_SYMBOL vmlinux 0xaf063510	_raw_spin_lock_bh
 EXPORT_SYMBOL vmlinux 0xaf24e584	compat_sock_common_setsockopt
+EXPORT_SYMBOL vmlinux 0xaf2c878d	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0xaf2d872c	prepare_to_wait
 EXPORT_SYMBOL vmlinux 0xaf3dd7dc	scsi_logging_level
 EXPORT_SYMBOL vmlinux 0xaf3f85e7	from_kprojid_munged
@@ -9524,7 +9525,6 @@ EXPORT_SYMBOL vmlinux 0xeb875599	xfrm_find_acq
 EXPORT_SYMBOL vmlinux 0xeb93c6d3	scsi_host_lookup
 EXPORT_SYMBOL vmlinux 0xeb9dea36	vm_event_states
 EXPORT_SYMBOL vmlinux 0xeba46e68	add_disk
-EXPORT_SYMBOL vmlinux 0xebc30897	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0xebe39a1e	lock_sock_fast
 EXPORT_SYMBOL vmlinux 0xec05e70c	rwsem_down_read_failed
 EXPORT_SYMBOL vmlinux 0xec074f12	nobh_writepage
@@ -14715,6 +14715,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x421fc3c9	ata_sff_error_handler
 EXPORT_SYMBOL_GPL vmlinux 0x4223ea72	perf_pmu_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x422e19aa	fat_build_inode
 EXPORT_SYMBOL_GPL vmlinux 0x4230f952	smpboot_unregister_percpu_thread
+EXPORT_SYMBOL_GPL vmlinux 0x4248a8af	sysfs_create_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x424acc6d	scatterwalk_done
 EXPORT_SYMBOL_GPL vmlinux 0x425870f6	usb_driver_release_interface
 EXPORT_SYMBOL_GPL vmlinux 0x4264e56b	hwmon_device_register_with_groups
@@ -16897,6 +16898,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xf696ac28	inet_csk_listen_start
 EXPORT_SYMBOL_GPL vmlinux 0xf6d4b3bd	mmc_app_cmd
 EXPORT_SYMBOL_GPL vmlinux 0xf6e874f5	ata_timing_merge
 EXPORT_SYMBOL_GPL vmlinux 0xf727abfb	ata_std_postreset
+EXPORT_SYMBOL_GPL vmlinux 0xf73b9fb6	sysfs_remove_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0xf75d2994	ehci_cf_port_reset_rwsem
 EXPORT_SYMBOL_GPL vmlinux 0xf766c383	transport_class_unregister
 EXPORT_SYMBOL_GPL vmlinux 0xf793f8f9	dma_buf_put

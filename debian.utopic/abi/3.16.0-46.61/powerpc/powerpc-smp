@@ -7112,6 +7112,7 @@ EXPORT_SYMBOL vmlinux 0x545f5acb	fib_default_rule_add
 EXPORT_SYMBOL vmlinux 0x548eb8f6	pskb_expand_head
 EXPORT_SYMBOL vmlinux 0x54a9db5f	_kstrtoul
 EXPORT_SYMBOL vmlinux 0x54b03b4a	ip_route_input_noref
+EXPORT_SYMBOL vmlinux 0x54bc8d1f	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0x54df8565	tty_chars_in_buffer
 EXPORT_SYMBOL vmlinux 0x54df8e87	netdev_master_upper_dev_link
 EXPORT_SYMBOL vmlinux 0x54e0815d	scsi_remove_device
@@ -9197,7 +9198,6 @@ EXPORT_SYMBOL vmlinux 0xd17ba2e5	xfrm_state_alloc
 EXPORT_SYMBOL vmlinux 0xd17f4c12	fb_prepare_logo
 EXPORT_SYMBOL vmlinux 0xd1816f32	frontswap_writethrough
 EXPORT_SYMBOL vmlinux 0xd196c9be	kstrtos16_from_user
-EXPORT_SYMBOL vmlinux 0xd19fe1ed	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0xd1e3c0a6	vfs_statfs
 EXPORT_SYMBOL vmlinux 0xd1e3f3c4	unregister_sysctl_table
 EXPORT_SYMBOL vmlinux 0xd20579ea	twl6040_reg_read
@@ -15067,6 +15067,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x5ff85e39	devm_usb_get_phy_dev
 EXPORT_SYMBOL_GPL vmlinux 0x6010df2e	crypto_unregister_ahash
 EXPORT_SYMBOL_GPL vmlinux 0x6015b18d	regmap_fields_write
 EXPORT_SYMBOL_GPL vmlinux 0x60266983	wm831x_reg_write
+EXPORT_SYMBOL_GPL vmlinux 0x60474d45	sysfs_create_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x60506751	unmap_kernel_range_noflush
 EXPORT_SYMBOL_GPL vmlinux 0x60974393	usb_match_one_id
 EXPORT_SYMBOL_GPL vmlinux 0x60999e4a	netdev_rx_handler_register
@@ -15322,6 +15323,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x75306f68	spi_register_driver
 EXPORT_SYMBOL_GPL vmlinux 0x758a782e	blk_fill_rwbs
 EXPORT_SYMBOL_GPL vmlinux 0x75c243b9	regcache_drop_region
 EXPORT_SYMBOL_GPL vmlinux 0x75c2b9f1	memalloc_socks
+EXPORT_SYMBOL_GPL vmlinux 0x75c59e0d	sysfs_remove_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x75c8a11c	inet_twdr_twkill_work
 EXPORT_SYMBOL_GPL vmlinux 0x75d17d0b	pmac_i2c_open
 EXPORT_SYMBOL_GPL vmlinux 0x75eaa691	thermal_cooling_device_register

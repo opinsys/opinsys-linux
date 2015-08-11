@@ -6759,7 +6759,6 @@ EXPORT_SYMBOL vmlinux 0x4302d0eb	free_pages
 EXPORT_SYMBOL vmlinux 0x43291914	sync_mapping_buffers
 EXPORT_SYMBOL vmlinux 0x432afc21	address_space_init_once
 EXPORT_SYMBOL vmlinux 0x4347f4a4	d_add_ci
-EXPORT_SYMBOL vmlinux 0x434bb778	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0x4351577a	fb_parse_edid
 EXPORT_SYMBOL vmlinux 0x435cf7b0	unregister_qdisc
 EXPORT_SYMBOL vmlinux 0x436c2179	iowrite32
@@ -7250,6 +7249,7 @@ EXPORT_SYMBOL vmlinux 0x63eb9355	panic_blink
 EXPORT_SYMBOL vmlinux 0x63eebb34	override_creds
 EXPORT_SYMBOL vmlinux 0x63fc232f	strlen_user
 EXPORT_SYMBOL vmlinux 0x6403e338	tcp_memory_pressure
+EXPORT_SYMBOL vmlinux 0x640a28e2	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0x6461eb05	mmc_detect_card_removed
 EXPORT_SYMBOL vmlinux 0x64709839	dm_register_target
 EXPORT_SYMBOL vmlinux 0x64870a9a	ab3100_event_register
@@ -14049,6 +14049,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x1e67ca58	device_pm_wait_for_dev
 EXPORT_SYMBOL_GPL vmlinux 0x1e7bbcb3	kernel_restart
 EXPORT_SYMBOL_GPL vmlinux 0x1e83fee6	HYPERVISOR_physdev_op
 EXPORT_SYMBOL_GPL vmlinux 0x1e872da4	usb_anchor_resume_wakeups
+EXPORT_SYMBOL_GPL vmlinux 0x1e959c45	sysfs_create_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x1eb1594f	gpiod_put
 EXPORT_SYMBOL_GPL vmlinux 0x1eb9516e	round_jiffies_relative
 EXPORT_SYMBOL_GPL vmlinux 0x1ebf6c2a	pci_power_names
@@ -16596,6 +16597,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xeb3ef01d	arm_pm_restart
 EXPORT_SYMBOL_GPL vmlinux 0xeb60d844	__tracepoint_cpu_idle
 EXPORT_SYMBOL_GPL vmlinux 0xeb6affef	extcon_find_cable_index
 EXPORT_SYMBOL_GPL vmlinux 0xeb6bf9cf	of_dma_get_range
+EXPORT_SYMBOL_GPL vmlinux 0xeb868719	sysfs_remove_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0xeb8a84ab	trace_seq_bitmask
 EXPORT_SYMBOL_GPL vmlinux 0xeb8de41a	task_cgroup_path
 EXPORT_SYMBOL_GPL vmlinux 0xeb9da3ad	pci_enable_pri

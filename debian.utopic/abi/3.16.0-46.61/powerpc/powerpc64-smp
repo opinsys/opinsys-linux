@@ -7241,7 +7241,6 @@ EXPORT_SYMBOL vmlinux 0x52428cc8	parent_mem_cgroup
 EXPORT_SYMBOL vmlinux 0x5245f6a4	hdmi_infoframe_pack
 EXPORT_SYMBOL vmlinux 0x527830ff	pmac_xpram_read
 EXPORT_SYMBOL vmlinux 0x52983a4f	vme_master_write
-EXPORT_SYMBOL vmlinux 0x52a4e413	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0x52b645e5	__smp_mb__after_atomic
 EXPORT_SYMBOL vmlinux 0x52bad945	scsi_is_host_device
 EXPORT_SYMBOL vmlinux 0x52cc8937	generic_splice_sendpage
@@ -8268,6 +8267,7 @@ EXPORT_SYMBOL vmlinux 0x8f172461	noop_llseek
 EXPORT_SYMBOL vmlinux 0x8f1bd831	tty_unlock
 EXPORT_SYMBOL vmlinux 0x8f238946	macio_enable_devres
 EXPORT_SYMBOL vmlinux 0x8f23e494	lockref_mark_dead
+EXPORT_SYMBOL vmlinux 0x8f3c3a00	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0x8f47b933	netpoll_poll_disable
 EXPORT_SYMBOL vmlinux 0x8f4daa7a	input_flush_device
 EXPORT_SYMBOL vmlinux 0x8f58ee7b	d_make_root
@@ -16089,6 +16089,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x920cc389	visitorl
 EXPORT_SYMBOL_GPL vmlinux 0x9214d1af	blk_queue_rq_timeout
 EXPORT_SYMBOL_GPL vmlinux 0x92170637	rtnl_link_register
 EXPORT_SYMBOL_GPL vmlinux 0x9218b381	dma_get_slave_channel
+EXPORT_SYMBOL_GPL vmlinux 0x921eb091	sysfs_create_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x9229e9be	xfrm_audit_policy_add
 EXPORT_SYMBOL_GPL vmlinux 0x924c46f8	zs_unmap_object
 EXPORT_SYMBOL_GPL vmlinux 0x92874acf	usb_block_urb
@@ -16668,6 +16669,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xbf506dde	iommu_group_add_device
 EXPORT_SYMBOL_GPL vmlinux 0xbf53ab74	blk_abort_request
 EXPORT_SYMBOL_GPL vmlinux 0xbf593071	devm_rtc_device_unregister
 EXPORT_SYMBOL_GPL vmlinux 0xbf8ec2b0	regulator_register
+EXPORT_SYMBOL_GPL vmlinux 0xbfa74342	sysfs_remove_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0xbfb472d5	noop_backing_dev_info
 EXPORT_SYMBOL_GPL vmlinux 0xbfbc5434	pciserial_resume_ports
 EXPORT_SYMBOL_GPL vmlinux 0xbfbe7363	gpio_unlock_as_irq

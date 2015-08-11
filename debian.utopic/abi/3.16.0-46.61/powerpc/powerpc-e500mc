@@ -6553,7 +6553,6 @@ EXPORT_SYMBOL vmlinux 0x2deda4a1	security_sk_classify_flow
 EXPORT_SYMBOL vmlinux 0x2e16ac45	inode_dio_wait
 EXPORT_SYMBOL vmlinux 0x2e17d6c2	nobh_write_end
 EXPORT_SYMBOL vmlinux 0x2e1ca751	clk_put
-EXPORT_SYMBOL vmlinux 0x2e1d80e0	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0x2e2ce9e0	sysctl_tcp_syncookies
 EXPORT_SYMBOL vmlinux 0x2e4ba376	input_unregister_device
 EXPORT_SYMBOL vmlinux 0x2e4d7782	__scsi_device_lookup_by_target
@@ -9289,6 +9288,7 @@ EXPORT_SYMBOL vmlinux 0xd78c4396	agp_generic_alloc_page
 EXPORT_SYMBOL vmlinux 0xd78daae0	__skb_dst_set_noref
 EXPORT_SYMBOL vmlinux 0xd78e6f89	security_skb_classify_flow
 EXPORT_SYMBOL vmlinux 0xd797b9a5	vme_master_write
+EXPORT_SYMBOL vmlinux 0xd79dc211	nf_register_queue_handler
 EXPORT_SYMBOL vmlinux 0xd7b5e4c4	dquot_destroy
 EXPORT_SYMBOL vmlinux 0xd7e0852c	blk_rq_map_integrity_sg
 EXPORT_SYMBOL vmlinux 0xd7e56a4e	simple_strtoll
@@ -15670,6 +15670,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x8dfd5821	__cookie_v6_init_sequence
 EXPORT_SYMBOL_GPL vmlinux 0x8e0c6d7d	regulator_map_voltage_linear
 EXPORT_SYMBOL_GPL vmlinux 0x8e1cd06f	kvm_set_pfn_accessed
 EXPORT_SYMBOL_GPL vmlinux 0x8e2acc9c	fuse_dev_operations
+EXPORT_SYMBOL_GPL vmlinux 0x8e3f8ea6	sysfs_create_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x8e60df7a	__tracepoint_wbc_writepage
 EXPORT_SYMBOL_GPL vmlinux 0x8e9c7933	gpiod_to_irq
 EXPORT_SYMBOL_GPL vmlinux 0x8ebb5d12	flush_kthread_worker
@@ -15845,6 +15846,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x9b3d4fd0	usb_hcd_start_port_resume
 EXPORT_SYMBOL_GPL vmlinux 0x9b481bb0	pci_reset_slot
 EXPORT_SYMBOL_GPL vmlinux 0x9b694766	rtc_device_register
 EXPORT_SYMBOL_GPL vmlinux 0x9ba6c0b6	wm8350_read_auxadc
+EXPORT_SYMBOL_GPL vmlinux 0x9bbd5dee	sysfs_remove_mount_point
 EXPORT_SYMBOL_GPL vmlinux 0x9bce231f	netdev_rx_handler_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x9bd526ca	dev_forward_skb
 EXPORT_SYMBOL_GPL vmlinux 0x9bd86975	devm_kmalloc
