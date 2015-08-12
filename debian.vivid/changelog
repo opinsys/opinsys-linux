@@ -1,9 +1,22 @@
-linux-lts-vivid (3.19.0-26.27~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-26.28~14.04.1) trusty; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1479195
+    - LP: #1483922
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "Bluetooth: ath3k: Add support of 04ca:300d AR3012 device"
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 12 Aug 2015 13:10:14 +0100
+
+linux (3.19.0-26.27) vivid; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1479055
   * [Config] updateconfigs for 3.19.8-ckt4 stable update
 
   [ Chris J Arges ]
@@ -829,7 +842,7 @@ linux-lts-vivid (3.19.0-26.27~14.04.1) trusty; urgency=low
   * Linux 3.19.8-ckt4
     - LP: #1479048
 
- -- Luis Henriques <luis.henriques@canonical.com>  Wed, 29 Jul 2015 16:45:02 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 28 Jul 2015 18:22:31 +0100
 
 linux (3.19.0-25.26) vivid; urgency=low
 
