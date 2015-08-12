@@ -1,0 +1,6 @@
+config MT7662U
+	tristate "MediaTek MT7662U (USB) support"
+	depends on MAC80211
+	depends on USB
+	---help---
+	  This adds support for MT7662U-based wireless USB dongles.
