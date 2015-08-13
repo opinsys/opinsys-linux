@@ -1108,6 +1108,7 @@ bool ibx_digital_port_connected(struct drm_i915_private *dev_priv,
 			break;
 		case PORT_E:
 			bit = SDE_PORTE_HOTPLUG_SPT;
+			break;
 		default:
 			return true;
 		}
