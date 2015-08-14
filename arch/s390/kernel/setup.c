@@ -701,7 +701,7 @@ static void __init setup_memory(void)
 /*
  * Setup hardware capabilities.
  */
-static void __init setup_hwcaps(void)
+static int __init setup_hwcaps(void)
 {
 	static const int stfl_bits[6] = { 0, 2, 7, 17, 19, 21 };
 	struct cpuid cpu_id;
@@ -768,9 +768,11 @@ static void __init setup_hwcaps(void)
 		elf_hwcap |= HWCAP_S390_TE;
 
 	/*
-	 * Vector extension HWCAP_S390_VXRS is bit 11.
+	 * Vector extension HWCAP_S390_VXRS is bit 11. The Vector extension
+	 * can be disabled with the "novx" parameter. Use MACHINE_HAS_VX
+	 * instead of facility bit 129.
 	 */
-	if (test_facility(129))
+	if (MACHINE_HAS_VX)
 		elf_hwcap |= HWCAP_S390_VXRS;
 #endif
 
@@ -811,7 +813,9 @@ static void __init setup_hwcaps(void)
 		strcpy(elf_platform, "zEC12");
 		break;
 	}
+	return 0;
 }
+arch_initcall(setup_hwcaps);
 
 /*
  * Add system information as device randomness
@@ -907,11 +911,6 @@ void __init setup_arch(char **cmdline_p)
 	smp_fill_possible_mask();
         cpu_init();
 	s390_init_cpu_topology();
-
-	/*
-	 * Setup capabilities (ELF_HWCAP & ELF_PLATFORM).
-	 */
-	setup_hwcaps();
 
 	/*
 	 * Create kernel page tables and switch to virtual addressing.
