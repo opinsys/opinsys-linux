@@ -313,6 +313,7 @@ int opal_message_notifier_register(enum opal_msg_type msg_type,
 			   __func__, msg_type);
 		return -EINVAL;
 	}
+
 	return atomic_notifier_chain_register(
 				&opal_msg_notifier_head[msg_type], nb);
 }
@@ -358,7 +359,7 @@ static void opal_handle_message(void)
 	type = be32_to_cpu(msg.msg_type);
 
 	/* Sanity check */
-	if (type > OPAL_MSG_TYPE_MAX) {
+	if (type >= OPAL_MSG_TYPE_MAX) {
 		pr_warning("%s: Unknown message type: %u\n", __func__, type);
 		return;
 	}
