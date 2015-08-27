@@ -1115,10 +1115,6 @@ parse_device_mapping(struct drm_i915_private *dev_priv,
 		DRM_DEBUG_KMS("No general definition block is found, no devices defined.\n");
 		return;
 	}
-	/* Remember to keep this in sync with child_device_config;
-	 * whenever a new feature is added to BDB that causes that
-	 * struct to grow this needs to be updated too
-	 */
 	if (bdb->version < 195) {
 		expected_size = 33;
 	} else if (bdb->version == 195) {
@@ -1132,8 +1128,7 @@ parse_device_mapping(struct drm_i915_private *dev_priv,
 	}
 
 	if (expected_size > sizeof(*p_child)) {
-		DRM_ERROR("child_device_config (size %u) cannot fit in p_child (size %zu); bdb->version: %u\n",
-			  expected_size, sizeof(*p_child), bdb->version);
+		DRM_ERROR("child_device_config cannot fit in p_child\n");
 		return;
 	}
 

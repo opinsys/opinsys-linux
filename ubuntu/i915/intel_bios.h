@@ -239,10 +239,6 @@ struct common_child_dev_config {
 	u8 not_common2[2];
 	u8 ddc_pin;
 	u16 edid_ptr;
-	u8 obsolete;
-	u8 flags_1;
-	u8 not_common3[13];
-	u8 iboost_level;
 } __packed;
 
 /* This field changes depending on the BDB version, so the most reliable way to
