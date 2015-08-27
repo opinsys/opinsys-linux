@@ -2787,15 +2787,7 @@ void intel_ddi_init(struct drm_device *dev, enum port port)
 	struct intel_digital_port *intel_dig_port;
 	struct intel_encoder *intel_encoder;
 	struct drm_encoder *encoder;
-	bool init_hdmi, init_dp, ddi_e_present;
-
-	/*
-	 * On SKL we don't have a way to detect DDI-E so we rely on VBT.
-	 */
-	ddi_e_present = IS_SKYLAKE(dev) &&
-		(dev_priv->vbt.ddi_port_info[PORT_E].supports_dp ||
-		 dev_priv->vbt.ddi_port_info[PORT_E].supports_dvi ||
-		 dev_priv->vbt.ddi_port_info[PORT_E].supports_hdmi);
+	bool init_hdmi, init_dp;
 
 	init_hdmi = (dev_priv->vbt.ddi_port_info[port].supports_dvi ||
 		     dev_priv->vbt.ddi_port_info[port].supports_hdmi);
@@ -2827,7 +2819,7 @@ void intel_ddi_init(struct drm_device *dev, enum port port)
 	intel_dig_port->port = port;
 	intel_dig_port->saved_port_bits = I915_READ(DDI_BUF_CTL(port)) &
 					  (DDI_BUF_PORT_REVERSAL |
-					   ddi_e_present ? 0 : DDI_A_4_LANES);
+					   DDI_A_4_LANES);
 
 	intel_encoder->type = INTEL_OUTPUT_UNKNOWN;
 	intel_encoder->crtc_mask = (1 << 0) | (1 << 1) | (1 << 2);

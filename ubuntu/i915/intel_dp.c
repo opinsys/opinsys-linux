@@ -151,11 +151,9 @@ static u8 intel_dp_max_lane_count(struct intel_dp *intel_dp)
 	u8 source_max, sink_max;
 
 	source_max = 4;
-	if (HAS_DDI(dev) && (intel_dig_port->port == PORT_E ||
-			     (intel_dig_port->port == PORT_A &&
-			      (intel_dig_port->saved_port_bits &
-			       DDI_A_4_LANES) == 0)))
-	    source_max = 2;
+	if (HAS_DDI(dev) && intel_dig_port->port == PORT_A &&
+	    (intel_dig_port->saved_port_bits & DDI_A_4_LANES) == 0)
+		source_max = 2;
 
 	sink_max = drm_dp_max_lane_count(intel_dp->dpcd);
 
