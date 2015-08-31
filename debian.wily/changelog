@@ -1,11 +1,24 @@
-linux-lts-wily (4.2.0-6.6~14.04.1.1) trusty; urgency=low
+linux-lts-wily (4.2.0-7.7~14.04.1) trusty; urgency=low
 
-  * UBUNTU: SAUCE: usbip: Update include path
-    Fixes FTBS
+  [ Tim Gardner ]
 
- -- Tim Gardner <tim.gardner@canonical.com>  Fri, 28 Aug 2015 07:26:34 -0600
+  * Release Tracking Bug
+    - LP: #1490564
+  * rebase to v4.2
 
-linux-lts-wily (4.2.0-6.6~14.04.1) trusty; urgency=low
+  [ Wen Xiong ]
+
+  * SAUCE: ipr: Byte swapping for device_id attribute in sysfs
+    - LP: #1453892
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v4.2
+    - LP: #1487345
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 26 Aug 2015 07:06:10 -0600
+
+linux (4.2.0-6.6) wily; urgency=low
 
   [ Tim Gardner ]
 
