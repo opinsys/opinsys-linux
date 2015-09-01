@@ -1,9 +1,29 @@
-linux-lts-vivid (3.19.0-27.29~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-28.30~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1490785
+
+  [ Gary Wang ]
+
+  * SAUCE: i915_bpo: drm/i915: set CDCLK if DPLL0 enabled during resuming
+    from S3
+    - LP: #1490035
+
+  [ Timo Aaltonen ]
+
+  * Revert "SAUCE: i915_bpo: drm/i915/skl: DDI-E and DDI-A shares 4 lanes."
+    - LP: #1490038
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 01 Sep 2015 10:11:04 +0100
+
+linux (3.19.0-27.29) vivid; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1485184
+    - LP: #1485113
 
   [ Adam Lee ]
 
