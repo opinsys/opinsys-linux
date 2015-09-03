@@ -110,6 +110,16 @@ void haswell_set_bclk(struct hda_intel *hda)
 	azx_writew(&hda->chip, EM5, bclk_n);
 }
 
+int snd_hdac_i915_register_notifier(const struct i915_audio_component_audio_ops *aops)
+{
+	if (WARN_ON(!hdac_acomp))
+		return -ENODEV;
+
+	hdac_acomp->audio_ops = aops;
+	return 0;
+}
+EXPORT_SYMBOL_GPL(snd_hdac_i915_register_notifier);
+
 static int hda_component_master_bind(struct device *dev)
 {
 	struct snd_card *card = dev_get_drvdata(dev);

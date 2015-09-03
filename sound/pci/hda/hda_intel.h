@@ -54,6 +54,7 @@ void haswell_set_bclk(struct hda_intel *hda);
 int hda_i915_init(struct hda_intel *hda);
 int hda_i915_init_bpo(struct hda_intel *hda);
 int hda_i915_exit(struct hda_intel *hda);
+int snd_hdac_i915_register_notifier(const struct i915_audio_component_audio_ops *);
 #else
 static inline int hda_set_codec_wakeup(struct hda_intel *hda, bool enable)
 {
@@ -79,6 +80,10 @@ static inline int hda_i915_init_bpo(void)
 static inline int hda_i915_exit_bpo(void)
 {
        return 0;
+}
+static inline int snd_hdac_i915_register_notifier(const struct i915_audio_component_audio_ops *aops)
+{
+	return -ENODEV;
 }
 #endif
 
