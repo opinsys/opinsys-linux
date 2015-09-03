@@ -33,6 +33,8 @@
 #define AZX_REG_EM4			0x100c
 #define AZX_REG_EM5			0x1010
 
+static struct i915_audio_component *hdac_acomp;
+
 int hda_set_codec_wakeup(struct hda_intel *hda, bool enable)
 {
 	struct i915_audio_component *acomp = &hda->audio_component;
@@ -173,6 +175,7 @@ int hda_i915_init(struct hda_intel *hda)
 	struct i915_audio_component *acomp = &hda->audio_component;
 	int ret;
 
+	hdac_acomp = acomp;
 	component_match_add(dev, &match, hda_component_master_match, hda);
 	ret = component_master_add_with_match(dev, &hda_component_master_ops,
 					      match);
@@ -213,6 +216,7 @@ int hda_i915_init_bpo(struct hda_intel *hda)
 	struct i915_audio_component *acomp = &hda->audio_component;
 	int ret;
 
+	hdac_acomp = acomp;
 	component_match_add(dev, &match, hda_component_master_match_bpo, hda);
 	ret = component_master_add_with_match(dev, &hda_component_master_ops,
 					      match);
