@@ -880,9 +880,7 @@ int netvsc_send(struct hv_device *device,
 		packet->send_buf_index = section_index;
 		packet->total_data_buflen += msd_len;
 
-		if (msdp->pkt)
-			netvsc_xmit_completion(msdp->pkt);
-
+		kfree(msdp->pkt);
 		if (packet->xmit_more) {
 			msdp->pkt = packet;
 			msdp->count++;
@@ -906,7 +904,7 @@ int netvsc_send(struct hv_device *device,
 		if (m_ret != 0) {
 			netvsc_free_send_slot(net_device,
 					      msd_send->send_buf_index);
-			netvsc_xmit_completion(msd_send);
+			kfree(msd_send);
 		}
 	}
 
