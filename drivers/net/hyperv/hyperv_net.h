@@ -128,6 +128,7 @@ struct ndis_tcp_ip_checksum_info;
 struct hv_netvsc_packet {
 	/* Bookkeeping stuff */
 	u32 status;
+	bool part_of_skb;
 
 	struct hv_device *device;
 	bool is_data_pkt;

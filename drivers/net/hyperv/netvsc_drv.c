@@ -239,6 +239,9 @@ void netvsc_xmit_completion(void *context)
 	struct sk_buff *skb = (struct sk_buff *)
 		(unsigned long)packet->send_completion_tid;
 
+	if (!packet->part_of_skb)
+		kfree(packet);
+
 	if (skb)
 		dev_kfree_skb_any(skb);
 }
@@ -388,7 +391,8 @@ static int netvsc_start_xmit(struct sk_buff *skb, struct net_device *net)
 	int  hdr_offset;
 	u32 net_trans_info;
 	u32 hash;
-	u32 skb_length;
+	u32 skb_length = skb->len;
+	u32 head_room = skb_headroom(skb);
 	u32 pkt_sz;
 	struct hv_page_buffer page_buf[MAX_PAGE_BUFFER_COUNT];
 
@@ -397,9 +401,6 @@ static int netvsc_start_xmit(struct sk_buff *skb, struct net_device *net)
 	 * header. We can only transmit MAX_PAGE_BUFFER_COUNT number
 	 * of pages in a single packet.
 	 */
-
-check_size:
-	skb_length = skb->len;
 	num_data_pgs = netvsc_get_slots(skb) + 2;
 	if (num_data_pgs > MAX_PAGE_BUFFER_COUNT) {
 		netdev_err(net, "Packet too big: %u\n", skb->len);
@@ -413,14 +414,21 @@ check_size:
 			NDIS_VLAN_PPI_SIZE + NDIS_CSUM_PPI_SIZE +
 			NDIS_LSO_PPI_SIZE + NDIS_HASH_PPI_SIZE;
 
-	ret = skb_cow_head(skb, pkt_sz);
-	if (ret) {
-		netdev_err(net, "unable to alloc hv_netvsc_packet\n");
-		ret = -ENOMEM;
-		goto drop;
+	if (head_room < pkt_sz) {
+		packet = kmalloc(pkt_sz, GFP_ATOMIC);
+		if (!packet) {
+			/* out of memory, drop packet */
+			netdev_err(net, "unable to alloc hv_netvsc_packet\n");
+			dev_kfree_skb(skb);
+			net->stats.tx_dropped++;
+			return NETDEV_TX_OK;
+		}
+		packet->part_of_skb = false;
+	} else {
+		/* Use the headroom for building up the packet */
+		packet = (struct hv_netvsc_packet *)skb->head;
+		packet->part_of_skb = true;
 	}
-	/* Use the headroom for building up the packet */
-	packet = (struct hv_netvsc_packet *)skb->head;
 
 	packet->status = 0;
 	packet->xmit_more = skb->xmit_more;
@@ -581,6 +589,8 @@ drop:
 		net->stats.tx_bytes += skb_length;
 		net->stats.tx_packets++;
 	} else {
+		if (!packet->part_of_skb)
+			kfree(packet);
 		if (ret != -EAGAIN) {
 			dev_kfree_skb_any(skb);
 			net->stats.tx_dropped++;
