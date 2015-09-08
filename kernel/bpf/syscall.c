@@ -148,14 +148,15 @@ static int map_lookup_elem(union bpf_attr *attr)
 	void __user *ukey = u64_to_ptr(attr->key);
 	void __user *uvalue = u64_to_ptr(attr->value);
 	int ufd = attr->map_fd;
-	struct fd f = fdget(ufd);
 	struct bpf_map *map;
 	void *key, *value, *ptr;
+	struct fd f;
 	int err;
 
 	if (CHECK_ATTR(BPF_MAP_LOOKUP_ELEM))
 		return -EINVAL;
 
+	f = fdget(ufd);
 	map = bpf_map_get(f);
 	if (IS_ERR(map))
 		return PTR_ERR(map);
@@ -206,14 +207,15 @@ static int map_update_elem(union bpf_attr *attr)
 	void __user *ukey = u64_to_ptr(attr->key);
 	void __user *uvalue = u64_to_ptr(attr->value);
 	int ufd = attr->map_fd;
-	struct fd f = fdget(ufd);
 	struct bpf_map *map;
 	void *key, *value;
+	struct fd f;
 	int err;
 
 	if (CHECK_ATTR(BPF_MAP_UPDATE_ELEM))
 		return -EINVAL;
 
+	f = fdget(ufd);
 	map = bpf_map_get(f);
 	if (IS_ERR(map))
 		return PTR_ERR(map);
@@ -258,14 +260,15 @@ static int map_delete_elem(union bpf_attr *attr)
 {
 	void __user *ukey = u64_to_ptr(attr->key);
 	int ufd = attr->map_fd;
-	struct fd f = fdget(ufd);
 	struct bpf_map *map;
+	struct fd f;
 	void *key;
 	int err;
 
 	if (CHECK_ATTR(BPF_MAP_DELETE_ELEM))
 		return -EINVAL;
 
+	f = fdget(ufd);
 	map = bpf_map_get(f);
 	if (IS_ERR(map))
 		return PTR_ERR(map);
@@ -298,14 +301,15 @@ static int map_get_next_key(union bpf_attr *attr)
 	void __user *ukey = u64_to_ptr(attr->key);
 	void __user *unext_key = u64_to_ptr(attr->next_key);
 	int ufd = attr->map_fd;
-	struct fd f = fdget(ufd);
 	struct bpf_map *map;
 	void *key, *next_key;
+	struct fd f;
 	int err;
 
 	if (CHECK_ATTR(BPF_MAP_GET_NEXT_KEY))
 		return -EINVAL;
 
+	f = fdget(ufd);
 	map = bpf_map_get(f);
 	if (IS_ERR(map))
 		return PTR_ERR(map);
