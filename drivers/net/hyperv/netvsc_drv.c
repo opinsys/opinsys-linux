@@ -417,8 +417,6 @@ static int netvsc_start_xmit(struct sk_buff *skb, struct net_device *net)
 		return NETDEV_TX_OK;
 	}
 
-	packet->xmit_more = skb->xmit_more;
-
 	packet->vlan_tci = skb->vlan_tci;
 
 	packet->q_idx = skb_get_queue_mapping(skb);
