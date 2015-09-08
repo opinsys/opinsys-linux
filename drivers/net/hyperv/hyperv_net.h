@@ -590,7 +590,7 @@ struct nvsp_message {
 
 #define NETVSC_RECEIVE_BUFFER_ID		0xcafe
 
-#define NETVSC_PACKET_SIZE                      4096
+#define NETVSC_PACKET_SIZE                      2048
 
 #define VRSS_SEND_TAB_SIZE 16
 
@@ -641,7 +641,7 @@ struct netvsc_device {
 	int ring_size;
 
 	/* The primary channel callback buffer */
-	unsigned char *cb_buffer;
+	unsigned char cb_buffer[NETVSC_PACKET_SIZE];
 	/* The sub channel callback buffer */
 	unsigned char *sub_cb_buf;
 };
