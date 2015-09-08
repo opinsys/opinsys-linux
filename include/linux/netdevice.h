@@ -3238,20 +3238,6 @@ int __init dev_proc_init(void);
 #define dev_proc_init() 0
 #endif
 
-static inline netdev_tx_t __netdev_start_xmit(const struct net_device_ops *ops,
-					      struct sk_buff *skb, struct net_device *dev)
-{
-	skb->xmit_more = 0;
-	return ops->ndo_start_xmit(skb, dev);
-}
-
-static inline netdev_tx_t netdev_start_xmit(struct sk_buff *skb, struct net_device *dev)
-{
-	const struct net_device_ops *ops = dev->netdev_ops;
-
-	return __netdev_start_xmit(ops, skb, dev);
-}
-
 int netdev_class_create_file_ns(struct class_attribute *class_attr,
 				const void *ns);
 void netdev_class_remove_file_ns(struct class_attribute *class_attr,

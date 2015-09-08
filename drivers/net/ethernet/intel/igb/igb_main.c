@@ -4917,14 +4917,13 @@ static void igb_tx_map(struct igb_ring *tx_ring,
 
 	tx_ring->next_to_use = i;
 
-	if (!skb->xmit_more) {
-		writel(i, tx_ring->tail);
+	writel(i, tx_ring->tail);
 
-		/* we need this if more than one processor can write to our tail
-		 * at a time, it synchronizes IO on IA64/Altix systems
-		 */
-		mmiowb();
-	}
+	/* we need this if more than one processor can write to our tail
+	 * at a time, it synchronizes IO on IA64/Altix systems
+	 */
+	mmiowb();
+
 	return;
 
 dma_error:
