@@ -239,8 +239,7 @@ static void netvsc_xmit_completion(void *context)
 	struct sk_buff *skb = (struct sk_buff *)
 		(unsigned long)packet->send_completion_tid;
 
-	if (!packet->part_of_skb)
-		kfree(packet);
+	kfree(packet);
 
 	if (skb)
 		dev_kfree_skb_any(skb);
@@ -388,9 +387,6 @@ static int netvsc_start_xmit(struct sk_buff *skb, struct net_device *net)
 	u32 net_trans_info;
 	u32 hash;
 	u32 skb_length = skb->len;
-	u32 head_room = skb_headroom(skb);
-	u32 pkt_sz;
-	struct hv_page_buffer page_buf[MAX_PAGE_BUFFER_COUNT];
 
 
 	/* We will atmost need two pages to describe the rndis
@@ -405,32 +401,24 @@ static int netvsc_start_xmit(struct sk_buff *skb, struct net_device *net)
 		return NETDEV_TX_OK;
 	}
 
-	pkt_sz = sizeof(struct hv_netvsc_packet) +
-			sizeof(struct rndis_message) +
-			NDIS_VLAN_PPI_SIZE + NDIS_CSUM_PPI_SIZE +
-			NDIS_LSO_PPI_SIZE + NDIS_HASH_PPI_SIZE;
+	/* Allocate a netvsc packet based on # of frags. */
+	packet = kzalloc(sizeof(struct hv_netvsc_packet) +
+			 (num_data_pgs * sizeof(struct hv_page_buffer)) +
+			 sizeof(struct rndis_message) +
+			 NDIS_VLAN_PPI_SIZE + NDIS_CSUM_PPI_SIZE +
+			 NDIS_LSO_PPI_SIZE + NDIS_HASH_PPI_SIZE, GFP_ATOMIC);
+	if (!packet) {
+		/* out of memory, drop packet */
+		netdev_err(net, "unable to allocate hv_netvsc_packet\n");
 
-	if (head_room < pkt_sz) {
-		packet = kmalloc(pkt_sz, GFP_ATOMIC);
-		if (!packet) {
-			/* out of memory, drop packet */
-			netdev_err(net, "unable to alloc hv_netvsc_packet\n");
-			dev_kfree_skb(skb);
-			net->stats.tx_dropped++;
-			return NETDEV_TX_OK;
-		}
-		packet->part_of_skb = false;
-	} else {
-		/* Use the headroom for building up the packet */
-		packet = (struct hv_netvsc_packet *)skb->head;
-		packet->part_of_skb = true;
+		dev_kfree_skb(skb);
+		net->stats.tx_dropped++;
+		return NETDEV_TX_OK;
 	}
 
-	packet->status = 0;
 	packet->xmit_more = skb->xmit_more;
 
 	packet->vlan_tci = skb->vlan_tci;
-	packet->page_buf = page_buf;
 
 	packet->q_idx = skb_get_queue_mapping(skb);
 
@@ -438,13 +426,8 @@ static int netvsc_start_xmit(struct sk_buff *skb, struct net_device *net)
 	packet->total_data_buflen = skb->len;
 
 	packet->rndis_msg = (struct rndis_message *)((unsigned long)packet +
-				sizeof(struct hv_netvsc_packet));
-
-	memset(packet->rndis_msg, 0, sizeof(struct rndis_message) +
-					NDIS_VLAN_PPI_SIZE +
-					NDIS_CSUM_PPI_SIZE +
-					NDIS_LSO_PPI_SIZE +
-					NDIS_HASH_PPI_SIZE);
+				sizeof(struct hv_netvsc_packet) +
+				(num_data_pgs * sizeof(struct hv_page_buffer)));
 
 	/* Set the completion routine */
 	packet->send_completion = netvsc_xmit_completion;
@@ -576,7 +559,7 @@ do_send:
 	rndis_msg->msg_len += rndis_msg_size;
 	packet->total_data_buflen = rndis_msg->msg_len;
 	packet->page_buf_cnt = init_page_array(rndis_msg, rndis_msg_size,
-					skb, &page_buf[0]);
+					skb, &packet->page_buf[0]);
 
 	ret = netvsc_send(net_device_ctx->device_ctx, packet);
 
@@ -585,8 +568,7 @@ drop:
 		net->stats.tx_bytes += skb_length;
 		net->stats.tx_packets++;
 	} else {
-		if (!packet->part_of_skb)
-			kfree(packet);
+		kfree(packet);
 		if (ret != -EAGAIN) {
 			dev_kfree_skb_any(skb);
 			net->stats.tx_dropped++;
@@ -820,17 +802,11 @@ static int netvsc_probe(struct hv_device *dev,
 	struct netvsc_device_info device_info;
 	struct netvsc_device *nvdev;
 	int ret;
-	u32 max_needed_headroom;
 
 	net = alloc_etherdev_mq(sizeof(struct net_device_context),
 				num_online_cpus());
 	if (!net)
 		return -ENOMEM;
-
-	max_needed_headroom = sizeof(struct hv_netvsc_packet) +
-				sizeof(struct rndis_message) +
-				NDIS_VLAN_PPI_SIZE + NDIS_CSUM_PPI_SIZE +
-				NDIS_LSO_PPI_SIZE + NDIS_HASH_PPI_SIZE;
 
 	netif_carrier_off(net);
 
@@ -849,13 +825,6 @@ static int netvsc_probe(struct hv_device *dev,
 
 	net->ethtool_ops = &ethtool_ops;
 	SET_NETDEV_DEV(net, &dev->device);
-
-	/*
-	 * Request additional head room in the skb.
-	 * We will use this space to build the rndis
-	 * heaser and other state we need to maintain.
-	 */
-	net->needed_headroom = max_needed_headroom;
 
 	/* Notify the netvsc driver of the new device */
 	device_info.ring_size = ring_size;
