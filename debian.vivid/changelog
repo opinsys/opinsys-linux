@@ -1,9 +1,389 @@
-linux-lts-vivid (3.19.0-28.30~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-29.31~14.04.1) trusty; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1490785
+    - LP: #1494093
+
+  [ Ander Conselvan de Oliveira ]
+
+  * SAUCE: i915_bpo: Set ddi_pll_sel in DP MST path
+    - LP: #1483320
+
+  [ Chris J Arges ]
+
+  * [Config] DEFAULT_IOSCHED="deadline" for ppc64el
+    - LP: #1469829
+
+  [ Chris Wilson ]
+
+  * SAUCE: i915_bpo: drm/i915: Flag the execlists context object as dirty
+    after every use
+    - LP: #1489501
+
+  [ Daniel Vetter ]
+
+  * SAUCE: i915_bpo: drm/i915: Only dither on 6bpc panels
+    - LP: #1489501
+
+  [ David Henningsson ]
+
+  * SAUCE: drm/i915: Add audio pin sense / ELD callback
+    - LP: #1490895
+  * SAUCE: drm/i915: Call audio pin/ELD notify function
+    - LP: #1490895
+  * SAUCE: ubuntu/i915: Call audio pin/ELD notify function
+    - LP: #1490895
+  * SAUCE: ALSA: hda - Add "hdac_acomp" global variable
+    - LP: #1490895
+  * SAUCE: ALSA: hda - allow codecs to access the i915 pin/ELD callback
+    - LP: #1490895
+  * SAUCE: ALSA: hda - Wake the codec up on pin/ELD notify events
+    - LP: #1490895
+
+  [ Jani Nikula ]
+
+  * SAUCE: i915_bpo: Revert "drm/i915: Allow parsing of variable size child
+    device entries from VBT"
+    - LP: #1489501
+
+  [ Maarten Lankhorst ]
+
+  * SAUCE: i915_bpo: drm/i915: calculate primary visibility changes instead
+    of calling from set_config
+    - LP: #1489501
+  * SAUCE: i915_bpo: drm/i915: Commit planes on each crtc separately.
+    - LP: #1489501
+
+  [ Thulasimani,Sivakumar ]
+
+  * SAUCE: i915_bpo: Revert "drm/i915: Add eDP intermediate frequencies for
+    CHV"
+    - LP: #1489501
+  * SAUCE: i915_bpo: drm/i915: remove HBR2 from chv supported list
+    - LP: #1489501
+  * SAUCE: i915_bpo: drm/i915: Avoid TP3 on CHV
+    - LP: #1489501
+
+  [ Timo Aaltonen ]
+
+  * Revert "SAUCE: i915_bpo: drm/i915: Allow parsing of variable size child
+    device entries from VBT, addendum v2"
+    - LP: #1489501
+  * SAUCE: Migrate Broadwell to i915_bpo.
+    - LP: #1483320
+
+  [ Upstream Kernel Changes ]
+
+  * tcp: fix recv with flags MSG_WAITALL | MSG_PEEK
+    - LP: #1486146
+  * powerpc/powernv: Fix the overflow of OPAL message notifiers head array
+    - LP: #1487085
+  * xhci: call BIOS workaround to enable runtime suspend on Intel Braswell
+    - LP: #1489292
+  * PM / QoS: Make it possible to expose device latency tolerance to
+    userspace
+    - LP: #1488395
+  * ACPI / PM: Attach ACPI power domain only once
+    - LP: #1488395
+  * Driver core: wakeup the parent device before trying probe
+    - LP: #1488395
+  * klist: implement klist_prev()
+    - LP: #1488395
+  * driver core: implement device_for_each_child_reverse()
+    - LP: #1488395
+  * mfd: make mfd_remove_devices() iterate in reverse order
+    - LP: #1488395
+  * mfd: Add support for Intel Sunrisepoint LPSS devices
+    - LP: #1488395
+  * md: use kzalloc() when bitmap is disabled
+    - LP: #1493319
+  * regulator: s2mps11: Fix GPIO suspend enable shift wrapping bug
+    - LP: #1493319
+  * iwlwifi: mvm: fix antenna selection when BT is active
+    - LP: #1493319
+  * HID: cp2112: fix to force single data-report reply
+    - LP: #1493319
+  * ata: pmp: add quirk for Marvell 4140 SATA PMP
+    - LP: #1493319
+  * libata: add ATA_HORKAGE_BROKEN_FPDMA_AA quirk for HP 250GB SATA disk
+    VB0250EAVER
+    - LP: #1493319
+  * efi: Handle memory error structures produced based on old versions of
+    standard
+    - LP: #1493319
+  * phy: berlin-usb: fix divider for BG2CD
+    - LP: #1493319
+  * libata: add ATA_HORKAGE_NOTRIM
+    - LP: #1493319
+  * libata: force disable trim for SuperSSpeed S238
+    - LP: #1493319
+  * libata: add ATA_HORKAGE_MAX_SEC_1024 to revert back to previous
+    max_sectors limit
+    - LP: #1493319
+  * libata: increase the timeout when setting transfer mode
+    - LP: #1493319
+  * can: mcp251x: fix resume when device is down
+    - LP: #1493319
+  * libata: Do not blacklist M510DC
+    - LP: #1493319
+  * mac80211: clear subdir_stations when removing debugfs
+    - LP: #1493319
+  * ALSA: pcm: Fix lockdep warning with nonatomic PCM ops
+    - LP: #1493319
+  * iio: adc: vf610: fix the adc register read fail issue
+    - LP: #1493319
+  * ALSA: hda - Add headset mic support for Acer Aspire V5-573G
+    - LP: #1493319
+  * Subject: pinctrl: imx1-core: Fix debug output in .pin_config_set
+    callback
+    - LP: #1493319
+  * ALSA: hda: add new AMD PCI IDs with proper driver caps
+    - LP: #1493319
+  * x86/mm: Add parenthesis for TLB tracepoint size calculation
+    - LP: #1493319
+  * x86/mpx: Do not set ->vm_ops on MPX VMAs
+    - LP: #1493319
+  * net: mvneta: fix refilling for Rx DMA buffers
+    - LP: #1493319
+  * ALSA: hda - Add new GPU codec ID 0x10de007d to snd-hda
+    - LP: #1493319
+  * drm/i915: Use two 32bit reads for select 64bit REG_READ ioctls
+    - LP: #1493319
+  * md/raid10: always set reshape_safe when initializing reshape_position.
+    - LP: #1493319
+  * ALSA: hda - Add headset mic pin quirk for a Dell device
+    - LP: #1476987, #1493319
+  * drm: Stop resetting connector state to unknown
+    - LP: #1493319
+  * usb: dwc3: Reset the transfer resource index on SET_INTERFACE
+    - LP: #1493319
+  * usb: xhci: Bugfix for NULL pointer deference in xhci_endpoint_init()
+    function
+    - LP: #1493319
+  * xhci: Calculate old endpoints correctly on device reset
+    - LP: #1493319
+  * xhci: report U3 when link is in resume state
+    - LP: #1493319
+  * xhci: prevent bus_suspend if SS port resuming in phase 1
+    - LP: #1493319
+  * xhci: do not report PLC when link is in internal resume state
+    - LP: #1493319
+  * usb: core: lpm: set lpm_capable for root hub device
+    - LP: #1493319
+  * USB: OHCI: Fix race between ED unlink and URB submission
+    - LP: #1493319
+  * usb-storage: ignore ZTE MF 823 card reader in mode 0x1225
+    - LP: #1493319
+  * blkcg: fix gendisk reference leak in blkg_conf_prep()
+    - LP: #1493319
+  * mei: prevent unloading mei hw modules while the device is opened.
+    - LP: #1493319
+  * iommu/vt-d: Fix VM domain ID leak
+    - LP: #1493319
+  * tile: use free_bootmem_late() for initrd
+    - LP: #1493319
+  * Input: usbtouchscreen - avoid unresponsive TSC-30 touch screen
+    - LP: #1493319
+  * block: Do a full clone when splitting discard bios
+    - LP: #1493319
+  * md/raid1: fix test for 'was read error from last working device'.
+    - LP: #1493319
+  * mmc: omap_hsmmc: Fix DTO and DCRC handling
+    - LP: #1493319
+  * spi: imx: Fix small DMA transfers
+    - LP: #1493319
+  * ftrace: Fix breakage of set_ftrace_pid
+    - LP: #1493319
+  * isdn/gigaset: reset tty->receive_room when attaching ser_gigaset
+    - LP: #1493319
+  * sched: cls_bpf: fix panic on filter replace
+    - LP: #1493319
+  * net_sched: fix a use-after-free in sfq
+    - LP: #1493319
+  * serial: core: Fix crashes while echoing when closing
+    - LP: #1493319
+  * mmc: sdhci-pxav3: fix platform_data is not initialized
+    - LP: #1493319
+  * mmc: block: Add missing mmc_blk_put() in power_ro_lock_show()
+    - LP: #1493319
+  * mmc: sdhci-esdhc: Make 8BIT bus work
+    - LP: #1493319
+  * bonding: correctly handle bonding type change on enslave failure
+    - LP: #1493319
+  * mmc: sdhci check parameters before call dma_free_coherent
+    - LP: #1493319
+  * net: Clone skb before setting peeked flag
+    - LP: #1493319
+  * mtd: nand: Fix NAND_USE_BOUNCE_BUFFER flag conflict
+    - LP: #1493319
+  * bridge: mdb: fix double add notification
+    - LP: #1493319
+  * usb: gadget: mv_udc_core: fix phy_regs I/O memory leak
+    - LP: #1493319
+  * net/xen-netback: off by one in BUG_ON() condition
+    - LP: #1493319
+  * sched: cls_flow: fix panic on filter replace
+    - LP: #1493319
+  * ipvlan: use rcu_deference_bh() in ipvlan_queue_xmit()
+    - LP: #1493319
+  * inet: frags: fix defragmented packet's IP header for af_packet
+    - LP: #1493319
+  * bonding: fix destruction of bond with devices different from
+    arphrd_ether
+    - LP: #1493319
+  * fq_codel: fix a use-after-free
+    - LP: #1493319
+  * ASoC: dapm: Lock during userspace access
+    - LP: #1493319
+  * ASoC: dapm: Don't add prefix to widget stream name
+    - LP: #1493319
+  * ASoC: ssm4567: Keep TDM_BCLKS in ssm4567_set_dai_fmt
+    - LP: #1493319
+  * ARM: OMAP2+: hwmod: Fix _wait_target_ready() for hwmods without sysc
+    - LP: #1493319
+  * ASoC: pcm1681: Fix setting de-emphasis sampling rate selection
+    - LP: #1493319
+  * qla2xxx: Fix hardware lock/unlock issue causing kernel panic.
+    - LP: #1493319
+  * qla2xxx: release request queue reservation.
+    - LP: #1493319
+  * qla2xxx: Remove msleep in qlt_send_term_exchange
+    - LP: #1493319
+  * qla2xxx: fix command initialization in target mode.
+    - LP: #1493319
+  * qla2xxx: kill sessions/log out initiator on RSCN and port down events
+    - LP: #1493319
+  * qla2xxx: cleanup cmd in qla workqueue before processing TMR
+    - LP: #1493319
+  * qla2xxx: delay plogi/prli ack until existing sessions are deleted
+    - LP: #1493319
+  * qla2xxx: Abort stale cmds on qla_tgt_wq when plogi arrives
+    - LP: #1493319
+  * qla2xxx: added sess generations to detect RSCN update races
+    - LP: #1493319
+  * qla2xxx: disable scsi_transport_fc registration in target mode
+    - LP: #1493319
+  * qla2xxx: drop cmds/tmrs arrived while session is being deleted
+    - LP: #1493319
+  * qla2xxx: terminate exchange when command is aborted by LIO
+    - LP: #1493319
+  * iscsi-target: Fix use-after-free during TPG session shutdown
+    - LP: #1493319
+  * iscsi-target: Convert iscsi_thread_set usage to kthread.h
+    - LP: #1493319
+  * iscsi-target: Fix iscsit_start_kthreads failure OOPs
+    - LP: #1493319
+  * iscsi-target: Fix iser explicit logout TX kthread leak
+    - LP: #1493319
+  * ARM: dts: i.MX35: Fix can support.
+    - LP: #1493319
+  * ALSA: hda - Apply fixup for another Toshiba Satellite S50D
+    - LP: #1493319
+  * drm/nouveau/fbcon/nv11-: correctly account for ring space usage
+    - LP: #1493319
+  * vhost: actually track log eventfd file
+    - LP: #1493319
+  * arm64/efi: map the entire UEFI vendor string before reading it
+    - LP: #1493319
+  * xfs: remote attribute headers contain an invalid LSN
+    - LP: #1493319
+  * xfs: remote attributes need to be considered data
+    - LP: #1493319
+  * ALSA: hda - Apply a fixup to Dell Vostro 5480
+    - LP: #1493319
+  * ALSA: usb-audio: add dB range mapping for some devices
+    - LP: #1493319
+  * drm/i915: Replace WARN inside I915_READ64_2x32 with retry loop
+    - LP: #1493319
+  * drm/radeon/combios: add some validation of lvds values
+    - LP: #1493319
+  * drm/i915: Declare the swizzling unknown for L-shaped configurations
+    - LP: #1493319
+  * x86/efi: Use all 64 bit of efi_memmap in setup_e820()
+    - LP: #1493319
+  * efi: Check for NULL efi kernel parameters
+    - LP: #1493319
+  * ipr: Fix locking for unit attention handling
+    - LP: #1493319
+  * ipr: Fix incorrect trace indexing
+    - LP: #1493319
+  * ipr: Fix invalid array indexing for HRRQ
+    - LP: #1493319
+  * scsi: fix memory leak with scsi-mq
+    - LP: #1493319
+  * ALSA: hda - Fix MacBook Pro 5,2 quirk
+    - LP: #1493319
+  * x86/xen: Probe target addresses in set_aliased_prot() before the
+    hypercall
+    - LP: #1493319
+  * packet: tpacket_snd(): fix signed/unsigned comparison
+    - LP: #1493319
+  * inet: frag: don't re-use chainlist for evictor
+    - LP: #1493319
+  * bridge: netlink: fix slave_changelink/br_setport race conditions
+    - LP: #1493319
+  * netfilter: ctnetlink: put back references to master ct and expect
+    objects
+    - LP: #1493319
+  * NFS: Don't revalidate the mapping if both size and change attr are up
+    to date
+    - LP: #1493319
+  * bridge: mdb: fix delmdb state in the notification
+    - LP: #1493319
+  * ipvs: skb_orphan in case of forwarding
+    - LP: #1493319
+  * avr32: handle NULL as a valid clock object
+    - LP: #1493319
+  * ipvs: fix crash with sync protocol v0 and FTP
+    - LP: #1493319
+  * act_pedit: check binding before calling tcf_hash_release()
+    - LP: #1493319
+  * netfilter: nf_conntrack: Support expectations in different zones
+    - LP: #1493319
+  * ipvs: do not use random local source address for tunnels
+    - LP: #1493319
+  * ALSA: hda - fix cs4210_spdif_automute()
+    - LP: #1493319
+  * niu: don't count tx error twice in case of headroom realloc fails
+    - LP: #1493319
+  * net: sched: fix refcount imbalance in actions
+    - LP: #1493319
+  * net/mlx4_core: Fix wrong index in propagating port change event to VFs
+    - LP: #1493319
+  * packet: missing dev_put() in packet_do_bind()
+    - LP: #1493319
+  * ipvs: fix crash if scheduler is changed
+    - LP: #1493319
+  * Linux 3.19.8-ckt6
+    - LP: #1493319
+
+  [ Ville Syrjälä ]
+
+  * SAUCE: i915_bpo: drm/i915: Don't use link_bw for PLL setup
+    - LP: #1483320
+  * SAUCE: i915_bpo: drm/i915: Split atomic wm update to pre and post
+    variants
+    - LP: #1493746
+
+  [ Wen Xiong ]
+
+  * SAUCE: ipr: Byte swapping for device_id attribute in sysfs
+    - LP: #1453892
+
+  [ Wen-chien Jesse Sung ]
+
+  * [Config] MFD_INTEL_LPSS/MFD_INTEL_LPSS_ACPI/MFD_INTEL_LPSS_PCI=m
+    - LP: #1488395
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 10 Sep 2015 09:13:15 +0100
+
+linux (3.19.0-28.30) vivid; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1490606
 
   [ Gary Wang ]
 
@@ -16,7 +396,7 @@ linux-lts-vivid (3.19.0-28.30~14.04.1) trusty; urgency=low
   * Revert "SAUCE: i915_bpo: drm/i915/skl: DDI-E and DDI-A shares 4 lanes."
     - LP: #1490038
 
- -- Luis Henriques <luis.henriques@canonical.com>  Tue, 01 Sep 2015 10:11:04 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 31 Aug 2015 16:04:31 +0100
 
 linux (3.19.0-27.29) vivid; urgency=low
 
