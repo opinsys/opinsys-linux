@@ -617,6 +617,11 @@ void symsrc__destroy(struct symsrc *ss)
 	close(ss->fd);
 }
 
+bool __weak elf__needs_adjust_symbols(GElf_Ehdr ehdr)
+{
+	return ehdr.e_type == ET_EXEC || ehdr.e_type == ET_REL;
+}
+
 int symsrc__init(struct symsrc *ss, struct dso *dso, const char *name,
 		 enum dso_binary_type type)
 {
@@ -686,8 +691,7 @@ int symsrc__init(struct symsrc *ss, struct dso *dso, const char *name,
 						     ".gnu.prelink_undo",
 						     NULL) != NULL);
 	} else {
-		ss->adjust_symbols = ehdr.e_type == ET_EXEC ||
-				     ehdr.e_type == ET_REL;
+		ss->adjust_symbols = elf__needs_adjust_symbols(ehdr);
 	}
 
 	ss->name   = strdup(name);
