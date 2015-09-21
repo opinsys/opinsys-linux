@@ -11922,11 +11922,6 @@ EXPORT_SYMBOL_GPL drivers/mfd/88pm80x 0x9a7f87ef	pm80x_pm_ops
 EXPORT_SYMBOL_GPL drivers/mfd/88pm80x 0xd99fd720	pm80x_deinit
 EXPORT_SYMBOL_GPL drivers/mfd/88pm80x 0xdf0db9d2	pm80x_init
 EXPORT_SYMBOL_GPL drivers/mfd/88pm80x 0xf4a39fa4	pm80x_regmap_config
-EXPORT_SYMBOL_GPL drivers/mfd/intel-lpss 0x0d026833	intel_lpss_prepare
-EXPORT_SYMBOL_GPL drivers/mfd/intel-lpss 0xb68baa03	intel_lpss_resume
-EXPORT_SYMBOL_GPL drivers/mfd/intel-lpss 0xbadc8861	intel_lpss_probe
-EXPORT_SYMBOL_GPL drivers/mfd/intel-lpss 0xc1a425c7	intel_lpss_remove
-EXPORT_SYMBOL_GPL drivers/mfd/intel-lpss 0xe601b955	intel_lpss_suspend
 EXPORT_SYMBOL_GPL drivers/mfd/kempld-core 0x031faeba	kempld_get_mutex
 EXPORT_SYMBOL_GPL drivers/mfd/kempld-core 0x468af027	kempld_write8
 EXPORT_SYMBOL_GPL drivers/mfd/kempld-core 0x6bd3f5bb	kempld_read8

@@ -1,3 +1,16 @@
+linux (3.19.0-30.33) vivid; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1498065
+  * Revert "[Config]
+    MFD_INTEL_LPSS/MFD_INTEL_LPSS_ACPI/MFD_INTEL_LPSS_PCI=m"
+    - LP: #1498137
+  * [Config] Disable the MFD_INTEL_LPSS* driver
+
+ -- Brad Figg <brad.figg@canonical.com>  Mon, 21 Sep 2015 11:57:20 -0700
+
 linux (3.19.0-30.32) vivid; urgency=low
 
   [ Brad Figg ]
