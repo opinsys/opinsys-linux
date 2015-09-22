@@ -1,9 +1,36 @@
-linux-lts-vivid (3.19.0-29.31~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-30.33~14.04.1) trusty; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1498307
+  * Revert "[Config]
+    MFD_INTEL_LPSS/MFD_INTEL_LPSS_ACPI/MFD_INTEL_LPSS_PCI=m"
+    - LP: #1498137
+  * [Config] Disable the MFD_INTEL_LPSS* driver
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 22 Sep 2015 09:51:45 +0100
+
+linux (3.19.0-30.32) vivid; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1498065
+
+  [ Upstream Kernel Changes ]
+
+  * net: Fix skb_set_peeked use-after-free bug
+    - LP: #1497184
+
+ -- Brad Figg <brad.figg@canonical.com>  Mon, 21 Sep 2015 08:44:41 -0700
+
+linux (3.19.0-29.31) vivid; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1494093
+    - LP: #1493902
 
   [ Ander Conselvan de Oliveira ]
 
@@ -376,7 +403,7 @@ linux-lts-vivid (3.19.0-29.31~14.04.1) trusty; urgency=low
   * [Config] MFD_INTEL_LPSS/MFD_INTEL_LPSS_ACPI/MFD_INTEL_LPSS_PCI=m
     - LP: #1488395
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 10 Sep 2015 09:13:15 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 09 Sep 2015 16:12:53 +0100
 
 linux (3.19.0-28.30) vivid; urgency=low
 
