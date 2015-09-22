@@ -884,7 +884,7 @@ static int ovs_flow_cmd_new(struct sk_buff *skb, struct genl_info *info)
 	if (error)
 		goto err_kfree_flow;
 
-	ovs_flow_mask_key(&new_flow->key, &new_flow->unmasked_key, &mask);
+	ovs_flow_mask_key(&new_flow->key, &new_flow->unmasked_key, true, &mask);
 
 	/* Validate actions. */
 	error = ovs_nla_copy_actions(a[OVS_FLOW_ATTR_ACTIONS], &new_flow->key,
@@ -993,7 +993,7 @@ static struct sw_flow_actions *get_flow_actions(const struct nlattr *a,
 	struct sw_flow_key masked_key;
 	int error;
 
-	ovs_flow_mask_key(&masked_key, key, mask);
+	ovs_flow_mask_key(&masked_key, key, true, mask);
 	error = ovs_nla_copy_actions(a, &masked_key, &acts, log);
 	if (error) {
 		OVS_NLERR(log,
