@@ -1,4 +1,31 @@
-linux-lts-wily (4.2.0-10.12~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-11.13~14.04.1) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1498170
+  * [Config] updateconfigs, removed CONFIG_KVM_ARM_MAX_VCPUS
+  * rebase to v4.2.1
+
+  [ Upstream Kernel Changes ]
+
+  * powercap / RAPL: Add support for Skylake H/S
+    - LP: #1398269
+  * powercap / RAPL: Add support for Broadwell-H
+    - LP: #1398269
+  * powercap / RAPL: disable the 2nd power limit properly
+    - LP: #1398269
+  * thermal/powerclamp: add cpu id for Skylake u/y
+  * thermal/powerclamp: add cpu id for denlow platform
+  * arm/arm64: KVM: Remove 'config KVM_ARM_MAX_VCPUS'
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v4.2.1
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 16 Sep 2015 06:55:41 -0600
+
+linux (4.2.0-10.12) wily; urgency=low
 
   [ Tim Gardner ]
 
