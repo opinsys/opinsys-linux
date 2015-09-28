@@ -5988,6 +5988,7 @@ EXPORT_SYMBOL vmlinux 0x674c8642	poll_schedule_timeout
 EXPORT_SYMBOL vmlinux 0x6754da37	vlan_dev_real_dev
 EXPORT_SYMBOL vmlinux 0x675b8f61	param_get_string
 EXPORT_SYMBOL vmlinux 0x676a564c	kern_path
+EXPORT_SYMBOL vmlinux 0x678f4016	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x67989db9	simple_unlink
 EXPORT_SYMBOL vmlinux 0x679ab048	padata_register_cpumask_notifier
 EXPORT_SYMBOL vmlinux 0x67b1bb6c	vfs_writev
@@ -6622,7 +6623,6 @@ EXPORT_SYMBOL vmlinux 0x8e603d75	__skb_gso_segment
 EXPORT_SYMBOL vmlinux 0x8e7c267b	devm_backlight_device_register
 EXPORT_SYMBOL vmlinux 0x8e912ff5	inet_rtx_syn_ack
 EXPORT_SYMBOL vmlinux 0x8e91ff97	blk_init_tags
-EXPORT_SYMBOL vmlinux 0x8ea7bdcb	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x8eb7a058	module_layout
 EXPORT_SYMBOL vmlinux 0x8ec04552	_raw_spin_trylock_bh
 EXPORT_SYMBOL vmlinux 0x8eef7083	inet_stream_connect

@@ -8852,7 +8852,6 @@ EXPORT_SYMBOL vmlinux 0xc99e2a55	twl_rev
 EXPORT_SYMBOL vmlinux 0xc9a5c83e	__cleancache_init_fs
 EXPORT_SYMBOL vmlinux 0xc9c5b43c	bio_integrity_advance
 EXPORT_SYMBOL vmlinux 0xc9e61380	cdev_add
-EXPORT_SYMBOL vmlinux 0xc9ee4dae	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xca093d94	flock_lock_file_wait
 EXPORT_SYMBOL vmlinux 0xca0f4667	readlink_copy
 EXPORT_SYMBOL vmlinux 0xca23a17a	scsi_reset_provider
@@ -9345,6 +9344,7 @@ EXPORT_SYMBOL vmlinux 0xe9c16ebe	of_get_next_child
 EXPORT_SYMBOL vmlinux 0xe9dc51c9	mem_section
 EXPORT_SYMBOL vmlinux 0xe9e25e3f	lockref_put_or_lock
 EXPORT_SYMBOL vmlinux 0xe9ed38a4	netdev_all_upper_get_next_dev_rcu
+EXPORT_SYMBOL vmlinux 0xe9f56c1b	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xe9f7149c	zlib_deflate_workspacesize
 EXPORT_SYMBOL vmlinux 0xe9fac23c	__skb_recv_datagram
 EXPORT_SYMBOL vmlinux 0xea054b22	nla_policy_len

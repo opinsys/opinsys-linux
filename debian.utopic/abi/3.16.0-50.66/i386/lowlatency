@@ -6327,7 +6327,6 @@ EXPORT_SYMBOL vmlinux 0x13f716ac	fb_get_mode
 EXPORT_SYMBOL vmlinux 0x13ffb673	simple_dentry_operations
 EXPORT_SYMBOL vmlinux 0x14038860	ip_options_rcv_srr
 EXPORT_SYMBOL vmlinux 0x1420b379	kstrtou16_from_user
-EXPORT_SYMBOL vmlinux 0x143b169e	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x14413a1b	vfs_rename
 EXPORT_SYMBOL vmlinux 0x144345bd	mmc_detect_card_removed
 EXPORT_SYMBOL vmlinux 0x1472f87d	i2c_verify_client
@@ -8631,6 +8630,7 @@ EXPORT_SYMBOL vmlinux 0x98b3afee	phy_device_register
 EXPORT_SYMBOL vmlinux 0x98db4895	devm_gpio_request
 EXPORT_SYMBOL vmlinux 0x98e19100	udp_seq_open
 EXPORT_SYMBOL vmlinux 0x98f05b8f	generic_splice_sendpage
+EXPORT_SYMBOL vmlinux 0x98f50a65	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x98fa21b0	mod_timer_pinned
 EXPORT_SYMBOL vmlinux 0x991ff7f5	f_setown
 EXPORT_SYMBOL vmlinux 0x99233c32	cpu_core_map

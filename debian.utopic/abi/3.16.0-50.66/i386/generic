@@ -8361,7 +8361,6 @@ EXPORT_SYMBOL vmlinux 0x8bb0fba8	nf_log_set
 EXPORT_SYMBOL vmlinux 0x8bc488dd	d_add_ci
 EXPORT_SYMBOL vmlinux 0x8bcdbba1	unregister_md_personality
 EXPORT_SYMBOL vmlinux 0x8bd14e28	kmem_cache_create
-EXPORT_SYMBOL vmlinux 0x8bd24c42	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x8c096718	get_io_context
 EXPORT_SYMBOL vmlinux 0x8c183cbe	iowrite16
 EXPORT_SYMBOL vmlinux 0x8c350a6f	free_buffer_head
@@ -10299,6 +10298,7 @@ EXPORT_SYMBOL vmlinux 0xfdea4289	rps_may_expire_flow
 EXPORT_SYMBOL vmlinux 0xfdfc0b3b	fiemap_fill_next_extent
 EXPORT_SYMBOL vmlinux 0xfe029963	unregister_inetaddr_notifier
 EXPORT_SYMBOL vmlinux 0xfe047ce6	acpi_enter_sleep_state
+EXPORT_SYMBOL vmlinux 0xfe23b6c0	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xfe462d08	swiotlb_sync_sg_for_cpu
 EXPORT_SYMBOL vmlinux 0xfe5d4bb2	sys_tz
 EXPORT_SYMBOL vmlinux 0xfe7c4287	nr_cpu_ids

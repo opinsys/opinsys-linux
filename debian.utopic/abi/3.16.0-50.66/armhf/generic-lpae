@@ -6335,6 +6335,7 @@ EXPORT_SYMBOL vmlinux 0x2be0f12d	dql_completed
 EXPORT_SYMBOL vmlinux 0x2be71000	dma_async_device_unregister
 EXPORT_SYMBOL vmlinux 0x2bfd462a	bitmap_unplug
 EXPORT_SYMBOL vmlinux 0x2c089532	migrate_page
+EXPORT_SYMBOL vmlinux 0x2c0c28ef	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x2c14323a	kstrtol_from_user
 EXPORT_SYMBOL vmlinux 0x2c143d60	tcf_hash_insert
 EXPORT_SYMBOL vmlinux 0x2c1576b2	dma_release_from_coherent
@@ -9761,7 +9762,6 @@ EXPORT_SYMBOL vmlinux 0xf46b5583	dma_declare_coherent_memory
 EXPORT_SYMBOL vmlinux 0xf46c3e64	twl6040_get_pll
 EXPORT_SYMBOL vmlinux 0xf473ffaf	down
 EXPORT_SYMBOL vmlinux 0xf4796700	fb_find_mode
-EXPORT_SYMBOL vmlinux 0xf4982fe0	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xf4a7fc6d	omapdss_compat_init
 EXPORT_SYMBOL vmlinux 0xf4bdbeb9	__frontswap_invalidate_area
 EXPORT_SYMBOL vmlinux 0xf4c6efdd	kmem_cache_free

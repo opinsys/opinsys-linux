@@ -6733,7 +6733,6 @@ EXPORT_SYMBOL vmlinux 0x33ba5cd4	param_ops_bool
 EXPORT_SYMBOL vmlinux 0x33c7435c	prandom_u32_state
 EXPORT_SYMBOL vmlinux 0x33cfa666	genphy_config_aneg
 EXPORT_SYMBOL vmlinux 0x33f0768c	cpufreq_quick_get_max
-EXPORT_SYMBOL vmlinux 0x33fb97fd	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x33fcf44a	__kfifo_out_r
 EXPORT_SYMBOL vmlinux 0x34144d5f	clk_get
 EXPORT_SYMBOL vmlinux 0x34184afe	current_kernel_time
@@ -8200,6 +8199,7 @@ EXPORT_SYMBOL vmlinux 0x894d6924	inode_reclaim_rsv_space
 EXPORT_SYMBOL vmlinux 0x89647bd7	mntget
 EXPORT_SYMBOL vmlinux 0x897473df	mktime
 EXPORT_SYMBOL vmlinux 0x899f36ca	netdev_lower_get_next
+EXPORT_SYMBOL vmlinux 0x899f7e8d	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x89afe34e	__kfifo_dma_in_prepare
 EXPORT_SYMBOL vmlinux 0x89b9f796	set_pages_wb
 EXPORT_SYMBOL vmlinux 0x89c24ae8	tcp_md5_hash_header

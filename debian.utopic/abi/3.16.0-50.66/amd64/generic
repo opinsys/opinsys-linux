@@ -6827,7 +6827,6 @@ EXPORT_SYMBOL vmlinux 0x3a3d543f	security_file_permission
 EXPORT_SYMBOL vmlinux 0x3a45b724	__break_lease
 EXPORT_SYMBOL vmlinux 0x3a53feae	brioctl_set
 EXPORT_SYMBOL vmlinux 0x3a7348db	scsi_is_target_device
-EXPORT_SYMBOL vmlinux 0x3a9723d9	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x3a9b6fb9	blk_unregister_region
 EXPORT_SYMBOL vmlinux 0x3aa2bea0	tcf_register_action
 EXPORT_SYMBOL vmlinux 0x3aa4b5ee	dev_uc_sync_multiple
@@ -9355,6 +9354,7 @@ EXPORT_SYMBOL vmlinux 0xce8380aa	unregister_cdrom
 EXPORT_SYMBOL vmlinux 0xce8d9d7f	xfrm_input_register_afinfo
 EXPORT_SYMBOL vmlinux 0xceab0311	strchrnul
 EXPORT_SYMBOL vmlinux 0xceae504f	cmdline_parts_free
+EXPORT_SYMBOL vmlinux 0xceaf2505	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xcede9eab	xfrm_register_mode
 EXPORT_SYMBOL vmlinux 0xcef51982	kstrtou16
 EXPORT_SYMBOL vmlinux 0xcefcd99a	serial8250_unregister_port

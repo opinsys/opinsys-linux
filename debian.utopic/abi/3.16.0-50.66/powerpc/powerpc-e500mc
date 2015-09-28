@@ -6635,7 +6635,6 @@ EXPORT_SYMBOL vmlinux 0x3337f44c	phy_drivers_unregister
 EXPORT_SYMBOL vmlinux 0x3379c319	mb_cache_create
 EXPORT_SYMBOL vmlinux 0x337cce46	put_cmsg
 EXPORT_SYMBOL vmlinux 0x337dd3f2	dm_put_device
-EXPORT_SYMBOL vmlinux 0x33b1c0da	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x33b647c7	block_page_mkwrite
 EXPORT_SYMBOL vmlinux 0x33b84f74	copy_page
 EXPORT_SYMBOL vmlinux 0x33ba5cd4	param_ops_bool
@@ -7742,6 +7741,7 @@ EXPORT_SYMBOL vmlinux 0x777f1779	iov_iter_fault_in_readable
 EXPORT_SYMBOL vmlinux 0x7793ffe2	__sk_mem_schedule
 EXPORT_SYMBOL vmlinux 0x7799326c	kmap_to_page
 EXPORT_SYMBOL vmlinux 0x779a18af	kstrtoll
+EXPORT_SYMBOL vmlinux 0x77abf7f9	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x77b851c4	cacheable_memzero
 EXPORT_SYMBOL vmlinux 0x77bc13a0	strim
 EXPORT_SYMBOL vmlinux 0x77d4806f	tty_chars_in_buffer

@@ -7648,7 +7648,6 @@ EXPORT_SYMBOL vmlinux 0x73bcb6d1	__skb_recv_datagram
 EXPORT_SYMBOL vmlinux 0x73d06a43	of_find_backlight_by_node
 EXPORT_SYMBOL vmlinux 0x73d4f56a	skb_add_rx_frag
 EXPORT_SYMBOL vmlinux 0x73d5fb57	tcf_em_tree_validate
-EXPORT_SYMBOL vmlinux 0x73dc1fcc	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x73dece66	padata_set_cpumask
 EXPORT_SYMBOL vmlinux 0x73e20c1c	strlcpy
 EXPORT_SYMBOL vmlinux 0x73e3112c	serio_unregister_child_port
@@ -9593,6 +9592,7 @@ EXPORT_SYMBOL vmlinux 0xe57e876e	scsi_cmd_ioctl
 EXPORT_SYMBOL vmlinux 0xe5829f80	scsi_is_sdev_device
 EXPORT_SYMBOL vmlinux 0xe582f13f	get_mem_type
 EXPORT_SYMBOL vmlinux 0xe5867808	dlci_ioctl_set
+EXPORT_SYMBOL vmlinux 0xe58bf914	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xe5c78a99	do_blank_screen
 EXPORT_SYMBOL vmlinux 0xe5d4b0a8	uart_register_driver
 EXPORT_SYMBOL vmlinux 0xe5e1cddb	__wait_on_buffer

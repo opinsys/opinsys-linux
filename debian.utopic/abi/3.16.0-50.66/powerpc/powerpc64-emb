@@ -6644,6 +6644,7 @@ EXPORT_SYMBOL vmlinux 0x35a5b62b	padata_add_cpu
 EXPORT_SYMBOL vmlinux 0x35c32767	xor_altivec_2
 EXPORT_SYMBOL vmlinux 0x35fe65a8	generic_pipe_buf_steal
 EXPORT_SYMBOL vmlinux 0x3601cdd0	console_stop
+EXPORT_SYMBOL vmlinux 0x360b701f	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x3618cb2d	ida_destroy
 EXPORT_SYMBOL vmlinux 0x3630075e	dev_alert
 EXPORT_SYMBOL vmlinux 0x36404ff6	pci_back_from_sleep
@@ -9873,7 +9874,6 @@ EXPORT_SYMBOL vmlinux 0xfded48ed	enable_kernel_fp
 EXPORT_SYMBOL vmlinux 0xfdfc0b3b	fiemap_fill_next_extent
 EXPORT_SYMBOL vmlinux 0xfe029963	unregister_inetaddr_notifier
 EXPORT_SYMBOL vmlinux 0xfe2be4da	__generic_file_write_iter
-EXPORT_SYMBOL vmlinux 0xfe34df12	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xfe35aa4a	percpu_counter_destroy
 EXPORT_SYMBOL vmlinux 0xfe51ed89	md_integrity_register
 EXPORT_SYMBOL vmlinux 0xfe5d4bb2	sys_tz

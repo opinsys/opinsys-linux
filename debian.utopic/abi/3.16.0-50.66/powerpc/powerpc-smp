@@ -6792,6 +6792,7 @@ EXPORT_SYMBOL vmlinux 0x404ee9b9	bio_integrity_add_page
 EXPORT_SYMBOL vmlinux 0x4059792f	print_hex_dump
 EXPORT_SYMBOL vmlinux 0x405c1144	get_seconds
 EXPORT_SYMBOL vmlinux 0x406b0453	simple_write_end
+EXPORT_SYMBOL vmlinux 0x40933f9f	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x40973662	sysctl_udp_mem
 EXPORT_SYMBOL vmlinux 0x40a27c37	scsi_dev_info_remove_list
 EXPORT_SYMBOL vmlinux 0x40a2d1dd	dm_table_get_size
@@ -9245,7 +9246,6 @@ EXPORT_SYMBOL vmlinux 0xd438221a	jbd2_journal_set_triggers
 EXPORT_SYMBOL vmlinux 0xd43a6ce8	inet_csk_delete_keepalive_timer
 EXPORT_SYMBOL vmlinux 0xd46c458a	iter_file_splice_write
 EXPORT_SYMBOL vmlinux 0xd49402fe	write_cache_pages
-EXPORT_SYMBOL vmlinux 0xd499b9f1	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xd49ccd8d	dmam_free_noncoherent
 EXPORT_SYMBOL vmlinux 0xd551b1f2	scsi_free_host_dev
 EXPORT_SYMBOL vmlinux 0xd5710bde	dquot_operations

@@ -6545,7 +6545,6 @@ EXPORT_SYMBOL vmlinux 0x2a40bd0d	proc_set_size
 EXPORT_SYMBOL vmlinux 0x2a719ada	unregister_filesystem
 EXPORT_SYMBOL vmlinux 0x2a7b3413	generic_fillattr
 EXPORT_SYMBOL vmlinux 0x2aaf984f	blk_queue_dma_pad
-EXPORT_SYMBOL vmlinux 0x2ab0febb	sk_wait_data
 EXPORT_SYMBOL vmlinux 0x2acf0feb	vfs_fstat
 EXPORT_SYMBOL vmlinux 0x2ae19bbe	giveup_vsx
 EXPORT_SYMBOL vmlinux 0x2ae66b3e	sg_miter_start
@@ -8675,6 +8674,7 @@ EXPORT_SYMBOL vmlinux 0xa6161ce2	inode_add_bytes
 EXPORT_SYMBOL vmlinux 0xa61865e1	get_unmapped_area
 EXPORT_SYMBOL vmlinux 0xa619f609	ip6_route_output
 EXPORT_SYMBOL vmlinux 0xa63a2f9b	param_get_ulong
+EXPORT_SYMBOL vmlinux 0xa641bf2e	sk_wait_data
 EXPORT_SYMBOL vmlinux 0xa6531ed1	set_blocksize
 EXPORT_SYMBOL vmlinux 0xa65972b8	_memcpy_toio
 EXPORT_SYMBOL vmlinux 0xa65bd0d2	simple_pin_fs
