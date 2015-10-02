@@ -1,15 +1,25 @@
-linux-lts-vivid (3.19.0-30.33~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-30.34~14.04.1) trusty; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * Initialize msg/shm IPC objects before doing ipc_addid()
+    - LP: #1502032
+    - CVE-2015-7613
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 02 Oct 2015 11:07:55 +0100
+
+linux (3.19.0-30.33) vivid; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1498307
+    - LP: #1498065
   * Revert "[Config]
     MFD_INTEL_LPSS/MFD_INTEL_LPSS_ACPI/MFD_INTEL_LPSS_PCI=m"
     - LP: #1498137
   * [Config] Disable the MFD_INTEL_LPSS* driver
 
- -- Luis Henriques <luis.henriques@canonical.com>  Tue, 22 Sep 2015 09:51:45 +0100
+ -- Brad Figg <brad.figg@canonical.com>  Mon, 21 Sep 2015 11:57:20 -0700
 
 linux (3.19.0-30.32) vivid; urgency=low
 
