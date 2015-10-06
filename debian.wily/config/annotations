@@ -1822,7 +1822,7 @@ CONFIG_RTC_DRV_TWL4030				p policy<{'armhf': 'y', '*': 'm'}> note<boot essential
 CONFIG_RTC_DRV_OMAP				p policy<{'armhf': 'y', '*': 'm'}>
 CONFIG_RTC_DRV_S3C				p policy<{'armhf': 'y', '*': 'm'}>
 CONFIG_RTC_DRV_PL031				p policy<{'armhf': 'y', '*': 'm'}>
-CONFIG_RTC_DRV_XGENE				p policy<{'amd64': 'y', '*': 'm'}>
+CONFIG_RTC_DRV_XGENE				p policy<{'arm64': 'y', '*': 'n'}>
 CONFIG_RTC_DRV_DS1374_WDT			y
 CONFIG_RTC_DRV_PCF8523				p policy<{'armhf-generic': 'y', '*': 'm'}>
 CONFIG_RTC_DRV_OPAL				p policy<{'powerpc-powerpc64-smp': 'y', 'ppc64el-generic': 'y'}>
@@ -2892,7 +2892,7 @@ CONFIG_TREE_RCU                                 p policy<{'amd64-generic': 'y', 
 CONFIG_PREEMPT_RCU                              p policy<{'amd64-lowlatency': 'y', 'i386-lowlatency': 'y'}>
 
 # Menu: General setup >> Stack Protector buffer overflow detection
-CONFIG_CC_STACKPROTECTOR_REGULAR		p mark<ENFORCED> policy<{'powerpc': '-', 'ppc64el': '-', '*': 'y'}>
+CONFIG_CC_STACKPROTECTOR_REGULAR			p mark<ENFORCED> policy<{'powerpc': '-', 'ppc64el': '-', '*': 'y'}>
 
 # Menu: General setup >> Stack Protector buffer overflow detection >> Architecture: arm
 
@@ -4405,7 +4405,6 @@ CONFIG_LGUEST					n
 
 # Menu: Virtualization >> Architecture: arm
 CONFIG_KVM_ARM_HOST                             p policy<{'arm64': 'y', 'armhf-generic-lpae': 'y'}>
-CONFIG_KVM_ARM_MAX_VCPUS                        p policy<{'arm64': '4', 'armhf-generic-lpae': '4'}>
 CONFIG_KVM_ARM_VGIC                             p policy<{'arm64': 'y', 'armhf-generic-lpae': 'y'}>
 CONFIG_KVM_ARM_TIMER                            p policy<{'arm64': 'y', 'armhf-generic-lpae': 'y'}>
 
