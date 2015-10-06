@@ -1,4 +1,302 @@
-linux-lts-vivid (3.19.0-30.34~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-31.35~14.04.1) trusty; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1503127
+
+  [ Ben Hutchings ]
+
+  * SAUCE: aufs3: mmap: Fix races in madvise_remove() and sys_msync()
+    - CVE-2015-7312
+
+  [ Craig Magina ]
+
+  * [Config] Add XGENE_EDAC, EDAC_SUPPORT and EDAC_ATOMIC_SCRUB
+    - LP: #1494357
+
+  [ John Johansen ]
+
+  * SAUCE: (no-up) apparmor: fix mount not handling disconnected paths
+    - LP: #1496430
+
+  [ Laurent Dufour ]
+
+  * SAUCE: powerpc/hvsi: Fix endianness issues in the HVSI driver
+    - LP: #1499357
+
+  [ Tim Gardner ]
+
+  * [Config] CONFIG_RTC_DRV_XGENE=y for only arm64
+    - LP: #1499869
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "sit: Add gro callbacks to sit_offload"
+    - LP: #1500493
+  * ipmi/powernv: Fix minor locking bug
+    - LP: #1493017
+  * mmc: sdhci-pci: set the clear transfer mode register quirk for O2Micro
+    - LP: #1472843
+  * perf probe ppc: Fix symbol fixup issues due to ELF type
+    - LP: #1485528
+  * perf probe ppc: Use the right prefix when ignoring SyS symbols on ppc
+    - LP: #1485528
+  * perf probe ppc: Enable matching against dot symbols automatically
+    - LP: #1485528
+  * perf probe ppc64le: Fix ppc64 ABIv2 symbol decoding
+    - LP: #1485528
+  * perf probe ppc64le: Prefer symbol table lookup over DWARF
+    - LP: #1485528
+  * perf probe ppc64le: Fixup function entry if using kallsyms lookup
+    - LP: #1485528
+  * perf probe: Improve detection of file/function name in the probe
+    pattern
+    - LP: #1485528
+  * perf probe: Ignore tail calls to probed functions
+    - LP: #1485528
+  * seccomp: cap SECCOMP_RET_ERRNO data to MAX_ERRNO
+    - LP: #1496073
+  * EDAC: Cleanup atomic_scrub mess
+    - LP: #1494357
+  * arm64: Enable EDAC on ARM64
+    - LP: #1494357
+  * MAINTAINERS: Add entry for APM X-Gene SoC EDAC driver
+    - LP: #1494357
+  * Documentation: Add documentation for the APM X-Gene SoC EDAC DTS
+    binding
+    - LP: #1494357
+  * EDAC: Add APM X-Gene SoC EDAC driver
+    - LP: #1494357
+  * arm64: Add APM X-Gene SoC EDAC DTS entries
+    - LP: #1494357
+  * EDAC, edac_stub: Drop arch-specific include
+    - LP: #1494357
+  * NVMe: Fix blk-mq hot cpu notification
+    - LP: #1498778
+  * blk-mq: Shared tag enhancements
+    - LP: #1498778
+  * blk-mq: avoid access hctx->tags->cpumask before allocation
+    - LP: #1498778
+  * x86/ldt: Make modify_ldt synchronous
+    - LP: #1500493
+  * x86/ldt: Correct LDT access in single stepping logic
+    - LP: #1500493
+  * x86/ldt: Correct FPU emulation access to LDT
+    - LP: #1500493
+  * md: flush ->event_work before stopping array.
+    - LP: #1500493
+  * ipv6: addrconf: validate new MTU before applying it
+    - LP: #1500493
+  * virtio-net: drop NETIF_F_FRAGLIST
+    - LP: #1500493
+  * RDS: verify the underlying transport exists before creating a
+    connection
+    - LP: #1500493
+  * xen/gntdev: convert priv->lock to a mutex
+    - LP: #1500493
+  * xen/gntdevt: Fix race condition in gntdev_release()
+    - LP: #1500493
+  * PCI: Restore PCI_MSIX_FLAGS_BIRMASK definition
+    - LP: #1500493
+  * USB: qcserial/option: make AT URCs work for Sierra Wireless
+    MC7305/MC7355
+    - LP: #1500493
+  * USB: qcserial: Add support for Dell Wireless 5809e 4G Modem
+    - LP: #1500493
+  * nfsd: Drop BUG_ON and ignore SECLABEL on absent filesystem
+    - LP: #1500493
+  * usb: chipidea: ehci_init_driver is intended to call one time
+    - LP: #1500493
+  * crypto: qat - Fix invalid synchronization between register/unregister
+    sym algs
+    - LP: #1500493
+  * crypto: ixp4xx - Remove bogus BUG_ON on scattered dst buffer
+    - LP: #1500493
+  * mfd: arizona: Fix initialisation of the PM runtime
+    - LP: #1500493
+  * xen-blkfront: don't add indirect pages to list when !feature_persistent
+    - LP: #1500493
+  * xen-blkback: replace work_pending with work_busy in
+    purge_persistent_gnt()
+    - LP: #1500493
+  * usb: gadget: f_uac2: fix calculation of uac2->p_interval
+    - LP: #1500493
+  * hwrng: core - correct error check of kthread_run call
+    - LP: #1500493
+  * USB: sierra: add 1199:68AB device ID
+    - LP: #1500493
+  * regmap: regcache-rbtree: Clean new present bits on present bitmap
+    resize
+    - LP: #1500493
+  * target/iscsi: Fix double free of a TUR followed by a solicited NOPOUT
+    - LP: #1500493
+  * rbd: fix copyup completion race
+    - LP: #1500493
+  * md/raid1: extend spinlock to protect raid1_end_read_request against
+    inconsistencies
+    - LP: #1500493
+  * target: REPORT LUNS should return LUN 0 even for dynamic ACLs
+    - LP: #1500493
+  * MIPS: Fix sched_getaffinity with MT FPAFF enabled
+    - LP: #1500493
+  * MIPS: Malta: Don't reinitialise RTC
+    - LP: #1500493
+  * MIPS: do_mcheck: Fix kernel code dump with EVA
+    - LP: #1500493
+  * MIPS: show_stack: Fix stack trace with EVA
+    - LP: #1500493
+  * MIPS: Export get_c0_perfcount_int()
+    - LP: #1500493
+  * rtlwifi: rtl8723be: Add module parameter for MSI interrupts
+    - LP: #1500493
+  * MIPS: Flush RPS on kernel entry with EVA
+    - LP: #1500493
+  * usb: udc: core: add device_del() call to error pathway
+    - LP: #1500493
+  * xhci: fix off by one error in TRB DMA address boundary check
+    - LP: #1500493
+  * drivers/usb: Delete XHCI command timer if necessary
+    - LP: #1500493
+  * staging: vt6655: vnt_bss_info_changed check conf->beacon_rate is not
+    NULL
+    - LP: #1500493
+  * dm: fix dm_merge_bvec regression on 32 bit systems
+    - LP: #1500493
+  * perf: Fix fasync handling on inherited events
+    - LP: #1500493
+  * drm/dp-mst: Remove debug WARN_ON
+    - LP: #1500493
+  * ALSA: fireworks/firewire-lib: add support for recent firmware quirk
+    - LP: #1500493
+  * mm, vmscan: Do not wait for page writeback for GFP_NOFS allocations
+    - LP: #1500493
+  * MIPS: Make set_pte() SMP safe.
+    - LP: #1500493
+  * ipc: modify message queue accounting to not take kernel data structures
+    into account
+    - LP: #1500493
+  * ocfs2: fix BUG in ocfs2_downconvert_thread_do_work()
+    - LP: #1500493
+  * fsnotify: fix oops in fsnotify_clear_marks_by_group_flags()
+    - LP: #1500493
+  * KVM: x86: Use adjustment in guest cycles when handling
+    MSR_IA32_TSC_ADJUST
+    - LP: #1500493
+  * x86/xen: build "Xen PV" APIC driver for domU as well
+    - LP: #1500493
+  * cpuset: use trialcs->mems_allowed as a temp variable
+    - LP: #1500493
+  * drm/dp/mst: Remove port after removing connector.
+    - LP: #1500493
+  * localmodconfig: Use Kbuild files too
+    - LP: #1500493
+  * dm thin metadata: delete btrees when releasing metadata snapshot
+    - LP: #1500493
+  * dm btree: add ref counting ops for the leaves of top level btrees
+    - LP: #1500493
+  * drm/radeon: add new OLAND pci id
+    - LP: #1500493
+  * libiscsi: Fix host busy blocking during connection teardown
+    - LP: #1500493
+  * libfc: Fix fc_exch_recv_req() error path
+    - LP: #1500493
+  * libfc: Fix fc_fcp_cleanup_each_cmd()
+    - LP: #1500493
+  * sd: Fix maximum I/O size for BLOCK_PC requests
+    - LP: #1500493
+  * EDAC, ppc4xx: Access mci->csrows array elements properly
+    - LP: #1500493
+  * crypto: caam - fix memory corruption in ahash_final_ctx
+    - LP: #1500493
+  * drm/vmwgfx: Fix execbuf locking issues
+    - LP: #1500493
+  * mm/hwpoison: fix page refcount of unknown non LRU page
+    - LP: #1500493
+  * ipc,sem: fix use after free on IPC_RMID after a task using same
+    semaphore set exits
+    - LP: #1500493
+  * ipc/sem.c: update/correct memory barriers
+    - LP: #1500493
+  * MIPS: Fix seccomp syscall argument for MIPS64
+    - LP: #1500493
+  * x86/ldt: Further fix FPU emulation
+    - LP: #1500493
+  * drm/i915: Flag the execlists context object as dirty after every use
+    - LP: #1500493
+  * fnic: Use the local variable instead of I/O flag to acquire io_req_lock
+    in fnic_queuecommand() to avoid deadloack
+    - LP: #1500493
+  * SCSI: Fix NULL pointer dereference in runtime PM
+    - LP: #1500493
+  * ALSA: usb-audio: Fix runtime PM unbalance
+    - LP: #1500493
+  * x86/xen: make CONFIG_XEN depend on CONFIG_X86_LOCAL_APIC
+    - LP: #1500493
+  * Input: gpio_keys_polled - request GPIO pin as input.
+    - LP: #1500493
+  * PCI: Don't use 64-bit bus addresses on PA-RISC
+    - LP: #1500493
+  * ALSA: usb: Add native DSD support for Gustard DAC-X20U
+    - LP: #1500493
+  * Add factory recertified Crucial M500s to blacklist
+    - LP: #1500493
+  * arm64: KVM: Fix host crash when injecting a fault into a 32bit guest
+    - LP: #1500493
+  * batman-adv: protect tt_local_entry from concurrent delete events
+    - LP: #1500493
+  * ip6_gre: release cached dst on tunnel removal
+    - LP: #1500493
+  * perf: Fix PERF_EVENT_IOC_PERIOD migration race
+    - LP: #1500493
+  * net: Fix RCU splat in af_key
+    - LP: #1500493
+  * bna: fix interrupts storm caused by erroneous packets
+    - LP: #1500493
+  * rds: fix an integer overflow test in rds_info_getsockopt()
+    - LP: #1500493
+  * fq_codel: explicitly reset flows in ->reset()
+    - LP: #1500493
+  * bridge: netlink: account for the IFLA_BRPORT_PROXYARP attribute size
+    and policy
+    - LP: #1500493
+  * batman-adv: fix kernel crash due to missing NULL checks
+    - LP: #1500493
+  * fbdev: select versatile helpers for the integrator
+    - LP: #1500493
+  * rocker: free netdevice during netdevice removal
+    - LP: #1500493
+  * udp: fix dst races with multicast early demux
+    - LP: #1500493
+  * net: phy: add locking to
+    phy_read_mmd_indirect()/phy_write_mmd_indirect()
+    - LP: #1500493
+  * sparc64: Fix userspace FPU register corruptions.
+    - LP: #1500493
+  * rtnetlink: verify IFLA_VF_INFO attributes before passing them to driver
+    - LP: #1500493
+  * net/tipc: initialize security state for new connection socket
+    - LP: #1500493
+  * net: pktgen: fix race between pktgen_thread_worker() and kthread_stop()
+    - LP: #1500493
+  * net: Fix skb csum races when peeking
+    - LP: #1500493
+  * ipv6: lock socket in ip6_datagram_connect()
+    - LP: #1500493
+  * bonding: correct the MAC address for "follow" fail_over_mac policy
+    - LP: #1500493
+  * netlink: don't hold mutex in rcu callback when releasing mmapd ring
+    - LP: #1500493
+  * ext4: fix loss of delalloc extent info in ext4_zero_range()
+    - LP: #1500493
+  * ACPI, PCI: Penalize legacy IRQ used by ACPI SCI
+    - LP: #1500493
+  * Linux 3.19.8-ckt7
+    - LP: #1500493
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 06 Oct 2015 11:03:07 +0100
+
+linux (3.19.0-30.34) vivid; urgency=low
 
   [ Upstream Kernel Changes ]
 
@@ -6,7 +304,7 @@ linux-lts-vivid (3.19.0-30.34~14.04.1) trusty; urgency=low
     - LP: #1502032
     - CVE-2015-7613
 
- -- Luis Henriques <luis.henriques@canonical.com>  Fri, 02 Oct 2015 11:07:55 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 02 Oct 2015 10:14:53 +0100
 
 linux (3.19.0-30.33) vivid; urgency=low
 
