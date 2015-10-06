@@ -1,4 +1,354 @@
-linux-lts-wily (4.2.0-12.14~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-15.17~14.04.2) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1503016
+  * rebase to v4.2.3
+
+  [ Andrew Donnellan ]
+
+  * SAUCE: cxl: fix leak of IRQ names in cxl_free_afu_irqs()
+  * SAUCE: cxl: fix leak of ctx->irq_bitmap when releasing context via
+    kernel API
+  * SAUCE: cxl: fix leak of ctx->mapping when releasing kernel API contexts
+
+  [ Ben Hutchings ]
+
+  * SAUCE: aufs3: mmap: Fix races in madvise_remove() and sys_msync()
+    - CVE-2015-7312
+
+  [ Dan Carpenter ]
+
+  * SAUCE: (noup) cxlflash: a couple off by one bugs
+    - LP: #1499849
+
+  [ John Johansen ]
+
+  * SAUCE: (no-up) apparmor: fix mount not handling disconnected paths
+    - LP: #1496430
+
+  [ Manoj Kumar ]
+
+  * SAUCE: (noup) cxlflash: Fix to avoid invalid port_sel value
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Replace magic numbers with literals
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix read capacity timeout
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to double the delay each time
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to escalate to LINK_RESET on login timeout
+    - LP: #1499849
+
+  [ Matthew R. Ochs ]
+
+  * SAUCE: (noup) cxlflash: Fix potential oops following LUN removal
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix data corruption when vLUN used over
+    multiple cards
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to avoid sizeof(bool)
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix context encode mask width
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to avoid CXL services during EEH
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Correct naming of limbo state and waitq
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Make functions static
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Refine host/device attributes
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to avoid spamming the kernel log
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to avoid stall while waiting on TMF
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix location of setting resid
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix host link up event handling
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix async interrupt bypass logic
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Remove dual port online dependency
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix AFU version access/storage and add check
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Correct usage of scsi_host_put()
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to prevent workq from accessing freed
+    memory
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Correct behavior in device reset handler
+    following EEH
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Remove unnecessary scsi_block_requests
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix function prolog parameters and return codes
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix MMIO and endianness errors
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to prevent EEH recovery failure
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Correct spelling, grammar, and alignment
+    mistakes
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to prevent stale AFU RRQ
+    - LP: #1499849
+  * SAUCE: (noup) MAINTAINERS: Add cxlflash driver
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to avoid corrupting adapter fops
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Correct trace string
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to avoid potential deadlock on EEH
+    - LP: #1499849
+  * SAUCE: (noup) cxlflash: Fix to avoid leaving dangling interrupt
+    resources
+    - LP: #1499849
+
+  [ Philippe Bergheaud ]
+
+  * SAUCE: cxl: Workaround malformed pcie packets on some cards
+
+  [ Tim Gardner ]
+
+  * [Config] CONFIG_CC_STACKPROTECTOR_STRONG=y
+    - LP: #1380025
+  * [Config] Add MMC modules sufficient for net booting
+    - LP: #1502772
+
+  [ Upstream Kernel Changes ]
+
+  * Initialize msg/shm IPC objects before doing ipc_addid()
+  * RDS: verify the underlying transport exists before creating a
+    connection
+  * cxl: abort cxl_pci_enable_device_hook() if PCI channel is offline
+  * cxl: Fix build failure due to -Wunused-variable behaviour change
+  * cxl: Fix lockdep warning while creating afu_err_buff attribute
+  * USB: whiteheat: fix potential null-deref at probe
+    - LP: #1478826
+    - CVE-2015-5257
+  * dcache: Handle escaped paths in prepend_path
+    - CVE-2015-2925
+  * vfs: Test for and handle paths that are unreachable from their mnt_root
+    - CVE-2015-2925
+  * hv_netvsc: Add support to set MTU reservation from guest side
+    - LP: #1494431
+  * hv_netvsc: Add close of RNDIS filter into change mtu call
+    - LP: #1494431
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Sun, 04 Oct 2015 09:26:08 -0400
+
+linux (4.2.0-14.16) wily; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1501818
+  * rebase to v4.2.2
+  * [Config] CONFIG_RTC_DRV_XGENE=y
+    - LP: #1499869
+
+  [ Upstream Kernel Changes ]
+
+  * mei: do not access freed cb in blocking write
+    - LP: #1494076
+  * mei: bus: fix drivers and devices names confusion
+    - LP: #1494076
+  * mei: bus: rename nfc.c to bus-fixup.c
+    - LP: #1494076
+  * mei: bus: move driver api functions at the start of the file
+    - LP: #1494076
+  * mei: bus: rename uevent handler to mei_cl_device_uevent
+    - LP: #1494076
+  * mei: bus: don't enable events implicitly in device enable
+    - LP: #1494076
+  * mei: bus: report if event registration failed
+    - LP: #1494076
+  * mei: bus: revamp device matching
+    - LP: #1494076
+  * mei: bus: revamp probe and remove functions
+    - LP: #1494076
+  * mei: bus: add reference to bus device in struct mei_cl_client
+    - LP: #1494076
+  * mei: bus: add me client device list infrastructure
+    - LP: #1494076
+  * mei: bus: enable running fixup routines before device registration
+    - LP: #1494076
+  * mei: bus: blacklist the nfc info client
+    - LP: #1494076
+  * mei: bus: blacklist clients by number of connections
+    - LP: #1494076
+  * mei: bus: simplify how we build nfc bus name
+    - LP: #1494076
+  * mei: bus: link client devices instead of host clients
+    - LP: #1494076
+  * mei: support for dynamic clients
+    - LP: #1494076
+  * mei: disconnect on connection request timeout
+    - LP: #1494076
+  * mei: define async notification hbm commands
+    - LP: #1494076
+  * mei: implement async notification hbm messages
+    - LP: #1494076
+  * mei: enable async event notifications only from hbm version 2.0
+    - LP: #1494076
+  * mei: add mei_cl_notify_request command
+    - LP: #1494076
+  * mei: add a handler that waits for notification on event
+    - LP: #1494076
+  * mei: add async event notification ioctls
+    - LP: #1494076
+  * mei: support polling for event notification
+    - LP: #1494076
+  * mei: implement fasync for event notification
+    - LP: #1494076
+  * mei: bus: add and call callback on notify event
+    - LP: #1494076
+  * mei: hbm: add new error code MEI_CL_CONN_NOT_ALLOWED
+    - LP: #1494076
+  * mei: me: d0i3: add the control registers
+    - LP: #1494076
+  * mei: me: d0i3: add flag to indicate D0i3 support
+    - LP: #1494076
+  * mei: me: d0i3: enable d0i3 interrupts
+    - LP: #1494076
+  * mei: hbm: reorganize the power gating responses
+    - LP: #1494076
+  * mei: me: d0i3: add d0i3 enter/exit state machine
+    - LP: #1494076
+  * mei: me: d0i3: move mei_me_hw_reset down in the file
+    - LP: #1494076
+  * mei: me: d0i3: exit d0i3 on driver start and enter it on stop
+    - LP: #1494076
+  * mei: me: add sunrise point device ids
+    - LP: #1494076
+  * mei: hbm: bump supported HBM version to 2.0
+    - LP: #1494076
+  * mei: remove check on pm_runtime_active in __mei_cl_disconnect
+    - LP: #1494076
+  * mei: fix debugfs files leak on error path
+    - LP: #1494076
+
+  [ Upstream Kernel Changes ]
+
+  * rebase to v4.2.2
+    - LP: #1492132
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 29 Sep 2015 09:02:13 -0700
+
+linux (4.2.0-13.15) wily; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1500894
+  * [Config] Drop annotation for CONFIG_KVM_ARM_MAX_VCPUS
+
+  [ Andre Przywara ]
+
+  * SAUCE: KVM: arm/arm64: VGIC: don't track used LRs in the distributor
+  * SAUCE: KVM: extend struct kvm_msi to hold a 32-bit device ID
+  * SAUCE: KVM: arm/arm64: add emulation model specific destroy function
+  * SAUCE: KVM: arm/arm64: extend arch CAP checks to allow per-VM capabilities
+  * SAUCE: KVM: arm/arm64: make GIC frame address initialization model specific
+  * SAUCE: KVM: arm64: Introduce new MMIO region for the ITS base address
+  * SAUCE: KVM: arm64: handle ITS related GICv3 redistributor registers
+  * SAUCE: KVM: arm64: introduce ITS emulation file with stub functions
+  * SAUCE: KVM: arm64: implement basic ITS register handlers
+  * SAUCE: KVM: arm64: add data structures to model ITS interrupt translation
+  * SAUCE: KVM: arm64: handle pending bit for LPIs in ITS emulation
+  * SAUCE: KVM: arm64: sync LPI configuration and pending tables
+  * SAUCE: KVM: arm64: implement ITS command queue command handlers
+  * SAUCE: KVM: arm64: implement MSI injection in ITS emulation
+  * SAUCE: KVM: arm64: enable ITS emulation as a virtual MSI controller
+
+  [ dann frazier ]
+
+  * [Config] CONFIG_MDIO_OCTEON=m
+  * [Config] Enable NUMA on ARM64
+
+  [ Duc Dang ]
+
+  * SAUCE: (no-up) MAINTAINERS: Add Applied Micro (APM) X-Gene Device Tree maintainer
+  * SAUCE: (no-up) arm64: dts: Add X-Gene v2 reboot driver dts node
+  * SAUCE: (no-up) arm64: dts: Add APM X-Gene 2 standby GPIO controller DTS entries
+  * SAUCE: (no-up) arm64: dts: Add poweroff device nodes for APM X-Gene 2 platform
+
+  [ Eric Auger ]
+
+  * SAUCE: KVM: api: pass the devid in the msi routing entry
+  * SAUCE: KVM: kvm_host: add devid in kvm_kernel_irq_routing_entry
+  * SAUCE: KVM: irqchip: convey devid to kvm_set_msi
+  * SAUCE: KVM: arm/arm64: enable irqchip routing
+  * SAUCE: KVM: arm/arm64: build a default routing table
+  * SAUCE: KVM: arm/arm64: enable MSI routing
+  * SAUCE: KVM: arm: enable KVM_SIGNAL_MSI and MSI routing
+
+  [ Feng Kan ]
+
+  * SAUCE: (no-up) Documentation: arm64: add SCU dts binding documentation to linux kernel
+  * SAUCE: (no-up) arm64: dts: Add X-Gene reboot driver dts node
+  * SAUCE: (no-up) arm64: dts: add APM Merlin Board device tree
+  * SAUCE: (no-up) Documentation: arm: pmu: Add Potenza PMU binding
+  * SAUCE: (no-up) arm64: dts: Add PMU node for APM X-Gene Storm SOC
+
+  [ Ganapatrao Kulkarni ]
+
+  * SAUCE: arm64, numa: adding numa support for arm64 platforms.
+  * SAUCE: Documentation: arm64/arm: dt bindings for numa.
+  * SAUCE: arm64, numa, dt: adding dt based numa support using dt node property arm, associativity
+
+  [ Tai Nguyen ]
+
+  * SAUCE: (no-up) power: reset: Add syscon poweroff device node for APM
+    X-Gene platform
+
+  [ Upstream Kernel Changes ]
+
+  * kexec: define kexec_in_progress in !CONFIG_KEXEC case
+    - LP: #1440103
+  * Drivers: hv: vmbus: add special kexec handler
+    - LP: #1440103
+  * Drivers: hv: don't do hypercalls when hypercall_page is NULL
+    - LP: #1440103
+  * Drivers: hv: vmbus: add special crash handler
+    - LP: #1440103
+  * Drivers: hv: vmbus: prefer 'die' notification chain to 'panic'
+    - LP: #1440103
+  * Drivers: hv: kvp: check kzalloc return value
+    - LP: #1440103
+  * tcp_cubic: better follow cubic curve after idle period
+    - LP: #1500218
+  * net: mdio-octeon: Modify driver to work on both ThunderX and Octeon
+  * net: mdio-octeon: Fix octeon_mdiobus_probe function for return values
+  * s390/lib: export __delay
+  * ipmi:ssif: Add a module parm to specify that SMBus alerts don't work
+  * net: thunder: Factor out DT specific code in BGX
+  * net, thunder, bgx: Add support to get MAC address from ACPI.
+  * net: thunderx: Add receive error stats reporting via ethtool
+  * net: thunderx: mailboxes: remove code duplication
+  * net: thunderx: Receive hashing HW offload support
+  * net: thunderx: Support for HW VLAN stripping
+  * net: thunderx: Rework interrupt handling
+  * net: thunderx: Support for upto 96 queues for a VF
+  * net: thunderx: Support for internal loopback mode
+  * PCI: generic: Remove dependency on ARM-specific struct hw_pci
+  * PCI: Build setup-irq.o for arm64
+  * PCI: generic: Add arm64 support
+  * of_pci_irq: Silence bogus "of_irq_parse_pci() failed ..." messages.
+  * cpufreq: powernv: Increase the verbosity of OCC console messages
+  * cpufreq : powernv: Report Pmax throttling if capped below nominal frequency
+    - LP: #1500672
+
+  [ Wang, Xiaolong ]
+
+  * SAUCE: (noup) Disable HWP on Skylake-S processors.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 25 Sep 2015 11:19:08 -0600
+
+linux (4.2.0-12.14) wily; urgency=low
 
   [ Tim Gardner ]
 
