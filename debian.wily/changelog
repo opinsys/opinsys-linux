@@ -1,4 +1,28 @@
-linux-lts-wily (4.2.0-15.17~14.04.2) trusty; urgency=low
+linux-lts-wily (4.2.0-15.18~14.04.1) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1503692
+
+  [ Andy Whitcroft ]
+
+  * Revert "SAUCE: aufs3: mmap: Fix races in madvise_remove() and sys_msync()"
+    Was incorrectly backported.
+
+  [ Ben Hutchings ]
+
+  * SAUCE: aufs3: mmap: Fix races in madvise_remove() and sys_msync()
+    - CVE-2015-7312
+
+  [ Tim Gardner ]
+
+  * [Debian] config-check and prepare using ${DEBIAN}/config/annotations
+    Makes the LTS update script work better.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 07 Oct 2015 07:28:10 -0600
+
+linux (4.2.0-15.17) wily; urgency=low
 
   [ Tim Gardner ]
 
