@@ -397,6 +397,7 @@ static int activate_afu_directed(struct cxl_afu *afu)
 
 	dev_info(&afu->dev, "Activating AFU directed mode\n");
 
+	afu->num_procs = afu->max_procs_virtualised;
 	if (alloc_spa(afu))
 		return -ENOMEM;
 
@@ -405,7 +406,6 @@ static int activate_afu_directed(struct cxl_afu *afu)
 	cxl_p1n_write(afu, CXL_PSL_ID_An, CXL_PSL_ID_An_F | CXL_PSL_ID_An_L);
 
 	afu->current_mode = CXL_MODE_DIRECTED;
-	afu->num_procs = afu->max_procs_virtualised;
 
 	if ((rc = cxl_chardev_m_afu_add(afu)))
 		return rc;
