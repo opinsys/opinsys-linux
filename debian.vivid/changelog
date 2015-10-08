@@ -1,9 +1,30 @@
-linux-lts-vivid (3.19.0-31.35~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-31.36~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1503924
+
+  [ Andy Whitcroft ]
+
+  * Revert "SAUCE: aufs3: mmap: Fix races in madvise_remove() and
+    sys_msync()"
+    - LP: #1503655
+
+  [ Ben Hutchings ]
+
+  * SAUCE: aufs3: mmap: Fix races in madvise_remove() and sys_msync()
+    - LP: #1503655
+    - CVE-2015-7312
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 08 Oct 2015 10:26:37 +0100
+
+linux (3.19.0-31.35) vivid; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1503127
+    - LP: #1503005
 
   [ Ben Hutchings ]
 
@@ -294,7 +315,7 @@ linux-lts-vivid (3.19.0-31.35~14.04.1) trusty; urgency=low
   * Linux 3.19.8-ckt7
     - LP: #1500493
 
- -- Luis Henriques <luis.henriques@canonical.com>  Tue, 06 Oct 2015 11:03:07 +0100
+ -- Brad Figg <brad.figg@canonical.com>  Mon, 05 Oct 2015 11:59:02 -0700
 
 linux (3.19.0-30.34) vivid; urgency=low
 
