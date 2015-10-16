@@ -23,6 +23,7 @@
 #include <linux/of_dma.h>
 #include <linux/acpi.h>
 #include <linux/acpi_dma.h>
+#include <linux/dmi.h>
 
 #include "internal.h"
 
@@ -157,6 +158,19 @@ static int dw_probe(struct platform_device *pdev)
 	struct resource *mem;
 	struct dw_dma_platform_data *pdata;
 	int err;
+
+	/*
+	* On a certain platform, loading dw_dmac causes issues
+	* when booting and shuting down. To avoid this problem,
+	* we temporarily skip the probing process, and will revert
+	* this workaround when the fix is ready from upstream.
+	*
+	* Ref: https://bugzilla.kernel.org/show_bug.cgi?id=101271
+	*/
+	if (dmi_match(DMI_PRODUCT_NAME, "HP x360 310 G2 PC")) {
+		pr_info("HP X360 detected, skip probing dw_dmac\n");
+		return -ENODEV;
+	}
 
 	chip = devm_kzalloc(dev, sizeof(*chip), GFP_KERNEL);
 	if (!chip)
