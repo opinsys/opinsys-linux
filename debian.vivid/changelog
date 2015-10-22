@@ -1,9 +1,66 @@
-linux-lts-vivid (3.19.0-31.36~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-32.37~14.04.1) trusty; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1503924
+    - LP: #1508574
+
+  [ Joseph Salisbury ]
+
+  * SAUCE: storvsc: use small sg_tablesize on x86
+    - LP: #1495983
+
+  [ Phidias Chiang ]
+
+  * SAUCE: dma: dw_dmac: Workaround for stop probing on HP X360 laptop v2
+    - LP: #1501580
+
+  [ Tim Gardner ]
+
+  * [Config] Add MMC modules sufficient for net booting
+    - LP: #1502772
+
+  [ Upstream Kernel Changes ]
+
+  * USB: whiteheat: fix potential null-deref at probe
+    - LP: #1478826
+    - CVE-2015-5257
+  * dcache: Handle escaped paths in prepend_path
+    - LP: #1441108
+    - CVE-2015-2925
+  * vfs: Test for and handle paths that are unreachable from their mnt_root
+    - LP: #1441108
+    - CVE-2015-2925
+  * hv_netvsc: Add support to set MTU reservation from guest side
+    - LP: #1494431
+  * hv_netvsc: Add close of RNDIS filter into change mtu call
+    - LP: #1494431
+  * powerpc/eeh: Fix missed PE#0 on P7IOC
+    - LP: #1502982
+  * powerpc/powernv: display reason for Malfunction Alert HMI.
+    - LP: #1482343
+  * powerpc/powernv: Pull all HMI events before panic.
+    - LP: #1482343
+  * powerpc/powernv: Invoke opal_cec_reboot2() on unrecoverable machine
+    check errors.
+    - LP: #1482343
+  * powerpc/powernv: Invoke opal_cec_reboot2() on unrecoverable HMI.
+    - LP: #1482343
+  * powerpc/eeh: Fix PE#0 check in eeh_add_to_parent_pe()
+    - LP: #1502982
+  * HID: i2c-hid: The interrupt should be level sensitive v2
+    - LP: #1501187
+  * HID: i2c-hid: Add support for ACPI GPIO interrupts v2
+    - LP: #1501187
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 22 Oct 2015 09:29:20 +0100
+
+linux (3.19.0-31.36) vivid; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1503703
 
   [ Andy Whitcroft ]
 
@@ -17,7 +74,7 @@ linux-lts-vivid (3.19.0-31.36~14.04.1) trusty; urgency=low
     - LP: #1503655
     - CVE-2015-7312
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 08 Oct 2015 10:26:37 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 07 Oct 2015 14:23:22 +0100
 
 linux (3.19.0-31.35) vivid; urgency=low
 
