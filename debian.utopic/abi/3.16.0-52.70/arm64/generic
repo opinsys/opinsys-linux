@@ -13829,6 +13829,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x0c0fad13	inet_hashinfo_init
 EXPORT_SYMBOL_GPL vmlinux 0x0c2cdbf1	synchronize_sched
 EXPORT_SYMBOL_GPL vmlinux 0x0c43d693	power_supply_am_i_supplied
 EXPORT_SYMBOL_GPL vmlinux 0x0c80e3fe	efivar_init
+EXPORT_SYMBOL_GPL vmlinux 0x0c8913d2	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x0cbec282	extcon_update_state
 EXPORT_SYMBOL_GPL vmlinux 0x0cc1e40f	crypto_it_tab
 EXPORT_SYMBOL_GPL vmlinux 0x0cc29058	ehci_suspend
@@ -15581,7 +15582,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x9a11a0fc	crypto_attr_alg_name
 EXPORT_SYMBOL_GPL vmlinux 0x9a3ecf97	pwm_set_polarity
 EXPORT_SYMBOL_GPL vmlinux 0x9a54ac1c	regmap_fields_write
 EXPORT_SYMBOL_GPL vmlinux 0x9a71fbb7	bmp085_regmap_config
-EXPORT_SYMBOL_GPL vmlinux 0x9a7e42e4	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x9a89dbf7	lpddr2_jedec_min_tck
 EXPORT_SYMBOL_GPL vmlinux 0x9a923583	usb_kill_anchored_urbs
 EXPORT_SYMBOL_GPL vmlinux 0x9ac11b74	suspend_set_ops

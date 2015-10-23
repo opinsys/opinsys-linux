@@ -14334,6 +14334,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x1ee32b18	fsstack_copy_attr_all
 EXPORT_SYMBOL_GPL vmlinux 0x1ee3857a	usb_set_device_state
 EXPORT_SYMBOL_GPL vmlinux 0x1ee3a2c1	put_pid_ns
 EXPORT_SYMBOL_GPL vmlinux 0x1f0031da	kernfs_path
+EXPORT_SYMBOL_GPL vmlinux 0x1f0b2581	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x1f169aef	pm_generic_thaw
 EXPORT_SYMBOL_GPL vmlinux 0x1f8436ff	xfrm_audit_state_add
 EXPORT_SYMBOL_GPL vmlinux 0x1f8544b8	panic_timeout
@@ -15598,7 +15599,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x8aef9118	tty_standard_install
 EXPORT_SYMBOL_GPL vmlinux 0x8af25c64	rtnl_link_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x8afd9130	rio_mport_chk_dev_access
 EXPORT_SYMBOL_GPL vmlinux 0x8b28708b	dev_change_net_namespace
-EXPORT_SYMBOL_GPL vmlinux 0x8b5ca871	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x8b60be6f	of_prop_next_string
 EXPORT_SYMBOL_GPL vmlinux 0x8b70e8ea	__wake_up_sync_key
 EXPORT_SYMBOL_GPL vmlinux 0x8b848222	ping_get_port

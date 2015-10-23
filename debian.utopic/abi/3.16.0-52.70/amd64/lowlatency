@@ -14704,7 +14704,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x07fc478e	acpi_dev_resource_interrupt
 EXPORT_SYMBOL_GPL vmlinux 0x08415196	dm_accept_partial_bio
 EXPORT_SYMBOL_GPL vmlinux 0x085f4492	dequeue_signal
 EXPORT_SYMBOL_GPL vmlinux 0x088bfa7e	cancel_work_sync
-EXPORT_SYMBOL_GPL vmlinux 0x088c2eb9	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x08b2944a	disk_map_sector_rcu
 EXPORT_SYMBOL_GPL vmlinux 0x08bc0870	compat_put_timespec
 EXPORT_SYMBOL_GPL vmlinux 0x08da79a2	fuse_get_req_for_background
@@ -15194,6 +15193,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x2e66c367	lp8788_read_multi_bytes
 EXPORT_SYMBOL_GPL vmlinux 0x2e736852	arizona_request_irq
 EXPORT_SYMBOL_GPL vmlinux 0x2e842131	fixed_phy_set_link_update
 EXPORT_SYMBOL_GPL vmlinux 0x2e9c926f	xfrm_audit_state_notfound_simple
+EXPORT_SYMBOL_GPL vmlinux 0x2eb19ea3	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x2ebe3135	cpu_is_hotpluggable
 EXPORT_SYMBOL_GPL vmlinux 0x2ece9ef4	crypto_spawn_tfm2
 EXPORT_SYMBOL_GPL vmlinux 0x2ee1585e	inet6_csk_addr2sockaddr

@@ -15871,6 +15871,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x987d3ef3	devm_regulator_get_exclusive
 EXPORT_SYMBOL_GPL vmlinux 0x9889ba06	snd_soc_add_platform_controls
 EXPORT_SYMBOL_GPL vmlinux 0x98914d11	of_pci_get_devfn
 EXPORT_SYMBOL_GPL vmlinux 0x98b3287a	ata_cable_ignore
+EXPORT_SYMBOL_GPL vmlinux 0x98bf8c1d	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x98c9f584	klist_init
 EXPORT_SYMBOL_GPL vmlinux 0x98dd8573	add_to_page_cache_lru
 EXPORT_SYMBOL_GPL vmlinux 0x98fa1e20	dm_get_reserved_rq_based_ios
@@ -16437,7 +16438,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xc154c0c2	iptunnel_xmit
 EXPORT_SYMBOL_GPL vmlinux 0xc17515d7	usb_hcds_loaded
 EXPORT_SYMBOL_GPL vmlinux 0xc18578ed	process_srcu
 EXPORT_SYMBOL_GPL vmlinux 0xc196370a	clk_set_parent
-EXPORT_SYMBOL_GPL vmlinux 0xc19fb394	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xc1d15bf0	mtd_unpoint
 EXPORT_SYMBOL_GPL vmlinux 0xc1d99710	fuse_conn_kill
 EXPORT_SYMBOL_GPL vmlinux 0xc1ee720f	__hrtimer_start_range_ns

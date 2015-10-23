@@ -14866,7 +14866,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xc9c2ae83	init_phb_dynamic
 EXPORT_SYMBOL_GPL vmlinux 0xc9e485f6	crypto_spawn_tfm
 EXPORT_SYMBOL_GPL vmlinux 0xc9e8a1a5	bus_get_device_klist
 EXPORT_SYMBOL_GPL vmlinux 0xc9ec4e21	free_percpu
-EXPORT_SYMBOL_GPL vmlinux 0xca093646	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xca357c8a	usb_store_new_id
 EXPORT_SYMBOL_GPL vmlinux 0xca7d8764	kthread_freezable_should_stop
 EXPORT_SYMBOL_GPL vmlinux 0xca845fdc	usb_alloc_streams
@@ -15489,6 +15488,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xfd33eef2	ata_sas_port_alloc
 EXPORT_SYMBOL_GPL vmlinux 0xfd7774c8	ata_sff_qc_fill_rtf
 EXPORT_SYMBOL_GPL vmlinux 0xfd7e1d1b	unregister_wide_hw_breakpoint
 EXPORT_SYMBOL_GPL vmlinux 0xfd8b5891	md_rdev_init
+EXPORT_SYMBOL_GPL vmlinux 0xfd9b9bb2	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xfdedeba0	cpufreq_freq_attr_scaling_boost_freqs
 EXPORT_SYMBOL_GPL vmlinux 0xfe1a9351	da9052_free_irq
 EXPORT_SYMBOL_GPL vmlinux 0xfe212ce3	sysfs_create_link

@@ -16018,7 +16018,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x62051b5c	__rio_local_write_config_32
 EXPORT_SYMBOL_GPL vmlinux 0x622b19a6	ata_pci_device_do_resume
 EXPORT_SYMBOL_GPL vmlinux 0x622c7922	register_oom_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x622f1d57	kobject_uevent
-EXPORT_SYMBOL_GPL vmlinux 0x62344466	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x623803c8	hest_disable
 EXPORT_SYMBOL_GPL vmlinux 0x624a6406	hwrng_register
 EXPORT_SYMBOL_GPL vmlinux 0x624b304f	fsstack_copy_inode_size
@@ -17378,6 +17377,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xc6144b32	sdev_evt_send_simple
 EXPORT_SYMBOL_GPL vmlinux 0xc615fb4f	blk_queue_flush
 EXPORT_SYMBOL_GPL vmlinux 0xc617f82c	unregister_oom_notifier
 EXPORT_SYMBOL_GPL vmlinux 0xc61862aa	udp4_lib_lookup
+EXPORT_SYMBOL_GPL vmlinux 0xc61965e3	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xc6328b26	fat_detach
 EXPORT_SYMBOL_GPL vmlinux 0xc638a49a	ata_ehi_push_desc
 EXPORT_SYMBOL_GPL vmlinux 0xc63a1109	gpiod_cansleep

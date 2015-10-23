@@ -14720,7 +14720,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x019b8518	i2c_unlock_adapter
 EXPORT_SYMBOL_GPL vmlinux 0x01a3febe	iommu_attach_device
 EXPORT_SYMBOL_GPL vmlinux 0x01a88f8e	__clk_get_flags
 EXPORT_SYMBOL_GPL vmlinux 0x01b92126	usb_get_status
-EXPORT_SYMBOL_GPL vmlinux 0x01c498f0	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x01d11a05	wakeup_source_register
 EXPORT_SYMBOL_GPL vmlinux 0x01e1a8de	kgdb_breakpoint
 EXPORT_SYMBOL_GPL vmlinux 0x01ee383f	mmu_notifier_register
@@ -15662,6 +15661,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x46ccb10b	fuse_put_request
 EXPORT_SYMBOL_GPL vmlinux 0x46ce80fd	component_master_add
 EXPORT_SYMBOL_GPL vmlinux 0x46f96213	regulator_bulk_get
 EXPORT_SYMBOL_GPL vmlinux 0x4705502e	tpm_calc_ordinal_duration
+EXPORT_SYMBOL_GPL vmlinux 0x4711f6c3	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x47229b5c	gpio_request
 EXPORT_SYMBOL_GPL vmlinux 0x473f368e	ohci_setup
 EXPORT_SYMBOL_GPL vmlinux 0x4761f17c	register_netevent_notifier

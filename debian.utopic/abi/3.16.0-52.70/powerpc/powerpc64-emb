@@ -14659,7 +14659,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x3dc526a9	arizona_of_match
 EXPORT_SYMBOL_GPL vmlinux 0x3dc916b6	crypto_fl_tab
 EXPORT_SYMBOL_GPL vmlinux 0x3de9cae1	crypto_remove_final
 EXPORT_SYMBOL_GPL vmlinux 0x3e15d5c7	of_get_nand_ecc_step_size
-EXPORT_SYMBOL_GPL vmlinux 0x3e1d2e46	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x3e473f7d	usb_hcd_pci_shutdown
 EXPORT_SYMBOL_GPL vmlinux 0x3e58dc18	crypto_unregister_template
 EXPORT_SYMBOL_GPL vmlinux 0x3e63bbd7	crypto_givcipher_type
@@ -16505,6 +16504,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xd5bd7dac	ring_buffer_record_enable_cpu
 EXPORT_SYMBOL_GPL vmlinux 0xd5ed5348	regmap_register_patch
 EXPORT_SYMBOL_GPL vmlinux 0xd5fae2a1	wm8400_reg_read
 EXPORT_SYMBOL_GPL vmlinux 0xd5fe64a7	spi_write_then_read
+EXPORT_SYMBOL_GPL vmlinux 0xd60113f3	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xd617a67d	crypto_larval_alloc
 EXPORT_SYMBOL_GPL vmlinux 0xd6232aa5	regulator_unregister
 EXPORT_SYMBOL_GPL vmlinux 0xd6592e8f	irq_domain_add_simple

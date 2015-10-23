@@ -15094,7 +15094,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x57a5cf95	stmpe_reg_read
 EXPORT_SYMBOL_GPL vmlinux 0x57bac72f	sock_gen_put
 EXPORT_SYMBOL_GPL vmlinux 0x57db0a97	omap_install_iommu_arch
 EXPORT_SYMBOL_GPL vmlinux 0x57def6fb	usbnet_open
-EXPORT_SYMBOL_GPL vmlinux 0x57e49f4f	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x580dd354	of_pci_msi_chip_add
 EXPORT_SYMBOL_GPL vmlinux 0x5835c015	ahash_attr_alg
 EXPORT_SYMBOL_GPL vmlinux 0x58413099	ipv6_fixup_options
@@ -16167,6 +16166,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xa7fdc51d	syscon_regmap_lookup_by_phandle
 EXPORT_SYMBOL_GPL vmlinux 0xa7fdcf6d	fuse_conn_get
 EXPORT_SYMBOL_GPL vmlinux 0xa8021ba1	devm_usb_get_phy_dev
 EXPORT_SYMBOL_GPL vmlinux 0xa80ff2a2	ip_local_out_sk
+EXPORT_SYMBOL_GPL vmlinux 0xa818e3b9	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xa84dec78	usb_free_streams
 EXPORT_SYMBOL_GPL vmlinux 0xa851973a	raw_notifier_call_chain
 EXPORT_SYMBOL_GPL vmlinux 0xa85d656e	adp5520_read

@@ -14442,7 +14442,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x0f751aea	input_event_from_user
 EXPORT_SYMBOL_GPL vmlinux 0x0f98ce6e	inet6_csk_reqsk_queue_hash_add
 EXPORT_SYMBOL_GPL vmlinux 0x0fc769ff	ipv4_sk_redirect
 EXPORT_SYMBOL_GPL vmlinux 0x0ff0e7e0	rio_attach_device
-EXPORT_SYMBOL_GPL vmlinux 0x10060f44	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x100627a0	pci_walk_bus
 EXPORT_SYMBOL_GPL vmlinux 0x100ed207	dma_buf_kunmap
 EXPORT_SYMBOL_GPL vmlinux 0x100f87bb	usb_set_configuration
@@ -14767,6 +14766,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x26c90ea4	scsi_eh_get_sense
 EXPORT_SYMBOL_GPL vmlinux 0x26cc8f4e	da903x_read
 EXPORT_SYMBOL_GPL vmlinux 0x26d51b32	usb_disable_xhci_ports
 EXPORT_SYMBOL_GPL vmlinux 0x26e64e3a	kernfs_put
+EXPORT_SYMBOL_GPL vmlinux 0x27037d31	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x27163768	digsig_verify
 EXPORT_SYMBOL_GPL vmlinux 0x27467a52	mmput
 EXPORT_SYMBOL_GPL vmlinux 0x2768278a	pci_hp_deregister

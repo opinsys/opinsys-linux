@@ -14446,7 +14446,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x2a6993c1	tty_buffer_request_room
 EXPORT_SYMBOL_GPL vmlinux 0x2a6afb89	generic_fh_to_dentry
 EXPORT_SYMBOL_GPL vmlinux 0x2a807442	driver_find
 EXPORT_SYMBOL_GPL vmlinux 0x2a912314	led_trigger_show
-EXPORT_SYMBOL_GPL vmlinux 0x2abe4d2d	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x2ad1ece4	zs_get_total_size_bytes
 EXPORT_SYMBOL_GPL vmlinux 0x2afc1111	usb_get_dev
 EXPORT_SYMBOL_GPL vmlinux 0x2b37c41c	attribute_container_register
@@ -16012,6 +16011,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xa851973a	raw_notifier_call_chain
 EXPORT_SYMBOL_GPL vmlinux 0xa85964b5	usb_driver_set_configuration
 EXPORT_SYMBOL_GPL vmlinux 0xa85dcfc5	debugfs_create_size_t
 EXPORT_SYMBOL_GPL vmlinux 0xa87ed73f	sdio_memcpy_fromio
+EXPORT_SYMBOL_GPL vmlinux 0xa8c67eb9	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xa8e9eed3	rio_mport_get_feature
 EXPORT_SYMBOL_GPL vmlinux 0xa9080bc7	usb_clear_halt
 EXPORT_SYMBOL_GPL vmlinux 0xa91ef687	devm_regulator_unregister_supply_alias

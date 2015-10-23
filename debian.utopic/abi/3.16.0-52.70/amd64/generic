@@ -15258,6 +15258,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x355dd687	scsi_internal_device_block
 EXPORT_SYMBOL_GPL vmlinux 0x3560ea9f	sync_filesystem
 EXPORT_SYMBOL_GPL vmlinux 0x35687f92	sysfs_remove_file_ns
 EXPORT_SYMBOL_GPL vmlinux 0x357872ca	map_vm_area
+EXPORT_SYMBOL_GPL vmlinux 0x358f044d	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0x358ff60f	twl_get_hfclk_rate
 EXPORT_SYMBOL_GPL vmlinux 0x35dfd7c1	sk_clone_lock
 EXPORT_SYMBOL_GPL vmlinux 0x35e19c0f	spi_new_device
@@ -17083,7 +17084,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xba670b3e	regulator_get_current_limit
 EXPORT_SYMBOL_GPL vmlinux 0xba959a66	rio_unregister_driver
 EXPORT_SYMBOL_GPL vmlinux 0xba9c183a	device_create_bin_file
 EXPORT_SYMBOL_GPL vmlinux 0xbaafb5a3	__rio_local_read_config_16
-EXPORT_SYMBOL_GPL vmlinux 0xbad35928	netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xbad93679	usb_hcd_unlink_urb_from_ep
 EXPORT_SYMBOL_GPL vmlinux 0xbae10710	pci_configure_slot
 EXPORT_SYMBOL_GPL vmlinux 0xbb038ce4	perf_unregister_guest_info_callbacks
