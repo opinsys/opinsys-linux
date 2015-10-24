@@ -79,9 +79,6 @@ struct rpcrdma_ia {
  * RDMA Endpoint -- one per transport instance
  */
 
-#define RPCRDMA_WC_BUDGET	(128)
-#define RPCRDMA_POLLSIZE	(16)
-
 struct rpcrdma_ep {
 	atomic_t		rep_cqcount;
 	int			rep_cqinit;
@@ -92,8 +89,6 @@ struct rpcrdma_ep {
 	struct rdma_conn_param	rep_remote_cma;
 	struct sockaddr_storage	rep_remote_addr;
 	struct delayed_work	rep_connect_worker;
-	struct ib_wc		rep_send_wcs[RPCRDMA_POLLSIZE];
-	struct ib_wc		rep_recv_wcs[RPCRDMA_POLLSIZE];
 };
 
 /*
