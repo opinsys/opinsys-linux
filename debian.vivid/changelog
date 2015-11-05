@@ -1,9 +1,19 @@
-linux-lts-vivid (3.19.0-32.37~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-33.38~14.04.1) trusty; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * KVM: x86: vmx: avoid guest->host DOS by intercepting #AC
+    - LP: #1513540
+    - CVE-2015-5307
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 05 Nov 2015 18:53:12 +0000
+
+linux (3.19.0-32.37) vivid; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1508574
+    - LP: #1508381
 
   [ Joseph Salisbury ]
 
@@ -53,7 +63,7 @@ linux-lts-vivid (3.19.0-32.37~14.04.1) trusty; urgency=low
   * HID: i2c-hid: Add support for ACPI GPIO interrupts v2
     - LP: #1501187
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 22 Oct 2015 09:29:20 +0100
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 21 Oct 2015 10:30:13 +0100
 
 linux (3.19.0-31.36) vivid; urgency=low
 
