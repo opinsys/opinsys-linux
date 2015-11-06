@@ -1,4 +1,60 @@
-linux-lts-wily (4.2.0-16.19~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-18.22~14.04.1) trusty; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * KVM: x86: vmx: avoid guest->host DOS by intercepting #AC
+    - LP: #1513540
+    - CVE-2015-5307
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 05 Nov 2015 21:31:53 +0000
+
+linux (4.2.0-17.21) wily; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1509480
+
+  [ Joseph Salisbury ]
+
+  * SAUCE: storvsc: use small sg_tablesize on x86
+    - LP: #1495983
+
+ -- Brad Figg <brad.figg@canonical.com>  Fri, 23 Oct 2015 11:58:01 -0700
+
+linux (4.2.0-17.20) wily; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1508993
+
+  [ Andy Whitcroft ]
+
+  * [Debian] rebuild should only trigger for non-linux packages
+    - LP: #1498862
+  * [Packaging] Provides: virtualbox-guest-modules when appropriate
+    - LP: #1434579, #1507588
+
+  [ Matthew R. Ochs ]
+
+  * SAUCE: (noup) cxlflash: Fix to avoid lock instrumentation rejection
+    - LP: #1508541
+  * SAUCE: (noup) cxlflash: Fix to avoid bypassing context cleanup
+    - LP: #1508541
+
+  [ Upstream Kernel Changes ]
+
+  * HID: lenovo: Use constants for axes names
+    - LP: #1508178
+  * HID: lenovo: Add missing return-value check
+    - LP: #1508178
+  * HID: lenovo: Hide middle-button press until release
+    - LP: #1508178
+
+ -- Brad Figg <brad.figg@canonical.com>  Thu, 22 Oct 2015 07:59:42 -0700
+
+linux (4.2.0-16.19) wily; urgency=low
 
   [ Tim Gardner ]
 
