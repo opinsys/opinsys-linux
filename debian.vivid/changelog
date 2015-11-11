@@ -1,4 +1,25 @@
-linux-lts-vivid (3.19.0-33.38~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-34.39~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1515070
+
+  [ danielepa ]
+
+  * SAUCE: net: usb: cdc_ether: add DW5580 as a mobile broadband adapter
+    - LP: #1513847
+
+  [ Wen-chien Jesse Sung ]
+
+  * SAUCE: mwifiex: Switch WiFi LED state according to the device status
+    - LP: #1512997
+  * SAUCE: Bluetooth: Support for LED on Marvell modules
+    - LP: #1512999
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 11 Nov 2015 13:44:19 +0000
+
+linux (3.19.0-33.38) vivid; urgency=low
 
   [ Upstream Kernel Changes ]
 
