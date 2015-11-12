@@ -320,11 +320,11 @@ static void *ipq806x_gmac_setup(struct platform_device *pdev)
 			     QSGMII_PHY_RX_SIGNAL_DETECT_EN |
 			     QSGMII_PHY_TX_DRIVER_EN |
 			     QSGMII_PHY_QSGMII_EN |
-			     0x4 << QSGMII_PHY_PHASE_LOOP_GAIN_OFFSET |
-			     0x3 << QSGMII_PHY_RX_DC_BIAS_OFFSET |
-			     0x1 << QSGMII_PHY_RX_INPUT_EQU_OFFSET |
-			     0x2 << QSGMII_PHY_CDR_PI_SLEW_OFFSET |
-			     0xC << QSGMII_PHY_TX_DRV_AMP_OFFSET);
+			     0x4ul << QSGMII_PHY_PHASE_LOOP_GAIN_OFFSET |
+			     0x3ul << QSGMII_PHY_RX_DC_BIAS_OFFSET |
+			     0x1ul << QSGMII_PHY_RX_INPUT_EQU_OFFSET |
+			     0x2ul << QSGMII_PHY_CDR_PI_SLEW_OFFSET |
+			     0xCul << QSGMII_PHY_TX_DRV_AMP_OFFSET);
 	}
 
 	return gmac;
