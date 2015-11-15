@@ -870,7 +870,7 @@ static void ipsec_esp_decrypt_swauth_done(struct device *dev,
 			icvdata = &edesc->link_tbl[0];
 
 		sg = sg_last(req->dst, edesc->dst_nents ? : 1);
-		err = memcmp(icvdata, (char *)sg_virt(sg) + sg->length -
+		err = crypto_memneq(icvdata, (char *)sg_virt(sg) + sg->length -
 			     ctx->authsize, ctx->authsize) ? -EBADMSG : 0;
 	}
 
