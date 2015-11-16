@@ -238,7 +238,7 @@ mcast_acct:
 	}
 }
 
-static int ipvlan_rcv_frame(struct ipvl_addr *addr, struct sk_buff *skb,
+static int ipvlan_rcv_frame(struct ipvl_addr *addr, struct sk_buff **pskb,
 			    bool local)
 {
 	struct ipvl_dev *ipvlan = addr->master;
@@ -246,6 +246,7 @@ static int ipvlan_rcv_frame(struct ipvl_addr *addr, struct sk_buff *skb,
 	unsigned int len;
 	rx_handler_result_t ret = RX_HANDLER_CONSUMED;
 	bool success = false;
+	struct sk_buff *skb = *pskb;
 
 	len = skb->len + ETH_HLEN;
 	if (unlikely(!(dev->flags & IFF_UP))) {
@@ -257,6 +258,7 @@ static int ipvlan_rcv_frame(struct ipvl_addr *addr, struct sk_buff *skb,
 	if (!skb)
 		goto out;
 
+	*pskb = skb;
 	skb->dev = dev;
 	skb->pkt_type = PACKET_HOST;
 
@@ -448,7 +450,7 @@ static int ipvlan_xmit_mode_l3(struct sk_buff *skb, struct net_device *dev)
 
 	addr = ipvlan_addr_lookup(ipvlan->port, lyr3h, addr_type, true);
 	if (addr)
-		return ipvlan_rcv_frame(addr, skb, true);
+		return ipvlan_rcv_frame(addr, &skb, true);
 
 out:
 	skb->dev = ipvlan->phy_dev;
@@ -468,7 +470,7 @@ static int ipvlan_xmit_mode_l2(struct sk_buff *skb, struct net_device *dev)
 		if (lyr3h) {
 			addr = ipvlan_addr_lookup(ipvlan->port, lyr3h, addr_type, true);
 			if (addr)
-				return ipvlan_rcv_frame(addr, skb, true);
+				return ipvlan_rcv_frame(addr, &skb, true);
 		}
 		skb = skb_share_check(skb, GFP_ATOMIC);
 		if (!skb)
@@ -554,7 +556,7 @@ static rx_handler_result_t ipvlan_handle_mode_l3(struct sk_buff **pskb,
 
 	addr = ipvlan_addr_lookup(port, lyr3h, addr_type, true);
 	if (addr)
-		ret = ipvlan_rcv_frame(addr, skb, false);
+		ret = ipvlan_rcv_frame(addr, pskb, false);
 
 out:
 	return ret;
@@ -581,7 +583,7 @@ static rx_handler_result_t ipvlan_handle_mode_l2(struct sk_buff **pskb,
 
 		addr = ipvlan_addr_lookup(port, lyr3h, addr_type, true);
 		if (addr)
-			ret = ipvlan_rcv_frame(addr, skb, false);
+			ret = ipvlan_rcv_frame(addr, pskb, false);
 	}
 
 	return ret;
