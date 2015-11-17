@@ -1,9 +1,23 @@
-linux-lts-vivid (3.19.0-35.40~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-36.41~14.04.1) trusty; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1515863
+    - LP: #1516875
+
+  [ Upstream Kernel Changes ]
+
+  * arm64: errata: use KBUILD_CFLAGS_MODULE for erratum #843419
+    - LP: #1516682
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 17 Nov 2015 10:23:54 +0000
+
+linux (3.19.0-35.40) vivid; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1515656
 
   [ Luis Henriques ]
 
@@ -526,7 +540,7 @@ linux-lts-vivid (3.19.0-35.40~14.04.1) trusty; urgency=low
   * SAUCE: i915_bpo: drm/i915: Setup DDI clk for MST on SKL
     - LP: #1515169
 
- -- Luis Henriques <luis.henriques@canonical.com>  Fri, 13 Nov 2015 10:02:56 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 12 Nov 2015 15:03:12 +0000
 
 linux (3.19.0-34.39) vivid; urgency=low
 
