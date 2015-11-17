@@ -6984,7 +6984,6 @@ EXPORT_SYMBOL vmlinux 0x497ee0b5	from_kgid
 EXPORT_SYMBOL vmlinux 0x4981e63b	scsi_register_driver
 EXPORT_SYMBOL vmlinux 0x498802d4	sock_init_data
 EXPORT_SYMBOL vmlinux 0x49959da9	devfreq_monitor_suspend
-EXPORT_SYMBOL vmlinux 0x499a5ef6	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x49b07aec	tcp_select_initial_window
 EXPORT_SYMBOL vmlinux 0x49b1f5c1	netdev_lower_get_next
 EXPORT_SYMBOL vmlinux 0x49dc7da3	mfd_cell_enable
@@ -8768,6 +8767,7 @@ EXPORT_SYMBOL vmlinux 0xba8f7e06	serio_unregister_child_port
 EXPORT_SYMBOL vmlinux 0xbaaf5c85	kobject_set_name
 EXPORT_SYMBOL vmlinux 0xbab0fb0f	i2c_get_adapter
 EXPORT_SYMBOL vmlinux 0xbab89b6e	security_dentry_init_security
+EXPORT_SYMBOL vmlinux 0xbabdca50	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0xbadbcf86	lockref_get_or_lock
 EXPORT_SYMBOL vmlinux 0xbae2ce6d	blk_mq_kick_requeue_list
 EXPORT_SYMBOL vmlinux 0xbb34134a	iov_shorten
@@ -15368,7 +15368,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x7796c1df	pci_pasid_features
 EXPORT_SYMBOL_GPL vmlinux 0x77b0de42	crypto_unregister_algs
 EXPORT_SYMBOL_GPL vmlinux 0x77bac519	cpci_hp_unregister_bus
 EXPORT_SYMBOL_GPL vmlinux 0x77c45f8d	usb_find_interface
-EXPORT_SYMBOL_GPL vmlinux 0x77dfda51	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x77f28dd5	rio_dma_prep_slave_sg
 EXPORT_SYMBOL_GPL vmlinux 0x77f666de	tracepoint_probe_register
 EXPORT_SYMBOL_GPL vmlinux 0x78041455	disk_part_iter_exit
@@ -16581,6 +16580,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xdbb1f621	usb_disable_autosuspend
 EXPORT_SYMBOL_GPL vmlinux 0xdbbd2e71	do_unbind_con_driver
 EXPORT_SYMBOL_GPL vmlinux 0xdbf1db58	crypto_register_alg
 EXPORT_SYMBOL_GPL vmlinux 0xdbf7cb70	mpi_get_nbits
+EXPORT_SYMBOL_GPL vmlinux 0xdc094d29	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xdc0e8b01	ata_port_pbar_desc
 EXPORT_SYMBOL_GPL vmlinux 0xdc197e5f	devm_regmap_init_mmio_clk
 EXPORT_SYMBOL_GPL vmlinux 0xdc3e9b3d	pci_create_slot

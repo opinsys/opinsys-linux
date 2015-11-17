@@ -7196,6 +7196,7 @@ EXPORT_SYMBOL vmlinux 0x55c09df5	elevator_init
 EXPORT_SYMBOL vmlinux 0x55c321d4	dquot_alloc
 EXPORT_SYMBOL vmlinux 0x55c383f2	mmc_alloc_host
 EXPORT_SYMBOL vmlinux 0x56032a37	ether_setup
+EXPORT_SYMBOL vmlinux 0x5633bbbf	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x5635a60a	vmalloc_user
 EXPORT_SYMBOL vmlinux 0x5638400e	nonseekable_open
 EXPORT_SYMBOL vmlinux 0x563952a3	kblockd_schedule_work
@@ -9212,7 +9213,6 @@ EXPORT_SYMBOL vmlinux 0xd2b8e204	pci_claim_resource
 EXPORT_SYMBOL vmlinux 0xd2cbda45	tcp_v4_syn_recv_sock
 EXPORT_SYMBOL vmlinux 0xd2ceb53c	sock_alloc_file
 EXPORT_SYMBOL vmlinux 0xd2da1048	register_netdevice_notifier
-EXPORT_SYMBOL vmlinux 0xd2e35122	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0xd2f1564a	phy_ethtool_get_eee
 EXPORT_SYMBOL vmlinux 0xd2fc19bd	proc_doulongvec_ms_jiffies_minmax
 EXPORT_SYMBOL vmlinux 0xd3008d4d	sched_autogroup_detach
@@ -14779,7 +14779,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x4484a5a4	wait_for_device_probe
 EXPORT_SYMBOL_GPL vmlinux 0x44999d34	fib_rules_register
 EXPORT_SYMBOL_GPL vmlinux 0x44a864bf	bitmap_resize
 EXPORT_SYMBOL_GPL vmlinux 0x44e8cb85	pm_generic_restore
-EXPORT_SYMBOL_GPL vmlinux 0x452072d1	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x45576208	rt_mutex_trylock
 EXPORT_SYMBOL_GPL vmlinux 0x456ac6f2	devm_mdiobus_alloc_size
 EXPORT_SYMBOL_GPL vmlinux 0x457594fa	crypto_alg_list
@@ -14935,6 +14934,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x51865dbf	mddev_init
 EXPORT_SYMBOL_GPL vmlinux 0x519109fb	led_trigger_unregister_simple
 EXPORT_SYMBOL_GPL vmlinux 0x51b413de	__netpoll_free_async
 EXPORT_SYMBOL_GPL vmlinux 0x51b65a26	rtc_lock
+EXPORT_SYMBOL_GPL vmlinux 0x51c19c20	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x51cfca5b	ata_sff_port_ops
 EXPORT_SYMBOL_GPL vmlinux 0x51e86427	ping_get_port
 EXPORT_SYMBOL_GPL vmlinux 0x5210a5bf	hsi_board_list

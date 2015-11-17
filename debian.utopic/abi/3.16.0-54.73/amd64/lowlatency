@@ -6061,7 +6061,6 @@ EXPORT_SYMBOL vmlinux 0x0b032ad7	from_kuid
 EXPORT_SYMBOL vmlinux 0x0b0d888b	icmpv6_err_convert
 EXPORT_SYMBOL vmlinux 0x0b1beb31	vmalloc_32_user
 EXPORT_SYMBOL vmlinux 0x0b27f1cc	vme_irq_generate
-EXPORT_SYMBOL vmlinux 0x0b3202b9	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x0b50af0a	xfrm_input
 EXPORT_SYMBOL vmlinux 0x0b742fd7	simple_strtol
 EXPORT_SYMBOL vmlinux 0x0b977c4f	blk_rq_init
@@ -6949,6 +6948,7 @@ EXPORT_SYMBOL vmlinux 0x4211c3c1	zlib_inflateInit2
 EXPORT_SYMBOL vmlinux 0x42350e8d	ucs2_strlen
 EXPORT_SYMBOL vmlinux 0x423e7892	abx500_startup_irq_enabled
 EXPORT_SYMBOL vmlinux 0x42595e58	vgacon_text_force
+EXPORT_SYMBOL vmlinux 0x42913867	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x42a1b208	gen_pool_first_fit
 EXPORT_SYMBOL vmlinux 0x42bd12ba	sk_common_release
 EXPORT_SYMBOL vmlinux 0x42c8de35	ioremap_nocache
@@ -15954,7 +15954,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x663c16d6	gnttab_grant_foreign_access_subpage_ref
 EXPORT_SYMBOL_GPL vmlinux 0x66514bd4	device_remove_file_self
 EXPORT_SYMBOL_GPL vmlinux 0x668402aa	crypto_put_default_rng
 EXPORT_SYMBOL_GPL vmlinux 0x66920ed0	pci_pasid_features
-EXPORT_SYMBOL_GPL vmlinux 0x66a2b842	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x66ab97c0	device_reset
 EXPORT_SYMBOL_GPL vmlinux 0x66c1c7ba	ata_eh_qc_complete
 EXPORT_SYMBOL_GPL vmlinux 0x66d2b49a	regulator_can_change_voltage
@@ -17190,6 +17189,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xc1d4957b	crypto_alloc_ahash
 EXPORT_SYMBOL_GPL vmlinux 0xc1d7212e	kernfs_path
 EXPORT_SYMBOL_GPL vmlinux 0xc1dbdb36	pci_msi_off
 EXPORT_SYMBOL_GPL vmlinux 0xc1e494fe	fsstack_copy_attr_all
+EXPORT_SYMBOL_GPL vmlinux 0xc1e6ef49	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xc1f07a32	rio_bus_type
 EXPORT_SYMBOL_GPL vmlinux 0xc1f39f45	crypto_register_pcomp
 EXPORT_SYMBOL_GPL vmlinux 0xc1fb0528	virtqueue_add_outbuf

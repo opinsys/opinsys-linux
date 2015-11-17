@@ -4522,7 +4522,6 @@ EXPORT_SYMBOL vmlinux 0x0ca0c882	twl6030_interrupt_mask
 EXPORT_SYMBOL vmlinux 0x0cae232b	utf16s_to_utf8s
 EXPORT_SYMBOL vmlinux 0x0cca1655	pnv_cxl_alloc_hwirqs
 EXPORT_SYMBOL vmlinux 0x0ceedfa3	skb_unlink
-EXPORT_SYMBOL vmlinux 0x0cf98b2e	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x0d1fd3dc	xfrm_init_state
 EXPORT_SYMBOL vmlinux 0x0d2dfe32	elv_rq_merge_ok
 EXPORT_SYMBOL vmlinux 0x0d325702	neigh_ifdown
@@ -5764,6 +5763,7 @@ EXPORT_SYMBOL vmlinux 0x59efadea	inet_listen
 EXPORT_SYMBOL vmlinux 0x59f37177	__scm_send
 EXPORT_SYMBOL vmlinux 0x5a025f7b	arch_local_irq_restore
 EXPORT_SYMBOL vmlinux 0x5a05d62d	of_find_i2c_device_by_node
+EXPORT_SYMBOL vmlinux 0x5a07b3fd	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x5a0aaa12	proc_doulongvec_ms_jiffies_minmax
 EXPORT_SYMBOL vmlinux 0x5a109106	neigh_update
 EXPORT_SYMBOL vmlinux 0x5a32cb9e	kmem_cache_alloc
@@ -14120,6 +14120,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x8d2f384a	pwm_config
 EXPORT_SYMBOL_GPL vmlinux 0x8d36c088	look_up_OID
 EXPORT_SYMBOL_GPL vmlinux 0x8d4d4104	ftrace_event_reg
 EXPORT_SYMBOL_GPL vmlinux 0x8d6241c2	regmap_init_spi
+EXPORT_SYMBOL_GPL vmlinux 0x8da25060	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x8dbf5a20	kvmppc_hv_entry_trampoline
 EXPORT_SYMBOL_GPL vmlinux 0x8dc3eacf	ahash_attr_alg
 EXPORT_SYMBOL_GPL vmlinux 0x8ddf8c88	ipv4_update_pmtu
@@ -14552,7 +14553,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xb1425b32	dm_table_add_target_callbacks
 EXPORT_SYMBOL_GPL vmlinux 0xb18429eb	suspend_device_irqs
 EXPORT_SYMBOL_GPL vmlinux 0xb1894607	opal_notifier_register
 EXPORT_SYMBOL_GPL vmlinux 0xb1acbcce	rcu_barrier_sched
-EXPORT_SYMBOL_GPL vmlinux 0xb1ae2375	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xb1bed25d	dpm_resume_start
 EXPORT_SYMBOL_GPL vmlinux 0xb1c0c1c2	async_schedule_domain
 EXPORT_SYMBOL_GPL vmlinux 0xb1c63658	devres_for_each_res

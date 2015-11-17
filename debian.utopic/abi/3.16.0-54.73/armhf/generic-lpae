@@ -6449,7 +6449,6 @@ EXPORT_SYMBOL vmlinux 0x31674caa	abx500_event_registers_startup_state_get
 EXPORT_SYMBOL vmlinux 0x31805f80	__net_get_random_once
 EXPORT_SYMBOL vmlinux 0x3191f109	__krealloc
 EXPORT_SYMBOL vmlinux 0x31ad2bfa	tcf_em_tree_dump
-EXPORT_SYMBOL vmlinux 0x31b1063a	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x31b31f5c	csum_partial_copy_nocheck
 EXPORT_SYMBOL vmlinux 0x31cee75f	ip4_datagram_connect
 EXPORT_SYMBOL vmlinux 0x31d63d62	pci_bus_write_config_dword
@@ -9847,6 +9846,7 @@ EXPORT_SYMBOL vmlinux 0xf902aab9	__scsi_device_lookup
 EXPORT_SYMBOL vmlinux 0xf907632b	abort_creds
 EXPORT_SYMBOL vmlinux 0xf914f03a	tty_chars_in_buffer
 EXPORT_SYMBOL vmlinux 0xf91fda43	genphy_aneg_done
+EXPORT_SYMBOL vmlinux 0xf9258142	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0xf9348cbc	xz_dec_run
 EXPORT_SYMBOL vmlinux 0xf9427374	dispc_request_irq
 EXPORT_SYMBOL vmlinux 0xf961eae3	thaw_bdev
@@ -16409,6 +16409,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xc0023bf0	rtc_alarm_irq_enable
 EXPORT_SYMBOL_GPL vmlinux 0xc01387c1	platform_device_unregister
 EXPORT_SYMBOL_GPL vmlinux 0xc01d80b3	ata_bmdma_port_intr
 EXPORT_SYMBOL_GPL vmlinux 0xc01f56d9	powercap_register_control_type
+EXPORT_SYMBOL_GPL vmlinux 0xc028ab76	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xc029f7c1	da9052_regmap_config
 EXPORT_SYMBOL_GPL vmlinux 0xc03a654b	memalloc_socks
 EXPORT_SYMBOL_GPL vmlinux 0xc03b5426	of_fixed_factor_clk_setup
@@ -16474,7 +16475,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xc407a1d4	gpiod_unexport
 EXPORT_SYMBOL_GPL vmlinux 0xc407cd01	blkg_stat_recursive_sum
 EXPORT_SYMBOL_GPL vmlinux 0xc41e0178	btree_last
 EXPORT_SYMBOL_GPL vmlinux 0xc420b0a5	gpiochip_add_pingroup_range
-EXPORT_SYMBOL_GPL vmlinux 0xc4240877	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xc428068d	sata_deb_timing_long
 EXPORT_SYMBOL_GPL vmlinux 0xc454fc7b	twl_get_type
 EXPORT_SYMBOL_GPL vmlinux 0xc471c67a	twl4030_audio_disable_resource

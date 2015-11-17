@@ -7266,7 +7266,6 @@ EXPORT_SYMBOL vmlinux 0x5b87f86b	pci_select_bars
 EXPORT_SYMBOL vmlinux 0x5b928727	blk_mq_can_queue
 EXPORT_SYMBOL vmlinux 0x5b956823	mddev_congested
 EXPORT_SYMBOL vmlinux 0x5bac5883	posix_acl_to_xattr
-EXPORT_SYMBOL vmlinux 0x5bb2f1f2	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x5bb9daec	__sg_page_iter_start
 EXPORT_SYMBOL vmlinux 0x5bc1373c	of_translate_address
 EXPORT_SYMBOL vmlinux 0x5bdbd52d	kunmap_high
@@ -8581,6 +8580,7 @@ EXPORT_SYMBOL vmlinux 0xa951b05a	dentry_update_name_case
 EXPORT_SYMBOL vmlinux 0xa95744fd	snd_ctl_boolean_mono_info
 EXPORT_SYMBOL vmlinux 0xa964dd13	gpmc_cs_request
 EXPORT_SYMBOL vmlinux 0xa974e90f	__dynamic_netdev_dbg
+EXPORT_SYMBOL vmlinux 0xa97f70ce	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0xa98ac56d	mmc_request_done
 EXPORT_SYMBOL vmlinux 0xa99682b3	tty_unregister_driver
 EXPORT_SYMBOL vmlinux 0xa9c165b7	amba_driver_unregister
@@ -16170,6 +16170,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xa818e3b9	__netlink_alloc_skb
 EXPORT_SYMBOL_GPL vmlinux 0xa84dec78	usb_free_streams
 EXPORT_SYMBOL_GPL vmlinux 0xa851973a	raw_notifier_call_chain
 EXPORT_SYMBOL_GPL vmlinux 0xa85d656e	adp5520_read
+EXPORT_SYMBOL_GPL vmlinux 0xa899e2f8	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xa89daa56	dma_buf_put
 EXPORT_SYMBOL_GPL vmlinux 0xa8a32176	clk_prepare
 EXPORT_SYMBOL_GPL vmlinux 0xa8ad4485	snd_soc_component_async_complete
@@ -16990,7 +16991,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xe1775ee7	dm_get_reserved_bio_based_ios
 EXPORT_SYMBOL_GPL vmlinux 0xe18f60cc	ip6_datagram_send_ctl
 EXPORT_SYMBOL_GPL vmlinux 0xe193f9eb	omap_dm_timer_stop
 EXPORT_SYMBOL_GPL vmlinux 0xe198a5f1	snd_dmaengine_pcm_open_request_chan
-EXPORT_SYMBOL_GPL vmlinux 0xe1c3b778	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xe1ec1601	dma_buf_begin_cpu_access
 EXPORT_SYMBOL_GPL vmlinux 0xe1f9c2e4	usb_get_dev
 EXPORT_SYMBOL_GPL vmlinux 0xe1f9f4ff	devm_spi_register_master

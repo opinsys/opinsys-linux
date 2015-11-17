@@ -5895,7 +5895,6 @@ EXPORT_SYMBOL vmlinux 0x04236553	__xfrm_state_destroy
 EXPORT_SYMBOL vmlinux 0x04314fba	poll_initwait
 EXPORT_SYMBOL vmlinux 0x0440a533	_lv1_net_remove_multicast_address
 EXPORT_SYMBOL vmlinux 0x04482cdb	__refrigerator
-EXPORT_SYMBOL vmlinux 0x044c51d4	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x047a14aa	rawv6_mh_filter_register
 EXPORT_SYMBOL vmlinux 0x047ef59e	ppp_unregister_channel
 EXPORT_SYMBOL vmlinux 0x0482fd74	vmalloc_to_page
@@ -5995,6 +5994,7 @@ EXPORT_SYMBOL vmlinux 0x09d44df9	in_lock_functions
 EXPORT_SYMBOL vmlinux 0x09e15f2d	blk_requeue_request
 EXPORT_SYMBOL vmlinux 0x09e60b8d	inet_unregister_protosw
 EXPORT_SYMBOL vmlinux 0x09e8babb	generic_perform_write
+EXPORT_SYMBOL vmlinux 0x09f4016a	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x0a2487e0	unblock_all_signals
 EXPORT_SYMBOL vmlinux 0x0a3d0644	cpu_online_mask
 EXPORT_SYMBOL vmlinux 0x0a55d474	dquot_get_dqinfo
@@ -15197,7 +15197,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x4a38cc57	of_platform_populate
 EXPORT_SYMBOL_GPL vmlinux 0x4a3d0fe3	dev_change_net_namespace
 EXPORT_SYMBOL_GPL vmlinux 0x4a47b2d5	driver_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x4a4fbc5a	subsys_dev_iter_exit
-EXPORT_SYMBOL_GPL vmlinux 0x4a55ff74	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x4a7931b2	use_cop
 EXPORT_SYMBOL_GPL vmlinux 0x4a82a8c2	spu_add_dev_attr_group
 EXPORT_SYMBOL_GPL vmlinux 0x4a89d1ea	spi_sync_locked
@@ -17351,6 +17350,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xf31b3fd1	workqueue_set_max_active
 EXPORT_SYMBOL_GPL vmlinux 0xf331236f	btree_geo32
 EXPORT_SYMBOL_GPL vmlinux 0xf3409b72	virtqueue_get_vring_size
 EXPORT_SYMBOL_GPL vmlinux 0xf3486ddc	kern_mount_data
+EXPORT_SYMBOL_GPL vmlinux 0xf3558ee0	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xf35efd3c	balloon_page_enqueue
 EXPORT_SYMBOL_GPL vmlinux 0xf378d51d	__ip_route_output_key
 EXPORT_SYMBOL_GPL vmlinux 0xf37d3c12	ata_sas_port_destroy

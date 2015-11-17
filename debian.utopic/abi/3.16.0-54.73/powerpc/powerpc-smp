@@ -6252,7 +6252,6 @@ EXPORT_SYMBOL vmlinux 0x1cccf488	inet6_bind
 EXPORT_SYMBOL vmlinux 0x1ce4ab7f	xfrm_policy_delete
 EXPORT_SYMBOL vmlinux 0x1cebd8d5	ipv6_chk_addr
 EXPORT_SYMBOL vmlinux 0x1ced1d86	bio_uncopy_user
-EXPORT_SYMBOL vmlinux 0x1cee0b6f	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x1cef4854	elevator_exit
 EXPORT_SYMBOL vmlinux 0x1d24a0af	ip_options_rcv_srr
 EXPORT_SYMBOL vmlinux 0x1d313e51	pcie_capability_read_word
@@ -9945,6 +9944,7 @@ EXPORT_SYMBOL vmlinux 0xfdd76260	tcf_exts_validate
 EXPORT_SYMBOL vmlinux 0xfded48ed	enable_kernel_fp
 EXPORT_SYMBOL vmlinux 0xfdfc0b3b	fiemap_fill_next_extent
 EXPORT_SYMBOL vmlinux 0xfe029963	unregister_inetaddr_notifier
+EXPORT_SYMBOL vmlinux 0xfe0d16f0	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0xfe1f4113	update_time
 EXPORT_SYMBOL vmlinux 0xfe5d4bb2	sys_tz
 EXPORT_SYMBOL vmlinux 0xfe68e133	md_finish_reshape
@@ -14361,6 +14361,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x20bc3470	orderly_poweroff
 EXPORT_SYMBOL_GPL vmlinux 0x20c8f5dd	crypto_alloc_aead
 EXPORT_SYMBOL_GPL vmlinux 0x20d9ba49	ata_msleep
 EXPORT_SYMBOL_GPL vmlinux 0x20f92d51	crypto_aead_setauthsize
+EXPORT_SYMBOL_GPL vmlinux 0x21055850	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x2133762c	usb_register_device_driver
 EXPORT_SYMBOL_GPL vmlinux 0x215493d7	device_for_each_child
 EXPORT_SYMBOL_GPL vmlinux 0x215bfb88	mmc_regulator_get_supply
@@ -16645,7 +16646,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xe1775ee7	dm_get_reserved_bio_based_ios
 EXPORT_SYMBOL_GPL vmlinux 0xe1bd6c99	rio_init_mports
 EXPORT_SYMBOL_GPL vmlinux 0xe1c83eb9	regulator_unregister_supply_alias
 EXPORT_SYMBOL_GPL vmlinux 0xe1dfedd8	pm_generic_runtime_suspend
-EXPORT_SYMBOL_GPL vmlinux 0xe1e5a737	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0xe1ea9e19	ata_port_freeze
 EXPORT_SYMBOL_GPL vmlinux 0xe20922b2	usb_get_phy_dev
 EXPORT_SYMBOL_GPL vmlinux 0xe20d1b85	register_kretprobe

@@ -7102,7 +7102,6 @@ EXPORT_SYMBOL vmlinux 0x41907cd7	netpoll_send_udp
 EXPORT_SYMBOL vmlinux 0x419d8354	fsnotify_get_group
 EXPORT_SYMBOL vmlinux 0x41b36d5d	seq_open
 EXPORT_SYMBOL vmlinux 0x41b3dfb4	elv_dispatch_sort
-EXPORT_SYMBOL vmlinux 0x41cef754	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0x41d6cb07	wait_for_completion_io_timeout
 EXPORT_SYMBOL vmlinux 0x41fbb06e	udp_set_csum
 EXPORT_SYMBOL vmlinux 0x4211c3c1	zlib_inflateInit2
@@ -9657,6 +9656,7 @@ EXPORT_SYMBOL vmlinux 0xd8e56904	ip_route_me_harder
 EXPORT_SYMBOL vmlinux 0xd8fc4f94	misc_deregister
 EXPORT_SYMBOL vmlinux 0xd9091363	acpi_install_notify_handler
 EXPORT_SYMBOL vmlinux 0xd9213d13	truncate_pagecache
+EXPORT_SYMBOL vmlinux 0xd9224e1f	skb_copy_and_csum_datagram_iovec
 EXPORT_SYMBOL vmlinux 0xd92afabe	bitmap_clear
 EXPORT_SYMBOL vmlinux 0xd93702ff	vm_map_ram
 EXPORT_SYMBOL vmlinux 0xd94322e7	acpi_evaluate_reference
@@ -15667,7 +15667,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x47884890	system_power_efficient_wq
 EXPORT_SYMBOL_GPL vmlinux 0x4799ecbc	crypto_mod_put
 EXPORT_SYMBOL_GPL vmlinux 0x47a902a9	regulator_set_optimum_mode
 EXPORT_SYMBOL_GPL vmlinux 0x47aad3b9	have_governor_per_policy
-EXPORT_SYMBOL_GPL vmlinux 0x47c69ef7	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x47d02271	ata_dev_disable
 EXPORT_SYMBOL_GPL vmlinux 0x47ecde79	__ata_ehi_push_desc
 EXPORT_SYMBOL_GPL vmlinux 0x47f5d5b2	ata_sas_port_stop
@@ -16332,6 +16331,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x77f1eb67	bio_trim
 EXPORT_SYMBOL_GPL vmlinux 0x781713a8	debugfs_create_u64
 EXPORT_SYMBOL_GPL vmlinux 0x781c6eca	hrtimer_init
 EXPORT_SYMBOL_GPL vmlinux 0x782adb74	hpet_rtc_interrupt
+EXPORT_SYMBOL_GPL vmlinux 0x7851ea32	ehci_handshake
 EXPORT_SYMBOL_GPL vmlinux 0x789209ac	ata_link_online
 EXPORT_SYMBOL_GPL vmlinux 0x7897217a	balloon_page_enqueue
 EXPORT_SYMBOL_GPL vmlinux 0x78a8d6a2	ata_scsi_slave_destroy
