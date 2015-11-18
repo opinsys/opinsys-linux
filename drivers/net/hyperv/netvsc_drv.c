@@ -236,20 +236,40 @@ static u32 comp_hash(u8 *key, int klen, void *data, int dlen)
 
 static bool netvsc_set_hash(u32 *hash, struct sk_buff *skb)
 {
-	struct flow_keys flow;
+	struct iphdr *iphdr;
+	struct ipv6hdr *ipv6hdr;
+	__be32 dbuf[9];
 	int data_len;
 
-	if (!skb_flow_dissect_flow_keys(skb, &flow, 0) ||
-	    !(flow.basic.n_proto == htons(ETH_P_IP) ||
-	      flow.basic.n_proto == htons(ETH_P_IPV6)))
+	if (eth_hdr(skb)->h_proto != htons(ETH_P_IP) &&
+	    eth_hdr(skb)->h_proto != htons(ETH_P_IPV6))
 		return false;
 
-	if (flow.basic.ip_proto == IPPROTO_TCP)
-		data_len = 12;
-	else
-		data_len = 8;
+	iphdr = ip_hdr(skb);
+	ipv6hdr = ipv6_hdr(skb);
 
-	*hash = comp_hash(netvsc_hash_key, HASH_KEYLEN, &flow, data_len);
+	if (iphdr->version == 4) {
+		dbuf[0] = iphdr->saddr;
+		dbuf[1] = iphdr->daddr;
+		if (iphdr->protocol == IPPROTO_TCP) {
+			dbuf[2] = *(__be32 *)&tcp_hdr(skb)->source;
+			data_len = 12;
+		} else {
+			data_len = 8;
+		}
+	} else if (ipv6hdr->version == 6) {
+		memcpy(dbuf, &ipv6hdr->saddr, 32);
+		if (ipv6hdr->nexthdr == IPPROTO_TCP) {
+			dbuf[8] = *(__be32 *)&tcp_hdr(skb)->source;
+			data_len = 36;
+		} else {
+			data_len = 32;
+		}
+	} else {
+		return false;
+	}
+
+	*hash = comp_hash(netvsc_hash_key, HASH_KEYLEN, dbuf, data_len);
 
 	return true;
 }
