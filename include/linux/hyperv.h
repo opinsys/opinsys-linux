@@ -758,7 +758,19 @@ struct vmbus_channel {
 	 * link up channels based on their CPU affinity.
 	 */
 	struct list_head percpu_list;
+	/*
+	 * Host signaling policy: The default policy will be
+	 * based on the ring buffer state. We will also support
+	 * a policy where the client driver can have explicit
+	 * signaling control.
+	 */
+	bool signal_state;
 };
+
+static inline void set_channel_signal_state(struct vmbus_channel *c, bool state)
+{
+	c->signal_state = state;
+}
 
 static inline void set_channel_read_state(struct vmbus_channel *c, bool state)
 {

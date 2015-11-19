@@ -602,6 +602,14 @@ int vmbus_sendpacket_ctl(struct vmbus_channel *channel, void *buffer,
 
 	ret = hv_ringbuffer_write(&channel->outbound, bufferlist, 3, &signal);
 
+	/* Based on the channel signal state, we will decide
+	 * which signaling policy will be applied.
+	 */
+	if (channel->signal_state)
+		signal = true;
+	else
+		kick_q = true;
+
 	if ((ret == 0) && kick_q && signal)
 		vmbus_setevent(channel);
 
@@ -692,6 +700,14 @@ int vmbus_sendpacket_pagebuffer_ctl(struct vmbus_channel *channel,
 	bufferlist[2].iov_len = (packetlen_aligned - packetlen);
 
 	ret = hv_ringbuffer_write(&channel->outbound, bufferlist, 3, &signal);
+
+	/* Based on the channel signal state, we will decide
+	 * which signaling policy will be applied.
+	 */
+	if (channel->signal_state)
+		signal = true;
+	else
+		kick_q = true;
 
 	if ((ret == 0) && kick_q && signal)
 		vmbus_setevent(channel);
