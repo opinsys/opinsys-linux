@@ -128,7 +128,7 @@
 				reg = <0x4002c000 0x1000>;
 				clocks = <&clks VF610_CLK_DSPI0>;
 				clock-names = "dspi";
-				spi-num-chipselects = <5>;
+				spi-num-chipselects = <6>;
 				status = "disabled";
 			};
 
