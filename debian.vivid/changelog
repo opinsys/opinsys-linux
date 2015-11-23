@@ -1,16 +1,30 @@
-linux-lts-vivid (3.19.0-36.41~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-37.42~14.04.1) trusty; urgency=low
+
+  [ Kamal Mostafa ]
+
+  * Release Tracking Bug
+    - LP: #1518519
+
+  [ K. Y. Srinivasan ]
+
+  * SAUCE: Drivers: hv: vmbus: Fix a Host signaling bug
+    - LP: #1508706
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 23 Nov 2015 13:24:32 +0000
+
+linux (3.19.0-36.41) vivid; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1516875
+    - LP: #1516748
 
   [ Upstream Kernel Changes ]
 
   * arm64: errata: use KBUILD_CFLAGS_MODULE for erratum #843419
     - LP: #1516682
 
- -- Luis Henriques <luis.henriques@canonical.com>  Tue, 17 Nov 2015 10:23:54 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 16 Nov 2015 18:49:43 +0000
 
 linux (3.19.0-35.40) vivid; urgency=low
 
