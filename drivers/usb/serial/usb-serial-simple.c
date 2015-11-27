@@ -53,7 +53,8 @@ DEVICE(funsoft, FUNSOFT_IDS);
 
 /* Infineon Flashloader driver */
 #define FLASHLOADER_IDS()		\
-	{ USB_DEVICE(0x8087, 0x0716) }
+	{ USB_DEVICE(0x8087, 0x0716) }, \
+    { USB_DEVICE_INTERFACE_NUMBER(0x058b, 0x0041, 1) }
 DEVICE(flashloader, FLASHLOADER_IDS);
 
 /* Google Serial USB SubClass */
