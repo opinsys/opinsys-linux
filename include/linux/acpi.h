@@ -784,8 +784,8 @@ static inline int acpi_dev_get_property_array(struct acpi_device *adev,
 	return -ENXIO;
 }
 static inline int acpi_dev_get_property_reference(struct acpi_device *adev,
-				const char *name, const char *cells_name,
-				size_t index, struct acpi_reference_args *args)
+				const char *name, size_t index,
+				struct acpi_reference_args *args)
 {
 	return -ENXIO;
 }
