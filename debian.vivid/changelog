@@ -1,16 +1,46 @@
-linux-lts-vivid (3.19.0-37.42~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-39.44~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1521875
+
+  [ Upstream Kernel Changes ]
+
+  * fib_rules: Fix dump_rules() not to exit early
+    - LP: #1514785
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 02 Dec 2015 09:28:31 +0000
+
+linux (3.19.0-38.43) vivid; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1520641
+
+  [ danielepa ]
+
+  * SAUCE: usb: cdc-acm: blacklist VID/PID 0x058b/0x0041 device
+    - LP: #1520147
+  * SAUCE: usb: usb-serial-simple: add 0x058b/0x0041 device
+    - LP: #1520147
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 27 Nov 2015 16:12:02 +0000
+
+linux (3.19.0-37.42) vivid; urgency=low
 
   [ Kamal Mostafa ]
 
   * Release Tracking Bug
-    - LP: #1518519
+    - LP: #1518406
 
   [ K. Y. Srinivasan ]
 
   * SAUCE: Drivers: hv: vmbus: Fix a Host signaling bug
     - LP: #1508706
 
- -- Luis Henriques <luis.henriques@canonical.com>  Mon, 23 Nov 2015 13:24:32 +0000
+ -- Kamal Mostafa <kamal@canonical.com>  Fri, 20 Nov 2015 09:49:10 -0800
 
 linux (3.19.0-36.41) vivid; urgency=low
 
