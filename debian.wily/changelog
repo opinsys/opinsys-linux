@@ -1,9 +1,108 @@
-linux-lts-wily (4.2.0-19.23~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-21.25~14.04.1) trusty; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1515538
+    - LP: #1522374
+
+  [ Upstream Kernel Changes ]
+
+  * staging/dgnc: fix info leak in ioctl
+    - LP: #1509565
+    - CVE-2015-7885
+  * [media] media/vivid-osd: fix info leak in ioctl
+    - LP: #1509564
+    - CVE-2015-7884
+  * KEYS: Fix race between key destruction and finding a keyring by name
+    - LP: #1508856
+    - CVE-2015-7872
+  * KEYS: Fix crash when attempt to garbage collect an uninstantiated
+    keyring
+    - LP: #1508856
+    - CVE-2015-7872
+  * KEYS: Don't permit request_key() to construct a new keyring
+    - LP: #1508856
+    - CVE-2015-7872
+  * isdn_ppp: Add checks for allocation failure in isdn_ppp_open()
+    - LP: #1508329
+    - CVE-2015-7799
+  * ppp, slip: Validate VJ compression slot parameters completely
+    - LP: #1508329
+    - CVE-2015-7799
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 03 Dec 2015 11:41:35 +0000
+
+linux (4.2.0-20.24) wily; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1521753
+
+  [ Andy Whitcroft ]
+
+  * [Tests] gcc-multilib does not exist on ppc64el
+    - LP: #1515541
+
+  [ Joseph Salisbury ]
+
+  * SAUCE: scsi_sysfs: protect against double execution of
+    __scsi_remove_device()
+    - LP: #1509029
+
+  [ Manoj Kumar ]
+
+  * SAUCE: (noup) cxlflash: Fix to escalate LINK_RESET also on port 1
+    - LP: #1513583
+
+  [ Matthew R. Ochs ]
+
+  * SAUCE: (noup) cxlflash: Fix to avoid virtual LUN failover failure
+    - LP: #1513583
+
+  [ Oren Givon ]
+
+  * SAUCE: (noup) iwlwifi: Add new PCI IDs for the 8260 series
+    - LP: #1517375
+
+  [ Seth Forshee ]
+
+  * [Config] CONFIG_DRM_AMDGPU_CIK=n
+    - LP: #1510405
+
+  [ Upstream Kernel Changes ]
+
+  * net/mlx5e: Disable VLAN filter in promiscuous mode
+    - LP: #1514861
+  * drivers: net: xgene: fix RGMII 10/100Mb mode
+    - LP: #1433290
+  * HID: rmi: Disable scanning if the device is not a wake source
+    - LP: #1515503
+  * HID: rmi: Set F01 interrupt enable register when not set
+    - LP: #1515503
+  * net/mlx5e: Ethtool link speed setting fixes
+    - LP: #1517919
+  * scsi_scan: don't dump trace when scsi_prep_async_scan() is called twice
+    - LP: #1517942
+  * x86/ioapic: Disable interrupts when re-routing legacy IRQs
+    - LP: #1508593
+  * xhci: Workaround to get Intel xHCI reset working more reliably
+  * megaraid_sas: Do not use PAGE_SIZE for max_sectors
+    - LP: #1475166
+  * net: usb: cdc_ether: add Dell DW5580 as a mobile broadband adapter
+    - LP: #1513847
+  * KVM: svm: unconditionally intercept #DB
+    - LP: #1520184
+    - CVE-2015-8104
+
+ -- Brad Figg <brad.figg@canonical.com>  Tue, 01 Dec 2015 12:38:33 -0800
+
+linux (4.2.0-19.23) wily; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1515157
 
   [ Andy Whitcroft ]
 
@@ -919,7 +1018,7 @@ linux-lts-wily (4.2.0-19.23~14.04.1) trusty; urgency=low
   * Linux 4.2.6
     - LP: #1514889
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 12 Nov 2015 10:32:20 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 11 Nov 2015 09:54:16 +0000
 
 linux (4.2.0-18.22) wily; urgency=low
 
