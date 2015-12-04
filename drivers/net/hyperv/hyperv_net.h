@@ -129,7 +129,6 @@ struct hv_netvsc_packet {
 	/* Bookkeeping stuff */
 	u32 status;
 
-	struct hv_device *device;
 	bool is_data_pkt;
 	bool xmit_more; /* from skb */
 	bool cp_partial; /* partial copy into send buffer */
