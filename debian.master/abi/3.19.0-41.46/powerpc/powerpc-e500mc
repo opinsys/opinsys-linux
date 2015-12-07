@@ -14108,6 +14108,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb86fbea7	snd_dmaengine_pcm_register
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb9c51118	snd_soc_poweroff
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xba46ff5c	snd_soc_jack_add_pins
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbc229660	snd_soc_get_enum_double
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbf33c6aa	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc02cf9db	snd_soc_component_test_bits
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc2764f9b	snd_soc_lookup_platform
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc52453d5	snd_soc_debugfs_root

@@ -17447,6 +17447,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xe4613aee	irq_domain_add_simple
 EXPORT_SYMBOL_GPL vmlinux 0xe4689576	ktime_get_with_offset
 EXPORT_SYMBOL_GPL vmlinux 0xe4720f11	snd_soc_add_platform
 EXPORT_SYMBOL_GPL vmlinux 0xe481d419	each_symbol_section
+EXPORT_SYMBOL_GPL vmlinux 0xe493f886	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL vmlinux 0xe4971ade	tracing_alloc_snapshot
 EXPORT_SYMBOL_GPL vmlinux 0xe4c22565	cpdma_chan_destroy
 EXPORT_SYMBOL_GPL vmlinux 0xe4c3487d	rtc_irq_set_state

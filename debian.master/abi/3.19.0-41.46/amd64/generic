@@ -15097,6 +15097,7 @@ EXPORT_SYMBOL_GPL sound/soc/intel/sst/snd-intel-sst-core 0xe088b64d	intel_sst_pm
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x00276bac	snd_soc_component_init_regmap
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x0316b32d	snd_soc_add_component_controls
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x052a683d	snd_soc_dai_set_fmt
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x073a2013	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x09a14368	snd_soc_put_volsw_range
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x0a2d97a1	snd_soc_dapm_add_routes
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x0b88eeae	snd_soc_resume

@@ -14390,6 +14390,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x5787215f	snd_soc_jack_new
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x5c31ccb6	snd_soc_codec_set_sysclk
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x5d6a934d	snd_dmaengine_pcm_register
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x5fffbcca	snd_soc_dapm_put_volsw
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x622e622f	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x6433f750	snd_soc_info_enum_double
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x6b5960af	snd_soc_update_bits
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x6b96c6b2	snd_soc_dapm_put_enum_double
