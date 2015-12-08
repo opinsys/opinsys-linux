@@ -371,7 +371,7 @@ struct sock {
 	struct socket_wq __rcu	*sk_wq;
 
 #ifdef CONFIG_XFRM
-	struct xfrm_policy	*sk_policy[2];
+	struct xfrm_policy __rcu *sk_policy[2];
 #endif
 	unsigned long 		sk_flags;
 	struct dst_entry	*sk_rx_dst;

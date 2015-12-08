@@ -1140,12 +1140,14 @@ static inline int xfrm6_route_forward(struct sk_buff *skb)
 	return xfrm_route_forward(skb, AF_INET6);
 }
 
-int __xfrm_sk_clone_policy(struct sock *sk);
+int __xfrm_sk_clone_policy(struct sock *sk, const struct sock *osk);
 
-static inline int xfrm_sk_clone_policy(struct sock *sk)
+static inline int xfrm_sk_clone_policy(struct sock *sk, const struct sock *osk)
 {
-	if (unlikely(sk->sk_policy[0] || sk->sk_policy[1]))
-		return __xfrm_sk_clone_policy(sk);
+	sk->sk_policy[0] = NULL;
+	sk->sk_policy[1] = NULL;
+	if (unlikely(osk->sk_policy[0] || osk->sk_policy[1]))
+		return __xfrm_sk_clone_policy(sk, osk);
 	return 0;
 }
 
@@ -1153,12 +1155,16 @@ int xfrm_policy_delete(struct xfrm_policy *pol, int dir);
 
 static inline void xfrm_sk_free_policy(struct sock *sk)
 {
-	if (unlikely(sk->sk_policy[0] != NULL)) {
-		xfrm_policy_delete(sk->sk_policy[0], XFRM_POLICY_MAX);
+	struct xfrm_policy *pol;
+
+	pol = rcu_dereference_protected(sk->sk_policy[0], 1);
+	if (unlikely(pol != NULL)) {
+		xfrm_policy_delete(pol, XFRM_POLICY_MAX);
 		sk->sk_policy[0] = NULL;
 	}
-	if (unlikely(sk->sk_policy[1] != NULL)) {
-		xfrm_policy_delete(sk->sk_policy[1], XFRM_POLICY_MAX+1);
+	pol = rcu_dereference_protected(sk->sk_policy[1], 1);
+	if (unlikely(pol != NULL)) {
+		xfrm_policy_delete(pol, XFRM_POLICY_MAX+1);
 		sk->sk_policy[1] = NULL;
 	}
 }
@@ -1168,7 +1174,7 @@ void xfrm_garbage_collect(struct net *net);
 #else
 
 static inline void xfrm_sk_free_policy(struct sock *sk) {}
-static inline int xfrm_sk_clone_policy(struct sock *sk) { return 0; }
+static inline int xfrm_sk_clone_policy(struct sock *sk, const struct sock *osk) { return 0; }
 static inline int xfrm6_route_forward(struct sk_buff *skb) { return 1; }  
 static inline int xfrm4_route_forward(struct sk_buff *skb) { return 1; } 
 static inline int xfrm6_policy_check(struct sock *sk, int dir, struct sk_buff *skb)
