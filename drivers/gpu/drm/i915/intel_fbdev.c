@@ -55,13 +55,6 @@ static int intel_fbdev_set_par(struct fb_info *info)
 	ret = drm_fb_helper_set_par(info);
 
 	if (ret == 0) {
-		/*
-		 * FIXME: fbdev presumes that all callbacks also work from
-		 * atomic contexts and relies on that for emergency oops
-		 * printing. KMS totally doesn't do that and the locking here is
-		 * by far not the only place this goes wrong.  Ignore this for
-		 * now until we solve this for real.
-		 */
 		mutex_lock(&fb_helper->dev->struct_mutex);
 		ret = i915_gem_object_set_to_gtt_domain(ifbdev->fb->obj,
 							true);
