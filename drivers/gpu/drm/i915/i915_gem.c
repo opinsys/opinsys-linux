@@ -1221,8 +1221,12 @@ static int __i915_spin_request(struct drm_i915_gem_request *req, int state)
 	 * takes to sleep on a request, on the order of a microsecond.
 	 */
 
-	if (i915_gem_request_get_ring(req)->irq_refcount)
+	if (req->ring->irq_refcount)
 		return -EBUSY;
+
+	/* Only spin if we know the GPU is processing this request */
+	if (!i915_gem_request_started(req, true))
+		return -EAGAIN;
 
 	timeout = local_clock_us(&cpu) + 5;
 	while (!need_resched()) {
@@ -1237,6 +1241,7 @@ static int __i915_spin_request(struct drm_i915_gem_request *req, int state)
 
 		cpu_relax_lowlatency();
 	}
+
 	if (i915_gem_request_completed(req, false))
 		return 0;
 
@@ -2594,6 +2599,7 @@ int __i915_add_request(struct intel_engine_cs *ring,
 	}
 
 	request->emitted_jiffies = jiffies;
+	request->previous_seqno = ring->last_submitted_seqno;
 	ring->last_submitted_seqno = request->seqno;
 	list_add_tail(&request->list, &ring->request_list);
 	request->file_priv = NULL;
