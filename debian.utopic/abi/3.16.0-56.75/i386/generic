@@ -14607,6 +14607,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x729bf56e	snd_soc_dai_set_tdm_slot
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x74781dc3	snd_soc_new_ac97_codec
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x76351ae8	snd_soc_get_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x7840735d	snd_soc_put_enum_double
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x788b1bf8	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x7a26a4b2	snd_soc_dpcm_be_set_state
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x7b848b15	snd_soc_cache_write
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x7e606130	snd_soc_calc_bclk

@@ -14437,6 +14437,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x020f4b38	snd_soc_suspend
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x02a3519c	snd_soc_write
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x043d5862	snd_soc_set_ac97_ops
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x05780395	snd_soc_add_codec_controls
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x0885dea6	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x09512831	snd_soc_register_component
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x097d3682	snd_soc_lookup_platform
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x0b05a709	snd_soc_put_xr_sx

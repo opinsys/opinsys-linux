@@ -14166,6 +14166,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x4252c439	snd_soc_dai_set_tristate
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x43eee50f	snd_soc_remove_platform
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x45131e2b	snd_soc_suspend
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x45c0c25b	snd_soc_add_card_controls
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x47025608	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x48733045	snd_soc_dapm_nc_pin
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x496d67f0	snd_soc_bytes_info
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x4d04a4d9	snd_soc_cache_write

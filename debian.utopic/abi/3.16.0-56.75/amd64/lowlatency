@@ -14553,6 +14553,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb0ced5a2	snd_soc_dai_set_channel_map
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb11492d1	snd_soc_of_parse_tdm_slot
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb58ff750	snd_soc_write
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb64de3f3	dapm_clock_event
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbabc0107	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbb662719	snd_soc_info_xr_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbca67f1c	snd_soc_poweroff
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc2713b3e	snd_soc_put_xr_sx

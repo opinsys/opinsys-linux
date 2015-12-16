@@ -14229,6 +14229,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x165b53c4	regulator_set_optimum_mode
 EXPORT_SYMBOL_GPL vmlinux 0x1668eb66	power_supply_class
 EXPORT_SYMBOL_GPL vmlinux 0x168ce027	pid_vnr
 EXPORT_SYMBOL_GPL vmlinux 0x1691dc5a	pciserial_init_ports
+EXPORT_SYMBOL_GPL vmlinux 0x169720d7	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL vmlinux 0x16bacef8	pci_user_write_config_word
 EXPORT_SYMBOL_GPL vmlinux 0x16c401cb	tty_port_install
 EXPORT_SYMBOL_GPL vmlinux 0x16ca9414	iptunnel_xmit

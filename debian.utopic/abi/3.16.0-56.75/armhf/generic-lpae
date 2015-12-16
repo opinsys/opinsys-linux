@@ -16324,6 +16324,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xb9528f5e	smp_call_function_single_async
 EXPORT_SYMBOL_GPL vmlinux 0xb95e3e85	class_find_device
 EXPORT_SYMBOL_GPL vmlinux 0xb97bbd74	regulator_notifier_call_chain
 EXPORT_SYMBOL_GPL vmlinux 0xb9847053	devm_regmap_field_free
+EXPORT_SYMBOL_GPL vmlinux 0xb98bb49e	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL vmlinux 0xb9b26da1	blkcipher_walk_phys
 EXPORT_SYMBOL_GPL vmlinux 0xb9b9df41	usb_amd_dev_put
 EXPORT_SYMBOL_GPL vmlinux 0xb9c425de	register_syscore_ops

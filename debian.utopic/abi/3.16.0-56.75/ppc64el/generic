@@ -12340,6 +12340,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xdf38e2f1	snd_soc_dai_set_clkdiv
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe0a4ef89	snd_soc_dapm_get_volsw
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe198dd2f	snd_soc_jack_report
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe24f74f6	snd_soc_set_ac97_ops_of_reset
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe4a6e601	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe98f736f	snd_soc_dapm_enable_pin_unlocked
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xeb711ae7	snd_soc_params_to_bclk
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xeba91b19	snd_soc_codec_set_sysclk

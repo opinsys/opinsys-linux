@@ -13630,6 +13630,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbf5d2974	snd_soc_get_volsw
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbf64246d	snd_soc_jack_add_gpiods
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc0431188	snd_soc_dapm_get_pin_switch
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc0e01810	snd_soc_dpcm_be_get_state
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc1f09532	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc44c15f3	snd_soc_of_parse_card_name
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc5d6cbe1	snd_soc_add_dai_controls
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc75655b2	snd_soc_dai_set_channel_map
