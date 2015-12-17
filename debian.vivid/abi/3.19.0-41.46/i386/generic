@@ -15101,6 +15101,7 @@ EXPORT_SYMBOL_GPL sound/soc/intel/sst/snd-intel-sst-core 0xab14edd5	relocate_imr
 EXPORT_SYMBOL_GPL sound/soc/intel/sst/snd-intel-sst-core 0xc1ac9fbc	sst_alloc_drv_context
 EXPORT_SYMBOL_GPL sound/soc/intel/sst/snd-intel-sst-core 0xf04a4106	intel_sst_pm
 EXPORT_SYMBOL_GPL sound/soc/intel/sst/snd-intel-sst-core 0xf27c0350	sst_context_init
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x06f16f77	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x08ae8c41	snd_soc_dapm_disable_pin
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x09664be5	snd_soc_dapm_get_enum_double
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x09bad719	snd_soc_bytes_get
