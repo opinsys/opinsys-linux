@@ -15745,6 +15745,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x764928a2	cpdma_chan_create
 EXPORT_SYMBOL_GPL vmlinux 0x7676bae7	snd_soc_add_dai_controls
 EXPORT_SYMBOL_GPL vmlinux 0x76809147	fb_deferred_io_init
 EXPORT_SYMBOL_GPL vmlinux 0x7681946c	unregister_pm_notifier
+EXPORT_SYMBOL_GPL vmlinux 0x7696bee0	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL vmlinux 0x76bb262d	mbox_send_message
 EXPORT_SYMBOL_GPL vmlinux 0x770cf981	tpm_send
 EXPORT_SYMBOL_GPL vmlinux 0x77143bfc	crypto_ahash_walk_first

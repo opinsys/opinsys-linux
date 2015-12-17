@@ -14050,6 +14050,7 @@ EXPORT_SYMBOL_GPL sound/soc/fsl/snd-soc-fsl-asrc 0xa306be14	fsl_asrc_platform
 EXPORT_SYMBOL_GPL sound/soc/fsl/snd-soc-imx-audmux 0x30693bb7	imx_audmux_v1_configure_port
 EXPORT_SYMBOL_GPL sound/soc/fsl/snd-soc-imx-audmux 0x58631dab	imx_audmux_v2_configure_port
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x013e1f92	snd_dmaengine_pcm_register
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x01ae9897	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x02171a93	snd_soc_jack_notifier_unregister
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x023b543c	snd_soc_dapm_get_volsw
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x02ee0304	snd_soc_dai_set_fmt

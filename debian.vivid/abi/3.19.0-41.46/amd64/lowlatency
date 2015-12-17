@@ -15209,6 +15209,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb5d8534e	snd_soc_register_codec
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb80c265b	snd_soc_debugfs_root
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xb89124dd	snd_soc_add_platform
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xba35d67e	snd_soc_register_platform
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbb630d95	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbdbe85a6	snd_soc_dai_digital_mute
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xbdde03ee	snd_soc_test_bits
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xc27c0d2b	snd_soc_component_read

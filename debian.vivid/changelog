@@ -1,9 +1,43 @@
-linux-lts-vivid (3.19.0-41.46~14.04.2) trusty; urgency=low
+linux-lts-vivid (3.19.0-42.47~14.04.1) trusty; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * xen: Add RING_COPY_REQUEST()
+    - CVE-2015-8550
+  * xen-netback: don't use last request to determine minimum Tx credit
+    - CVE-2015-8550
+  * xen-netback: use RING_COPY_REQUEST() throughout
+    - CVE-2015-8550
+  * xen-blkback: only read request operation from shared ring once
+    - CVE-2015-8550
+  * xen-blkback: read from indirect descriptors only once
+    - CVE-2015-8550
+  * xen-scsiback: safely copy requests
+    - CVE-2015-8550
+  * xen/pciback: Save xen_pci_op commands before processing it
+    - CVE-2015-8550
+  * xen/pciback: Return error on XEN_PCI_OP_enable_msi when device has MSI
+    or MSI-X enabled
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: Return error on XEN_PCI_OP_enable_msix when device has MSI
+    or MSI-X enabled
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: Do not install an IRQ handler for MSI interrupts.
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: For XEN_PCI_OP_disable_msi[|x] only disable if device has
+    MSI(X) enabled.
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: Don't allow MSI-X ops if PCI_COMMAND_MEMORY is not set.
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 17 Dec 2015 12:12:56 +0000
+
+linux (3.19.0-41.46) vivid; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1523036
+    - LP: #1522918
 
   [ Upstream Kernel Changes ]
 
@@ -12,7 +46,7 @@ linux-lts-vivid (3.19.0-41.46~14.04.2) trusty; urgency=low
   * dm: fix AB-BA deadlock in __dm_destroy()
     - LP: #1522766
 
- -- Kamal Mostafa <kamal@canonical.com>  Tue, 08 Dec 2015 09:24:31 -0800
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 04 Dec 2015 17:31:09 +0000
 
 linux (3.19.0-40.45) vivid; urgency=low
 

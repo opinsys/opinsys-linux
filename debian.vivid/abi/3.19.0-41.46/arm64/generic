@@ -13830,6 +13830,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x783e72af	snd_soc_bytes_info_ext
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x79df55f5	snd_soc_dapm_new_controls
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x7ce55414	snd_soc_dapm_disable_pin
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x7e606130	snd_soc_calc_bclk
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x7fa207e6	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x84695fb2	snd_soc_jack_get_type
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x87d72931	snd_soc_cnew
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0x8841d8fe	snd_soc_dapm_put_volsw

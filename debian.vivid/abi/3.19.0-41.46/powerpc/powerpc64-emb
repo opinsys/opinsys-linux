@@ -14105,6 +14105,7 @@ EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe8a79416	snd_soc_dapm_new_controls
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe8b55085	snd_soc_read
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xe950708c	snd_soc_add_codec_controls
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xea9f0be6	snd_soc_dai_set_sysclk
+EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xeb325a39	snd_soc_info_volsw_sx
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xeb711ae7	snd_soc_params_to_bclk
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xeb897442	snd_soc_get_enum_double
 EXPORT_SYMBOL_GPL sound/soc/snd-soc-core 0xebe00e94	snd_soc_dapm_nc_pin_unlocked
