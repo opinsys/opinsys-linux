@@ -1,9 +1,43 @@
-linux-lts-wily (4.2.0-21.25~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-22.26~14.04.1) trusty; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * xen: Add RING_COPY_REQUEST()
+    - CVE-2015-8550
+  * xen-netback: don't use last request to determine minimum Tx credit
+    - CVE-2015-8550
+  * xen-netback: use RING_COPY_REQUEST() throughout
+    - CVE-2015-8550
+  * xen-blkback: only read request operation from shared ring once
+    - CVE-2015-8550
+  * xen-blkback: read from indirect descriptors only once
+    - CVE-2015-8550
+  * xen-scsiback: safely copy requests
+    - CVE-2015-8550
+  * xen/pciback: Save xen_pci_op commands before processing it
+    - CVE-2015-8550
+  * xen/pciback: Return error on XEN_PCI_OP_enable_msi when device has MSI
+    or MSI-X enabled
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: Return error on XEN_PCI_OP_enable_msix when device has MSI
+    or MSI-X enabled
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: Do not install an IRQ handler for MSI interrupts.
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: For XEN_PCI_OP_disable_msi[|x] only disable if device has
+    MSI(X) enabled.
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+  * xen/pciback: Don't allow MSI-X ops if PCI_COMMAND_MEMORY is not set.
+    - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 17 Dec 2015 12:52:52 +0000
+
+linux (4.2.0-21.25) wily; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1522374
+    - LP: #1522108
 
   [ Upstream Kernel Changes ]
 
@@ -30,7 +64,7 @@ linux-lts-wily (4.2.0-21.25~14.04.1) trusty; urgency=low
     - LP: #1508329
     - CVE-2015-7799
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 03 Dec 2015 11:41:35 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 02 Dec 2015 17:30:58 +0000
 
 linux (4.2.0-20.24) wily; urgency=low
 
