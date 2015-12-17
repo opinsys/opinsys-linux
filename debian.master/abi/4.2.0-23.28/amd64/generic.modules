@@ -1667,7 +1667,6 @@ inv-mpu6050
 ioatdma
 ioc4
 io_edgeport
-iosf_mbi
 io_ti
 iowarrior
 ip6_gre
