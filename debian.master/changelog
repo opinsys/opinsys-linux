@@ -1,3 +1,17 @@
+linux (3.19.0-42.48) vivid; urgency=low
+
+  [ Kamal Mostafa ]
+
+  * Release Tracking Bug
+    - LP: #1527393
+
+  [ Jann Horn ]
+
+  * ptrace: being capable wrt a process requires mapped uids/gids
+    - LP: #1527374
+
+ -- Kamal Mostafa <kamal@canonical.com>  Thu, 17 Dec 2015 13:03:51 -0800
+
 linux (3.19.0-42.47) vivid; urgency=low
 
   [ Upstream Kernel Changes ]
