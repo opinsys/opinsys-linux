@@ -1,3 +1,17 @@
+linux-lts-utopic (3.16.0-57.77~14.04.1) trusty; urgency=low
+
+  [ Kamal Mostafa ]
+
+  * Release Tracking Bug
+    - LP: #1527409
+
+  [ Jann Horn ]
+
+  * ptrace: being capable wrt a process requires mapped uids/gids
+    - LP: #1527374
+
+ -- Kamal Mostafa <kamal@canonical.com>  Thu, 17 Dec 2015 15:01:30 -0800
+
 linux-lts-utopic (3.16.0-57.76~14.04.1) trusty; urgency=low
 
   [ Upstream Kernel Changes ]
