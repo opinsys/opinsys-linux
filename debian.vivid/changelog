@@ -1,4 +1,18 @@
-linux-lts-vivid (3.19.0-42.47~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-42.48~14.04.1) trusty; urgency=low
+
+  [ Kamal Mostafa ]
+
+  * Release Tracking Bug
+    - LP: #1527519
+
+  [ Jann Horn ]
+
+  * ptrace: being capable wrt a process requires mapped uids/gids
+    - LP: #1527374
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 18 Dec 2015 09:59:09 +0000
+
+linux (3.19.0-42.47) vivid; urgency=low
 
   [ Upstream Kernel Changes ]
 
@@ -30,7 +44,7 @@ linux-lts-vivid (3.19.0-42.47~14.04.1) trusty; urgency=low
   * xen/pciback: Don't allow MSI-X ops if PCI_COMMAND_MEMORY is not set.
     - CVE-2015-8551, CVE-2015-8552, CVE-2015-8553
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 17 Dec 2015 12:12:56 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 16 Dec 2015 18:55:14 +0000
 
 linux (3.19.0-41.46) vivid; urgency=low
 
