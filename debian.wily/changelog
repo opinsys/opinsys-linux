@@ -1,16 +1,31 @@
-linux-lts-wily (4.2.0-22.27~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-23.28~14.04.1) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Release Tracking Bug
+    - LP: #1529993
+
+  [ Upstream Kernel Changes ]
+
+  * ovl: fix permission checking for setattr
+    - LP: #1528904
+    - CVE-2015-8660
+
+ -- Andy Whitcroft <apw@canonical.com>  Sat, 26 Dec 2015 09:42:47 +0000
+
+linux (4.2.0-22.27) wily; urgency=low
 
   [ Kamal Mostafa ]
 
   * Release Tracking Bug
-    - LP: #1527538
+    - LP: #1527391
 
   [ Jann Horn ]
 
   * ptrace: being capable wrt a process requires mapped uids/gids
     - LP: #1527374
 
- -- Luis Henriques <luis.henriques@canonical.com>  Fri, 18 Dec 2015 10:27:07 +0000
+ -- Kamal Mostafa <kamal@canonical.com>  Thu, 17 Dec 2015 12:54:53 -0800
 
 linux (4.2.0-22.26) wily; urgency=low
 
