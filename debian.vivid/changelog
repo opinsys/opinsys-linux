@@ -1,16 +1,31 @@
-linux-lts-vivid (3.19.0-42.48~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-43.49~14.04.1) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Release Tracking Bug
+    - LP: #1529971
+
+  [ Upstream Kernel Changes ]
+
+  * ovl: fix permission checking for setattr
+    - LP: #1528904
+    - CVE-2015-8660
+
+ -- Andy Whitcroft <apw@canonical.com>  Sat, 26 Dec 2015 09:48:24 +0000
+
+linux (3.19.0-42.48) vivid; urgency=low
 
   [ Kamal Mostafa ]
 
   * Release Tracking Bug
-    - LP: #1527519
+    - LP: #1527393
 
   [ Jann Horn ]
 
   * ptrace: being capable wrt a process requires mapped uids/gids
     - LP: #1527374
 
- -- Luis Henriques <luis.henriques@canonical.com>  Fri, 18 Dec 2015 09:59:09 +0000
+ -- Kamal Mostafa <kamal@canonical.com>  Thu, 17 Dec 2015 13:03:51 -0800
 
 linux (3.19.0-42.47) vivid; urgency=low
 
