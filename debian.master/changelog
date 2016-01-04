@@ -8,6 +8,34 @@ linux (3.19.0-47.53) vivid; urgency=low
 
  -- Luis Henriques <luis.henriques@canonical.com>  Mon, 18 Jan 2016 10:22:21 +0000
 
+linux (3.19.0-44.50) vivid; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1530886
+
+  [ Upstream Kernel Changes ]
+
+  * mwifiex: parse adhoc start/join result
+    - LP: #1528910
+  * mwifiex: handle start AP error paths correctly
+    - LP: #1528910
+  * mwifiex: set regulatory info from EEPROM
+    - LP: #1528910
+  * mwifiex: don't follow AP if country code received from EEPROM
+    - LP: #1528910
+  * mwifiex: add iw vendor command support
+    - LP: #1528910
+  * mwifiex: correction in region code to country mapping
+    - LP: #1528910
+  * mwifiex: update region_code_index array
+    - LP: #1528910
+  * mwifiex: use world for unidentified region code
+    - LP: #1528910
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 04 Jan 2016 15:06:01 +0000
+
 linux (3.19.0-43.49) vivid; urgency=low
 
   [ Andy Whitcroft ]
