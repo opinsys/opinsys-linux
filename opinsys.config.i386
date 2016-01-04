@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/i386 4.0.4-040004-generic Kernel Configuration
+# Linux/i386 4.0.6.opinsys4 Kernel Configuration
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -5976,7 +5976,8 @@ CONFIG_USB_ISP1760_DUAL_ROLE=y
 # USB port drivers
 #
 CONFIG_USB_USS720=m
-CONFIG_USB_SERIAL=m
+CONFIG_USB_SERIAL=y
+CONFIG_USB_SERIAL_CONSOLE=y
 CONFIG_USB_SERIAL_GENERIC=y
 CONFIG_USB_SERIAL_SIMPLE=m
 CONFIG_USB_SERIAL_AIRCABLE=m
