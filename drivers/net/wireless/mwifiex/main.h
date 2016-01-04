@@ -876,6 +876,8 @@ struct mwifiex_adapter {
 	u32 num_in_chan_stats;
 	int survey_idx;
 	bool auto_tdls;
+	u8 *cfg_data;
+	int cfg_len;
 };
 
 int mwifiex_init_lock_list(struct mwifiex_adapter *adapter);
@@ -1353,6 +1355,8 @@ void mwifiex_parse_tx_status_event(struct mwifiex_private *priv,
 struct sk_buff *
 mwifiex_clone_skb_for_tx_status(struct mwifiex_private *priv,
 				struct sk_buff *skb, u8 flag, u64 *cookie);
+
+void marvell_set_vendor_commands(struct wiphy *wiphy);
 
 #ifdef CONFIG_DEBUG_FS
 void mwifiex_debugfs_init(void);
