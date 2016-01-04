@@ -1521,8 +1521,8 @@ static int mwifiex_cfg80211_start_ap(struct wiphy *wiphy,
 
 	if (mwifiex_send_cmd(priv, HostCmd_CMD_UAP_SYS_CONFIG,
 			     HostCmd_ACT_GEN_SET,
-			     UAP_BSS_PARAMS_I, bss_cfg, false)) {
-		wiphy_err(wiphy, "Failed to set the SSID\n");
+			     UAP_BSS_PARAMS_I, bss_cfg, true)) {
+		wiphy_err(wiphy, "Failed to set AP configuration\n");
 		kfree(bss_cfg);
 		return -1;
 	}
@@ -1530,7 +1530,7 @@ static int mwifiex_cfg80211_start_ap(struct wiphy *wiphy,
 	kfree(bss_cfg);
 
 	if (mwifiex_send_cmd(priv, HostCmd_CMD_UAP_BSS_START,
-			     HostCmd_ACT_GEN_SET, 0, NULL, false)) {
+			     HostCmd_ACT_GEN_SET, 0, NULL, true)) {
 		wiphy_err(wiphy, "Failed to start the BSS\n");
 		return -1;
 	}
