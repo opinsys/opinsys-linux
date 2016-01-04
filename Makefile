@@ -1,7 +1,7 @@
 VERSION = 4
 PATCHLEVEL = 0
 SUBLEVEL = 6
-EXTRAVERSION = .opinsys4
+EXTRAVERSION = .opinsys5
 NAME = Hurr durr I'ma sheep
 
 # *DOCUMENTATION*
