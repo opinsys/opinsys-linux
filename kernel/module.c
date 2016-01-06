@@ -3388,6 +3388,12 @@ static int load_module(struct load_info *info, const char __user *uargs,
 	synchronize_rcu();
 	mutex_unlock(&module_mutex);
  free_module:
+	/*
+	 * Ftrace needs to clean up what it initialized.
+	 * This does nothing if ftrace_module_init() wasn't called,
+	 * but it must be called outside of module_mutex.
+	 */
+	ftrace_release_mod(mod);
 	module_deallocate(mod, info);
  free_copy:
 	free_copy(info);
