@@ -4042,12 +4042,16 @@ intel_dp_probe_oui(struct intel_dp *intel_dp)
 static bool
 intel_dp_probe_mst(struct intel_dp *intel_dp)
 {
+	struct drm_device *dev = intel_dp_to_dev(intel_dp);
 	u8 buf[1];
 
 	if (!intel_dp->can_mst)
 		return false;
 
-	if (intel_dp->dpcd[DP_DPCD_REV] < 0x12)
+	//TO-DO, this is workaround for test purpose only on disabling DP 1.2 MST
+	//SKL-U suffers error from DP data link computation with DP MST enabled.
+	//fix-BUG https://bugs.freedesktop.org/show_bug.cgi?id=91791
+	if (intel_dp->dpcd[DP_DPCD_REV] < 0x12 || IS_SKYLAKE(dev))
 		return false;
 
 	if (intel_dp_dpcd_read_wake(&intel_dp->aux, DP_MSTM_CAP, buf, 1)) {
