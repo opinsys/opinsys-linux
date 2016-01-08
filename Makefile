@@ -1,8 +1,8 @@
 VERSION = 4
 PATCHLEVEL = 2
 SUBLEVEL = 8
-EXTRAVERSION =
-NAME = Hurr durr I'ma sheep
+EXTRAVERSION = -ckt1
+NAME = Hare's hurried rump
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
