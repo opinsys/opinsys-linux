@@ -1,9 +1,19 @@
-linux-lts-wily (4.2.0-23.28~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-25.30~14.04.1) trusty; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * KEYS: Fix keyring ref leak in join_session_keyring()
+    - LP: #1534887
+    - CVE-2016-0728
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 18 Jan 2016 13:30:42 +0000
+
+linux (4.2.0-23.28) wily; urgency=low
 
   [ Andy Whitcroft ]
 
   * Release Tracking Bug
-    - LP: #1529993
+    - LP: #1529361
 
   [ Upstream Kernel Changes ]
 
