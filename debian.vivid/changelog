@@ -1,9 +1,19 @@
-linux-lts-vivid (3.19.0-43.49~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-47.53~14.04.1) trusty; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * KEYS: Fix keyring ref leak in join_session_keyring()
+    - LP: #1534887
+    - CVE-2016-0728
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Mon, 18 Jan 2016 11:42:07 +0000
+
+linux (3.19.0-43.49) vivid; urgency=low
 
   [ Andy Whitcroft ]
 
   * Release Tracking Bug
-    - LP: #1529971
+    - LP: #1529362
 
   [ Upstream Kernel Changes ]
 
