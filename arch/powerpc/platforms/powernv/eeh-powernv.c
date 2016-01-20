@@ -193,10 +193,15 @@ static int powernv_eeh_dev_probe(struct pci_dev *dev, void *flag)
 	 * that PE to block its config space.
 	 *
 	 * Broadcom Austin 4-ports NICs (14e4:1657)
+	 * Broadcom Shiner 4-ports 1G NICs (14e4:168a)
 	 * Broadcom Shiner 2-ports 10G NICs (14e4:168e)
 	 */
-	if ((dev->vendor == PCI_VENDOR_ID_BROADCOM && dev->device == 0x1657) ||
-	    (dev->vendor == PCI_VENDOR_ID_BROADCOM && dev->device == 0x168e))
+	if ((dev->vendor == PCI_VENDOR_ID_BROADCOM &&
+	     dev->device == 0x1657) ||
+	    (dev->vendor == PCI_VENDOR_ID_BROADCOM &&
+	     dev->device == 0x168a) ||
+	    (dev->vendor == PCI_VENDOR_ID_BROADCOM &&
+	     dev->device == 0x168e))
 		edev->pe->state |= EEH_PE_CFG_RESTRICTED;
 
 	/*
