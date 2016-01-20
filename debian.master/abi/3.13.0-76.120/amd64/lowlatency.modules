@@ -398,16 +398,13 @@ bcm_wimax
 bd6107
 be2iscsi
 be2net
-befs
 belkin_sa
 bfa
 bfs
 bfusb
 bh1770glc
 bh1780gli
-binfmt_misc
 block2mtd
-blocklayoutdriver
 blowfish_common
 blowfish_generic
 blowfish-x86_64
@@ -588,7 +585,6 @@ comedi_parport
 comedi_test
 comm
 compal-laptop
-configfs
 contec_pci_dio
 cordic
 core
@@ -1031,7 +1027,6 @@ freevxfs
 friq
 frpw
 fsa9480
-fscache
 fschmd
 ft1000
 ft1000_pcmcia
@@ -1221,7 +1216,6 @@ hfcmulti
 hfcpci
 hfcsusb
 hfc_usb
-hfs
 hfsplus
 hgafb
 hid
@@ -2195,13 +2189,9 @@ nfnetlink_cthelper
 nfnetlink_cttimeout
 nfnetlink_log
 nfnetlink_queue
-nfs
 nfs_acl
 nfsd
 nfs_layout_nfsv41_files
-nfsv2
-nfsv3
-nfsv4
 nf_synproxy_core
 nf_tables
 nf_tables_arp
@@ -2313,7 +2303,6 @@ nxt200x
 nxt6000
 obdclass
 obdecho
-objlayoutdriver
 ocfs2
 ocfs2_dlm
 ocfs2_dlmfs
