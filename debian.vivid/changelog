@@ -1,12 +1,87 @@
-linux-lts-vivid (3.19.0-48.54~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-49.55~14.04.1) trusty; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1537013
+
+  [ Colin Ian King ]
+
+  * SAUCE: (no-up) ACPI / tables: Add acpi_force_32bit_fadt_addr option to
+    force 32 bit FADT addresses
+    - LP: #1529381
+
+  [ Tim Gardner ]
+
+  * [Config] Add DRM ast driver to udeb installer image
+    - LP: #1514711
+  * SAUCE: (no-up) Revert "[SCSI] libiscsi: Reduce locking contention in
+    fast path"
+    - LP: #1517142
+
+  [ Upstream Kernel Changes ]
+
+  * powerpc/eeh: Fix recursive fenced PHB on Broadcom shiner adapter
+    - LP: #1532942
+  * Drivers: hv: vmbus: prevent cpu offlining on newer hypervisors
+    - LP: #1440103
+  * Drivers: hv: vmbus: teardown hv_vmbus_con workqueue and
+    vmbus_connection pages on shutdown
+    - LP: #1440103
+  * drivers: hv: vmbus: Teardown synthetic interrupt controllers on module
+    unload
+    - LP: #1440103
+  * clockevents: export clockevents_unbind_device instead of
+    clockevents_unbind
+    - LP: #1440103
+  * Drivers: hv: vmbus: Teardown clockevent devices on module unload
+    - LP: #1440103
+  * Drivers: hv: vmbus: Add support for VMBus panic notifier handler
+    - LP: #1440103
+  * hv: run non-blocking message handlers in the dispatch tasklet
+    - LP: #1440103
+  * Drivers: hv: vmbus: unregister panic notifier on module unload
+    - LP: #1440103
+  * Drivers: hv: vmbus: Implement the protocol for tearing down vmbus state
+    - LP: #1440103
+  * kexec: define kexec_in_progress in !CONFIG_KEXEC case
+    - LP: #1440103
+  * Drivers: hv: vmbus: add special kexec handler
+    - LP: #1440103
+  * Drivers: hv: don't do hypercalls when hypercall_page is NULL
+    - LP: #1440103
+  * Drivers: hv: vmbus: add special crash handler
+    - LP: #1440103
+  * Drivers: hv: vmbus: prefer 'die' notification chain to 'panic'
+    - LP: #1440103
+  * hyperv: Implement netvsc_get_channels() ethool op
+    - LP: #1494423
+  * hv_netvsc: Properly size the vrss queues
+    - LP: #1494423
+  * hv_netvsc: Allocate the sendbuf in a NUMA aware way
+    - LP: #1494423
+  * hv_netvsc: Allocate the receive buffer from the correct NUMA node
+    - LP: #1494423
+  * Drivers: hv: vmbus: Implement NUMA aware CPU affinity for channels
+    - LP: #1494423
+  * Drivers: hv: vmbus: Allocate ring buffer memory in NUMA aware fashion
+    - LP: #1494423
+  * Drivers: hv: vmbus: Improve the CPU affiliation for channels
+    - LP: #1494423
+  * Drivers: hv: vmbus: Further improve CPU affiliation logic
+    - LP: #1494423
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 22 Jan 2016 10:41:45 +0000
+
+linux (3.19.0-48.54) vivid; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1536366
+    - LP: #1536124
   * Merged back Ubuntu-3.19.0-46.52
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 21 Jan 2016 10:09:38 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Wed, 20 Jan 2016 10:30:51 +0000
 
 linux (3.19.0-47.53) vivid; urgency=low
 
