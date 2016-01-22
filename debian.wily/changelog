@@ -1,12 +1,65 @@
-linux-lts-wily (4.2.0-26.31~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-27.32~14.04.1) trusty; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1537089
+
+  [ Andy Whitcroft ]
+
+  * SAUCE: (no-up) add compat_uts_machine= kernel command line override
+    - LP: #1520627
+
+  [ Colin Ian King ]
+
+  * SAUCE: (no-up) ACPI / tables: Add acpi_force_32bit_fadt_addr option to
+    force 32 bit FADT addresses
+    - LP: #1529381
+
+  [ Eric Dumazet ]
+
+  * SAUCE: (no-up) udp: properly support MSG_PEEK with truncated buffers
+    - LP: #1527902
+
+  [ Guilherme G. Piccoli ]
+
+  * SAUCE: powerpc/eeh: Validate arch in eeh_add_device_early()
+    - LP: #1486180
+
+  [ Tim Gardner ]
+
+  * SAUCE: (no-up) Revert "[SCSI] libiscsi: Reduce locking contention in
+    fast path"
+    - LP: #1517142
+  * [Config] Add DRM ast driver to udeb installer image
+    - LP: #1514711
+
+  [ Upstream Kernel Changes ]
+
+  * net/mlx5e: Re-eanble client vlan TX acceleration
+    - LP: #1533249
+  * net/mlx5e: Fix LSO vlan insertion
+    - LP: #1533249
+  * net/mlx5e: Fix inline header size calculation
+    - LP: #1533249
+  * net: usb: cdc_ncm: Adding Dell DW5812 LTE Verizon Mobile Broadband Card
+    - LP: #1533118
+  * net: usb: cdc_ncm: Adding Dell DW5813 LTE AT&T Mobile Broadband Card
+    - LP: #1533118
+  * powerpc/eeh: Fix recursive fenced PHB on Broadcom shiner adapter
+    - LP: #1532942
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Fri, 22 Jan 2016 15:03:58 +0000
+
+linux (4.2.0-26.31) wily; urgency=low
 
   [ Luis Henriques ]
 
   * Release Tracking Bug
-    - LP: #1535986
+    - LP: #1535795
   * Merged back Ubuntu-4.2.0-25.30
 
- -- Luis Henriques <luis.henriques@canonical.com>  Wed, 20 Jan 2016 13:38:42 +0000
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 19 Jan 2016 15:35:02 +0000
 
 linux (4.2.0-25.30) wily; urgency=low
 
