@@ -1,5 +1,6 @@
 arch/*/{crypto,kernel,oprofile}
 arch/*/kvm/kvm.ko
+arch/s390/*
 arch/x86/kvm/kvm-intel.ko
 arch/x86/kvm/kvm-amd.ko
 crypto/*
@@ -13,7 +14,6 @@ drivers/ata/libahci_platform.ko
 drivers/block/nbd.ko
 drivers/block/floppy.ko
 drivers/block/cryptoloop.ko
-drivers/block/nvme.ko
 drivers/block/rbd.ko
 drivers/char/hangcheck-timer.ko
 drivers/char/hw_random/virtio-rng.ko
@@ -43,6 +43,8 @@ drivers/input/touchscreen/usbtouchscreen.ko
 drivers/input/misc/xen-kbdfront.ko
 drivers/md/*
 drivers/message/fusion*
+drivers/nvme/host/nvme.ko
+drivers/s390/*
 drivers/scsi/scsi_transport_spi.ko
 drivers/misc/vmw_balloon.ko
 drivers/misc/vmw_vmci/vmw_vmci.ko
@@ -58,9 +60,11 @@ drivers/net/dummy.ko
 drivers/net/ethernet/intel/e1000/e1000.ko
 drivers/net/ethernet/intel/e1000e/e1000e.ko
 drivers/net/eql.ko
+drivers/net/ethernet/ibm/*
 drivers/net/ifb.ko
 drivers/net/ethernet/intel/igbvf/igbvf.ko
 drivers/net/ethernet/intel/ixgbevf/ixgbevf.ko
+drivers/net/geneve.ko
 drivers/net/macvlan.ko
 drivers/net/macvtap.ko
 drivers/net/ethernet/8390/ne2k-pci.ko
@@ -73,13 +77,17 @@ drivers/net/veth.ko
 drivers/net/vmxnet3/vmxnet3.ko
 drivers/net/vxlan.ko
 drivers/net/xen-netback/*
+drivers/platform/x86/pvpanic.ko
 drivers/parport/parport.ko
 drivers/parport/parport_pc.ko
 drivers/pps/pps_core.ko
 drivers/ptp/ptp.ko
 drivers/net/ethernet/dec/tulip/*
 drivers/scsi/BusLogic.ko
-drivers/scsi/device_handler/scsi_dh.ko
+drivers/scsi/device_handler/scsi_dh_emc.ko
+drivers/scsi/device_handler/scsi_dh_alua.ko
+drivers/scsi/device_handler/scsi_dh_rdac.ko
+drivers/scsi/device_handler/scsi_dh_hp_sw.ko
 drivers/scsi/iscsi_boot_sysfs.ko
 drivers/scsi/iscsi_tcp.ko
 drivers/scsi/libiscsi.ko
@@ -95,6 +103,7 @@ drivers/scsi/scsi_transport_sas.ko
 drivers/scsi/vmw_pvscsi.ko
 drivers/scsi/hv_storvsc.ko
 drivers/scsi/virtio_scsi.ko
+drivers/scsi/ibmvscsi/*
 drivers/target/target_core*.ko
 drivers/uio/uio.ko
 drivers/vhost/*
@@ -175,3 +184,4 @@ sound/pci/snd-ens1370.ko
 sound/drivers/pcsp/snd-pcsp.ko
 ubuntu/vbox/vboxguest/vboxguest.ko
 ubuntu/vbox/vboxsf/vboxsf.ko
+zfs/*
