@@ -1,9 +1,346 @@
-linux-lts-vivid (3.19.0-49.55~14.04.1) trusty; urgency=low
+linux-lts-vivid (3.19.0-50.56~14.04.1) trusty; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1537013
+    - LP: #1540792
+
+  [ J. R. Okajima ]
+
+  * SAUCE: ubuntu: aufs: tiny, extract a new func xino_fwrite_wkq()
+    - LP: #1533043
+  * SAUCE: ubuntu: aufs: for 4.3, XINO handles EINTR from the dying process
+    - LP: #1533043
+
+  [ John Johansen ]
+
+  * SAUCE: (no-up): apparmor: fix for failed mediation of socket that is
+    being shutdown
+    - LP: #1446906
+
+  [ Upstream Kernel Changes ]
+
+  * drivers/base/memory.c: fix kernel warning during memory hotplug on
+    ppc64
+    - LP: #1463654
+  * sched/wait: Fix signal handling in bit wait helpers
+    - LP: #1537859
+  * sched/wait: Fix the signal handling fix
+    - LP: #1537859
+  * ARC: Fix silly typo in MAINTAINERS file
+    - LP: #1537859
+  * ip6mr: call del_timer_sync() in ip6mr_free_table()
+    - LP: #1537859
+  * gre6: allow to update all parameters via rtnl
+    - LP: #1537859
+  * atl1c: Improve driver not to do order 4 GFP_ATOMIC allocation
+    - LP: #1537859
+  * sctp: use the same clock as if sock source timestamps were on
+    - LP: #1537859
+  * sctp: update the netstamp_needed counter when copying sockets
+    - LP: #1537859
+  * sctp: also copy sk_tsflags when copying the socket
+    - LP: #1537859
+  * net: qca_spi: fix transmit queue timeout handling
+    - LP: #1537859
+  * ipv6: sctp: clone options to avoid use after free
+    - LP: #1537859
+  * net: add validation for the socket syscall protocol argument
+    - LP: #1537859
+  * sh_eth: fix kernel oops in skb_put()
+    - LP: #1537859
+  * net: fix IP early demux races
+    - LP: #1537859
+  * vlan: Fix untag operations of stacked vlans with REORDER_HEADER off
+    - LP: #1537859
+  * skbuff: Fix offset error in skb_reorder_vlan_header
+    - LP: #1537859
+  * pptp: verify sockaddr_len in pptp_bind() and pptp_connect()
+    - LP: #1537859
+  * bluetooth: Validate socket address length in sco_sock_bind().
+    - LP: #1537859
+  * fou: clean up socket with kfree_rcu
+    - LP: #1537859
+  * af_unix: Revert 'lock_interruptible' in stream receive code
+    - LP: #1537859
+  * KEYS: Fix race between read and revoke
+    - LP: #1537859
+  * tools: Add a "make all" rule
+    - LP: #1537859
+  * efi: Disable interrupts around EFI calls, not in the epilog/prolog
+    calls
+    - LP: #1537859
+  * fuse: break infinite loop in fuse_fill_write_pages()
+    - LP: #1537859
+  * usb: gadget: pxa27x: fix suspend callback
+    - LP: #1537859
+  * iio: fix some warning messages
+    - LP: #1537859
+  * USB: cp210x: Remove CP2110 ID from compatibility list
+    - LP: #1537859
+  * USB: cdc_acm: Ignore Infineon Flash Loader utility
+    - LP: #1537859
+  * ext4: Fix handling of extended tv_sec
+    - LP: #1537859
+  * jbd2: Fix unreclaimed pages after truncate in data=journal mode
+    - LP: #1537859
+  * drm/ttm: Fixed a read/write lock imbalance
+    - LP: #1537859
+  * i2c: mv64xxx: The n clockdiv factor is 0 based on sunxi SoCs
+    - LP: #1537859
+  * AHCI: Fix softreset failed issue of Port Multiplier
+    - LP: #1537859
+  * sata_sil: disable trim
+    - LP: #1537859
+  * usb-storage: Fix scsi-sd failure "Invalid field in cdb" for USB adapter
+    JMicron
+    - LP: #1537859
+  * staging: lustre: echo_copy.._lsm() dereferences userland pointers
+    directly
+    - LP: #1537859
+  * irqchip/versatile-fpga: Fix PCI IRQ mapping on Versatile PB
+    - LP: #1537859
+  * usb: core : hub: Fix BOS 'NULL pointer' kernel panic
+    - LP: #1537859
+  * USB: whci-hcd: add check for dma mapping error
+    - LP: #1537859
+  * usb: Use the USB_SS_MULT() macro to decode burst multiplier for log
+    message
+    - LP: #1537859
+  * xen/events/fifo: Consume unprocessed events when a CPU dies
+    - LP: #1537859
+  * dm btree: fix leak of bufio-backed block in btree_split_sibling error
+    path
+    - LP: #1537859
+  * ARM: 8465/1: mm: keep reserved ASIDs in sync with mm after multiple
+    rollovers
+    - LP: #1537859
+  * perf: Fix PERF_EVENT_IOC_PERIOD deadlock
+    - LP: #1537859
+  * usb: xhci: fix config fail of FS hub behind a HS hub with MTT
+    - LP: #1537859
+  * ALSA: rme96: Fix unexpected volume reset after rate changes
+    - LP: #1537859
+  * net: mvpp2: fix missing DMA region unmap in egress processing
+    - LP: #1537859
+  * net: mvpp2: fix buffers' DMA handling on RX path
+    - LP: #1537859
+  * net: mvpp2: fix refilling BM pools in RX path
+    - LP: #1537859
+  * dmaengine: at_xdmac: fix macro typo
+    - LP: #1537859
+  * ALSA: hda - Add inverted dmic for Packard Bell DOTS
+    - LP: #1523232, #1537859
+  * vhost: relax log address alignment
+    - LP: #1537859
+  * virtio: fix memory leak of virtio ida cache layers
+    - LP: #1537859
+  * IB/srp: Fix a memory leak
+    - LP: #1537859
+  * IB/srp: Fix possible send queue overflow
+    - LP: #1537859
+  * ALSA: hda - Fixing speaker noise on the two latest thinkpad models
+    - LP: #1523517, #1537859
+  * 9p: ->evict_inode() should kick out ->i_data, not ->i_mapping
+    - LP: #1537859
+  * radeon/cik: Fix GFX IB test on Big-Endian
+    - LP: #1537859
+  * radeon: Fix VCE ring test for Big-Endian systems
+    - LP: #1537859
+  * radeon: Fix VCE IB test on Big-Endian systems
+    - LP: #1537859
+  * video: fbdev: fsl: Fix kernel crash when diu_ops is not implemented
+    - LP: #1537859
+  * crypto: skcipher - Copy iv from desc even for 0-len walks
+    - LP: #1537859
+  * ALSA: hda - Fix noise problems on Thinkpad T440s
+    - LP: #1537859
+  * dm thin metadata: fix bug when taking a metadata snapshot
+    - LP: #1537859
+  * dm space map metadata: fix ref counting bug when bootstrapping a new
+    space map
+    - LP: #1537859
+  * ipmi: move timer init to before irq is setup
+    - LP: #1537859
+  * ASoC: es8328: Fix deemphasis values
+    - LP: #1537859
+  * KVM: PPC: Book3S HV: Prohibit setting illegal transaction state in MSR
+    - LP: #1537859
+  * rfkill: copy the name into the rfkill struct
+    - LP: #1537859
+  * dm btree: fix bufio buffer leaks in dm_btree_del() error path
+    - LP: #1537859
+  * ses: Fix problems with simple enclosures
+    - LP: #1537859
+  * vgaarb: fix signal handling in vga_get()
+    - LP: #1537859
+  * ASoC: davinci-mcasp: Fix XDATA check in mcasp_start_tx
+    - LP: #1537859
+  * ARM: dts: vf610: use reset values for L2 cache latencies
+    - LP: #1537859
+  * ses: fix additional element traversal bug
+    - LP: #1537859
+  * xhci: fix usb2 resume timing and races.
+    - LP: #1537859
+  * USB: add quirk for devices with broken LPM
+    - LP: #1537859
+  * powercap / RAPL: fix BIOS lock check
+    - LP: #1537859
+  * parisc iommu: fix panic due to trying to allocate too large region
+    - LP: #1537859
+  * mm: hugetlb: fix hugepage memory leak caused by wrong reserve count
+    - LP: #1537859
+  * vmstat: Reduce time interval to stat update on idle cpu
+    - LP: #1537859
+  * mm, vmstat: allow WQ concurrency to discover memory reclaim doesn't
+    make any progress
+    - LP: #1537859
+  * mm: hugetlb: call huge_pte_alloc() only if ptep is null
+    - LP: #1537859
+  * drivers/base/memory.c: prohibit offlining of memory blocks with missing
+    sections
+    - LP: #1537859
+  * ocfs2: fix SGID not inherited issue
+    - LP: #1537859
+  * sh64: fix __NR_fgetxattr
+    - LP: #1537859
+  * ASoC: wm8974: set cache type for regmap
+    - LP: #1537859
+  * n_tty: Fix poll() after buffer-limited eof push read
+    - LP: #1537859
+  * tty: Fix GPF in flush_to_ldisc()
+    - LP: #1537859
+  * genirq: Prevent chip buslock deadlock
+    - LP: #1537859
+  * ALSA: usb-audio: Add a more accurate volume quirk for AudioQuest
+    DragonFly
+    - LP: #1537859
+  * ARM: dts: imx6: Fix Ethernet PHY mode on Ventana boards
+    - LP: #1537859
+  * ARM: 8471/1: need to save/restore arm register(r11) when it is
+    corrupted
+    - LP: #1537859
+  * ALSA: hda - Add a fixup for Thinkpad X1 Carbon 2nd
+    - LP: #1537859
+  * spi: fix parent-device reference leak
+    - LP: #1537859
+  * scripts: recordmcount: break hardlinks
+    - LP: #1537859
+  * dma-debug: Fix dma_debug_entry offset calculation
+    - LP: #1537859
+  * ftrace/scripts: Have recordmcount copy the object file
+    - LP: #1537859
+  * ARC: dw2 unwind: Reinstante unwinding out of modules
+    - LP: #1537859
+  * ARC: dw2 unwind: Ignore CIE version !=1 gracefully instead of bailing
+    - LP: #1537859
+  * powerpc/powernv: pr_warn_once on unsupported OPAL_MSG type
+    - LP: #1537859
+  * ALSA: hda - Set SKL+ hda controller power at freeze() and thaw()
+    - LP: #1537859
+  * s390/dis: Fix handling of format specifiers
+    - LP: #1537859
+  * airspy: increase USB control message buffer size
+    - LP: #1537859
+  * USB: ipaq.c: fix a timeout loop
+    - LP: #1537859
+  * USB: fix invalid memory access in hub_activate()
+    - LP: #1537859
+  * x86/mce: Ensure offline CPUs don't participate in rendezvous process
+    - LP: #1537859
+  * i2c: rcar: disable runtime PM correctly in slave mode
+    - LP: #1537859
+  * parisc: Fix syscall restarts
+    - LP: #1537859
+  * ALSA: hda/realtek - Fix silent headphone output on MacPro 4,1 (v2)
+    - LP: #1537859
+  * MIPS: uaccess: Fix strlen_user with EVA
+    - LP: #1537859
+  * ASoC: arizona: Fix bclk for sample rates that are multiple of 4kHz
+    - LP: #1537859
+  * arm: fix handling of F_OFD_... in oabi_fcntl64()
+    - LP: #1537859
+  * ocfs2: fix BUG when calculate new backup super
+    - LP: #1537859
+  * mm/memory_hotplug.c: check for missing sections in
+    test_pages_in_a_zone()
+    - LP: #1537859
+  * ftrace/scripts: Fix incorrect use of sprintf in recordmcount
+    - LP: #1537859
+  * tracing: Fix setting of start_index in find_next()
+    - LP: #1537859
+  * tile: provide CONFIG_PAGE_SIZE_64KB etc for tilepro
+    - LP: #1537859
+  * ARM: versatile: fix MMC/SD interrupt assignment
+    - LP: #1537859
+  * async_tx: use GFP_NOWAIT rather than GFP_IO
+    - LP: #1537859
+  * dts: vt8500: Add SDHC node to DTS file for WM8650
+    - LP: #1537859
+  * ftrace/module: Call clean up function when module init fails early
+    - LP: #1537859
+  * vmstat: allocate vmstat_wq before it is used
+    - LP: #1537859
+  * usb: musb: USB_TI_CPPI41_DMA requires dmaengine support
+    - LP: #1537859
+  * sctp: convert sack_needed and sack_generation to bits
+    - LP: #1537859
+  * sctp: start t5 timer only when peer rwnd is 0 and local state is
+    SHUTDOWN_PENDING
+    - LP: #1537859
+  * pinctrl: bcm2835: Fix initial value for direction_output
+    - LP: #1537859
+  * net: phy: mdio-mux: Check return value of mdiobus_alloc()
+    - LP: #1537859
+  * sh_eth: fix TX buffer byte-swapping
+    - LP: #1537859
+  * mISDN: fix a loop count
+    - LP: #1537859
+  * amd-xgbe: fix a couple timeout loops
+    - LP: #1537859
+  * qlcnic: fix a timeout loop
+    - LP: #1537859
+  * ser_gigaset: fix deallocation of platform device structure
+    - LP: #1537859
+  * net: fix warnings in 'make htmldocs' by moving macro definition out of
+    field declaration
+    - LP: #1537859
+  * net/mlx4_en: Remove dependency between timestamping capability and
+    service_task
+    - LP: #1537859
+  * net/mlx4_en: Fix HW timestamp init issue upon system startup
+    - LP: #1537859
+  * include/linux/mmdebug.h: should include linux/bug.h
+    - LP: #1537859
+  * ipv6/addrlabel: fix ip6addrlbl_get()
+    - LP: #1537859
+  * ASoC: Use nested lock for snd_soc_dapm_mutex_lock
+    - LP: #1537859
+  * net: filter: make JITs zero A for SKF_AD_ALU_XOR_X
+    - LP: #1537859
+  * net: sched: fix missing free per cpu on qstats
+    - LP: #1537859
+  * net: possible use after free in dst_release
+    - LP: #1537859
+  * kvm: x86: only channel 0 of the i8254 is linked to the HPET
+    - LP: #1537859
+  * firmware: dmi_scan: Fix UUID endianness for SMBIOS >= 2.6
+    - LP: #1537859
+  * Linux 3.19.8-ckt13
+    - LP: #1537859
+  * hotplugcpu: Avoid deadlocks by waking active_writer
+    - LP: #1481357
+  * xfrm: dst_entries_init() per-net dst_ops
+    - LP: #1486670
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Thu, 04 Feb 2016 10:37:56 +0000
+
+linux (3.19.0-49.55) vivid; urgency=low
+
+  [ Brad Figg ]
+
+  * Release Tracking Bug
+    - LP: #1536775
 
   [ Colin Ian King ]
 
@@ -71,7 +408,7 @@ linux-lts-vivid (3.19.0-49.55~14.04.1) trusty; urgency=low
   * Drivers: hv: vmbus: Further improve CPU affiliation logic
     - LP: #1494423
 
- -- Luis Henriques <luis.henriques@canonical.com>  Fri, 22 Jan 2016 10:41:45 +0000
+ -- Brad Figg <brad.figg@canonical.com>  Thu, 21 Jan 2016 12:29:48 -0800
 
 linux (3.19.0-48.54) vivid; urgency=low
 
