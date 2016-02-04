@@ -1,3 +1,11 @@
+linux-lts-xenial (4.4.0-2.16~14.04.2) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Added libssl-dev to fix FTBS
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 04 Feb 2016 06:21:55 -0700
+
 linux-lts-xenial (4.4.0-2.16~14.04.1) trusty; urgency=low
 
   [ Andy Whitcroft ]
