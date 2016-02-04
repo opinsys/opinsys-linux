@@ -1,3 +1,12 @@
+linux-lts-xenial (4.4.0-2.16~14.04.3) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * [Debian] Add no_libbpf macro
+  * Disable libbpf on arches without the __NR_bpf syscall
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 04 Feb 2016 15:08:45 -0700
+
 linux-lts-xenial (4.4.0-2.16~14.04.2) trusty; urgency=low
 
   [ Tim Gardner ]
