@@ -14,6 +14,7 @@ do_extras_package = true
 do_tools_usbip    = true
 do_tools_cpupower = true
 do_tools_perf	  = true
+no_libbpf	= NO_LIBBPF=1
 
 #do_flavour_image_package = false
 do_zfs		= true
