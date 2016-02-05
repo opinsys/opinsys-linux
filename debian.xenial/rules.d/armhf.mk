@@ -13,6 +13,5 @@ loader		= grub
 do_tools_usbip  = true
 do_tools_cpupower = true
 do_tools_perf	= true
-no_libbpf	= NO_LIBBPF=1
 
 do_dtbs		= true
