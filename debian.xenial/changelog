@@ -1,3 +1,17 @@
+linux-lts-xenial (4.4.0-4.19~14.04.2~beta1) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * Release Tracking Bug
+    - LP: #1543186
+
+  * UBUNTU: Disable libbpf on arches without the __NR_bpf syscall
+  * update-from-xenial-master must remember to disable libbpf for
+    certain architectures.
+  * UBUNTU: [Config] Enable zfs for powerpc64-smp
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 08 Feb 2016 08:16:21 -0700
+
 linux-lts-xenial (4.4.0-4.19~14.04.1~beta1) trusty; urgency=low
 
   * update ZFS and SPL to 0.6.5.4 (LP: #1542296)
