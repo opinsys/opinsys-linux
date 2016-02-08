@@ -18,6 +18,7 @@ DEF_REPO=git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/${SOUR
 RELEASE_REPO="${DEF_REPO}"
 DEF_ARCHES="i386 amd64 armhf arm64 ppc64el powerpc"
 FOREIGN_ARCHES=
+NO_LIBBPF_ARCHES="armhf powerpc ppc64el"
 
 #
 # PPAs do not have a proposed pocket. The default assumes the
@@ -114,6 +115,13 @@ sed -i 's/CONFIG_CC_STACKPROTECTOR_STRONG/CONFIG_CC_STACKPROTECTOR_REGULAR/' ${D
 # Update package and DTB settings from master.
 #
 rsync -av ${DEBIAN_SOURCE}/rules.d/*.mk ${DEBIAN_TARGET}/rules.d/
+#
+# Remember to disable libbpf
+#
+for i in ${NO_LIBBPF_ARCHES}
+do
+	echo "no_libbpf	= NO_LIBBPF=1" >> ${DEBIAN_TARGET}/rules.d/$i.mk
+done
 
 #
 # Update modprobe.d from master
