@@ -1,9 +1,28 @@
-linux-lts-wily (4.2.0-28.33~14.04.1) trusty; urgency=low
+linux-lts-wily (4.2.0-29.34~14.04.1) trusty; urgency=low
+
+  [ Luis Henriques ]
+
+  * Release Tracking Bug
+    - LP: #1543520
+
+  [ Brad Figg ]
+
+  * Revert "SAUCE: apparmor: fix sleep from invalid context"
+    - LP: #1542049
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "af_unix: Revert 'lock_interruptible' in stream receive code"
+    - LP: #1540731
+
+ -- Luis Henriques <luis.henriques@canonical.com>  Tue, 09 Feb 2016 10:52:10 +0000
+
+linux (4.2.0-28.33) wily; urgency=low
 
   [ Brad Figg ]
 
   * Release Tracking Bug
-    - LP: #1540864
+    - LP: #1540634
 
   [ Brad Figg ]
 
@@ -1180,7 +1199,7 @@ linux-lts-wily (4.2.0-28.33~14.04.1) trusty; urgency=low
   * Linux 4.2.8-ckt3
     - LP: #1540532
 
- -- Luis Henriques <luis.henriques@canonical.com>  Thu, 04 Feb 2016 11:27:20 +0000
+ -- Brad Figg <brad.figg@canonical.com>  Mon, 01 Feb 2016 13:41:55 -0800
 
 linux (4.2.0-27.32) wily; urgency=low
 
